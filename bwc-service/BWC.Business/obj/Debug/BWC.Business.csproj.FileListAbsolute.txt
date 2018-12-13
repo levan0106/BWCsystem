@@ -1,0 +1,12 @@
+C:\Users\levan\code\BWC\BWC.Business\bin\Debug\BWC.Business.dll
+C:\Users\levan\code\BWC\BWC.Business\bin\Debug\BWC.Business.pdb
+C:\Users\levan\code\BWC\BWC.Business\obj\Debug\BWC.Business.csprojAssemblyReference.cache
+C:\Users\levan\code\BWC\BWC.Business\obj\Debug\BWC.Business.csproj.CoreCompileInputs.cache
+C:\Users\levan\code\BWC\BWC.Business\obj\Debug\BWC.Business.dll
+C:\Users\levan\code\BWC\BWC.Business\obj\Debug\BWC.Business.pdb
+C:\Users\levan\code\BWCsystem\bwc-service\BWC.Business\bin\Debug\BWC.Business.dll
+C:\Users\levan\code\BWCsystem\bwc-service\BWC.Business\bin\Debug\BWC.Business.pdb
+C:\Users\levan\code\BWCsystem\bwc-service\BWC.Business\obj\Debug\BWC.Business.csprojAssemblyReference.cache
+C:\Users\levan\code\BWCsystem\bwc-service\BWC.Business\obj\Debug\BWC.Business.csproj.CoreCompileInputs.cache
+C:\Users\levan\code\BWCsystem\bwc-service\BWC.Business\obj\Debug\BWC.Business.dll
+C:\Users\levan\code\BWCsystem\bwc-service\BWC.Business\obj\Debug\BWC.Business.pdb

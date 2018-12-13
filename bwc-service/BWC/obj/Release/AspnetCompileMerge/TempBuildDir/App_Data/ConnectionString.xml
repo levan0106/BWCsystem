@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<connections>
+  <connection>
+    <!--<connectionString name="DB" connectionString="Initial Catalog=bwc;Data Source=localhost;User ID=sa;Password=123456;Connection Timeout=120;Persist Security Info=True"></connectionString>-->
+    <connectionString name="DB" connectionString="DATABASE=bwc;SERVER=localhost;UID=root;PASSWORD=123456;SSLMode=None"></connectionString>
+  </connection>
+</connections>

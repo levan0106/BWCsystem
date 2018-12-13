@@ -1,0 +1,11 @@
+D:\BWC\BWC.Model\bin\Release\BWC.Model.dll
+D:\BWC\BWC.Model\bin\Release\BWC.Model.pdb
+D:\BWC\BWC.Model\obj\Release\BWC.Model.csprojResolveAssemblyReference.cache
+D:\BWC\BWC.Model\obj\Release\BWC.Model.dll
+D:\BWC\BWC.Model\obj\Release\BWC.Model.pdb
+C:\Users\levan\code\BWC\BWC.Model\bin\Release\BWC.Model.dll
+C:\Users\levan\code\BWC\BWC.Model\bin\Release\BWC.Model.pdb
+C:\Users\levan\code\BWC\BWC.Model\obj\Release\BWC.Model.dll
+C:\Users\levan\code\BWC\BWC.Model\obj\Release\BWC.Model.pdb
+C:\Users\levan\code\BWC\BWC.Model\obj\Release\BWC.Model.csprojAssemblyReference.cache
+C:\Users\levan\code\BWC\BWC.Model\obj\Release\BWC.Model.csproj.CoreCompileInputs.cache
