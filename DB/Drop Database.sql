@@ -1,0 +1,2 @@
+DROP DATABASE BWC;
+--C:\Program Files\Microsoft SQL Server\MSSQL10_50.EN2008R2\MSSQL\DATA

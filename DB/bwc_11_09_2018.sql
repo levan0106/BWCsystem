@@ -1,0 +1,5387 @@
+-- MySQL dump 10.13  Distrib 8.0.12, for Win64 (x86_64)
+--
+-- Host: localhost    Database: bwc
+-- ------------------------------------------------------
+-- Server version	8.0.12
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ SET NAMES utf8 ;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `category`
+--
+
+DROP TABLE IF EXISTS `category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `category` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `CategoryCode` varchar(500) NOT NULL,
+  `CategoryName` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  `Description` varchar(5000) DEFAULT NULL,
+  `TubeWidth` int(11) DEFAULT NULL,
+  `TubeTypewidthLess` int(11) DEFAULT NULL,
+  `TubeTypeWidthGreater` int(11) DEFAULT NULL,
+  `BottomRailWidth` int(11) DEFAULT NULL,
+  `MaterialWidth` int(11) DEFAULT NULL,
+  `MaterialDrop` int(11) DEFAULT NULL,
+  `HoodEqualWidth` tinyint(4) DEFAULT NULL,
+  `FrameWidth` int(11) DEFAULT NULL,
+  `FrameDrop` int(11) DEFAULT NULL,
+  `MeshWidth` int(11) DEFAULT NULL,
+  `MeshDrop` int(11) DEFAULT NULL,
+  `TubeType` int(11) DEFAULT NULL,
+  `OuterTrackDrop` int(11) DEFAULT NULL,
+  `InnerTrackDrop` int(11) DEFAULT NULL,
+  `MaterialKederWidth` int(11) DEFAULT NULL,
+  `BoxTypeDrop` int(11) DEFAULT NULL,
+  `BoxLength` int(11) DEFAULT NULL,
+  `BottomBarHeight` int(11) DEFAULT NULL,
+  `BottomBarLength` int(11) DEFAULT NULL,
+  `SlatHeight` int(11) DEFAULT NULL,
+  `SlatAmount` int(11) DEFAULT NULL,
+  `SlatLenght` int(11) DEFAULT NULL,
+  `AxleLenght` int(11) DEFAULT NULL,
+  `GuideLenght` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `category`
+--
+
+LOCK TABLES `category` WRITE;
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (4,'ROLLERBLIND','ROLLER BLIND',1,NULL,NULL,NULL,'2018-09-05 23:52:54.000000','ROLLER BLIND',30,0,0,30,32,400,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),(5,'AUTOAWNING','AUTO AWNING\r\n',1,NULL,NULL,NULL,'2018-09-05 23:42:46.000000','AUTO AWNING',55,50,63,55,60,400,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),(6,'STRAIGHTDROP','STRAIGHT DROP AWNING\r\n',1,NULL,NULL,NULL,'2018-09-05 23:49:43.000000','STRAIGHT DROP AWNING',55,50,63,55,60,400,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),(7,'FIXEDGUIDEAWNING','FIXED GUIDE AWNING\r\n',1,NULL,NULL,NULL,'2018-09-05 23:51:14.000000','FIXED GUIDE AWNING',75,50,63,75,80,400,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),(8,'STRAIGHTDROP','STRAIGHT DROP CRANK AWNING\r\n',1,NULL,NULL,NULL,'2018-09-05 23:50:29.000000','STRAIGHT DROP CRANK AWNING',60,50,63,60,32,400,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),(9,'ZIPSCREEN','ZIPSCREEN\r\n',1,NULL,NULL,NULL,'2018-09-05 23:52:13.000000','ZIP SCREEN',58,0,0,100,75,150,0,0,0,0,0,78,125,140,55,0,0,0,0,0,0,0,0,0),(11,'FLYSCREEN','FLYSCREEN',1,NULL,NULL,NULL,'2018-09-05 23:44:04.000000','FLY SCREEN',0,0,0,0,0,0,0,40,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),(12,'FLYSCREEN','FLYSCREEN WITH SKIRT\r\n',1,NULL,NULL,NULL,'2018-09-05 23:44:20.000000','FLYS CREEN WITH SKIRT',0,0,0,0,0,0,0,40,92,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),(13,'SECURITY','SECURITY WINDOW\r\n',1,NULL,NULL,NULL,'2018-09-05 23:48:55.000000','SECURITY WINDOW',0,0,0,0,0,0,0,45,45,55,55,0,0,0,0,0,0,0,0,0,0,0,0,0),(14,'SECURITY','SECURITY DOOR\r\n',1,NULL,NULL,NULL,'2018-09-05 23:48:37.000000','SECURITY DOOR',0,0,0,0,0,0,0,47,47,122,122,0,0,0,0,0,0,0,0,0,0,0,0,0),(15,'FLYDOOR','FLY DOOR NO TRACK\r\n',1,NULL,NULL,NULL,'2018-09-05 23:45:05.000000','FLY DOOR NO TRACK',0,0,0,0,0,0,0,40,52,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),(16,'FLYDOOR','FLY DOOR WITH T/B TRACK\r\n',1,NULL,NULL,NULL,'2018-09-05 23:43:29.000000','FLY DOOR WITH T/B TRACK',0,0,0,0,0,0,0,40,60,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),(17,'RS','RS',1,NULL,NULL,NULL,'2018-09-05 23:47:54.000000',NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,165,10,50,72,40,15,72,80,0);
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `color`
+--
+
+DROP TABLE IF EXISTS `color`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `color` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `ColorName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`,`ColorName`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=144 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `color`
+--
+
+LOCK TABLES `color` WRITE;
+/*!40000 ALTER TABLE `color` DISABLE KEYS */;
+INSERT INTO `color` VALUES (1,'NA',1,NULL,NULL,NULL,NULL),(2,'Brown Satin\r\n',1,NULL,NULL,NULL,NULL),(3,'Paperbark Matt\r\n',1,NULL,NULL,NULL,NULL),(4,'Pearl White Gloss\r\n',NULL,NULL,NULL,NULL,NULL),(5,'Pottery Satin\r\n',NULL,NULL,NULL,NULL,NULL),(6,'Satin Chrome\r\n',NULL,NULL,NULL,NULL,NULL),(7,'Stone Beige Matt\r\n',NULL,NULL,NULL,NULL,NULL),(8,'White Birch Gloss\r\n',NULL,NULL,NULL,NULL,NULL),(9,'Woodland Grey Matt\r\n',NULL,NULL,NULL,NULL,NULL),(10,'Satin S/Less Steel\r\n',NULL,NULL,NULL,NULL,NULL),(11,'Stainless Steel\r\n',NULL,NULL,NULL,NULL,NULL),(12,'Primrose Gloss\r\n',NULL,NULL,NULL,NULL,NULL),(13,'Charcoal (Monument)\r\n',NULL,NULL,NULL,NULL,NULL),(14,'Merino\r\n',NULL,NULL,NULL,NULL,NULL),(15,'Shale Grey\r\n',NULL,NULL,NULL,NULL,NULL),(16,'Charcoal (Monument)6.5M\r\n',NULL,NULL,NULL,NULL,NULL),(17,'White\r\n',NULL,NULL,NULL,NULL,NULL),(18,'Ratio White\r\n',NULL,NULL,NULL,NULL,NULL),(19,'Zinc\r\n',NULL,NULL,NULL,NULL,NULL),(20,'Ivory\r\n',NULL,NULL,NULL,NULL,NULL),(21,'2 Hole\r\n',NULL,NULL,NULL,NULL,NULL),(22,'Charcoal(Monument)\r\n',NULL,NULL,NULL,NULL,NULL),(23,'Charcoal(Monument)6.5M\r\n',NULL,NULL,NULL,NULL,NULL),(24,'Caulfield Green\r\n',NULL,NULL,NULL,NULL,NULL),(25,'Pure White\r\n',NULL,NULL,NULL,NULL,NULL),(26,'Blue Sky\r\n',NULL,NULL,NULL,NULL,NULL),(27,'Silver Grey\r\n',NULL,NULL,NULL,NULL,NULL),(28,'Vivid White\r\n',NULL,NULL,NULL,NULL,NULL),(29,'Mill Finish\r\n',NULL,NULL,NULL,NULL,NULL),(30,'Silver Zinc Plated\r\n',NULL,NULL,NULL,NULL,NULL),(31,'Black Satin\r\n',NULL,NULL,NULL,NULL,NULL),(32,'Pottery\r\n',NULL,NULL,NULL,NULL,NULL),(33,'Paperbark\r\n',NULL,NULL,NULL,NULL,NULL),(34,'Pearl White\r\n',NULL,NULL,NULL,NULL,NULL),(35,'Satin Black\r\n',NULL,NULL,NULL,NULL,NULL),(36,'Dune\r\n',NULL,NULL,NULL,NULL,NULL),(37,'Jasper\r\n',NULL,NULL,NULL,NULL,NULL),(38,'Woodland Grey\r\n',NULL,NULL,NULL,NULL,NULL),(39,'Charcoal\r\n',NULL,NULL,NULL,NULL,NULL),(40,'Monument Matte\r\n',NULL,NULL,NULL,NULL,NULL),(41,'Sand Black\r\n',NULL,NULL,NULL,NULL,NULL),(42,'Aliminium\r\n',NULL,NULL,NULL,NULL,NULL),(43,'Blue\r\n',NULL,NULL,NULL,NULL,NULL),(44,'Primrose\r\n',NULL,NULL,NULL,NULL,NULL),(45,'Custom Black\r\n',NULL,NULL,NULL,NULL,NULL),(46,'Monument\r\n',NULL,NULL,NULL,NULL,NULL),(47,'Bronze Anod\r\n',NULL,NULL,NULL,NULL,NULL),(48,'Brown\r\n',NULL,NULL,NULL,NULL,NULL),(49,'Monument Satin\r\n',NULL,NULL,NULL,NULL,NULL),(50,'Ultra Sliver\r\n',NULL,NULL,NULL,NULL,NULL),(51,'Jasper Satin\r\n',NULL,NULL,NULL,NULL,NULL),(52,'Grey\r\n',NULL,NULL,NULL,NULL,NULL),(53,'Woodland Grey Satin\r\n',NULL,NULL,NULL,NULL,NULL),(54,'Paperback\r\n',NULL,NULL,NULL,NULL,NULL),(55,'Sliver Gloss\r\n',NULL,NULL,NULL,NULL,NULL),(56,'Ultra Sliver Gloss\r\n',NULL,NULL,NULL,NULL,NULL),(57,'Amaranth\r\n',NULL,NULL,NULL,NULL,NULL),(58,'Amber\r\n',NULL,NULL,NULL,NULL,NULL),(59,'Amethyst\r\n',NULL,NULL,NULL,NULL,NULL),(60,'Apricot\r\n',NULL,NULL,NULL,NULL,NULL),(61,'Aquamarine\r\n',NULL,NULL,NULL,NULL,NULL),(62,'Azure\r\n',NULL,NULL,NULL,NULL,NULL),(63,'Baby blue\r\n',NULL,NULL,NULL,NULL,NULL),(64,'Beige\r\n',NULL,NULL,NULL,NULL,NULL),(67,'Blue-green\r\n',NULL,NULL,NULL,NULL,NULL),(68,'Blue-violet\r\n',NULL,NULL,NULL,NULL,NULL),(69,'Blush\r\n',NULL,NULL,NULL,NULL,NULL),(70,'Bronze\r\n',NULL,NULL,NULL,NULL,NULL),(72,'Burgundy\r\n',NULL,NULL,NULL,NULL,NULL),(73,'Byzantium\r\n',NULL,NULL,NULL,NULL,NULL),(74,'Carmine\r\n',NULL,NULL,NULL,NULL,NULL),(75,'Cerise\r\n',NULL,NULL,NULL,NULL,NULL),(76,'Cerulean\r\n',NULL,NULL,NULL,NULL,NULL),(77,'Champagne\r\n',NULL,NULL,NULL,NULL,NULL),(78,'Chartreuse green\r\n',NULL,NULL,NULL,NULL,NULL),(79,'Chocolate\r\n',NULL,NULL,NULL,NULL,NULL),(80,'Cobalt blue\r\n',NULL,NULL,NULL,NULL,NULL),(81,'Coffee\r\n',NULL,NULL,NULL,NULL,NULL),(82,'Copper\r\n',NULL,NULL,NULL,NULL,NULL),(83,'Coral\r\n',NULL,NULL,NULL,NULL,NULL),(84,'Crimson\r\n',NULL,NULL,NULL,NULL,NULL),(85,'Cyan\r\n',NULL,NULL,NULL,NULL,NULL),(86,'Desert sand\r\n',NULL,NULL,NULL,NULL,NULL),(87,'Electric blue\r\n',NULL,NULL,NULL,NULL,NULL),(88,'Emerald\r\n',NULL,NULL,NULL,NULL,NULL),(89,'Erin\r\n',NULL,NULL,NULL,NULL,NULL),(90,'Gold\r\n',NULL,NULL,NULL,NULL,NULL),(91,'Gray\r\n',NULL,NULL,NULL,NULL,NULL),(92,'Green\r\n',NULL,NULL,NULL,NULL,NULL),(93,'Harlequin\r\n',NULL,NULL,NULL,NULL,NULL),(94,'Indigo\r\n',NULL,NULL,NULL,NULL,NULL),(96,'Jade\r\n',NULL,NULL,NULL,NULL,NULL),(97,'Jungle green\r\n',NULL,NULL,NULL,NULL,NULL),(98,'Lavender\r\n',NULL,NULL,NULL,NULL,NULL),(99,'Lemon\r\n',NULL,NULL,NULL,NULL,NULL),(100,'Lilac\r\n',NULL,NULL,NULL,NULL,NULL),(101,'Lime\r\n',NULL,NULL,NULL,NULL,NULL),(102,'Magenta\r\n',NULL,NULL,NULL,NULL,NULL),(103,'Magenta rose\r\n',NULL,NULL,NULL,NULL,NULL),(104,'Maroon\r\n',NULL,NULL,NULL,NULL,NULL),(105,'Mauve\r\n',NULL,NULL,NULL,NULL,NULL),(106,'Navy blue\r\n',NULL,NULL,NULL,NULL,NULL),(107,'Ocher\r\n',NULL,NULL,NULL,NULL,NULL),(108,'Olive\r\n',NULL,NULL,NULL,NULL,NULL),(109,'Orange\r\n',NULL,NULL,NULL,NULL,NULL),(110,'Orange-red\r\n',NULL,NULL,NULL,NULL,NULL),(111,'Orchid\r\n',NULL,NULL,NULL,NULL,NULL),(112,'Peach\r\n',NULL,NULL,NULL,NULL,NULL),(113,'Pear\r\n',NULL,NULL,NULL,NULL,NULL),(114,'Periwinkle\r\n',NULL,NULL,NULL,NULL,NULL),(115,'Persian blue\r\n',NULL,NULL,NULL,NULL,NULL),(116,'Pink\r\n',NULL,NULL,NULL,NULL,NULL),(117,'Plum\r\n',NULL,NULL,NULL,NULL,NULL),(118,'Prussian blue\r\n',NULL,NULL,NULL,NULL,NULL),(119,'Puce\r\n',NULL,NULL,NULL,NULL,NULL),(120,'Purple\r\n',NULL,NULL,NULL,NULL,NULL),(121,'Raspberry\r\n',NULL,NULL,NULL,NULL,NULL),(122,'Red\r\n',NULL,NULL,NULL,NULL,NULL),(123,'Red-violet\r\n',NULL,NULL,NULL,NULL,NULL),(124,'Rose\r\n',NULL,NULL,NULL,NULL,NULL),(125,'Ruby\r\n',NULL,NULL,NULL,NULL,NULL),(126,'Salmon\r\n',NULL,NULL,NULL,NULL,NULL),(127,'Sangria\r\n',NULL,NULL,NULL,NULL,NULL),(128,'Sapphire\r\n',NULL,NULL,NULL,NULL,NULL),(129,'Scarlet\r\n',NULL,NULL,NULL,NULL,NULL),(130,'Silver\r\n',NULL,NULL,NULL,NULL,NULL),(131,'Slate gray\r\n',NULL,NULL,NULL,NULL,NULL),(132,'Spring bud\r\n',NULL,NULL,NULL,NULL,NULL),(133,'Spring green\r\n',NULL,NULL,NULL,NULL,NULL),(134,'Tan\r\n',NULL,NULL,NULL,NULL,NULL),(135,'Taupe\r\n',NULL,NULL,NULL,NULL,NULL),(136,'Teal\r\n',NULL,NULL,NULL,NULL,NULL),(137,'Turquoise\r\n',NULL,NULL,NULL,NULL,NULL),(138,'Violet\r\n',NULL,NULL,NULL,NULL,NULL),(139,'Viridian\r\n',NULL,NULL,NULL,NULL,NULL),(141,'Yellow\r\n',NULL,NULL,NULL,NULL,NULL),(143,'Black',NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `color` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `component`
+--
+
+DROP TABLE IF EXISTS `component`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `component` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `ComponentCode` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `ComponentName` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `SupplierId` int(11) DEFAULT NULL,
+  `Price` decimal(18,2) DEFAULT NULL,
+  `PurchasePrice` decimal(18,2) DEFAULT NULL,
+  `Color` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Unit` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Description` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `Discount` decimal(18,2) DEFAULT NULL,
+  `Size` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `ComponentType` int(11) DEFAULT NULL,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `component`
+--
+
+LOCK TABLES `component` WRITE;
+/*!40000 ALTER TABLE `component` DISABLE KEYS */;
+INSERT INTO `component` VALUES (1,'BWC0002','Chain holder',4,2000.00,1800.00,'Brown Satin\r\n','Each','Chain holder',10.00,NULL,0,1,NULL,NULL,'2018-06-12 23:11:36.510000','2018-07-14 22:18:30.913000'),(4,'BWC0008','Double bracket ',6,120.00,110.00,'Brown Satin\r\n','Each','double bracket then no need supply single bracket',8.00,NULL,0,1,NULL,NULL,'2018-06-16 17:55:29.103000','2018-08-25 13:46:15.520000'),(5,'BWC0003','BWC0003 BWC0003',4,200.00,180.00,'Brown Satin\r\n','Each','BWC0003 BWC0003',5.00,NULL,0,1,NULL,NULL,'2018-07-05 18:22:28.283000','2018-07-14 22:18:16.453000'),(6,'BWC0004','BWC0004 BWC0004',5,2000.00,1500.00,'Brown Satin\r\n','Each','BWC0003 BWC0003 BWC0003',3.00,NULL,0,1,NULL,NULL,'2018-07-24 21:17:28.483000','2018-08-25 14:14:23.170000'),(7,'bwc005','BWC005 aaaa',5,1000.00,900.00,'Brown Satin\r\n','Each',NULL,7.00,NULL,0,1,NULL,NULL,'2018-08-12 09:40:09.060000','2018-08-27 23:26:17.000000');
+/*!40000 ALTER TABLE `component` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `customer` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `FirstName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `LastName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Company` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Email` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `JobTitle` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `WebPage` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Notes` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `Address` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `ZipCode` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `City` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `State` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Country` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `BusinessPhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `MobilePhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `HomePhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Fax` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Discount` decimal(18,2) DEFAULT NULL,
+  `ABN` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `IsBWC` bigint(20) DEFAULT NULL,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES (1,'BWC','System','B WINDOW COVERS PTY LTD','bwindowcovers@gmail.com',NULL,'http://bwindowcovers.com.au',NULL,'1/52 SMITH RD, SPRINGVALE, VIC 3171',NULL,'hcmc',NULL,NULL,'8502 7472',NULL,NULL,NULL,0.00,'A.B.N 34 205 612 818',1,NULL,NULL,NULL,'2018-07-09 21:12:47.537000','2018-08-26 12:26:54.000000'),(2,'tung','le','aperia','bwindowcovers@gmail.com',NULL,'http://bwindowcovers.com.au',NULL,'truong chinh, tan binh',NULL,'hcmc',NULL,NULL,'8502 7472',NULL,NULL,NULL,0.00,'A.B.N 34 205 612 818',NULL,NULL,NULL,NULL,'2018-07-09 23:23:45.500000','2018-08-26 13:19:31.000000');
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `discount`
+--
+
+DROP TABLE IF EXISTS `discount`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `discount` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `ObjectId` int(11) DEFAULT NULL,
+  `ProductId` int(11) DEFAULT NULL,
+  `DiscountValue` decimal(18,2) DEFAULT NULL,
+  `DiscountType` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `discount`
+--
+
+LOCK TABLES `discount` WRITE;
+/*!40000 ALTER TABLE `discount` DISABLE KEYS */;
+INSERT INTO `discount` VALUES (5,1,2,7.00,1,NULL,NULL,'2018-08-20 23:07:47.890000','2018-08-20 23:24:55.987000',NULL),(13,2,1,8.00,1,NULL,NULL,'2018-08-20 23:31:01.487000','2018-08-21 22:15:40.720000',NULL),(14,4,2,5.00,0,NULL,NULL,'2018-08-21 22:15:24.467000',NULL,NULL);
+/*!40000 ALTER TABLE `discount` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `employee`
+--
+
+DROP TABLE IF EXISTS `employee`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `employee` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `FirstName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `LastName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Company` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Email` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `JobTitle` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `WebPage` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Notes` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `Address` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `ZipCode` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `City` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `State` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Country` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `BusinessPhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `MobilePhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `HomePhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Fax` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `SalaryPerHours` decimal(18,2) DEFAULT NULL,
+  `TaxFileNumber` int(11) DEFAULT NULL,
+  `SuperannuationName` varchar(550) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `FundABN` varchar(550) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `FundAddress` varchar(550) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `FundUSI` varchar(550) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `SuperannuationMemberNumber` int(11) DEFAULT NULL,
+  `SickLeaveRate` decimal(18,8) DEFAULT NULL,
+  `AnnualLeaveRate` decimal(18,8) DEFAULT NULL,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employee`
+--
+
+LOCK TABLES `employee` WRITE;
+/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
+INSERT INTO `employee` VALUES (1,'tung','le','BWC','levan0106@gmail.com',NULL,NULL,'BWC\'s employee','163 truong chinh, quan 12, hcmc',NULL,NULL,NULL,NULL,'0975436610','234235',NULL,NULL,10.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0.07692308,NULL,NULL,NULL,'2018-07-28 18:22:25.973000','2018-09-09 11:41:58.000000'),(2,'tung','tung','aperia','levan@gmail.com','Sale Prep',NULL,NULL,'163 truong chinh, quan 12',NULL,NULL,NULL,NULL,'123171231','124556',NULL,NULL,8.00,NULL,' Superannuation Name',NULL,NULL,NULL,NULL,0.03846154,0.07692308,NULL,NULL,NULL,'2018-07-29 16:27:49.370000','2018-09-09 16:20:38.000000'),(3,'bwc','employee',NULL,'bwc@gmail.com',NULL,NULL,NULL,'tan binh, ho chi minh',NULL,NULL,NULL,NULL,'5555555','5555555',NULL,NULL,5.00,234,'name','213455','address','usi',NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-29 16:28:41.390000','2018-08-07 22:43:52.870000'),(4,'tuan','viet','bwc','tuanviet@yahoo.com',NULL,NULL,NULL,'ho chi minh city',NULL,NULL,NULL,NULL,NULL,'343654',NULL,NULL,NULL,3456,NULL,NULL,NULL,NULL,NULL,0.03846154,0.08000000,NULL,NULL,NULL,'2018-08-07 22:45:24.060000','2018-09-09 11:39:42.000000');
+/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `material`
+--
+
+DROP TABLE IF EXISTS `material`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `material` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `MaterialCode` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `MaterialName` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Color` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `SupplierId` int(11) DEFAULT NULL,
+  `Price` decimal(18,2) DEFAULT NULL,
+  `Description` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `material`
+--
+
+LOCK TABLES `material` WRITE;
+/*!40000 ALTER TABLE `material` DISABLE KEYS */;
+INSERT INTO `material` VALUES (2,'bwc23456','SHANN MESH','Blue',4,NULL,'VALESCO - WHOLESALE PRICE - GST NOT INC.',1,NULL,NULL,'2018-06-14 22:27:14.670000','2018-07-14 20:52:32.403000'),(4,'bwdc345','SHAW -SCREEN (2500/3200MM)','white',5,NULL,'SHAW -SCREEN (2500/3200MM)',1,NULL,NULL,'2018-06-14 22:32:04.043000','2018-07-14 20:52:21.557000'),(5,'bwc123','SHAW -  LE REVE B/O (3000MM) - MANTRA B/O (3000MM)','Yellow',5,NULL,'SHAW -  LE REVE B/O (3000MM) - MANTRA B/O (3000MM)',1,NULL,NULL,'2018-06-17 16:06:42.600000','2018-07-14 12:27:25.947000'),(6,'78945','VALESCO - WHOLESALE PRICE - GST NOT INC.','NA',6,NULL,'VALESCO - WHOLESALE PRICE - GST NOT INC.',1,NULL,NULL,'2018-07-24 21:24:05.807000',NULL);
+/*!40000 ALTER TABLE `material` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `order`
+--
+
+DROP TABLE IF EXISTS `order`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `order` (
+  `Id` bigint(20) NOT NULL,
+  `EmployeeId` int(11) DEFAULT NULL,
+  `EmployeeName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Step` int(11) DEFAULT NULL,
+  `Taxes` decimal(18,2) DEFAULT NULL,
+  `Surcharge` decimal(18,2) DEFAULT NULL,
+  `Discount` decimal(18,2) DEFAULT NULL,
+  `OrderDate` datetime(6) DEFAULT NULL,
+  `FirtReceiveDate` datetime(6) DEFAULT NULL,
+  `LastUpdate` datetime(6) DEFAULT NULL,
+  `DeliveryDate` datetime(6) DEFAULT NULL,
+  `DeliveryNo` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Notes` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `SupplierId` int(11) DEFAULT NULL,
+  `SupplierName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `SupplierAddress` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `SupplierEmail` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `SupplierPhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `CustomerId` int(11) DEFAULT NULL,
+  `CustomerName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `CustomerAddress` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `CustomerEmail` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `CustomerPhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `OrderRefNo` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `OrderType` int(11) DEFAULT NULL,
+  `AMTExcGST` decimal(18,2) DEFAULT NULL,
+  `GST` decimal(18,2) DEFAULT NULL,
+  `AMTIncGST` decimal(18,2) DEFAULT NULL,
+  `TotalAmountExcGST` decimal(18,2) DEFAULT NULL,
+  `TotalAmount` decimal(18,2) DEFAULT NULL,
+  `TotalReceived` decimal(18,2) DEFAULT NULL,
+  `TotalPaid` decimal(18,2) DEFAULT NULL,
+  `Balance` decimal(18,2) DEFAULT NULL,
+  `NeedToReview` bigint(20) DEFAULT NULL,
+  `InvoiceNoForOrderOnly` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `InvoiceDateForOrderOnly` datetime(6) DEFAULT NULL,
+  `PickupDateForOrderOnly` datetime(6) DEFAULT NULL,
+  `CompleteDateForOrderOnly` datetime(6) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order`
+--
+
+LOCK TABLES `order` WRITE;
+/*!40000 ALTER TABLE `order` DISABLE KEYS */;
+INSERT INTO `order` VALUES (1529590581377,2,NULL,3,10.00,0.00,0.00,'2018-06-22 00:00:00.000000',NULL,NULL,NULL,NULL,NULL,4,'tung le','quoturm','mngo@aperia.com','123576787',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,4400.00,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-21 21:16:49.643000','2018-06-27 23:28:40.180000',NULL),(1529590718053,3,NULL,3,10.00,0.00,0.00,'2018-06-21 00:00:00.000000',NULL,NULL,NULL,NULL,NULL,6,'BWC Company','123 Syney Australia','tungle@aperia.com','123456',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,112.53,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-21 21:18:49.343000','2018-07-16 22:20:00.400000',NULL),(1529592217856,1,NULL,2,8.00,1231.00,0.00,'2018-06-21 00:00:00.000000',NULL,NULL,NULL,NULL,'this is note',5,'CSC','quoturm','mngo@aperia.com','1234',NULL,NULL,NULL,NULL,NULL,'123123',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-21 21:44:21.587000','2018-07-16 22:20:11.590000',NULL),(1529595111990,2,'Tuan Le',4,9.00,1234.00,0.00,'2018-06-30 10:47:17.000000','2018-04-24 00:00:00.000000',NULL,NULL,NULL,'this is note',4,'tung le','quoturm','mngo@aperia.com','1234456',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,8724.36,4360.00,567.00,3793.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-21 22:32:37.280000','2018-06-25 21:18:07.170000',NULL),(1530330251506,2,'Tuan Le',3,9.00,1234.00,0.00,'2018-06-30 10:44:15.003000',NULL,NULL,NULL,NULL,'this is note',4,'tung le','quoturm','mngo@aperia.com','1234456',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,2193.08,2184.36,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 10:44:15.003000','2018-07-17 23:32:34.703000',NULL),(1530330437904,1,NULL,1,5.00,1231.00,0.00,'2018-06-30 10:47:17.000000',NULL,NULL,NULL,NULL,'this is note',5,'viet tuan','quoturm','mngo@aperia.com','1234',NULL,NULL,NULL,NULL,NULL,'123123',1,NULL,NULL,NULL,NULL,4032.63,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 10:47:17.990000','2018-06-30 13:04:46.773000',NULL),(1530330652517,1,NULL,2,8.00,1231.00,0.00,'2018-06-30 10:50:52.600000',NULL,NULL,NULL,NULL,'this is note',5,'viet tuan','quoturm','mngo@aperia.com','1234',NULL,NULL,NULL,NULL,NULL,'123123',1,NULL,NULL,NULL,NULL,9.72,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 10:50:52.600000','2018-07-17 21:08:45.797000',NULL),(1530330861321,1,NULL,2,8.00,1231.00,0.00,'2018-06-30 10:54:21.403000',NULL,NULL,'2018-07-15 17:00:00.000000','123456','this is note',5,'CSC','quoturm','mngo@aperia.com','1234',NULL,NULL,NULL,NULL,NULL,'123123',1,NULL,NULL,NULL,NULL,9.72,6.48,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 10:54:21.403000','2018-07-17 21:07:34.823000',NULL),(1530330946656,1,NULL,6,8.00,1231.00,0.00,'2018-06-30 10:55:46.000000',NULL,NULL,NULL,NULL,'this is note',5,'CSC','quoturm','mngo@aperia.com','1234',NULL,NULL,NULL,NULL,NULL,'123123',1,NULL,NULL,NULL,NULL,9.72,9.72,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 10:55:46.763000','2018-07-16 22:19:41.773000',NULL),(1530331633177,2,'Tuan Le',6,9.00,1234.00,0.00,'2018-06-30 11:07:13.000000',NULL,NULL,NULL,NULL,'this is note',4,'aperia','quoturm','mngo@aperia.com','1234456',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,9810.00,9810.00,900.00,8910.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 11:07:13.270000','2018-07-16 22:19:32.147000',NULL),(1530360311814,2,'Tuan Le',3,9.00,1234.00,0.00,'2018-06-30 19:05:11.893000',NULL,NULL,NULL,NULL,'this is note',4,'aperia','quoturm','mngo@aperia.com','1234456',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,6540.00,3270.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 19:05:11.893000','2018-07-16 22:19:22.417000',NULL),(1530360334538,2,'Tuan Le',4,7.00,1234.00,0.00,'2018-06-30 19:05:34.000000',NULL,NULL,NULL,NULL,'this is note',4,'aperia','quoturm','mngo@aperia.com','1234456',NULL,NULL,NULL,NULL,NULL,'12312412412',1,NULL,NULL,NULL,NULL,3214.28,3216.42,932.28,2284.14,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 19:05:34.593000','2018-07-16 22:19:00.100000',NULL),(1530787392102,2,'Tuan Le',6,7.00,1234.00,5.00,'2018-07-05 17:43:12.000000',NULL,NULL,'2018-07-13 17:00:00.000000','123','this is note',4,'aperia','quoturm','mngo@aperia.com','1234456',NULL,NULL,NULL,NULL,NULL,'2345',1,2000.00,140.00,2140.00,NULL,10914.00,10914.00,10700.00,214.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 17:43:12.180000','2018-07-17 19:26:53.690000',NULL),(1531149326056,NULL,NULL,2,10.00,NULL,NULL,'2018-07-09 23:08:46.980000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,'B WINDOW COVERS PTY LTD','1/52 SMITH RD, SPRINGVALE, VIC 3171','bwindowcovers@gmail.com','8502 7472',NULL,2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-09 22:15:49.453000','2018-07-18 22:50:39.873000',NULL),(1531152513899,NULL,NULL,3,10.00,NULL,NULL,'2018-07-09 23:08:46.980000',NULL,NULL,NULL,NULL,'new order',NULL,NULL,NULL,NULL,NULL,2,'Aperia Solution','39b truong chinh, phuong 14, quan Tan Binh, HCM','tungle@gmail.com',NULL,NULL,2,NULL,NULL,NULL,NULL,924.00,220.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-09 23:08:46.980000','2018-07-10 22:12:12.707000',NULL),(1531235364561,NULL,'tung',2,10.00,NULL,NULL,'2018-07-10 22:09:38.130000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,'Aperia Solution','39b truong chinh, phuong 14, quan Tan Binh, HCM','tungle@agmail.com',NULL,NULL,2,NULL,NULL,NULL,NULL,14631.76,8360.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-10 22:09:38.130000','2018-07-10 22:12:33.757000',NULL),(1531930958415,NULL,'tung',2,10.00,NULL,NULL,'2018-07-18 23:22:47.727000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,'Aperia Solution','39b truong chinh, phuong 14, quan Tan Binh, HCM','tungle@agmail.com','0975436610',NULL,2,NULL,NULL,NULL,NULL,9009.00,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-18 23:22:47.727000',NULL,NULL),(1531931019163,NULL,'tung',3,10.00,NULL,NULL,'2018-07-18 23:23:44.787000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,'Aperia Solution','39b truong chinh, phuong 14, quan Tan Binh, HCM','tungle@agmail.com','0975436610',NULL,2,NULL,NULL,NULL,NULL,3300.00,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-18 23:23:44.787000','2018-07-20 21:53:04.773000',NULL),(1531932081893,NULL,'tung',4,10.00,NULL,NULL,'2018-07-18 23:41:34.517000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,'B WINDOW COVERS PTY LTD','1/52 SMITH RD, SPRINGVALE, VIC 3171','bwindowcovers@gmail.com','8502 7472',NULL,2,NULL,NULL,NULL,8470.00,9317.00,0.00,NULL,0.00,NULL,'123abc','2018-07-27 17:00:00.000000','2018-07-28 17:00:00.000000','2018-07-25 17:00:00.000000',NULL,NULL,'2018-07-18 23:41:34.517000','2018-07-28 09:33:32.153000',NULL),(1531932161935,NULL,'tung',1,10.00,NULL,NULL,'2018-07-18 23:42:46.820000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,'B WINDOW COVERS PTY LTD','1/52 SMITH RD, SPRINGVALE, VIC 3171','bwindowcovers@gmail.com','8502 7472',NULL,2,NULL,NULL,NULL,NULL,9386.99,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-18 23:42:46.820000',NULL,NULL),(1532009549069,NULL,'tung',1,10.00,NULL,NULL,'2018-07-19 21:12:48.547000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,'Aperia Solution','39b truong chinh, phuong 14, quan Tan Binh, HCM','tungle@agmail.com','0975436610',NULL,2,NULL,NULL,NULL,6576.41,7234.05,3960.00,0.00,3960.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-19 21:12:48.547000',NULL,NULL),(1532170419582,NULL,'tung',1,10.00,NULL,NULL,'2018-07-21 17:54:14.270000',NULL,NULL,'2018-07-21 10:53:39.583000',NULL,NULL,5,'CSC','quoturm','mngo@aperia.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,6875.00,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-21 17:54:14.270000',NULL,NULL),(1532441400871,NULL,'tung',1,10.00,NULL,NULL,'2018-07-24 21:10:00.940000',NULL,NULL,NULL,NULL,NULL,4,'aperia','quoturm','mngo@aperia.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,7320.00,8052.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-24 21:10:00.940000','2018-07-24 21:15:57.330000',NULL),(1532441516076,NULL,'tung',1,10.00,NULL,NULL,'2018-07-24 21:11:56.123000',NULL,NULL,NULL,NULL,NULL,6,'BWC Company','123 Syney Australia','tungle@aperia.com','123456',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,4312.22,0.00,NULL,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-24 21:11:56.123000','2018-07-24 21:15:22.270000',NULL),(1532441624800,NULL,'tung',1,10.00,NULL,NULL,'2018-07-24 21:13:44.847000',NULL,NULL,NULL,NULL,NULL,5,'CSC','quoturm','mngo@aperia.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,11652.00,12817.20,0.00,0.00,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-24 21:13:44.847000','2018-07-24 22:40:01.990000',NULL),(1532533553179,NULL,'tung',4,10.00,NULL,NULL,'2018-07-25 22:46:02.313000',NULL,NULL,'2018-07-25 17:00:00.000000',NULL,NULL,6,'BWC Company','123 Syney Australia','tungle@aperia.com','123456',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,1100.00,1100.00,600.00,500.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-25 22:46:02.313000','2018-07-26 22:21:08.167000',NULL),(1532745355526,NULL,'tung',4,10.00,NULL,NULL,'2018-07-28 09:36:12.677000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,'B WINDOW COVERS PTY LTD','1/52 SMITH RD, SPRINGVALE, VIC 3171','bwindowcovers@gmail.com','8502 7472',NULL,2,NULL,NULL,NULL,7000.00,7700.00,7700.00,1000.00,6700.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-28 09:36:12.677000','2018-07-28 09:37:34.250000',NULL),(1534174473944,NULL,'tung',2,10.00,NULL,NULL,'2018-08-13 22:34:40.723000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,'B WINDOW COVERS PTY LTD','1/52 SMITH RD, SPRINGVALE, VIC 3171','bwindowcovers@gmail.com','8502 7472',NULL,2,NULL,NULL,NULL,4670.00,5137.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-08-13 22:34:40.723000',NULL,NULL);
+/*!40000 ALTER TABLE `order` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ordercomponent`
+--
+
+DROP TABLE IF EXISTS `ordercomponent`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `ordercomponent` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderId` bigint(20) NOT NULL,
+  `ComponentId` int(11) NOT NULL,
+  `ColorId` int(11) DEFAULT NULL,
+  `ColorName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Quantity` int(11) DEFAULT NULL,
+  `Price` decimal(18,2) DEFAULT NULL,
+  `ExtendPrice` decimal(18,2) DEFAULT NULL,
+  `ExtCharge` tinyint(1) DEFAULT NULL,
+  `UnitId` int(11) DEFAULT NULL,
+  `UnitName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `OrderType` int(11) DEFAULT NULL,
+  `Step` int(11) DEFAULT NULL,
+  `AMTExcGST` decimal(18,2) DEFAULT NULL,
+  `GST` decimal(18,2) DEFAULT NULL,
+  `AMTIncGST` decimal(18,2) DEFAULT NULL,
+  `ReceivedAMTExcGST` decimal(18,2) DEFAULT NULL,
+  `ReceivedGST` decimal(18,2) DEFAULT NULL,
+  `ReceivedAMTIncGST` decimal(18,2) DEFAULT NULL,
+  `TotalAmount` decimal(18,2) DEFAULT NULL,
+  `DeliveryNo` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `DeliveryDate` datetime(6) DEFAULT NULL,
+  `Received` int(11) DEFAULT NULL,
+  `Discount` decimal(18,2) DEFAULT NULL,
+  `BackOrder` int(11) DEFAULT NULL,
+  `OrderRefNo` bigint(20) DEFAULT NULL,
+  `Size` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ordercomponent`
+--
+
+LOCK TABLES `ordercomponent` WRITE;
+/*!40000 ALTER TABLE `ordercomponent` DISABLE KEYS */;
+INSERT INTO `ordercomponent` VALUES (37,1531152513899,4,NULL,'Brown Satin\r\n',2,120.00,NULL,NULL,NULL,'Each',NULL,3,NULL,NULL,NULL,NULL,NULL,NULL,240.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-10 20:13:52.803000',NULL),(38,1531152513899,5,NULL,'Brown Satin\r\n',1,200.00,NULL,0,NULL,'Each',NULL,3,NULL,NULL,NULL,NULL,NULL,NULL,200.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-10 20:13:52.803000','2018-07-18 22:38:17.917000'),(48,1530787392102,1,NULL,'Brown Satin\r\n',2,1800.00,NULL,0,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3240.00,NULL,NULL,2,10.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-14 22:32:44.243000','2018-07-14 22:43:43.900000'),(49,1530787392102,5,NULL,'Brown Satin\r\n',1,180.00,NULL,0,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,171.00,NULL,NULL,1,5.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-14 22:32:44.243000','2018-07-17 20:47:17.247000'),(52,1529590718053,4,NULL,'Brown Satin\r\n',1,110.00,NULL,0,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,102.30,NULL,NULL,NULL,7.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-16 20:06:23.997000','2018-07-25 22:45:33.560000'),(53,1530331633177,1,NULL,'Brown Satin\r\n',1,1800.00,NULL,0,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1620.00,NULL,NULL,1,10.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-17 20:58:45.110000','2018-07-17 21:01:48.603000'),(54,1530330251506,1,NULL,'Brown Satin\r\n',1,1800.00,NULL,0,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1620.00,NULL,NULL,1,10.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-17 23:31:09.660000','2018-07-17 23:32:42.647000'),(56,1531932161935,4,NULL,'Brown Satin\r\n',2,120.00,NULL,NULL,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,223.20,NULL,NULL,NULL,7.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-18 23:43:04.350000',NULL),(57,1531932161935,5,NULL,'Brown Satin\r\n',1,200.00,NULL,NULL,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,190.00,NULL,NULL,NULL,5.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-18 23:43:04.350000',NULL),(65,1531932081893,4,NULL,'Brown Satin\r\n',1,120.00,NULL,NULL,NULL,'Each',NULL,3,NULL,NULL,NULL,NULL,NULL,NULL,111.60,NULL,NULL,NULL,7.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-20 22:01:35.107000',NULL),(66,1531932081893,5,NULL,'Brown Satin\r\n',1,200.00,NULL,NULL,NULL,'Each',NULL,3,NULL,NULL,NULL,NULL,NULL,NULL,190.00,NULL,NULL,NULL,5.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-20 22:01:35.107000',NULL),(70,1530330437904,4,NULL,'Brown Satin\r\n',1,120.00,NULL,NULL,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,111.60,NULL,NULL,NULL,7.00,NULL,1531932081893,NULL,NULL,NULL,NULL,'2018-07-21 17:11:13.810000',NULL),(72,1531930958415,5,NULL,'Brown Satin\r\n',1,200.00,NULL,NULL,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,190.00,NULL,NULL,NULL,5.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-21 23:13:04.080000',NULL),(75,1531235364561,1,NULL,'Brown Satin\r\n',3,2000.00,NULL,NULL,NULL,'Each',NULL,3,NULL,NULL,NULL,NULL,NULL,NULL,5400.00,NULL,NULL,NULL,10.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-21 23:17:44.340000',NULL),(76,1531235364561,4,NULL,'Brown Satin\r\n',1,120.00,NULL,NULL,NULL,'Each',NULL,3,NULL,NULL,NULL,NULL,NULL,NULL,111.60,NULL,NULL,NULL,7.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-21 23:17:44.340000',NULL),(77,1531235364561,5,NULL,'Brown Satin\r\n',1,200.00,NULL,NULL,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,190.00,NULL,NULL,NULL,5.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-21 23:17:44.340000',NULL),(81,1532441400871,1,NULL,'Brown Satin\r\n',1,1800.00,NULL,NULL,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1620.00,NULL,NULL,NULL,10.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-24 21:16:02.210000',NULL),(82,1532170419582,6,NULL,'Brown Satin\r\n',1,1500.00,NULL,NULL,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1500.00,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-24 21:17:43.797000',NULL),(84,1532441516076,4,NULL,'Brown Satin\r\n',1,110.00,NULL,NULL,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,101.20,NULL,NULL,NULL,8.00,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-24 22:37:14.230000',NULL),(96,1532009549069,6,NULL,'Brown Satin\r\n',1,2000.00,NULL,NULL,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5.00,NULL,NULL,'10m',NULL,NULL,NULL,'2018-08-13 22:33:59.357000',NULL),(97,1532009549069,7,NULL,'Brown Satin\r\n',1,1000.00,NULL,NULL,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5.00,NULL,NULL,'20m',NULL,NULL,NULL,'2018-08-13 22:33:59.357000',NULL),(98,1534174473944,7,4,'Brown Satin\r\n',1,1000.00,NULL,0,NULL,'Each',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,950.00,NULL,NULL,NULL,5.00,NULL,NULL,'15cm',NULL,NULL,NULL,'2018-08-13 22:34:54.763000','2018-08-25 13:55:38.670000'),(100,1534174473944,1,5,NULL,1,NULL,NULL,0,NULL,'Each',2,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7.00,NULL,NULL,'200 cm',NULL,NULL,NULL,'2018-08-25 14:33:57.403000','2018-08-25 14:36:28.680000'),(101,1534174473944,1,6,NULL,5,NULL,NULL,0,0,'Each',2,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6.00,NULL,NULL,'50cm',NULL,NULL,NULL,'2018-08-25 14:36:17.030000',NULL),(105,1532441624800,6,NULL,'Brown Satin\r\n',4,1500.00,NULL,NULL,NULL,'Each',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,5820.00,NULL,NULL,NULL,3.00,NULL,NULL,'',NULL,NULL,NULL,'2018-08-28 00:34:43.000000',NULL);
+/*!40000 ALTER TABLE `ordercomponent` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orderinvoice`
+--
+
+DROP TABLE IF EXISTS `orderinvoice`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `orderinvoice` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderId` bigint(20) NOT NULL,
+  `InvoiceNo` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `InvoiceDate` datetime(6) DEFAULT NULL,
+  `InvoiceAmount` decimal(18,2) DEFAULT NULL,
+  `CutLengthCharge` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `DeliveryCharge` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `AMTExcGST` decimal(18,2) DEFAULT NULL,
+  `GST` decimal(18,2) DEFAULT NULL,
+  `AMTIncGST` decimal(18,2) DEFAULT NULL,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orderinvoice`
+--
+
+LOCK TABLES `orderinvoice` WRITE;
+/*!40000 ALTER TABLE `orderinvoice` DISABLE KEYS */;
+INSERT INTO `orderinvoice` VALUES (1,1529595111990,'34567','2018-06-27 22:29:46.097000',3456.00,NULL,'ko biet',NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-27 22:29:46.097000','2018-06-27 23:05:35.820000'),(2,1529595111990,'123abc','2018-06-27 22:30:15.030000',345.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-27 22:30:15.030000','2018-06-27 22:57:46.193000'),(3,1529592217856,'2143','2018-06-29 22:56:45.680000',500.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-29 22:56:45.680000',NULL),(4,1530360334538,'123456','2018-07-03 00:18:20.177000',3456.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-03 00:18:20.177000',NULL),(5,1530787392102,'bwc123','2018-07-14 10:47:59.557000',4000.00,NULL,NULL,2000.00,10.00,2100.00,NULL,NULL,NULL,'2018-07-14 10:47:59.557000',NULL),(6,1532533553179,'1234567','2018-07-26 20:48:39.963000',1100.00,NULL,NULL,1000.00,100.00,1100.00,NULL,NULL,NULL,'2018-07-26 20:48:39.963000',NULL);
+/*!40000 ALTER TABLE `orderinvoice` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orderpayment`
+--
+
+DROP TABLE IF EXISTS `orderpayment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `orderpayment` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderId` bigint(20) NOT NULL,
+  `DatePaid` datetime(6) NOT NULL,
+  `PaymentType` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `AmountPaid` decimal(18,2) DEFAULT NULL,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orderpayment`
+--
+
+LOCK TABLES `orderpayment` WRITE;
+/*!40000 ALTER TABLE `orderpayment` DISABLE KEYS */;
+INSERT INTO `orderpayment` VALUES (1,1529595111990,'2018-06-27 22:00:33.330000','Check',234.00,NULL,NULL,NULL,'2018-06-27 22:00:33.330000','2018-06-27 22:18:20.137000'),(3,1529595111990,'2018-06-27 22:29:26.327000','Credit Card',333.00,NULL,NULL,NULL,'2018-06-27 22:29:26.327000',NULL),(4,1529592217856,'2018-06-29 22:56:53.560000','Cash',300.00,NULL,NULL,NULL,'2018-06-29 22:56:53.560000',NULL),(7,1530331633177,'2018-06-30 18:18:26.123000','Check',900.00,NULL,NULL,NULL,'2018-06-30 18:18:26.123000','2018-07-15 15:32:20.870000'),(10,1530787392102,'2018-07-06 23:53:54.043000','Cash',22.00,NULL,NULL,NULL,'2018-07-06 23:53:54.043000',NULL),(23,1530360334538,'2018-07-07 00:25:57.883000','Cash',210.28,NULL,NULL,NULL,'2018-07-07 00:25:57.883000',NULL),(28,1530787392102,'2018-07-07 16:17:27.663000','Cash',2000.00,NULL,NULL,NULL,'2018-07-07 16:17:27.663000',NULL),(29,1530360334538,'2018-07-14 23:13:26.940000','Credit Card',300.00,NULL,NULL,NULL,'2018-07-14 23:13:26.940000',NULL),(30,1530787392102,'2018-07-17 19:22:31.640000','Cash',8678.00,NULL,NULL,NULL,'2018-07-17 19:22:31.640000',NULL),(31,1530360334538,'2018-07-17 19:22:31.640000','Cash',322.00,NULL,NULL,NULL,'2018-07-17 19:22:31.640000',NULL),(32,1530360334538,'2018-07-17 15:38:53.670000','Cash',100.00,NULL,NULL,NULL,'2018-07-17 22:39:13.520000',NULL),(33,1532533553179,'2018-07-26 14:17:42.830000','Check',500.00,NULL,NULL,NULL,'2018-07-26 21:17:58.450000',NULL),(39,1532533553179,'2018-07-26 14:47:20.193000','Cash',100.00,NULL,NULL,NULL,'2018-07-26 21:47:58.510000',NULL),(43,1532745355526,'2018-08-02 17:00:00.000000','Check',1000.00,NULL,NULL,NULL,'2018-08-03 23:22:50.943000','2018-08-03 23:23:28.433000');
+/*!40000 ALTER TABLE `orderpayment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orderproduct`
+--
+
+DROP TABLE IF EXISTS `orderproduct`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `orderproduct` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderId` bigint(20) DEFAULT NULL,
+  `ProductId` int(11) DEFAULT NULL,
+  `MaterialId` int(11) DEFAULT NULL,
+  `LocationId` int(11) DEFAULT NULL,
+  `ColorId` int(11) DEFAULT NULL,
+  `ColorName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `ControlSideId` int(11) DEFAULT NULL,
+  `UnitId` int(11) DEFAULT NULL,
+  `Drop` int(11) DEFAULT NULL,
+  `Width` int(11) DEFAULT NULL,
+  `Quantity` int(11) DEFAULT NULL,
+  `Discount` int(11) DEFAULT NULL,
+  `ExtendPrice` decimal(18,2) DEFAULT NULL,
+  `UnitPrice` decimal(18,2) DEFAULT NULL,
+  `TotalAmount` decimal(18,2) DEFAULT NULL,
+  `DeliveryNo` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `DeliveryDate` datetime(6) DEFAULT NULL,
+  `Received` int(11) DEFAULT NULL,
+  `BackOrder` int(11) DEFAULT NULL,
+  `OrderType` int(11) DEFAULT NULL,
+  `Step` int(11) DEFAULT NULL,
+  `AMTExcGST` decimal(18,2) DEFAULT NULL,
+  `GST` decimal(18,2) DEFAULT NULL,
+  `AMTIncGST` decimal(18,2) DEFAULT NULL,
+  `ReceivedAMTExcGST` decimal(18,2) DEFAULT NULL,
+  `ReceivedGST` decimal(18,2) DEFAULT NULL,
+  `ReceivedAMTIncGST` decimal(18,2) DEFAULT NULL,
+  `OrderRefNo` bigint(20) DEFAULT NULL,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orderproduct`
+--
+
+LOCK TABLES `orderproduct` WRITE;
+/*!40000 ALTER TABLE `orderproduct` DISABLE KEYS */;
+INSERT INTO `orderproduct` VALUES (1,1529595111990,1,4,1,1,NULL,1,1,2,3,2,0,0.00,4000.00,8000.00,NULL,NULL,1,2,NULL,2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-25 21:28:10.287000','2018-07-17 21:18:09.587000'),(2,1529595111990,2,4,1,1,NULL,4,1,1,2,2,4,0.00,2.00,4.00,NULL,NULL,0,2,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-25 22:26:06.050000','2018-06-25 22:37:35.543000'),(3,1529592217856,2,2,1,1,'NA',1,1,2,3,2,0,0.00,200.00,400.00,NULL,NULL,1,1,NULL,1,400.00,32.00,432.00,200.00,16.00,216.00,NULL,NULL,NULL,NULL,'2018-06-27 23:33:58.537000','2018-07-15 15:30:10.050000'),(4,1529590581377,2,4,1,1,NULL,1,1,1,2,2,0,0.00,2000.00,4000.00,NULL,NULL,0,2,NULL,0,4000.00,400.00,4400.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-06-29 22:46:37.260000','2018-07-25 22:45:21.140000'),(5,1530330251506,1,2,1,1,NULL,1,1,2,3,2,0,0.00,4.00,8.00,NULL,NULL,1,2,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 10:44:15.010000','2018-07-17 23:36:02.483000'),(6,1530330251506,2,4,1,1,NULL,4,1,1,2,2,4,0.00,2.00,4.00,NULL,NULL,0,2,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 10:44:15.010000',NULL),(7,1530330437904,2,2,1,1,NULL,1,1,2,3,3,0,0.00,3.00,9.00,NULL,NULL,0,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 10:47:18.007000','2018-07-21 17:10:33.993000'),(8,1530330652517,2,2,1,1,NULL,1,1,2,3,3,0,0.00,3.00,9.00,NULL,NULL,0,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 10:50:52.620000','2018-07-17 21:08:38.437000'),(9,1530330861321,2,2,1,1,NULL,1,1,2,3,3,0,0.00,3.00,9.00,NULL,NULL,2,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 10:54:21.417000','2018-07-25 22:44:38.237000'),(10,1530330946656,2,2,1,1,NULL,1,1,2,3,3,0,0.00,3.00,9.00,NULL,NULL,3,3,NULL,6,0.00,0.00,0.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-30 10:55:46.777000','2018-07-17 21:06:13.827000'),(11,1530331633177,2,4,1,1,NULL,4,1,1,2,2,4,0.00,2000.00,4000.00,NULL,NULL,2,1,NULL,1,4000.00,360.00,4360.00,2000.00,180.00,2180.00,NULL,NULL,NULL,NULL,'2018-06-30 11:07:13.273000','2018-07-17 21:05:30.787000'),(12,1530331633177,1,5,1,1,NULL,1,1,1,1,1,0,0.00,3000.00,3000.00,NULL,NULL,1,1,NULL,1,3000.00,270.00,3270.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-06-30 12:42:20.607000','2018-07-17 20:56:05.890000'),(14,1530360311814,2,4,1,1,NULL,4,1,1,2,1,4,0.00,3000.00,3000.00,NULL,NULL,1,-1,NULL,1,0.00,5.00,0.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-06-30 19:05:11.897000','2018-07-17 21:06:34.130000'),(15,1530360311814,1,5,1,1,NULL,1,1,1,1,1,0,0.00,3000.00,3000.00,NULL,NULL,0,1,NULL,1,2.00,5.00,10.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-06-30 19:05:11.897000','2018-06-30 19:06:43.067000'),(16,1530360334538,1,5,1,6,NULL,1,1,1,1,1,0,0.00,3000.00,3000.00,'123456','2018-06-28 17:00:00.000000',1,0,NULL,1,3000.00,210.00,3210.00,3000.00,210.00,3210.00,NULL,NULL,NULL,NULL,'2018-06-30 19:05:34.597000','2018-07-01 16:43:09.200000'),(17,1530360334538,1,2,1,4,NULL,1,1,1,2,2,0,0.00,2.00,4.00,'123abc','2018-06-29 17:00:00.000000',3,1,NULL,1,4.00,0.28,4.28,2.00,0.14,2.14,NULL,NULL,NULL,NULL,'2018-06-30 20:01:05.057000','2018-07-14 23:17:59.727000'),(18,1530787392102,2,4,1,4,'white',1,1,1,2,1,10,0.00,2000.00,2000.00,NULL,NULL,1,1,NULL,1,2000.00,140.00,2140.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-05 17:43:12.183000','2018-07-14 22:43:29.177000'),(19,1530787392102,1,4,1,2,'blue',2,4,1,2,1,5,0.00,4000.00,3800.00,NULL,NULL,1,0,NULL,1,4000.00,280.00,4280.00,4000.00,280.00,4280.00,NULL,NULL,NULL,NULL,'2018-07-05 23:32:38.397000','2018-07-17 22:05:02.927000'),(24,1531152513899,2,5,1,1,NULL,1,5,1,2,2,NULL,0.00,200.00,400.00,NULL,NULL,1,1,NULL,3,400.00,40.00,440.00,200.00,20.00,220.00,NULL,NULL,NULL,NULL,'2018-07-10 21:21:50.820000','2018-07-10 21:34:43.063000'),(25,1531235364561,1,5,1,1,NULL,1,1,2,3,2,5,2000.00,2000.00,7600.00,NULL,NULL,2,2,NULL,1,8000.00,800.00,8800.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-10 22:15:27.123000','2018-07-18 22:33:44.737000'),(26,1531931019163,2,2,1,1,NULL,1,1,100,200,1,10,0.00,3000.00,2700.00,NULL,NULL,0,1,NULL,1,3000.00,300.00,3300.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-18 23:35:47.473000','2018-07-18 23:37:55.563000'),(27,1531932081893,1,4,1,1,NULL,1,1,200,300,1,5,0.00,5000.00,4750.00,NULL,NULL,0,1,NULL,3,5000.00,500.00,5500.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-18 23:41:57.870000','2018-07-18 23:42:06.550000'),(28,1531932161935,2,5,1,1,NULL,1,1,1,2,2,5,0.00,4000.00,8000.00,NULL,NULL,0,2,NULL,1,8000.00,800.00,8800.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-18 23:46:43.093000',NULL),(35,1532009549069,1,5,1,1,NULL,1,1,200,200,1,10,0.00,4000.00,3600.00,NULL,NULL,1,1,NULL,1,4000.00,400.00,4400.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-19 21:56:28.247000','2018-07-19 21:59:48.820000'),(36,1531932081893,1,5,1,1,NULL,1,1,123,123,1,7,0.00,4000.00,3720.00,NULL,NULL,0,1,NULL,3,4000.00,400.00,4400.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-20 22:01:24.240000','2018-07-28 09:07:12.757000'),(37,1530330437904,1,5,1,1,NULL,1,1,123,123,1,7,0.00,4000.00,4000.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1531932081893,NULL,NULL,NULL,'2018-07-21 17:19:37.520000',NULL),(38,1532170419582,1,4,1,1,NULL,1,1,200,300,1,5,0.00,5000.00,4750.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1531932081893,NULL,NULL,NULL,'2018-07-21 17:54:14.387000',NULL),(39,1531930958415,2,4,1,1,NULL,1,1,300,400,1,0,1000.00,7000.00,8000.00,NULL,NULL,0,1,NULL,1,8000.00,800.00,8800.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-21 23:13:25.803000',NULL),(40,1532441516076,1,4,1,1,NULL,1,1,20,30,1,5,20.00,4000.00,3819.00,NULL,NULL,0,1,NULL,NULL,3819.00,381.90,4200.90,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-24 21:11:56.127000','2018-07-26 22:54:16.970000'),(41,1532441624800,1,4,1,1,'green',1,1,200,30,1,10,2000.00,0.00,1800.00,NULL,NULL,0,1,NULL,NULL,0.00,0.00,0.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-24 21:13:44.850000','2018-07-27 21:12:29.637000'),(42,1531932161935,3,6,1,1,NULL,1,1,1000,2000,2,5,0.00,273.91,520.43,NULL,NULL,0,2,NULL,1,520.43,52.04,572.47,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-24 23:15:35.197000',NULL),(43,1532533553179,2,5,1,1,NULL,1,1,20,30,2,0,0.00,500.00,1000.00,NULL,NULL,2,2,NULL,1,1000.00,100.00,1100.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-26 20:47:37.987000','2018-07-26 20:47:46.027000'),(44,1532745355526,2,4,1,4,NULL,1,1,200,500,1,0,0.00,7000.00,7000.00,NULL,NULL,1,1,NULL,1,7000.00,700.00,7700.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-07-28 09:36:58.127000','2018-07-28 09:37:27.383000'),(45,1532009549069,1,5,1,1,NULL,1,1,100,200,1,0,0.00,126.41,126.41,NULL,NULL,0,1,NULL,1,126.41,12.64,139.05,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-08-03 22:13:27.180000',NULL),(47,1534174473944,2,5,1,2,NULL,1,1,100,200,1,7,0.00,4000.00,3720.00,NULL,NULL,0,1,NULL,1,3720.00,372.00,4092.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-08-21 23:19:34.457000','2018-08-30 20:57:13.000000'),(48,1532441400871,2,4,1,1,NULL,1,1,300,300,1,5,0.00,6000.00,5700.00,NULL,NULL,0,1,NULL,1,5700.00,570.00,6270.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-08-21 23:29:54.073000',NULL),(50,1532441624800,2,4,1,1,NULL,1,1,200,200,1,4,200.00,4000.00,4032.00,NULL,NULL,0,1,NULL,1,3840.00,384.00,4224.00,0.00,0.00,0.00,NULL,NULL,NULL,NULL,'2018-08-28 00:35:47.000000','2018-08-28 00:48:04.000000');
+/*!40000 ALTER TABLE `orderproduct` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `product` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `ProductCode` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `ProductName` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `CategoryId` int(11) DEFAULT NULL,
+  `Notes` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (1,'BWCP00001','ROLLER BLIND - BWC',17,'ROLLER BLIND - Produce by BWC\nROLLER BLIND - Produce by BWC\nROLLER BLIND - Produce by BWC\nROLLER BLIND - Produce by BWC\nROLLER BLIND - Produce by BWC',1,NULL,NULL,'2018-06-14 23:12:21.447000','2018-09-06 00:02:59.000000'),(2,'ACMEDA00002','ROLLER BLIND - ACMEDA',4,'ROLLER BLIND - Product by ACMEDA',1,NULL,NULL,'2018-06-18 22:58:59.757000','2018-09-06 00:02:44.000000'),(3,'ROLLER SHUTTER','ROLLER SHUTTER',5,'VALESCO - WHOLESALE PRICE - GST NOT INC. OPTION 1: WINCH $45/EACH OPTION 2: ITALIAN MOTOR WITH SWITCH : $300/ EACH OPTION 3: ITALIAN MOTOR WITH 1 SINGLE REMOTE CONTROL: $350/EACH INSTALLATION: GROUND LEVEL: $90/EACH	SECOND LEVEL: $110/EACH	MEASUREMENT: $50/TRIP',1,NULL,NULL,'2018-07-24 21:23:12.453000','2018-09-06 00:02:00.000000'),(4,'BWC0007','BWC 0007',16,NULL,1,NULL,NULL,'2018-09-06 00:05:41.000000',NULL);
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `productcomponent`
+--
+
+DROP TABLE IF EXISTS `productcomponent`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `productcomponent` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `ProductId` int(11) NOT NULL,
+  `ComponentId` int(11) NOT NULL,
+  `ColorId` int(11) DEFAULT NULL,
+  `Quantity` int(11) DEFAULT NULL,
+  `Price` decimal(18,2) DEFAULT NULL,
+  `ExtCharge` tinyint(1) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `productcomponent`
+--
+
+LOCK TABLES `productcomponent` WRITE;
+/*!40000 ALTER TABLE `productcomponent` DISABLE KEYS */;
+INSERT INTO `productcomponent` VALUES (2,1,4,3,2,5000.00,1,NULL,NULL,'2018-06-16 17:57:38.873000','2018-06-17 22:26:29.660000'),(9,1,1,1,1,2222.00,0,NULL,NULL,'2018-06-16 20:13:26.663000','2018-07-14 21:45:15.963000'),(10,0,1,1,2,12314.00,1,NULL,NULL,'2018-06-17 21:05:57.227000',NULL),(12,0,1,1,1,0.00,0,NULL,NULL,'2018-06-18 22:59:30.843000',NULL),(13,0,1,1,1,0.00,0,NULL,NULL,'2018-06-18 23:03:36.320000',NULL),(14,0,1,2,3,0.00,0,NULL,NULL,'2018-06-18 23:04:38.840000',NULL),(15,0,1,1,1,0.00,0,NULL,NULL,'2018-06-18 23:07:37.513000',NULL),(16,0,1,2,2,0.00,0,NULL,NULL,'2018-06-18 23:09:03.423000',NULL),(17,2,1,2,1,0.00,0,NULL,NULL,'2018-06-18 23:10:47.840000','2018-06-25 16:32:04.880000'),(18,2,4,5,1,23123.00,1,NULL,NULL,'2018-06-25 16:30:07.797000',NULL);
+/*!40000 ALTER TABLE `productcomponent` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `productmaterial`
+--
+
+DROP TABLE IF EXISTS `productmaterial`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `productmaterial` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `ProductId` int(11) NOT NULL,
+  `MaterialId` int(11) NOT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `productmaterial`
+--
+
+LOCK TABLES `productmaterial` WRITE;
+/*!40000 ALTER TABLE `productmaterial` DISABLE KEYS */;
+INSERT INTO `productmaterial` VALUES (6,1,2,NULL,NULL,'2018-06-16 18:07:40.430000',NULL),(7,1,4,NULL,NULL,'2018-06-17 21:05:30.253000',NULL),(8,2,2,NULL,NULL,'2018-06-18 23:05:53.350000',NULL),(10,1,5,NULL,NULL,'2018-06-25 17:37:17.557000',NULL),(11,2,5,NULL,NULL,'2018-06-30 23:52:09.460000',NULL),(12,2,4,NULL,NULL,'2018-07-01 23:46:13.853000',NULL),(13,3,6,NULL,NULL,'2018-07-24 21:24:18.807000',NULL),(14,3,2,NULL,NULL,'2018-08-20 22:24:10.737000',NULL);
+/*!40000 ALTER TABLE `productmaterial` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `productprice`
+--
+
+DROP TABLE IF EXISTS `productprice`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `productprice` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `GroupId` bigint(20) DEFAULT NULL,
+  `ProductMaterialId` int(11) NOT NULL,
+  `Row` int(11) NOT NULL,
+  `Column` int(11) NOT NULL,
+  `Value` decimal(18,2) DEFAULT NULL,
+  `IsActive` tinyint(1) DEFAULT NULL,
+  `PriceType` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=8115 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `productprice`
+--
+
+LOCK TABLES `productprice` WRITE;
+/*!40000 ALTER TABLE `productprice` DISABLE KEYS */;
+INSERT INTO `productprice` VALUES (144,636660593002370000,3,1,1,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(145,636660593002370000,3,2,1,100.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(146,636660593002370000,3,3,1,200.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(147,636660593002370000,3,4,1,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(148,636660593002370000,3,5,1,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(149,636660593002370000,3,6,1,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(150,636660593002370000,3,7,1,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(151,636660593002370000,3,8,1,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(152,636660593002370000,3,9,1,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(153,636660593002370000,3,10,1,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(154,636660593002370000,3,11,1,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(155,636660593002370000,3,1,2,100.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(156,636660593002370000,3,2,2,30000.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(157,636660593002370000,3,3,2,40000.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(158,636660593002370000,3,4,2,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(159,636660593002370000,3,5,2,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(160,636660593002370000,3,6,2,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(161,636660593002370000,3,7,2,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(162,636660593002370000,3,8,2,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(163,636660593002370000,3,9,2,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(164,636660593002370000,3,10,2,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(165,636660593002370000,3,11,2,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(166,636660593002370000,3,1,3,200.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(167,636660593002370000,3,2,3,40000.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(168,636660593002370000,3,3,3,50000.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(169,636660593002370000,3,4,3,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(170,636660593002370000,3,5,3,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(171,636660593002370000,3,6,3,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(172,636660593002370000,3,7,3,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(173,636660593002370000,3,8,3,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(174,636660593002370000,3,9,3,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(175,636660593002370000,3,10,3,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(176,636660593002370000,3,11,3,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(177,636660593002370000,3,1,4,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(178,636660593002370000,3,2,4,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(179,636660593002370000,3,3,4,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(180,636660593002370000,3,4,4,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(181,636660593002370000,3,5,4,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(182,636660593002370000,3,6,4,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(183,636660593002370000,3,7,4,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(184,636660593002370000,3,8,4,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(185,636660593002370000,3,9,4,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(186,636660593002370000,3,10,4,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(187,636660593002370000,3,11,4,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(188,636660593002370000,3,1,5,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(189,636660593002370000,3,2,5,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(190,636660593002370000,3,3,5,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(191,636660593002370000,3,4,5,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(192,636660593002370000,3,5,5,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(193,636660593002370000,3,6,5,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(194,636660593002370000,3,7,5,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(195,636660593002370000,3,8,5,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(196,636660593002370000,3,9,5,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(197,636660593002370000,3,10,5,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(198,636660593002370000,3,11,5,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(199,636660593002370000,3,1,6,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(200,636660593002370000,3,2,6,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(201,636660593002370000,3,3,6,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(202,636660593002370000,3,4,6,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(203,636660593002370000,3,5,6,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(204,636660593002370000,3,6,6,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(205,636660593002370000,3,7,6,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(206,636660593002370000,3,8,6,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(207,636660593002370000,3,9,6,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(208,636660593002370000,3,10,6,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(209,636660593002370000,3,11,6,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(210,636660593002370000,3,1,7,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(211,636660593002370000,3,2,7,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(212,636660593002370000,3,3,7,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(213,636660593002370000,3,4,7,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(214,636660593002370000,3,5,7,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(215,636660593002370000,3,6,7,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(216,636660593002370000,3,7,7,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(217,636660593002370000,3,8,7,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(218,636660593002370000,3,9,7,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(219,636660593002370000,3,10,7,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(220,636660593002370000,3,11,7,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(221,636660593002370000,3,1,8,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(222,636660593002370000,3,2,8,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(223,636660593002370000,3,3,8,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(224,636660593002370000,3,4,8,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(225,636660593002370000,3,5,8,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(226,636660593002370000,3,6,8,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(227,636660593002370000,3,7,8,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(228,636660593002370000,3,8,8,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(229,636660593002370000,3,9,8,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(230,636660593002370000,3,10,8,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(231,636660593002370000,3,11,8,0.00,1,1,NULL,NULL,'2018-07-01 16:28:20.237000','2018-06-17 16:12:21.873000'),(297,636648711539530000,5,1,1,0.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(298,636648711539530000,5,2,1,1.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(299,636648711539530000,5,3,1,2.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(300,636648711539530000,5,4,1,3.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(301,636648711539530000,5,5,1,0.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(302,636648711539530000,5,1,2,1.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(303,636648711539530000,5,2,2,2.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(304,636648711539530000,5,3,2,3.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(305,636648711539530000,5,4,2,4.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(306,636648711539530000,5,5,2,0.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(307,636648711539530000,5,1,3,2.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(308,636648711539530000,5,2,3,3.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(309,636648711539530000,5,3,3,4.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(310,636648711539530000,5,4,3,5.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(311,636648711539530000,5,5,3,0.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(312,636648711539530000,5,1,4,3.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(313,636648711539530000,5,2,4,4.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(314,636648711539530000,5,3,4,5.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(315,636648711539530000,5,4,4,6.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(316,636648711539530000,5,5,4,0.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(317,636648711539530000,5,1,5,0.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(318,636648711539530000,5,2,5,0.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(319,636648711539530000,5,3,5,0.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(320,636648711539530000,5,4,5,0.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(321,636648711539530000,5,5,5,0.00,1,1,NULL,NULL,'2018-06-17 22:25:53.953000','2018-06-17 22:25:53.953000'),(462,636655396072530000,7,1,1,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(463,636655396072530000,7,2,1,40.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(464,636655396072530000,7,3,1,50.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(465,636655396072530000,7,4,1,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(466,636655396072530000,7,5,1,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(467,636655396072530000,7,1,2,40.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(468,636655396072530000,7,2,2,4000.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(469,636655396072530000,7,3,2,6000.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(470,636655396072530000,7,4,2,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(471,636655396072530000,7,5,2,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(472,636655396072530000,7,1,3,50.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(473,636655396072530000,7,2,3,6000.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(474,636655396072530000,7,3,3,7000.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(475,636655396072530000,7,4,3,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(476,636655396072530000,7,5,3,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(477,636655396072530000,7,1,4,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(478,636655396072530000,7,2,4,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(479,636655396072530000,7,3,4,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(480,636655396072530000,7,4,4,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(481,636655396072530000,7,5,4,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(482,636655396072530000,7,1,5,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(483,636655396072530000,7,2,5,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(484,636655396072530000,7,3,5,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(485,636655396072530000,7,4,5,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(486,636655396072530000,7,5,5,0.00,0,1,NULL,NULL,'2018-06-25 16:06:47.253000','2018-06-25 16:06:47.253000'),(609,636655488361200000,10,1,1,0.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(610,636655488361200000,10,2,1,2.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(611,636655488361200000,10,3,1,3.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(612,636655488361200000,10,4,1,4.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(613,636655488361200000,10,5,1,5.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(614,636655488361200000,10,1,2,2.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(615,636655488361200000,10,2,2,3000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(616,636655488361200000,10,3,2,4000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(617,636655488361200000,10,4,2,5000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(618,636655488361200000,10,5,2,6000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(619,636655488361200000,10,1,3,3.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(620,636655488361200000,10,2,3,4000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(621,636655488361200000,10,3,3,5000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(622,636655488361200000,10,4,3,6000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(623,636655488361200000,10,5,3,7000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(624,636655488361200000,10,1,4,4.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(625,636655488361200000,10,2,4,5000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(626,636655488361200000,10,3,4,6000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(627,636655488361200000,10,4,4,7000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(628,636655488361200000,10,5,4,8000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(629,636655488361200000,10,1,5,5.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(630,636655488361200000,10,2,5,6000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(631,636655488361200000,10,3,5,7000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(632,636655488361200000,10,4,5,8000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(633,636655488361200000,10,5,5,9000.00,1,1,NULL,NULL,'2018-06-25 18:40:36.120000','2018-06-25 18:40:36.120000'),(855,636660012533130000,11,1,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(856,636660012533130000,11,2,1,1.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(857,636660012533130000,11,3,1,2.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(858,636660012533130000,11,4,1,3.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(859,636660012533130000,11,5,1,4.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(860,636660012533130000,11,6,1,5.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(861,636660012533130000,11,7,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(862,636660012533130000,11,1,2,1.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(863,636660012533130000,11,2,2,2000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(864,636660012533130000,11,3,2,2000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(865,636660012533130000,11,4,2,5000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(866,636660012533130000,11,5,2,6000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(867,636660012533130000,11,6,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(868,636660012533130000,11,7,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(869,636660012533130000,11,1,3,2.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(870,636660012533130000,11,2,3,3000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(871,636660012533130000,11,3,3,3000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(872,636660012533130000,11,4,3,6000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(873,636660012533130000,11,5,3,7000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(874,636660012533130000,11,6,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(875,636660012533130000,11,7,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(876,636660012533130000,11,1,4,3.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(877,636660012533130000,11,2,4,4000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(878,636660012533130000,11,3,4,4000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(879,636660012533130000,11,4,4,7000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(880,636660012533130000,11,5,4,8000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(881,636660012533130000,11,6,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(882,636660012533130000,11,7,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(883,636660012533130000,11,1,5,4.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(884,636660012533130000,11,2,5,5000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(885,636660012533130000,11,3,5,6000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(886,636660012533130000,11,4,5,7000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(887,636660012533130000,11,5,5,9000.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(888,636660012533130000,11,6,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(889,636660012533130000,11,7,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(890,636660012533130000,11,1,6,5.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(891,636660012533130000,11,2,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(892,636660012533130000,11,3,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(893,636660012533130000,11,4,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(894,636660012533130000,11,5,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(895,636660012533130000,11,6,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(896,636660012533130000,11,7,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(897,636660012533130000,11,1,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(898,636660012533130000,11,2,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(899,636660012533130000,11,3,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(900,636660012533130000,11,4,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(901,636660012533130000,11,5,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(902,636660012533130000,11,6,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(903,636660012533130000,11,7,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(904,636660012533130000,11,1,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(905,636660012533130000,11,2,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(906,636660012533130000,11,3,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(907,636660012533130000,11,4,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(908,636660012533130000,11,5,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(909,636660012533130000,11,6,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(910,636660012533130000,11,7,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(911,636660012533130000,11,1,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(912,636660012533130000,11,2,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(913,636660012533130000,11,3,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(914,636660012533130000,11,4,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(915,636660012533130000,11,5,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(916,636660012533130000,11,6,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(917,636660012533130000,11,7,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(918,636660012533130000,11,1,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(919,636660012533130000,11,2,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(920,636660012533130000,11,3,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(921,636660012533130000,11,4,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(922,636660012533130000,11,5,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(923,636660012533130000,11,6,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(924,636660012533130000,11,7,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(925,636660012533130000,11,1,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(926,636660012533130000,11,2,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(927,636660012533130000,11,3,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(928,636660012533130000,11,4,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(929,636660012533130000,11,5,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(930,636660012533130000,11,6,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(931,636660012533130000,11,7,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(932,636660012533130000,11,1,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(933,636660012533130000,11,2,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(934,636660012533130000,11,3,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(935,636660012533130000,11,4,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(936,636660012533130000,11,5,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(937,636660012533130000,11,6,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(938,636660012533130000,11,7,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(939,636660012533130000,11,1,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(940,636660012533130000,11,2,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(941,636660012533130000,11,3,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(942,636660012533130000,11,4,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(943,636660012533130000,11,5,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(944,636660012533130000,11,6,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(945,636660012533130000,11,7,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(946,636660012533130000,11,1,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(947,636660012533130000,11,2,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(948,636660012533130000,11,3,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(949,636660012533130000,11,4,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(950,636660012533130000,11,5,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(951,636660012533130000,11,6,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(952,636660012533130000,11,7,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(953,636660012533130000,11,1,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(954,636660012533130000,11,2,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(955,636660012533130000,11,3,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(956,636660012533130000,11,4,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(957,636660012533130000,11,5,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(958,636660012533130000,11,6,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(959,636660012533130000,11,7,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(960,636660012533130000,11,1,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(961,636660012533130000,11,2,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(962,636660012533130000,11,3,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(963,636660012533130000,11,4,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(964,636660012533130000,11,5,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(965,636660012533130000,11,6,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(966,636660012533130000,11,7,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(967,636660012533130000,11,1,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(968,636660012533130000,11,2,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(969,636660012533130000,11,3,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(970,636660012533130000,11,4,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(971,636660012533130000,11,5,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(972,636660012533130000,11,6,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(973,636660012533130000,11,7,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(974,636660012533130000,11,1,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(975,636660012533130000,11,2,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(976,636660012533130000,11,3,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(977,636660012533130000,11,4,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(978,636660012533130000,11,5,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(979,636660012533130000,11,6,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(980,636660012533130000,11,7,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(981,636660012533130000,11,8,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(982,636660012533130000,11,8,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(983,636660012533130000,11,8,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(984,636660012533130000,11,8,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(985,636660012533130000,11,8,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(986,636660012533130000,11,8,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(987,636660012533130000,11,8,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(988,636660012533130000,11,8,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(989,636660012533130000,11,8,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(990,636660012533130000,11,8,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(991,636660012533130000,11,8,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(992,636660012533130000,11,8,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(993,636660012533130000,11,8,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(994,636660012533130000,11,8,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(995,636660012533130000,11,8,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(996,636660012533130000,11,8,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(997,636660012533130000,11,8,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(998,636660012533130000,11,8,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(999,636660012533130000,11,9,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1000,636660012533130000,11,9,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1001,636660012533130000,11,9,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1002,636660012533130000,11,9,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1003,636660012533130000,11,9,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1004,636660012533130000,11,9,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1005,636660012533130000,11,9,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1006,636660012533130000,11,9,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1007,636660012533130000,11,9,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1008,636660012533130000,11,9,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1009,636660012533130000,11,9,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1010,636660012533130000,11,9,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1011,636660012533130000,11,9,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1012,636660012533130000,11,9,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1013,636660012533130000,11,9,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1014,636660012533130000,11,9,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1015,636660012533130000,11,9,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1016,636660012533130000,11,9,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1017,636660012533130000,11,10,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1018,636660012533130000,11,10,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1019,636660012533130000,11,10,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1020,636660012533130000,11,10,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1021,636660012533130000,11,10,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1022,636660012533130000,11,10,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1023,636660012533130000,11,10,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1024,636660012533130000,11,10,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1025,636660012533130000,11,10,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1026,636660012533130000,11,10,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1027,636660012533130000,11,10,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1028,636660012533130000,11,10,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1029,636660012533130000,11,10,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1030,636660012533130000,11,10,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1031,636660012533130000,11,10,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1032,636660012533130000,11,10,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1033,636660012533130000,11,10,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1034,636660012533130000,11,10,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1035,636660012533130000,11,11,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1036,636660012533130000,11,11,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1037,636660012533130000,11,11,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1038,636660012533130000,11,11,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1039,636660012533130000,11,11,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1040,636660012533130000,11,11,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1041,636660012533130000,11,11,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1042,636660012533130000,11,11,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1043,636660012533130000,11,11,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1044,636660012533130000,11,11,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1045,636660012533130000,11,11,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1046,636660012533130000,11,11,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1047,636660012533130000,11,11,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1048,636660012533130000,11,11,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1049,636660012533130000,11,11,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1050,636660012533130000,11,11,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1051,636660012533130000,11,11,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1052,636660012533130000,11,11,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1053,636660012533130000,11,12,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1054,636660012533130000,11,12,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1055,636660012533130000,11,12,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1056,636660012533130000,11,12,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1057,636660012533130000,11,12,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1058,636660012533130000,11,12,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1059,636660012533130000,11,12,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1060,636660012533130000,11,12,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1061,636660012533130000,11,12,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1062,636660012533130000,11,12,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1063,636660012533130000,11,12,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1064,636660012533130000,11,12,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1065,636660012533130000,11,12,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1066,636660012533130000,11,12,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1067,636660012533130000,11,12,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1068,636660012533130000,11,12,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1069,636660012533130000,11,12,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1070,636660012533130000,11,12,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1071,636660012533130000,11,13,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1072,636660012533130000,11,13,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1073,636660012533130000,11,13,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1074,636660012533130000,11,13,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1075,636660012533130000,11,13,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1076,636660012533130000,11,13,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1077,636660012533130000,11,13,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1078,636660012533130000,11,13,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1079,636660012533130000,11,13,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1080,636660012533130000,11,13,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1081,636660012533130000,11,13,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1082,636660012533130000,11,13,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1083,636660012533130000,11,13,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1084,636660012533130000,11,13,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1085,636660012533130000,11,13,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1086,636660012533130000,11,13,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1087,636660012533130000,11,13,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1088,636660012533130000,11,13,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1089,636660012533130000,11,14,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1090,636660012533130000,11,14,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1091,636660012533130000,11,14,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1092,636660012533130000,11,14,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1093,636660012533130000,11,14,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1094,636660012533130000,11,14,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1095,636660012533130000,11,14,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1096,636660012533130000,11,14,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1097,636660012533130000,11,14,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1098,636660012533130000,11,14,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1099,636660012533130000,11,14,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1100,636660012533130000,11,14,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1101,636660012533130000,11,14,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1102,636660012533130000,11,14,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1103,636660012533130000,11,14,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1104,636660012533130000,11,14,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1105,636660012533130000,11,14,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1106,636660012533130000,11,14,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1107,636660012533130000,11,15,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1108,636660012533130000,11,15,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1109,636660012533130000,11,15,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1110,636660012533130000,11,15,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1111,636660012533130000,11,15,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1112,636660012533130000,11,15,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1113,636660012533130000,11,15,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1114,636660012533130000,11,15,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1115,636660012533130000,11,15,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1116,636660012533130000,11,15,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1117,636660012533130000,11,15,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1118,636660012533130000,11,15,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1119,636660012533130000,11,15,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1120,636660012533130000,11,15,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1121,636660012533130000,11,15,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1122,636660012533130000,11,15,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1123,636660012533130000,11,15,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1124,636660012533130000,11,15,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1125,636660012533130000,11,16,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1126,636660012533130000,11,16,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1127,636660012533130000,11,16,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1128,636660012533130000,11,16,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1129,636660012533130000,11,16,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1130,636660012533130000,11,16,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1131,636660012533130000,11,16,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1132,636660012533130000,11,16,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1133,636660012533130000,11,16,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1134,636660012533130000,11,16,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1135,636660012533130000,11,16,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1136,636660012533130000,11,16,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1137,636660012533130000,11,16,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1138,636660012533130000,11,16,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1139,636660012533130000,11,16,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1140,636660012533130000,11,16,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1141,636660012533130000,11,16,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1142,636660012533130000,11,16,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1143,636660012533130000,11,17,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1144,636660012533130000,11,17,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1145,636660012533130000,11,17,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1146,636660012533130000,11,17,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1147,636660012533130000,11,17,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1148,636660012533130000,11,17,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1149,636660012533130000,11,17,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1150,636660012533130000,11,17,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1151,636660012533130000,11,17,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1152,636660012533130000,11,17,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1153,636660012533130000,11,17,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1154,636660012533130000,11,17,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1155,636660012533130000,11,17,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1156,636660012533130000,11,17,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1157,636660012533130000,11,17,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1158,636660012533130000,11,17,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1159,636660012533130000,11,17,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1160,636660012533130000,11,17,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1161,636660012533130000,11,18,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1162,636660012533130000,11,18,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1163,636660012533130000,11,18,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1164,636660012533130000,11,18,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1165,636660012533130000,11,18,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1166,636660012533130000,11,18,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1167,636660012533130000,11,18,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1168,636660012533130000,11,18,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1169,636660012533130000,11,18,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1170,636660012533130000,11,18,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1171,636660012533130000,11,18,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1172,636660012533130000,11,18,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1173,636660012533130000,11,18,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1174,636660012533130000,11,18,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1175,636660012533130000,11,18,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1176,636660012533130000,11,18,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1177,636660012533130000,11,18,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1178,636660012533130000,11,18,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1179,636660012533130000,11,19,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1180,636660012533130000,11,19,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1181,636660012533130000,11,19,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1182,636660012533130000,11,19,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1183,636660012533130000,11,19,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1184,636660012533130000,11,19,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1185,636660012533130000,11,19,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1186,636660012533130000,11,19,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1187,636660012533130000,11,19,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1188,636660012533130000,11,19,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1189,636660012533130000,11,19,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1190,636660012533130000,11,19,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1191,636660012533130000,11,19,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1192,636660012533130000,11,19,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1193,636660012533130000,11,19,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1194,636660012533130000,11,19,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1195,636660012533130000,11,19,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1196,636660012533130000,11,19,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1197,636660012533130000,11,20,1,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1198,636660012533130000,11,20,2,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1199,636660012533130000,11,20,3,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1200,636660012533130000,11,20,4,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1201,636660012533130000,11,20,5,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1202,636660012533130000,11,20,6,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1203,636660012533130000,11,20,7,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1204,636660012533130000,11,20,8,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1205,636660012533130000,11,20,9,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1206,636660012533130000,11,20,10,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1207,636660012533130000,11,20,11,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1208,636660012533130000,11,20,12,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1209,636660012533130000,11,20,13,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1210,636660012533130000,11,20,14,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1211,636660012533130000,11,20,15,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1212,636660012533130000,11,20,16,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1213,636660012533130000,11,20,17,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1214,636660012533130000,11,20,18,0.00,0,1,NULL,NULL,'2018-07-01 00:20:53.313000','2018-07-01 00:20:53.313000'),(1264,636660585714200000,7,1,1,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1265,636660585714200000,7,2,1,40.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1266,636660585714200000,7,3,1,50.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1267,636660585714200000,7,4,1,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1268,636660585714200000,7,5,1,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1269,636660585714200000,7,1,2,40.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1270,636660585714200000,7,2,2,4000.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1271,636660585714200000,7,3,2,6000.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1272,636660585714200000,7,4,2,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1273,636660585714200000,7,5,2,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1274,636660585714200000,7,1,3,50.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1275,636660585714200000,7,2,3,6000.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1276,636660585714200000,7,3,3,7000.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1277,636660585714200000,7,4,3,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1278,636660585714200000,7,5,3,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1279,636660585714200000,7,1,4,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1280,636660585714200000,7,2,4,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1281,636660585714200000,7,3,4,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1282,636660585714200000,7,4,4,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1283,636660585714200000,7,5,4,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1284,636660585714200000,7,1,5,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1285,636660585714200000,7,2,5,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1286,636660585714200000,7,3,5,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1287,636660585714200000,7,4,5,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1288,636660585714200000,7,5,5,0.00,0,1,NULL,NULL,'2018-07-01 16:16:11.420000','2018-07-01 16:16:11.420000'),(1339,636660855031330000,6,1,1,0.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1340,636660855031330000,6,2,1,1.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1341,636660855031330000,6,3,1,2.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1342,636660855031330000,6,4,1,3.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1343,636660855031330000,6,5,1,0.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1344,636660855031330000,6,1,2,1.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1345,636660855031330000,6,2,2,2.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1346,636660855031330000,6,3,2,2.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1347,636660855031330000,6,4,2,3.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1348,636660855031330000,6,5,2,0.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1349,636660855031330000,6,1,3,2.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1350,636660855031330000,6,2,3,2.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1351,636660855031330000,6,3,3,3.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1352,636660855031330000,6,4,3,4.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1353,636660855031330000,6,5,3,0.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1354,636660855031330000,6,1,4,3.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1355,636660855031330000,6,2,4,3.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1356,636660855031330000,6,3,4,4.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1357,636660855031330000,6,4,4,5.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1358,636660855031330000,6,5,4,0.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1359,636660855031330000,6,1,5,0.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1360,636660855031330000,6,2,5,0.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1361,636660855031330000,6,3,5,0.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1362,636660855031330000,6,4,5,0.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1363,636660855031330000,6,5,5,0.00,1,1,NULL,NULL,'2018-07-01 23:45:03.133000','2018-07-01 23:45:03.133000'),(1774,636665757739570000,9,1,1,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1775,636665757739570000,9,2,1,1.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1776,636665757739570000,9,3,1,2.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1777,636665757739570000,9,4,1,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1778,636665757739570000,9,5,1,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1779,636665757739570000,9,1,2,1.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1780,636665757739570000,9,2,2,200.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1781,636665757739570000,9,3,2,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1782,636665757739570000,9,4,2,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1783,636665757739570000,9,5,2,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1784,636665757739570000,9,1,3,2.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1785,636665757739570000,9,2,3,300.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1786,636665757739570000,9,3,3,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1787,636665757739570000,9,4,3,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1788,636665757739570000,9,5,3,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1789,636665757739570000,9,1,4,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1790,636665757739570000,9,2,4,400.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1791,636665757739570000,9,3,4,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1792,636665757739570000,9,4,4,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1793,636665757739570000,9,5,4,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1794,636665757739570000,9,1,5,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1795,636665757739570000,9,2,5,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1796,636665757739570000,9,3,5,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1797,636665757739570000,9,4,5,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1798,636665757739570000,9,5,5,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 15:58:18.400000'),(1799,636665758639430000,9,1,1,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1800,636665758639430000,9,2,1,1.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1801,636665758639430000,9,3,1,2.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1802,636665758639430000,9,4,1,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1803,636665758639430000,9,5,1,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1804,636665758639430000,9,1,2,1.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1805,636665758639430000,9,2,2,100.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1806,636665758639430000,9,3,2,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1807,636665758639430000,9,4,2,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1808,636665758639430000,9,5,2,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1809,636665758639430000,9,1,3,2.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1810,636665758639430000,9,2,3,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1811,636665758639430000,9,3,3,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1812,636665758639430000,9,4,3,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1813,636665758639430000,9,5,3,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1814,636665758639430000,9,1,4,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1815,636665758639430000,9,2,4,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1816,636665758639430000,9,3,4,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1817,636665758639430000,9,4,4,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1818,636665758639430000,9,5,4,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1819,636665758639430000,9,1,5,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1820,636665758639430000,9,2,5,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1821,636665758639430000,9,3,5,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1822,636665758639430000,9,4,5,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1823,636665758639430000,9,5,5,0.00,0,1,NULL,NULL,'2018-07-07 15:57:43.943000','2018-07-07 16:00:37.710000'),(1849,636665760782500000,9,1,1,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1850,636665760782500000,9,2,1,1.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1851,636665760782500000,9,3,1,2.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1852,636665760782500000,9,4,1,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1853,636665760782500000,9,5,1,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1854,636665760782500000,9,1,2,1.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1855,636665760782500000,9,2,2,100.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1856,636665760782500000,9,3,2,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1857,636665760782500000,9,4,2,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1858,636665760782500000,9,5,2,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1859,636665760782500000,9,1,3,2.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1860,636665760782500000,9,2,3,200.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1861,636665760782500000,9,3,3,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1862,636665760782500000,9,4,3,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1863,636665760782500000,9,5,3,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1864,636665760782500000,9,1,4,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1865,636665760782500000,9,2,4,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1866,636665760782500000,9,3,4,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1867,636665760782500000,9,4,4,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1868,636665760782500000,9,5,4,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1869,636665760782500000,9,1,5,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1870,636665760782500000,9,2,5,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1871,636665760782500000,9,3,5,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1872,636665760782500000,9,4,5,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1873,636665760782500000,9,5,5,0.00,1,1,NULL,NULL,'2018-07-07 16:01:18.250000','2018-07-07 16:01:59.650000'),(1949,636660857662230000,11,1,1,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1950,636660857662230000,11,2,1,1.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1951,636660857662230000,11,3,1,2.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1952,636660857662230000,11,4,1,3.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1953,636660857662230000,11,5,1,4.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1954,636660857662230000,11,6,1,5.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1955,636660857662230000,11,7,1,6.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1956,636660857662230000,11,8,1,7.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1957,636660857662230000,11,9,1,8.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1958,636660857662230000,11,10,1,9.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1959,636660857662230000,11,11,1,10.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1960,636660857662230000,11,12,1,11.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1961,636660857662230000,11,13,1,12.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1962,636660857662230000,11,14,1,13.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1963,636660857662230000,11,1,2,1.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1964,636660857662230000,11,2,2,2000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1965,636660857662230000,11,3,2,2000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1966,636660857662230000,11,4,2,5000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1967,636660857662230000,11,5,2,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1968,636660857662230000,11,6,2,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1969,636660857662230000,11,7,2,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1970,636660857662230000,11,8,2,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1971,636660857662230000,11,9,2,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1972,636660857662230000,11,10,2,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1973,636660857662230000,11,11,2,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1974,636660857662230000,11,12,2,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1975,636660857662230000,11,13,2,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1976,636660857662230000,11,14,2,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1977,636660857662230000,11,1,3,2.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1978,636660857662230000,11,2,3,3000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1979,636660857662230000,11,3,3,3000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1980,636660857662230000,11,4,3,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1981,636660857662230000,11,5,3,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1982,636660857662230000,11,6,3,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1983,636660857662230000,11,7,3,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1984,636660857662230000,11,8,3,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1985,636660857662230000,11,9,3,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1986,636660857662230000,11,10,3,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1987,636660857662230000,11,11,3,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1988,636660857662230000,11,12,3,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1989,636660857662230000,11,13,3,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1990,636660857662230000,11,14,3,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1991,636660857662230000,11,1,4,3.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1992,636660857662230000,11,2,4,4000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1993,636660857662230000,11,3,4,4000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1994,636660857662230000,11,4,4,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1995,636660857662230000,11,5,4,8000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1996,636660857662230000,11,6,4,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1997,636660857662230000,11,7,4,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1998,636660857662230000,11,8,4,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(1999,636660857662230000,11,9,4,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2000,636660857662230000,11,10,4,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2001,636660857662230000,11,11,4,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2002,636660857662230000,11,12,4,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2003,636660857662230000,11,13,4,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2004,636660857662230000,11,14,4,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2005,636660857662230000,11,1,5,4.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2006,636660857662230000,11,2,5,5000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2007,636660857662230000,11,3,5,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2008,636660857662230000,11,4,5,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2009,636660857662230000,11,5,5,9000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2010,636660857662230000,11,6,5,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2011,636660857662230000,11,7,5,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2012,636660857662230000,11,8,5,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2013,636660857662230000,11,9,5,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2014,636660857662230000,11,10,5,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2015,636660857662230000,11,11,5,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2016,636660857662230000,11,12,5,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2017,636660857662230000,11,13,5,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2018,636660857662230000,11,14,5,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2019,636660857662230000,11,1,6,5.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2020,636660857662230000,11,2,6,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2021,636660857662230000,11,3,6,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2022,636660857662230000,11,4,6,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2023,636660857662230000,11,5,6,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2024,636660857662230000,11,6,6,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2025,636660857662230000,11,7,6,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2026,636660857662230000,11,8,6,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2027,636660857662230000,11,9,6,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2028,636660857662230000,11,10,6,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2029,636660857662230000,11,11,6,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2030,636660857662230000,11,12,6,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2031,636660857662230000,11,13,6,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2032,636660857662230000,11,14,6,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2033,636660857662230000,11,1,7,6.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2034,636660857662230000,11,2,7,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2035,636660857662230000,11,3,7,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2036,636660857662230000,11,4,7,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2037,636660857662230000,11,5,7,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2038,636660857662230000,11,6,7,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2039,636660857662230000,11,7,7,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2040,636660857662230000,11,8,7,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2041,636660857662230000,11,9,7,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2042,636660857662230000,11,10,7,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2043,636660857662230000,11,11,7,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2044,636660857662230000,11,12,7,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2045,636660857662230000,11,13,7,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2046,636660857662230000,11,14,7,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2047,636660857662230000,11,1,8,7.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2048,636660857662230000,11,2,8,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2049,636660857662230000,11,3,8,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2050,636660857662230000,11,4,8,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2051,636660857662230000,11,5,8,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2052,636660857662230000,11,6,8,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2053,636660857662230000,11,7,8,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2054,636660857662230000,11,8,8,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2055,636660857662230000,11,9,8,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2056,636660857662230000,11,10,8,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2057,636660857662230000,11,11,8,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2058,636660857662230000,11,12,8,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2059,636660857662230000,11,13,8,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2060,636660857662230000,11,14,8,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2061,636660857662230000,11,1,9,8.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2062,636660857662230000,11,2,9,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2063,636660857662230000,11,3,9,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2064,636660857662230000,11,4,9,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2065,636660857662230000,11,5,9,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2066,636660857662230000,11,6,9,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2067,636660857662230000,11,7,9,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2068,636660857662230000,11,8,9,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2069,636660857662230000,11,9,9,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2070,636660857662230000,11,10,9,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2071,636660857662230000,11,11,9,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2072,636660857662230000,11,12,9,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2073,636660857662230000,11,13,9,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2074,636660857662230000,11,14,9,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2075,636660857662230000,11,1,10,9.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2076,636660857662230000,11,2,10,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2077,636660857662230000,11,3,10,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2078,636660857662230000,11,4,10,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2079,636660857662230000,11,5,10,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2080,636660857662230000,11,6,10,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2081,636660857662230000,11,7,10,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2082,636660857662230000,11,8,10,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2083,636660857662230000,11,9,10,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2084,636660857662230000,11,10,10,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2085,636660857662230000,11,11,10,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2086,636660857662230000,11,12,10,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2087,636660857662230000,11,13,10,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2088,636660857662230000,11,14,10,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2089,636660857662230000,11,1,11,10.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2090,636660857662230000,11,2,11,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2091,636660857662230000,11,3,11,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2092,636660857662230000,11,4,11,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2093,636660857662230000,11,5,11,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2094,636660857662230000,11,6,11,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2095,636660857662230000,11,7,11,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2096,636660857662230000,11,8,11,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2097,636660857662230000,11,9,11,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2098,636660857662230000,11,10,11,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2099,636660857662230000,11,11,11,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2100,636660857662230000,11,12,11,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2101,636660857662230000,11,13,11,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2102,636660857662230000,11,14,11,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2103,636660857662230000,11,1,12,11.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2104,636660857662230000,11,2,12,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2105,636660857662230000,11,3,12,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2106,636660857662230000,11,4,12,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2107,636660857662230000,11,5,12,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2108,636660857662230000,11,6,12,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2109,636660857662230000,11,7,12,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2110,636660857662230000,11,8,12,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2111,636660857662230000,11,9,12,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2112,636660857662230000,11,10,12,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2113,636660857662230000,11,11,12,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2114,636660857662230000,11,12,12,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2115,636660857662230000,11,13,12,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2116,636660857662230000,11,14,12,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2117,636660857662230000,11,1,13,12.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2118,636660857662230000,11,2,13,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2119,636660857662230000,11,3,13,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2120,636660857662230000,11,4,13,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2121,636660857662230000,11,5,13,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2122,636660857662230000,11,6,13,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2123,636660857662230000,11,7,13,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2124,636660857662230000,11,8,13,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2125,636660857662230000,11,9,13,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2126,636660857662230000,11,10,13,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2127,636660857662230000,11,11,13,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2128,636660857662230000,11,12,13,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2129,636660857662230000,11,13,13,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2130,636660857662230000,11,14,13,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2131,636660857662230000,11,1,14,13.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2132,636660857662230000,11,2,14,6000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2133,636660857662230000,11,3,14,7000.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2134,636660857662230000,11,4,14,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2135,636660857662230000,11,5,14,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2136,636660857662230000,11,6,14,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2137,636660857662230000,11,7,14,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2138,636660857662230000,11,8,14,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2139,636660857662230000,11,9,14,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2140,636660857662230000,11,10,14,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2141,636660857662230000,11,11,14,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2142,636660857662230000,11,12,14,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2143,636660857662230000,11,13,14,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2144,636660857662230000,11,14,14,0.00,0,1,NULL,NULL,'2018-07-01 23:49:26.223000','2018-07-07 22:04:12.850000'),(2145,636660596817800000,7,1,1,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2146,636660596817800000,7,2,1,40.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2147,636660596817800000,7,3,1,50.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2148,636660596817800000,7,4,1,60.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2149,636660596817800000,7,5,1,70.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2150,636660596817800000,7,1,2,40.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2151,636660596817800000,7,2,2,4000.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2152,636660596817800000,7,3,2,6000.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2153,636660596817800000,7,4,2,6000.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2154,636660596817800000,7,5,2,6000.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2155,636660596817800000,7,1,3,50.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2156,636660596817800000,7,2,3,6000.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2157,636660596817800000,7,3,3,7000.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2158,636660596817800000,7,4,3,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2159,636660596817800000,7,5,3,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2160,636660596817800000,7,1,4,60.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2161,636660596817800000,7,2,4,6000.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2162,636660596817800000,7,3,4,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2163,636660596817800000,7,4,4,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2164,636660596817800000,7,5,4,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2165,636660596817800000,7,1,5,70.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2166,636660596817800000,7,2,5,6000.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2167,636660596817800000,7,3,5,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2168,636660596817800000,7,4,5,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2169,636660596817800000,7,5,5,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2170,636660596817800000,7,6,1,80.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2171,636660596817800000,7,6,2,6000.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2172,636660596817800000,7,6,3,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2173,636660596817800000,7,6,4,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2174,636660596817800000,7,6,5,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2175,636660596817800000,7,1,6,80.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2176,636660596817800000,7,2,6,6000.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2177,636660596817800000,7,3,6,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2178,636660596817800000,7,4,6,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2179,636660596817800000,7,5,6,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2180,636660596817800000,7,6,6,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2181,636660596817800000,7,7,1,90.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2182,636660596817800000,7,7,2,6000.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2183,636660596817800000,7,7,3,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2184,636660596817800000,7,7,4,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2185,636660596817800000,7,7,5,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2186,636660596817800000,7,7,6,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2187,636660596817800000,7,1,7,90.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2188,636660596817800000,7,2,7,6000.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2189,636660596817800000,7,3,7,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2190,636660596817800000,7,4,7,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2191,636660596817800000,7,5,7,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2192,636660596817800000,7,6,7,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2193,636660596817800000,7,7,7,0.00,1,1,NULL,NULL,'2018-07-01 16:34:41.780000','2018-07-07 22:34:51.667000'),(2402,636655408344330000,8,1,1,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2403,636655408344330000,8,2,1,10.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2404,636655408344330000,8,3,1,20.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2405,636655408344330000,8,4,1,30.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2406,636655408344330000,8,5,1,40.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2407,636655408344330000,8,6,1,50.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2408,636655408344330000,8,7,1,60.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2409,636655408344330000,8,8,1,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2410,636655408344330000,8,1,2,10.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2411,636655408344330000,8,2,2,200.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2412,636655408344330000,8,3,2,300.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2413,636655408344330000,8,4,2,400.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2414,636655408344330000,8,5,2,500.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2415,636655408344330000,8,6,2,600.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2416,636655408344330000,8,7,2,700.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2417,636655408344330000,8,8,2,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2418,636655408344330000,8,1,3,20.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2419,636655408344330000,8,2,3,300.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2420,636655408344330000,8,3,3,400.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2421,636655408344330000,8,4,3,500.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2422,636655408344330000,8,5,3,600.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2423,636655408344330000,8,6,3,700.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2424,636655408344330000,8,7,3,800.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2425,636655408344330000,8,8,3,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2426,636655408344330000,8,1,4,30.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2427,636655408344330000,8,2,4,400.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2428,636655408344330000,8,3,4,500.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2429,636655408344330000,8,4,4,600.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2430,636655408344330000,8,5,4,700.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2431,636655408344330000,8,6,4,800.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2432,636655408344330000,8,7,4,900.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2433,636655408344330000,8,8,4,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2434,636655408344330000,8,1,5,40.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2435,636655408344330000,8,2,5,500.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2436,636655408344330000,8,3,5,600.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2437,636655408344330000,8,4,5,700.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2438,636655408344330000,8,5,5,800.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2439,636655408344330000,8,6,5,900.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2440,636655408344330000,8,7,5,1000.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2441,636655408344330000,8,8,5,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2442,636655408344330000,8,1,6,50.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2443,636655408344330000,8,2,6,600.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2444,636655408344330000,8,3,6,700.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2445,636655408344330000,8,4,6,800.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2446,636655408344330000,8,5,6,900.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2447,636655408344330000,8,6,6,1000.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2448,636655408344330000,8,7,6,1100.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2449,636655408344330000,8,8,6,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2450,636655408344330000,8,1,7,60.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2451,636655408344330000,8,2,7,700.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2452,636655408344330000,8,3,7,800.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2453,636655408344330000,8,4,7,900.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2454,636655408344330000,8,5,7,1000.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2455,636655408344330000,8,6,7,1100.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2456,636655408344330000,8,7,7,1200.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2457,636655408344330000,8,8,7,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2458,636655408344330000,8,1,8,60.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2459,636655408344330000,8,2,8,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2460,636655408344330000,8,3,8,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2461,636655408344330000,8,4,8,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2462,636655408344330000,8,5,8,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2463,636655408344330000,8,6,8,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2464,636655408344330000,8,7,8,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(2465,636655408344330000,8,8,8,0.00,1,1,NULL,NULL,'2018-06-25 16:27:14.433000','2018-07-08 15:21:38.060000'),(3096,636666602696270000,11,1,1,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3097,636666602696270000,11,2,1,10.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3098,636666602696270000,11,3,1,20.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3099,636666602696270000,11,4,1,30.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3100,636666602696270000,11,5,1,40.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3101,636666602696270000,11,6,1,50.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3102,636666602696270000,11,7,1,60.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3103,636666602696270000,11,8,1,7.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3104,636666602696270000,11,9,1,8.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3105,636666602696270000,11,10,1,9.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3106,636666602696270000,11,11,1,10.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3107,636666602696270000,11,12,1,11.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3108,636666602696270000,11,13,1,12.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3109,636666602696270000,11,14,1,13.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3110,636666602696270000,11,1,2,10.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3111,636666602696270000,11,2,2,200.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3112,636666602696270000,11,3,2,300.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3113,636666602696270000,11,4,2,400.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3114,636666602696270000,11,5,2,500.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3115,636666602696270000,11,6,2,600.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3116,636666602696270000,11,7,2,700.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3117,636666602696270000,11,8,2,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3118,636666602696270000,11,9,2,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3119,636666602696270000,11,10,2,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3120,636666602696270000,11,11,2,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3121,636666602696270000,11,12,2,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3122,636666602696270000,11,13,2,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3123,636666602696270000,11,14,2,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3124,636666602696270000,11,1,3,20.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3125,636666602696270000,11,2,3,300.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3126,636666602696270000,11,3,3,400.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3127,636666602696270000,11,4,3,500.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3128,636666602696270000,11,5,3,600.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3129,636666602696270000,11,6,3,700.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3130,636666602696270000,11,7,3,800.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3131,636666602696270000,11,8,3,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3132,636666602696270000,11,9,3,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3133,636666602696270000,11,10,3,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3134,636666602696270000,11,11,3,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3135,636666602696270000,11,12,3,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3136,636666602696270000,11,13,3,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3137,636666602696270000,11,14,3,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3138,636666602696270000,11,1,4,30.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3139,636666602696270000,11,2,4,400.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3140,636666602696270000,11,3,4,500.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3141,636666602696270000,11,4,4,600.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3142,636666602696270000,11,5,4,700.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3143,636666602696270000,11,6,4,800.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3144,636666602696270000,11,7,4,900.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3145,636666602696270000,11,8,4,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3146,636666602696270000,11,9,4,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3147,636666602696270000,11,10,4,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3148,636666602696270000,11,11,4,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3149,636666602696270000,11,12,4,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3150,636666602696270000,11,13,4,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3151,636666602696270000,11,14,4,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3152,636666602696270000,11,1,5,40.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3153,636666602696270000,11,2,5,500.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3154,636666602696270000,11,3,5,600.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3155,636666602696270000,11,4,5,700.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3156,636666602696270000,11,5,5,800.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3157,636666602696270000,11,6,5,900.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3158,636666602696270000,11,7,5,1000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3159,636666602696270000,11,8,5,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3160,636666602696270000,11,9,5,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3161,636666602696270000,11,10,5,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3162,636666602696270000,11,11,5,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3163,636666602696270000,11,12,5,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3164,636666602696270000,11,13,5,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3165,636666602696270000,11,14,5,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3166,636666602696270000,11,1,6,50.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3167,636666602696270000,11,2,6,600.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3168,636666602696270000,11,3,6,700.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3169,636666602696270000,11,4,6,800.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3170,636666602696270000,11,5,6,900.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3171,636666602696270000,11,6,6,1000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3172,636666602696270000,11,7,6,1100.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3173,636666602696270000,11,8,6,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3174,636666602696270000,11,9,6,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3175,636666602696270000,11,10,6,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3176,636666602696270000,11,11,6,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3177,636666602696270000,11,12,6,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3178,636666602696270000,11,13,6,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3179,636666602696270000,11,14,6,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3180,636666602696270000,11,1,7,60.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3181,636666602696270000,11,2,7,700.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3182,636666602696270000,11,3,7,800.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3183,636666602696270000,11,4,7,900.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3184,636666602696270000,11,5,7,1000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3185,636666602696270000,11,6,7,1100.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3186,636666602696270000,11,7,7,1200.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3187,636666602696270000,11,8,7,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3188,636666602696270000,11,9,7,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3189,636666602696270000,11,10,7,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3190,636666602696270000,11,11,7,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3191,636666602696270000,11,12,7,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3192,636666602696270000,11,13,7,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3193,636666602696270000,11,14,7,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3194,636666602696270000,11,1,8,7.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3195,636666602696270000,11,2,8,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3196,636666602696270000,11,3,8,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3197,636666602696270000,11,4,8,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3198,636666602696270000,11,5,8,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3199,636666602696270000,11,6,8,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3200,636666602696270000,11,7,8,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3201,636666602696270000,11,8,8,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3202,636666602696270000,11,9,8,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3203,636666602696270000,11,10,8,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3204,636666602696270000,11,11,8,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3205,636666602696270000,11,12,8,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3206,636666602696270000,11,13,8,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3207,636666602696270000,11,14,8,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3208,636666602696270000,11,1,9,8.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3209,636666602696270000,11,2,9,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3210,636666602696270000,11,3,9,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3211,636666602696270000,11,4,9,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3212,636666602696270000,11,5,9,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3213,636666602696270000,11,6,9,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3214,636666602696270000,11,7,9,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3215,636666602696270000,11,8,9,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3216,636666602696270000,11,9,9,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3217,636666602696270000,11,10,9,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3218,636666602696270000,11,11,9,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3219,636666602696270000,11,12,9,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3220,636666602696270000,11,13,9,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3221,636666602696270000,11,14,9,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3222,636666602696270000,11,1,10,9.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3223,636666602696270000,11,2,10,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3224,636666602696270000,11,3,10,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3225,636666602696270000,11,4,10,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3226,636666602696270000,11,5,10,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3227,636666602696270000,11,6,10,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3228,636666602696270000,11,7,10,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3229,636666602696270000,11,8,10,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3230,636666602696270000,11,9,10,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3231,636666602696270000,11,10,10,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3232,636666602696270000,11,11,10,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3233,636666602696270000,11,12,10,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3234,636666602696270000,11,13,10,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3235,636666602696270000,11,14,10,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3236,636666602696270000,11,1,11,10.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3237,636666602696270000,11,2,11,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3238,636666602696270000,11,3,11,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3239,636666602696270000,11,4,11,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3240,636666602696270000,11,5,11,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3241,636666602696270000,11,6,11,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3242,636666602696270000,11,7,11,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3243,636666602696270000,11,8,11,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3244,636666602696270000,11,9,11,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3245,636666602696270000,11,10,11,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3246,636666602696270000,11,11,11,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3247,636666602696270000,11,12,11,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3248,636666602696270000,11,13,11,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3249,636666602696270000,11,14,11,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3250,636666602696270000,11,1,12,11.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3251,636666602696270000,11,2,12,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3252,636666602696270000,11,3,12,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3253,636666602696270000,11,4,12,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3254,636666602696270000,11,5,12,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3255,636666602696270000,11,6,12,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3256,636666602696270000,11,7,12,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3257,636666602696270000,11,8,12,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3258,636666602696270000,11,9,12,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3259,636666602696270000,11,10,12,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3260,636666602696270000,11,11,12,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3261,636666602696270000,11,12,12,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3262,636666602696270000,11,13,12,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3263,636666602696270000,11,14,12,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3264,636666602696270000,11,1,13,12.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3265,636666602696270000,11,2,13,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3266,636666602696270000,11,3,13,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3267,636666602696270000,11,4,13,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3268,636666602696270000,11,5,13,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3269,636666602696270000,11,6,13,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3270,636666602696270000,11,7,13,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3271,636666602696270000,11,8,13,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3272,636666602696270000,11,9,13,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3273,636666602696270000,11,10,13,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3274,636666602696270000,11,11,13,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3275,636666602696270000,11,12,13,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3276,636666602696270000,11,13,13,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3277,636666602696270000,11,14,13,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3278,636666602696270000,11,1,14,13.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3279,636666602696270000,11,2,14,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3280,636666602696270000,11,3,14,7000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3281,636666602696270000,11,4,14,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3282,636666602696270000,11,5,14,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3283,636666602696270000,11,6,14,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3284,636666602696270000,11,7,14,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3285,636666602696270000,11,8,14,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3286,636666602696270000,11,9,14,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3287,636666602696270000,11,10,14,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3288,636666602696270000,11,11,14,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3289,636666602696270000,11,12,14,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3290,636666602696270000,11,13,14,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3291,636666602696270000,11,14,14,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3292,636666602696270000,11,1,15,14.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3293,636666602696270000,11,2,15,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3294,636666602696270000,11,3,15,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3295,636666602696270000,11,4,15,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3296,636666602696270000,11,5,15,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3297,636666602696270000,11,6,15,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3298,636666602696270000,11,7,15,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3299,636666602696270000,11,8,15,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3300,636666602696270000,11,9,15,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3301,636666602696270000,11,10,15,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3302,636666602696270000,11,11,15,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3303,636666602696270000,11,12,15,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3304,636666602696270000,11,13,15,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3305,636666602696270000,11,14,15,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3306,636666602696270000,11,1,16,15.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3307,636666602696270000,11,2,16,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3308,636666602696270000,11,3,16,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3309,636666602696270000,11,4,16,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3310,636666602696270000,11,5,16,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3311,636666602696270000,11,6,16,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3312,636666602696270000,11,7,16,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3313,636666602696270000,11,8,16,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3314,636666602696270000,11,9,16,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3315,636666602696270000,11,10,16,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3316,636666602696270000,11,11,16,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3317,636666602696270000,11,12,16,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3318,636666602696270000,11,13,16,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3319,636666602696270000,11,14,16,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3320,636666602696270000,11,1,17,16.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3321,636666602696270000,11,2,17,6000.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3322,636666602696270000,11,3,17,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3323,636666602696270000,11,4,17,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3324,636666602696270000,11,5,17,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3325,636666602696270000,11,6,17,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3326,636666602696270000,11,7,17,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3327,636666602696270000,11,8,17,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3328,636666602696270000,11,9,17,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3329,636666602696270000,11,10,17,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3330,636666602696270000,11,11,17,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3331,636666602696270000,11,12,17,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3332,636666602696270000,11,13,17,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3333,636666602696270000,11,14,17,0.00,1,1,NULL,NULL,'2018-07-08 15:24:29.627000','2018-07-13 22:02:49.623000'),(3516,636671831541870000,8,1,1,0.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3517,636671831541870000,8,2,1,200.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3518,636671831541870000,8,3,1,300.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3519,636671831541870000,8,4,1,400.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3520,636671831541870000,8,5,1,500.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3521,636671831541870000,8,1,2,100.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3522,636671831541870000,8,2,2,2000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3523,636671831541870000,8,3,2,3000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3524,636671831541870000,8,4,2,4000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3525,636671831541870000,8,5,2,5000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3526,636671831541870000,8,1,3,200.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3527,636671831541870000,8,2,3,3000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3528,636671831541870000,8,3,3,4000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3529,636671831541870000,8,4,3,5000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3530,636671831541870000,8,5,3,6000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3531,636671831541870000,8,1,4,300.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3532,636671831541870000,8,2,4,4000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3533,636671831541870000,8,3,4,5000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3534,636671831541870000,8,4,4,6000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3535,636671831541870000,8,5,4,7000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3536,636671831541870000,8,1,5,400.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3537,636671831541870000,8,2,5,5000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3538,636671831541870000,8,3,5,6000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3539,636671831541870000,8,4,5,7000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3540,636671831541870000,8,5,5,8000.00,1,2,NULL,NULL,'2018-07-14 16:39:14.187000','2018-07-14 16:39:14.190000'),(3541,636671832567570000,11,1,1,0.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3542,636671832567570000,11,2,1,300.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3543,636671832567570000,11,3,1,400.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3544,636671832567570000,11,4,1,500.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3545,636671832567570000,11,5,1,600.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3546,636671832567570000,11,1,2,300.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3547,636671832567570000,11,2,2,4000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3548,636671832567570000,11,3,2,5000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3549,636671832567570000,11,4,2,6000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3550,636671832567570000,11,5,2,7000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3551,636671832567570000,11,1,3,400.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3552,636671832567570000,11,2,3,5000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3553,636671832567570000,11,3,3,6000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3554,636671832567570000,11,4,3,7000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3555,636671832567570000,11,5,3,8000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3556,636671832567570000,11,1,4,500.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3557,636671832567570000,11,2,4,6000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3558,636671832567570000,11,3,4,7000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3559,636671832567570000,11,4,4,8000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3560,636671832567570000,11,5,4,9000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3561,636671832567570000,11,1,5,600.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3562,636671832567570000,11,2,5,7000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3563,636671832567570000,11,3,5,8000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3564,636671832567570000,11,4,5,9000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3565,636671832567570000,11,5,5,10000.00,1,2,NULL,NULL,'2018-07-14 16:40:56.757000','2018-07-14 16:40:56.760000'),(3999,636671870501830000,12,1,1,0.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4000,636671870501830000,12,2,1,100.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4001,636671870501830000,12,3,1,200.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4002,636671870501830000,12,4,1,300.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4003,636671870501830000,12,5,1,400.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4004,636671870501830000,12,1,2,100.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4005,636671870501830000,12,2,2,2000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4006,636671870501830000,12,3,2,3000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4007,636671870501830000,12,4,2,4000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4008,636671870501830000,12,5,2,5000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4009,636671870501830000,12,1,3,200.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4010,636671870501830000,12,2,3,3000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4011,636671870501830000,12,3,3,4000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4012,636671870501830000,12,4,3,5000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4013,636671870501830000,12,5,3,6000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4014,636671870501830000,12,1,4,300.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4015,636671870501830000,12,2,4,4000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4016,636671870501830000,12,3,4,5000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4017,636671870501830000,12,4,4,6000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4018,636671870501830000,12,5,4,7000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4019,636671870501830000,12,1,5,400.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4020,636671870501830000,12,2,5,5000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4021,636671870501830000,12,3,5,6000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4022,636671870501830000,12,4,5,7000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4023,636671870501830000,12,5,5,8000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4024,636671870501830000,12,1,6,500.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4025,636671870501830000,12,2,6,6000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4026,636671870501830000,12,3,6,7000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4027,636671870501830000,12,4,6,8000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4028,636671870501830000,12,5,6,9000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4029,636671870501830000,12,1,7,600.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4030,636671870501830000,12,2,7,7000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4031,636671870501830000,12,3,7,8000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4032,636671870501830000,12,4,7,9000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4033,636671870501830000,12,5,7,10000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4034,636671870501830000,12,6,1,500.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4035,636671870501830000,12,6,2,6000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4036,636671870501830000,12,6,3,7000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4037,636671870501830000,12,6,4,8000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4038,636671870501830000,12,6,5,9000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4039,636671870501830000,12,6,6,10000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4040,636671870501830000,12,6,7,11000.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4041,636671870501830000,12,7,1,0.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4042,636671870501830000,12,7,2,0.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4043,636671870501830000,12,7,3,0.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4044,636671870501830000,12,7,4,0.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4045,636671870501830000,12,7,5,0.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4046,636671870501830000,12,7,6,0.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4047,636671870501830000,12,7,7,0.00,0,2,NULL,NULL,'2018-07-14 17:44:10.183000','2018-07-14 17:44:10.183000'),(4152,636671870099130000,12,1,1,0.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4153,636671870099130000,12,2,1,100.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4154,636671870099130000,12,3,1,200.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4155,636671870099130000,12,4,1,300.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4156,636671870099130000,12,5,1,400.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4157,636671870099130000,12,1,2,100.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4158,636671870099130000,12,2,2,2000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4159,636671870099130000,12,3,2,3000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4160,636671870099130000,12,4,2,4000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4161,636671870099130000,12,5,2,5000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4162,636671870099130000,12,1,3,200.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4163,636671870099130000,12,2,3,3000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4164,636671870099130000,12,3,3,4000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4165,636671870099130000,12,4,3,5000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4166,636671870099130000,12,5,3,6000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4167,636671870099130000,12,1,4,300.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4168,636671870099130000,12,2,4,4000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4169,636671870099130000,12,3,4,5000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4170,636671870099130000,12,4,4,6000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4171,636671870099130000,12,5,4,7000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4172,636671870099130000,12,1,5,400.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4173,636671870099130000,12,2,5,5000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4174,636671870099130000,12,3,5,6000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4175,636671870099130000,12,4,5,7000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4176,636671870099130000,12,5,5,8000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4177,636671870099130000,12,6,1,500.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4178,636671870099130000,12,6,2,6000.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4179,636671870099130000,12,6,3,0.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4180,636671870099130000,12,6,4,0.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4181,636671870099130000,12,6,5,0.00,0,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 17:46:22.990000'),(4480,636671871245500000,12,1,1,0.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4481,636671871245500000,12,2,1,100.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4482,636671871245500000,12,3,1,200.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4483,636671871245500000,12,4,1,300.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4484,636671871245500000,12,5,1,400.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4485,636671871245500000,12,1,2,100.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4486,636671871245500000,12,2,2,2000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4487,636671871245500000,12,3,2,3000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4488,636671871245500000,12,4,2,4000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4489,636671871245500000,12,5,2,5000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4490,636671871245500000,12,1,3,200.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4491,636671871245500000,12,2,3,3000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4492,636671871245500000,12,3,3,4000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4493,636671871245500000,12,4,3,5000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4494,636671871245500000,12,5,3,6000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4495,636671871245500000,12,1,4,300.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4496,636671871245500000,12,2,4,4000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4497,636671871245500000,12,3,4,5000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4498,636671871245500000,12,4,4,6000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4499,636671871245500000,12,5,4,7000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4500,636671871245500000,12,1,5,400.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4501,636671871245500000,12,2,5,5000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4502,636671871245500000,12,3,5,6000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4503,636671871245500000,12,4,5,7000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4504,636671871245500000,12,5,5,8000.00,1,1,NULL,NULL,'2018-07-14 17:45:24.550000','2018-07-14 18:05:10.097000'),(4505,636671870868600000,12,1,1,0.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4506,636671870868600000,12,2,1,100.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4507,636671870868600000,12,3,1,200.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4508,636671870868600000,12,4,1,300.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4509,636671870868600000,12,5,1,400.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4510,636671870868600000,12,1,2,100.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4511,636671870868600000,12,2,2,2000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4512,636671870868600000,12,3,2,3000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4513,636671870868600000,12,4,2,4000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4514,636671870868600000,12,5,2,5000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4515,636671870868600000,12,1,3,200.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4516,636671870868600000,12,2,3,3000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4517,636671870868600000,12,3,3,4000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4518,636671870868600000,12,4,3,5000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4519,636671870868600000,12,5,3,6000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4520,636671870868600000,12,1,4,300.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4521,636671870868600000,12,2,4,4000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4522,636671870868600000,12,3,4,5000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4523,636671870868600000,12,4,4,6000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4524,636671870868600000,12,5,4,7000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4525,636671870868600000,12,1,5,400.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4526,636671870868600000,12,2,5,5000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4527,636671870868600000,12,3,5,6000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4528,636671870868600000,12,4,5,7000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4529,636671870868600000,12,5,5,8000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4530,636671870868600000,12,1,6,500.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4531,636671870868600000,12,2,6,6000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4532,636671870868600000,12,3,6,7000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4533,636671870868600000,12,4,6,8000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4534,636671870868600000,12,5,6,9000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4535,636671870868600000,12,1,7,600.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4536,636671870868600000,12,2,7,7000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4537,636671870868600000,12,3,7,8000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4538,636671870868600000,12,4,7,9000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4539,636671870868600000,12,5,7,10000.00,1,2,NULL,NULL,'2018-07-14 17:44:46.860000','2018-07-14 18:05:29.420000'),(4639,636671889741500000,7,1,1,0.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4640,636671889741500000,7,2,1,100.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4641,636671889741500000,7,3,1,200.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4642,636671889741500000,7,4,1,300.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4643,636671889741500000,7,5,1,400.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4644,636671889741500000,7,1,2,100.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4645,636671889741500000,7,2,2,2000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4646,636671889741500000,7,3,2,3000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4647,636671889741500000,7,4,2,4000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4648,636671889741500000,7,5,2,5000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4649,636671889741500000,7,1,3,200.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4650,636671889741500000,7,2,3,3000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4651,636671889741500000,7,3,3,4000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4652,636671889741500000,7,4,3,5000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4653,636671889741500000,7,5,3,6000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4654,636671889741500000,7,1,4,300.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4655,636671889741500000,7,2,4,4000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4656,636671889741500000,7,3,4,5000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4657,636671889741500000,7,4,4,6000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4658,636671889741500000,7,5,4,7000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4659,636671889741500000,7,1,5,400.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4660,636671889741500000,7,2,5,5000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4661,636671889741500000,7,3,5,6000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4662,636671889741500000,7,4,5,7000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4663,636671889741500000,7,5,5,8000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4664,636671889741500000,7,6,1,500.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4665,636671889741500000,7,6,2,6000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4666,636671889741500000,7,6,3,7000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4667,636671889741500000,7,6,4,8000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4668,636671889741500000,7,6,5,9000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4669,636671889741500000,7,7,1,600.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4670,636671889741500000,7,7,2,7000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4671,636671889741500000,7,7,3,8000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4672,636671889741500000,7,7,4,9000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4673,636671889741500000,7,7,5,10000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4674,636671889741500000,7,8,1,700.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4675,636671889741500000,7,8,2,8000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4676,636671889741500000,7,8,3,9000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4677,636671889741500000,7,8,4,10000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4678,636671889741500000,7,8,5,11000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4679,636671889741500000,7,9,1,800.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4680,636671889741500000,7,9,2,9000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4681,636671889741500000,7,9,3,10000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4682,636671889741500000,7,9,4,11000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4683,636671889741500000,7,9,5,12000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4684,636671889741500000,7,1,6,500.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4685,636671889741500000,7,2,6,6000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4686,636671889741500000,7,3,6,7000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4687,636671889741500000,7,4,6,8000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4688,636671889741500000,7,5,6,9000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4689,636671889741500000,7,6,6,10000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4690,636671889741500000,7,7,6,11000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4691,636671889741500000,7,8,6,12000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4692,636671889741500000,7,9,6,13000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4693,636671889741500000,7,1,7,600.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4694,636671889741500000,7,2,7,7000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4695,636671889741500000,7,3,7,8000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4696,636671889741500000,7,4,7,9000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4697,636671889741500000,7,5,7,10000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4698,636671889741500000,7,6,7,11000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4699,636671889741500000,7,7,7,12000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4700,636671889741500000,7,8,7,13000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4701,636671889741500000,7,9,7,14000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4702,636671889741500000,7,1,8,700.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4703,636671889741500000,7,2,8,8000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4704,636671889741500000,7,3,8,9000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4705,636671889741500000,7,4,8,10000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4706,636671889741500000,7,5,8,11000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4707,636671889741500000,7,6,8,12000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4708,636671889741500000,7,7,8,13000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4709,636671889741500000,7,8,8,14000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4710,636671889741500000,7,9,8,15000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4711,636671889741500000,7,1,9,800.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4712,636671889741500000,7,2,9,9000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4713,636671889741500000,7,3,9,10000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4714,636671889741500000,7,4,9,11000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4715,636671889741500000,7,5,9,12000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4716,636671889741500000,7,6,9,13000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4717,636671889741500000,7,7,9,14000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4718,636671889741500000,7,8,9,15000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4719,636671889741500000,7,9,9,16000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4720,636671889741500000,7,1,10,900.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4721,636671889741500000,7,2,10,10000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4722,636671889741500000,7,3,10,11000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4723,636671889741500000,7,4,10,12000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4724,636671889741500000,7,5,10,13000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4725,636671889741500000,7,6,10,14000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4726,636671889741500000,7,7,10,15000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4727,636671889741500000,7,8,10,16000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4728,636671889741500000,7,9,10,17000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4729,636671889741500000,7,1,11,1000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4730,636671889741500000,7,2,11,11000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4731,636671889741500000,7,3,11,12000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4732,636671889741500000,7,4,11,13000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4733,636671889741500000,7,5,11,14000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4734,636671889741500000,7,6,11,15000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4735,636671889741500000,7,7,11,16000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4736,636671889741500000,7,8,11,17000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4737,636671889741500000,7,9,11,18000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4738,636671889741500000,7,1,12,1100.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4739,636671889741500000,7,2,12,12000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4740,636671889741500000,7,3,12,13000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4741,636671889741500000,7,4,12,14000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4742,636671889741500000,7,5,12,15000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4743,636671889741500000,7,6,12,16000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4744,636671889741500000,7,7,12,17000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4745,636671889741500000,7,8,12,18000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4746,636671889741500000,7,9,12,19000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4747,636671889741500000,7,1,13,1200.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4748,636671889741500000,7,2,13,13000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4749,636671889741500000,7,3,13,14000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4750,636671889741500000,7,4,13,15000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4751,636671889741500000,7,5,13,16000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4752,636671889741500000,7,6,13,17000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4753,636671889741500000,7,7,13,18000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4754,636671889741500000,7,8,13,19000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4755,636671889741500000,7,9,13,20000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4756,636671889741500000,7,1,14,1300.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4757,636671889741500000,7,2,14,14000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4758,636671889741500000,7,3,14,15000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4759,636671889741500000,7,4,14,16000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4760,636671889741500000,7,5,14,17000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4761,636671889741500000,7,6,14,18000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4762,636671889741500000,7,7,14,19000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4763,636671889741500000,7,8,14,20000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4764,636671889741500000,7,9,14,21000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4765,636671889741500000,7,1,15,1400.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4766,636671889741500000,7,2,15,15000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4767,636671889741500000,7,3,15,16000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4768,636671889741500000,7,4,15,17000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4769,636671889741500000,7,5,15,18000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4770,636671889741500000,7,6,15,19000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4771,636671889741500000,7,7,15,20000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4772,636671889741500000,7,8,15,21000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(4773,636671889741500000,7,9,15,22000.00,1,2,NULL,NULL,'2018-07-14 18:16:14.150000','2018-07-14 18:16:14.153000'),(5281,636671890605600000,6,1,1,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5282,636671890605600000,6,2,1,100.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5283,636671890605600000,6,3,1,200.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5284,636671890605600000,6,4,1,300.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5285,636671890605600000,6,5,1,400.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5286,636671890605600000,6,6,1,500.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5287,636671890605600000,6,7,1,600.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5288,636671890605600000,6,8,1,700.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5289,636671890605600000,6,9,1,800.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5290,636671890605600000,6,10,1,900.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5291,636671890605600000,6,11,1,1000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5292,636671890605600000,6,12,1,1100.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5293,636671890605600000,6,13,1,1200.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5294,636671890605600000,6,1,2,100.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5295,636671890605600000,6,2,2,2000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5296,636671890605600000,6,3,2,3000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5297,636671890605600000,6,4,2,4000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5298,636671890605600000,6,5,2,5000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5299,636671890605600000,6,6,2,6000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5300,636671890605600000,6,7,2,7000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5301,636671890605600000,6,8,2,8000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5302,636671890605600000,6,9,2,9000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5303,636671890605600000,6,10,2,10000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5304,636671890605600000,6,11,2,11000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5305,636671890605600000,6,12,2,12000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5306,636671890605600000,6,13,2,13000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5307,636671890605600000,6,1,3,200.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5308,636671890605600000,6,2,3,3000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5309,636671890605600000,6,3,3,4000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5310,636671890605600000,6,4,3,5000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5311,636671890605600000,6,5,3,6000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5312,636671890605600000,6,6,3,7000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5313,636671890605600000,6,7,3,8000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5314,636671890605600000,6,8,3,9000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5315,636671890605600000,6,9,3,10000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5316,636671890605600000,6,10,3,11000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5317,636671890605600000,6,11,3,12000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5318,636671890605600000,6,12,3,13000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5319,636671890605600000,6,13,3,14000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5320,636671890605600000,6,1,4,300.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5321,636671890605600000,6,2,4,4000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5322,636671890605600000,6,3,4,5000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5323,636671890605600000,6,4,4,6000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5324,636671890605600000,6,5,4,7000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5325,636671890605600000,6,6,4,8000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5326,636671890605600000,6,7,4,9000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5327,636671890605600000,6,8,4,10000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5328,636671890605600000,6,9,4,11000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5329,636671890605600000,6,10,4,12000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5330,636671890605600000,6,11,4,13000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5331,636671890605600000,6,12,4,14000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5332,636671890605600000,6,13,4,15000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5333,636671890605600000,6,1,5,400.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5334,636671890605600000,6,2,5,5000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5335,636671890605600000,6,3,5,6000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5336,636671890605600000,6,4,5,7000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5337,636671890605600000,6,5,5,8000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5338,636671890605600000,6,6,5,9000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5339,636671890605600000,6,7,5,10000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5340,636671890605600000,6,8,5,11000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5341,636671890605600000,6,9,5,12000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5342,636671890605600000,6,10,5,13000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5343,636671890605600000,6,11,5,14000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5344,636671890605600000,6,12,5,15000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5345,636671890605600000,6,13,5,16000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5346,636671890605600000,6,1,6,500.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5347,636671890605600000,6,2,6,6000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5348,636671890605600000,6,3,6,7000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5349,636671890605600000,6,4,6,8000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5350,636671890605600000,6,5,6,9000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5351,636671890605600000,6,6,6,10000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5352,636671890605600000,6,7,6,11000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5353,636671890605600000,6,8,6,12000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5354,636671890605600000,6,9,6,13000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5355,636671890605600000,6,10,6,14000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5356,636671890605600000,6,11,6,15000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5357,636671890605600000,6,12,6,16000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5358,636671890605600000,6,13,6,17000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5359,636671890605600000,6,1,7,600.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5360,636671890605600000,6,2,7,7000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5361,636671890605600000,6,3,7,8000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5362,636671890605600000,6,4,7,9000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5363,636671890605600000,6,5,7,10000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5364,636671890605600000,6,6,7,11000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5365,636671890605600000,6,7,7,12000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5366,636671890605600000,6,8,7,13000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5367,636671890605600000,6,9,7,14000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5368,636671890605600000,6,10,7,15000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5369,636671890605600000,6,11,7,16000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5370,636671890605600000,6,12,7,17000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5371,636671890605600000,6,13,7,18000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5372,636671890605600000,6,1,8,700.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5373,636671890605600000,6,2,8,8000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5374,636671890605600000,6,3,8,9000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5375,636671890605600000,6,4,8,10000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5376,636671890605600000,6,5,8,11000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5377,636671890605600000,6,6,8,12000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5378,636671890605600000,6,7,8,13000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5379,636671890605600000,6,8,8,14000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5380,636671890605600000,6,9,8,15000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5381,636671890605600000,6,10,8,16000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5382,636671890605600000,6,11,8,17000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5383,636671890605600000,6,12,8,18000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5384,636671890605600000,6,13,8,19000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5385,636671890605600000,6,1,9,800.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5386,636671890605600000,6,2,9,9000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5387,636671890605600000,6,3,9,10000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5388,636671890605600000,6,4,9,11000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5389,636671890605600000,6,5,9,12000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5390,636671890605600000,6,6,9,13000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5391,636671890605600000,6,7,9,14000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5392,636671890605600000,6,8,9,15000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5393,636671890605600000,6,9,9,16000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5394,636671890605600000,6,10,9,17000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5395,636671890605600000,6,11,9,18000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5396,636671890605600000,6,12,9,19000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5397,636671890605600000,6,13,9,20000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5398,636671890605600000,6,1,10,900.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5399,636671890605600000,6,2,10,10000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5400,636671890605600000,6,3,10,11000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5401,636671890605600000,6,4,10,12000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5402,636671890605600000,6,5,10,13000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5403,636671890605600000,6,6,10,14000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5404,636671890605600000,6,7,10,15000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5405,636671890605600000,6,8,10,16000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5406,636671890605600000,6,9,10,17000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5407,636671890605600000,6,10,10,18000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5408,636671890605600000,6,11,10,19000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5409,636671890605600000,6,12,10,20000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5410,636671890605600000,6,13,10,21000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5411,636671890605600000,6,1,11,1000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5412,636671890605600000,6,2,11,11000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5413,636671890605600000,6,3,11,12000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5414,636671890605600000,6,4,11,13000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5415,636671890605600000,6,5,11,14000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5416,636671890605600000,6,6,11,15000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5417,636671890605600000,6,7,11,16000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5418,636671890605600000,6,8,11,17000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5419,636671890605600000,6,9,11,18000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5420,636671890605600000,6,10,11,19000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5421,636671890605600000,6,11,11,20000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5422,636671890605600000,6,12,11,21000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5423,636671890605600000,6,13,11,22000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5424,636671890605600000,6,1,12,1100.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5425,636671890605600000,6,2,12,12000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5426,636671890605600000,6,3,12,13000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5427,636671890605600000,6,4,12,14000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5428,636671890605600000,6,5,12,15000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5429,636671890605600000,6,6,12,16000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5430,636671890605600000,6,7,12,17000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5431,636671890605600000,6,8,12,18000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5432,636671890605600000,6,9,12,19000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5433,636671890605600000,6,10,12,20000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5434,636671890605600000,6,11,12,21000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5435,636671890605600000,6,12,12,22000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5436,636671890605600000,6,13,12,23000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5437,636671890605600000,6,1,13,1200.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5438,636671890605600000,6,2,13,13000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5439,636671890605600000,6,3,13,14000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5440,636671890605600000,6,4,13,15000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5441,636671890605600000,6,5,13,16000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5442,636671890605600000,6,6,13,17000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5443,636671890605600000,6,7,13,18000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5444,636671890605600000,6,8,13,19000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5445,636671890605600000,6,9,13,20000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5446,636671890605600000,6,10,13,21000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5447,636671890605600000,6,11,13,22000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5448,636671890605600000,6,12,13,23000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5449,636671890605600000,6,13,13,24000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5450,636671890605600000,6,1,14,1300.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5451,636671890605600000,6,2,14,14000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5452,636671890605600000,6,3,14,15000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5453,636671890605600000,6,4,14,16000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5454,636671890605600000,6,5,14,17000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5455,636671890605600000,6,6,14,18000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5456,636671890605600000,6,7,14,19000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5457,636671890605600000,6,8,14,20000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5458,636671890605600000,6,9,14,21000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5459,636671890605600000,6,10,14,22000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5460,636671890605600000,6,11,14,23000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5461,636671890605600000,6,12,14,24000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5462,636671890605600000,6,13,14,25000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5463,636671890605600000,6,1,15,1400.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5464,636671890605600000,6,2,15,15000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5465,636671890605600000,6,3,15,16000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5466,636671890605600000,6,4,15,17000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5467,636671890605600000,6,5,15,18000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5468,636671890605600000,6,6,15,19000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5469,636671890605600000,6,7,15,20000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5470,636671890605600000,6,8,15,21000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5471,636671890605600000,6,9,15,22000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5472,636671890605600000,6,10,15,23000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5473,636671890605600000,6,11,15,24000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5474,636671890605600000,6,12,15,25000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5475,636671890605600000,6,13,15,26000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5476,636671890605600000,6,1,16,1500.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5477,636671890605600000,6,2,16,16000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5478,636671890605600000,6,3,16,17000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5479,636671890605600000,6,4,16,18000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5480,636671890605600000,6,5,16,19000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5481,636671890605600000,6,6,16,20000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5482,636671890605600000,6,7,16,21000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5483,636671890605600000,6,8,16,22000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5484,636671890605600000,6,9,16,23000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5485,636671890605600000,6,10,16,24000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5486,636671890605600000,6,11,16,25000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5487,636671890605600000,6,12,16,26000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5488,636671890605600000,6,13,16,27000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5489,636671890605600000,6,1,17,1600.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5490,636671890605600000,6,2,17,17000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5491,636671890605600000,6,3,17,18000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5492,636671890605600000,6,4,17,19000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5493,636671890605600000,6,5,17,20000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5494,636671890605600000,6,6,17,21000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5495,636671890605600000,6,7,17,22000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5496,636671890605600000,6,8,17,23000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5497,636671890605600000,6,9,17,24000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5498,636671890605600000,6,10,17,25000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5499,636671890605600000,6,11,17,26000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5500,636671890605600000,6,12,17,27000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5501,636671890605600000,6,13,17,28000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5502,636671890605600000,6,1,18,1700.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5503,636671890605600000,6,2,18,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5504,636671890605600000,6,3,18,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5505,636671890605600000,6,4,18,20000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5506,636671890605600000,6,5,18,21000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5507,636671890605600000,6,6,18,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5508,636671890605600000,6,7,18,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5509,636671890605600000,6,8,18,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5510,636671890605600000,6,9,18,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5511,636671890605600000,6,10,18,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5512,636671890605600000,6,11,18,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5513,636671890605600000,6,12,18,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5514,636671890605600000,6,13,18,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5515,636671890605600000,6,1,19,1800.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5516,636671890605600000,6,2,19,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5517,636671890605600000,6,3,19,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5518,636671890605600000,6,4,19,21000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5519,636671890605600000,6,5,19,22000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5520,636671890605600000,6,6,19,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5521,636671890605600000,6,7,19,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5522,636671890605600000,6,8,19,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5523,636671890605600000,6,9,19,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5524,636671890605600000,6,10,19,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5525,636671890605600000,6,11,19,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5526,636671890605600000,6,12,19,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5527,636671890605600000,6,13,19,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5528,636671890605600000,6,1,20,1900.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5529,636671890605600000,6,2,20,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5530,636671890605600000,6,3,20,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5531,636671890605600000,6,4,20,22000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5532,636671890605600000,6,5,20,23000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5533,636671890605600000,6,6,20,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5534,636671890605600000,6,7,20,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5535,636671890605600000,6,8,20,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5536,636671890605600000,6,9,20,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5537,636671890605600000,6,10,20,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5538,636671890605600000,6,11,20,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5539,636671890605600000,6,12,20,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5540,636671890605600000,6,13,20,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5541,636671890605600000,6,1,21,2000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5542,636671890605600000,6,2,21,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5543,636671890605600000,6,3,21,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5544,636671890605600000,6,4,21,23000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5545,636671890605600000,6,5,21,24000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5546,636671890605600000,6,6,21,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5547,636671890605600000,6,7,21,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5548,636671890605600000,6,8,21,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5549,636671890605600000,6,9,21,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5550,636671890605600000,6,10,21,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5551,636671890605600000,6,11,21,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5552,636671890605600000,6,12,21,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5553,636671890605600000,6,13,21,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5554,636671890605600000,6,1,22,2100.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5555,636671890605600000,6,2,22,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5556,636671890605600000,6,3,22,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5557,636671890605600000,6,4,22,24000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5558,636671890605600000,6,5,22,25000.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5559,636671890605600000,6,6,22,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5560,636671890605600000,6,7,22,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5561,636671890605600000,6,8,22,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5562,636671890605600000,6,9,22,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5563,636671890605600000,6,10,22,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5564,636671890605600000,6,11,22,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5565,636671890605600000,6,12,22,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5566,636671890605600000,6,13,22,0.00,1,2,NULL,NULL,'2018-07-14 18:17:40.560000','2018-07-24 19:07:25.877000'),(5567,636671888905300000,10,1,1,0.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5568,636671888905300000,10,2,1,600.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5569,636671888905300000,10,3,1,700.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5570,636671888905300000,10,4,1,800.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5571,636671888905300000,10,5,1,900.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5572,636671888905300000,10,6,1,1000.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5573,636671888905300000,10,7,1,1100.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5574,636671888905300000,10,8,1,1200.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5575,636671888905300000,10,9,1,1300.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5576,636671888905300000,10,1,2,600.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5577,636671888905300000,10,2,2,126.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5578,636671888905300000,10,3,2,131.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5579,636671888905300000,10,4,2,136.67,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5580,636671888905300000,10,5,2,141.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5581,636671888905300000,10,6,2,145.65,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5582,636671888905300000,10,7,2,149.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5583,636671888905300000,10,8,2,154.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5584,636671888905300000,10,9,2,158.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5585,636671888905300000,10,1,3,700.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5586,636671888905300000,10,2,3,135.39,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5587,636671888905300000,10,3,3,140.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5588,636671888905300000,10,4,3,144.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5589,636671888905300000,10,5,3,149.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5590,636671888905300000,10,6,3,154.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5591,636671888905300000,10,7,3,159.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5592,636671888905300000,10,8,3,163.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5593,636671888905300000,10,9,3,168.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5594,636671888905300000,10,1,4,800.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5595,636671888905300000,10,2,4,141.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5596,636671888905300000,10,3,4,148.22,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5597,636671888905300000,10,4,4,153.35,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5598,636671888905300000,10,5,4,158.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5599,636671888905300000,10,6,4,163.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5600,636671888905300000,10,7,4,168.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5601,636671888905300000,10,8,4,173.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5602,636671888905300000,10,9,4,179.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5603,636671888905300000,10,1,5,900.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5604,636671888905300000,10,2,5,149.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5605,636671888905300000,10,3,5,154.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5606,636671888905300000,10,4,5,161.04,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5607,636671888905300000,10,5,5,166.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5608,636671888905300000,10,6,5,172.59,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5609,636671888905300000,10,7,5,177.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5610,636671888905300000,10,8,5,184.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5611,636671888905300000,10,9,5,191.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5612,636671888905300000,10,1,6,1000.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5613,636671888905300000,10,2,6,155.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5614,636671888905300000,10,3,6,162.33,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5615,636671888905300000,10,4,6,168.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5616,636671888905300000,10,5,6,175.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5617,636671888905300000,10,6,6,181.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5618,636671888905300000,10,7,6,189.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5619,636671888905300000,10,8,6,195.67,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5620,636671888905300000,10,9,6,202.09,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5621,636671888905300000,10,1,7,1100.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5622,636671888905300000,10,2,7,163.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5623,636671888905300000,10,3,7,170.02,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5624,636671888905300000,10,4,7,176.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5625,636671888905300000,10,5,7,184.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5626,636671888905300000,10,6,7,191.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5627,636671888905300000,10,7,7,198.24,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5628,636671888905300000,10,8,7,205.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5629,636671888905300000,10,9,7,212.35,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5630,636671888905300000,10,1,8,1200.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5631,636671888905300000,10,2,8,170.02,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5632,636671888905300000,10,3,8,177.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5633,636671888905300000,10,4,8,186.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5634,636671888905300000,10,5,8,193.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5635,636671888905300000,10,6,8,200.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5636,636671888905300000,10,7,8,208.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5637,636671888905300000,10,8,8,214.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5638,636671888905300000,10,9,8,222.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5639,636671888905300000,10,1,9,1300.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5640,636671888905300000,10,2,9,177.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5641,636671888905300000,10,3,9,186.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5642,636671888905300000,10,4,9,194.39,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5643,636671888905300000,10,5,9,202.09,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5644,636671888905300000,10,6,9,209.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5645,636671888905300000,10,7,9,217.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5646,636671888905300000,10,8,9,225.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5647,636671888905300000,10,9,9,232.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5648,636671888905300000,10,1,10,1400.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5649,636671888905300000,10,2,10,184.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5650,636671888905300000,10,3,10,194.39,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5651,636671888905300000,10,4,10,202.09,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5652,636671888905300000,10,5,10,211.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5653,636671888905300000,10,6,10,218.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5654,636671888905300000,10,7,10,227.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5655,636671888905300000,10,8,10,235.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5656,636671888905300000,10,9,10,245.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5657,636671888905300000,10,1,11,1500.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5658,636671888905300000,10,2,11,193.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5659,636671888905300000,10,3,11,200.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5660,636671888905300000,10,4,11,209.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5661,636671888905300000,10,5,11,218.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5662,636671888905300000,10,6,11,227.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5663,636671888905300000,10,7,11,236.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5664,636671888905300000,10,8,11,246.98,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5665,636671888905300000,10,9,11,255.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5666,636671888905300000,10,1,12,1600.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5667,636671888905300000,10,2,12,199.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5668,636671888905300000,10,3,12,208.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5669,636671888905300000,10,4,12,218.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5670,636671888905300000,10,5,12,227.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5671,636671888905300000,10,6,12,236.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5672,636671888905300000,10,7,12,246.98,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5673,636671888905300000,10,8,12,257.24,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5674,636671888905300000,10,9,12,266.22,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5675,636671888905300000,10,1,13,1700.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5676,636671888905300000,10,2,13,207.22,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5677,636671888905300000,10,3,13,216.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5678,636671888905300000,10,4,13,226.46,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5679,636671888905300000,10,5,13,236.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5680,636671888905300000,10,6,13,246.98,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5681,636671888905300000,10,7,13,257.24,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5682,636671888905300000,10,8,13,267.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5683,636671888905300000,10,9,13,276.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5684,636671888905300000,10,1,14,1800.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5685,636671888905300000,10,2,14,213.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5686,636671888905300000,10,3,14,223.89,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5687,636671888905300000,10,4,14,234.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5688,636671888905300000,10,5,14,245.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5689,636671888905300000,10,6,14,255.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5690,636671888905300000,10,7,14,266.22,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5691,636671888905300000,10,8,14,276.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5692,636671888905300000,10,9,14,286.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5693,636671888905300000,10,1,15,1900.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5694,636671888905300000,10,2,15,220.04,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5695,636671888905300000,10,3,15,231.59,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5696,636671888905300000,10,4,15,243.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5697,636671888905300000,10,5,15,254.67,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5698,636671888905300000,10,6,15,264.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5699,636671888905300000,10,7,15,276.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5700,636671888905300000,10,8,15,286.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5701,636671888905300000,10,9,15,299.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5702,636671888905300000,10,1,16,2000.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5703,636671888905300000,10,2,16,227.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5704,636671888905300000,10,3,16,240.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5705,636671888905300000,10,4,16,252.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5706,636671888905300000,10,5,16,262.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5707,636671888905300000,10,6,16,273.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5708,636671888905300000,10,7,16,285.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5709,636671888905300000,10,8,16,298.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5710,636671888905300000,10,9,16,309.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5711,636671888905300000,10,1,17,2100.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5712,636671888905300000,10,2,17,234.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5713,636671888905300000,10,3,17,248.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5714,636671888905300000,10,4,17,259.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5715,636671888905300000,10,5,17,271.35,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5716,636671888905300000,10,6,17,282.89,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5717,636671888905300000,10,7,17,297.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5718,636671888905300000,10,8,17,308.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5719,636671888905300000,10,9,17,320.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5720,636671888905300000,10,1,18,2200.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5721,636671888905300000,10,2,18,243.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5722,636671888905300000,10,3,18,254.67,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5723,636671888905300000,10,4,18,267.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5724,636671888905300000,10,5,18,280.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5725,636671888905300000,10,6,18,293.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5726,636671888905300000,10,7,18,305.98,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5727,636671888905300000,10,8,18,318.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5728,636671888905300000,10,9,18,330.35,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5729,636671888905300000,10,1,19,2300.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5730,636671888905300000,10,2,19,249.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5731,636671888905300000,10,3,19,262.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5732,636671888905300000,10,4,19,275.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5733,636671888905300000,10,5,19,288.02,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5734,636671888905300000,10,6,19,302.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5735,636671888905300000,10,7,19,314.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5736,636671888905300000,10,8,19,327.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5737,636671888905300000,10,9,19,340.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5738,636671888905300000,10,1,20,2400.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5739,636671888905300000,10,2,20,257.24,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5740,636671888905300000,10,3,20,270.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5741,636671888905300000,10,4,20,284.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5742,636671888905300000,10,5,20,298.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5743,636671888905300000,10,6,20,311.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5744,636671888905300000,10,7,20,325.22,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5745,636671888905300000,10,8,20,338.04,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5746,636671888905300000,10,9,20,353.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5747,636671888905300000,10,1,21,2500.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5748,636671888905300000,10,2,21,263.65,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5749,636671888905300000,10,3,21,277.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5750,636671888905300000,10,4,21,293.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5751,636671888905300000,10,5,21,307.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5752,636671888905300000,10,6,21,320.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5753,636671888905300000,10,7,21,334.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5754,636671888905300000,10,8,21,349.58,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5755,636671888905300000,10,9,21,363.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5756,636671888905300000,10,1,22,2600.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5757,636671888905300000,10,2,22,271.35,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5758,636671888905300000,10,3,22,285.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5759,636671888905300000,10,4,22,300.85,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5760,636671888905300000,10,5,22,314.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5761,636671888905300000,10,6,22,329.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5762,636671888905300000,10,7,22,345.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5763,636671888905300000,10,8,22,359.85,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5764,636671888905300000,10,9,22,373.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5765,636671888905300000,10,1,23,2700.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5766,636671888905300000,10,2,23,277.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5767,636671888905300000,10,3,23,294.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5768,636671888905300000,10,4,23,308.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5769,636671888905300000,10,5,23,323.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5770,636671888905300000,10,6,23,338.04,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5771,636671888905300000,10,7,23,354.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5772,636671888905300000,10,8,23,370.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5773,636671888905300000,10,9,23,384.21,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5774,636671888905300000,10,1,24,2800.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5775,636671888905300000,10,2,24,285.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5776,636671888905300000,10,3,24,302.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5777,636671888905300000,10,4,24,317.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5778,636671888905300000,10,5,24,332.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5779,636671888905300000,10,6,24,348.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5780,636671888905300000,10,7,24,363.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5781,636671888905300000,10,8,24,379.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5782,636671888905300000,10,9,24,394.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5783,636671888905300000,10,1,25,2900.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5784,636671888905300000,10,2,25,293.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5785,636671888905300000,10,3,25,308.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5786,636671888905300000,10,4,25,325.22,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5787,636671888905300000,10,5,25,340.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5788,636671888905300000,10,6,25,358.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5789,636671888905300000,10,7,25,373.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5790,636671888905300000,10,8,25,389.35,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5791,636671888905300000,10,9,25,407.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5792,636671888905300000,10,1,26,3000.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5793,636671888905300000,10,2,26,299.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5794,636671888905300000,10,3,26,316.24,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5795,636671888905300000,10,4,26,332.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5796,636671888905300000,10,5,26,350.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5797,636671888905300000,10,6,26,367.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5798,636671888905300000,10,7,26,382.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5799,636671888905300000,10,8,26,400.89,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5800,636671888905300000,10,9,26,417.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5801,636671888905300000,10,1,27,3100.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5802,636671888905300000,10,2,27,307.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5803,636671888905300000,10,3,27,323.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5804,636671888905300000,10,4,27,340.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5805,636671888905300000,10,5,27,358.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5806,636671888905300000,10,6,27,376.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5807,636671888905300000,10,7,27,393.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5808,636671888905300000,10,8,27,411.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5809,636671888905300000,10,9,27,427.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5810,636671888905300000,10,1,28,3200.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5811,636671888905300000,10,2,28,313.67,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5812,636671888905300000,10,3,28,331.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5813,636671888905300000,10,4,28,349.58,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5814,636671888905300000,10,5,28,367.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5815,636671888905300000,10,6,28,385.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5816,636671888905300000,10,7,28,403.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5817,636671888905300000,10,8,28,421.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5818,636671888905300000,10,9,28,438.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5819,636671888905300000,10,1,29,3300.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5820,636671888905300000,10,2,29,321.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5821,636671888905300000,10,3,29,339.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5822,636671888905300000,10,4,29,358.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5823,636671888905300000,10,5,29,376.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5824,636671888905300000,10,6,29,394.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5825,636671888905300000,10,7,29,413.71,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5826,636671888905300000,10,8,29,431.67,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5827,636671888905300000,10,9,29,450.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5828,636671888905300000,10,10,1,1400.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5829,636671888905300000,10,10,2,162.33,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5830,636671888905300000,10,10,3,173.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5831,636671888905300000,10,10,4,184.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5832,636671888905300000,10,10,5,196.96,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5833,636671888905300000,10,10,6,208.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5834,636671888905300000,10,10,7,218.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5835,636671888905300000,10,10,8,230.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5836,636671888905300000,10,10,9,241.85,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5837,636671888905300000,10,10,10,253.39,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5838,636671888905300000,10,10,11,264.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5839,636671888905300000,10,10,12,275.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5840,636671888905300000,10,10,13,286.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5841,636671888905300000,10,10,14,298.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5842,636671888905300000,10,10,15,309.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5843,636671888905300000,10,10,16,321.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5844,636671888905300000,10,10,17,331.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5845,636671888905300000,10,10,18,344.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5846,636671888905300000,10,10,19,354.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5847,636671888905300000,10,10,20,366.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5848,636671888905300000,10,10,21,377.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5849,636671888905300000,10,10,22,388.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5850,636671888905300000,10,10,23,400.89,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5851,636671888905300000,10,10,24,411.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5852,636671888905300000,10,10,25,422.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5853,636671888905300000,10,10,26,434.24,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5854,636671888905300000,10,10,27,444.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5855,636671888905300000,10,10,28,457.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5856,636671888905300000,10,10,29,467.58,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5857,636671888905300000,10,11,1,1500.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5858,636671888905300000,10,11,2,167.46,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5859,636671888905300000,10,11,3,179.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5860,636671888905300000,10,11,4,191.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5861,636671888905300000,10,11,5,203.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5862,636671888905300000,10,11,6,214.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5863,636671888905300000,10,11,7,226.46,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5864,636671888905300000,10,11,8,239.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5865,636671888905300000,10,11,9,250.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5866,636671888905300000,10,11,10,262.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5867,636671888905300000,10,11,11,273.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5868,636671888905300000,10,11,12,285.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5869,636671888905300000,10,11,13,298.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5870,636671888905300000,10,11,14,309.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5871,636671888905300000,10,11,15,321.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5872,636671888905300000,10,11,16,332.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5873,636671888905300000,10,11,17,344.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5874,636671888905300000,10,11,18,356.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5875,636671888905300000,10,11,19,367.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5876,636671888905300000,10,11,20,379.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5877,636671888905300000,10,11,21,390.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5878,636671888905300000,10,11,22,403.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5879,636671888905300000,10,11,23,415.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5880,636671888905300000,10,11,24,426.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5881,636671888905300000,10,11,25,438.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5882,636671888905300000,10,11,26,450.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5883,636671888905300000,10,11,27,462.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5884,636671888905300000,10,11,28,474.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5885,636671888905300000,10,11,29,485.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5886,636671888905300000,10,12,1,1600.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5887,636671888905300000,10,12,2,171.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5888,636671888905300000,10,12,3,182.85,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5889,636671888905300000,10,12,4,196.96,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5890,636671888905300000,10,12,5,208.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5891,636671888905300000,10,12,6,220.04,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5892,636671888905300000,10,12,7,232.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5893,636671888905300000,10,12,8,245.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5894,636671888905300000,10,12,9,258.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5895,636671888905300000,10,12,10,270.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5896,636671888905300000,10,12,11,281.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5897,636671888905300000,10,12,12,295.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5898,636671888905300000,10,12,13,307.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5899,636671888905300000,10,12,14,320.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5900,636671888905300000,10,12,15,331.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5901,636671888905300000,10,12,16,344.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5902,636671888905300000,10,12,17,357.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5903,636671888905300000,10,12,18,368.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5904,636671888905300000,10,12,19,381.65,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5905,636671888905300000,10,12,20,393.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5906,636671888905300000,10,12,21,406.02,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5907,636671888905300000,10,12,22,418.85,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5908,636671888905300000,10,12,23,430.39,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5909,636671888905300000,10,12,24,441.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5910,636671888905300000,10,12,25,456.04,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5911,636671888905300000,10,12,26,467.58,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5912,636671888905300000,10,12,27,480.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5913,636671888905300000,10,12,28,491.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5914,636671888905300000,10,12,29,504.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5915,636671888905300000,10,13,1,1700.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5916,636671888905300000,10,13,2,179.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5917,636671888905300000,10,13,3,193.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5918,636671888905300000,10,13,4,205.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5919,636671888905300000,10,13,5,218.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5920,636671888905300000,10,13,6,231.59,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5921,636671888905300000,10,13,7,245.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5922,636671888905300000,10,13,8,258.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5923,636671888905300000,10,13,9,271.35,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5924,636671888905300000,10,13,10,284.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5925,636671888905300000,10,13,11,298.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5926,636671888905300000,10,13,12,311.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5927,636671888905300000,10,13,13,323.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5928,636671888905300000,10,13,14,336.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5929,636671888905300000,10,13,15,350.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5930,636671888905300000,10,13,16,363.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5931,636671888905300000,10,13,17,376.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5932,636671888905300000,10,13,18,389.35,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5933,636671888905300000,10,13,19,403.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5934,636671888905300000,10,13,20,416.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5935,636671888905300000,10,13,21,429.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5936,636671888905300000,10,13,22,441.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5937,636671888905300000,10,13,23,456.04,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5938,636671888905300000,10,13,24,468.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5939,636671888905300000,10,13,25,481.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5940,636671888905300000,10,13,26,494.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5941,636671888905300000,10,13,27,508.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5942,636671888905300000,10,13,28,521.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5943,636671888905300000,10,13,29,534.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5944,636671888905300000,10,14,1,1800.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5945,636671888905300000,10,14,2,182.85,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5946,636671888905300000,10,14,3,198.24,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5947,636671888905300000,10,14,4,211.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5948,636671888905300000,10,14,5,223.89,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5949,636671888905300000,10,14,6,239.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5950,636671888905300000,10,14,7,252.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5951,636671888905300000,10,14,8,264.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5952,636671888905300000,10,14,9,279.04,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5953,636671888905300000,10,14,10,293.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5954,636671888905300000,10,14,11,307.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5955,636671888905300000,10,14,12,320.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5956,636671888905300000,10,14,13,332.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5957,636671888905300000,10,14,14,348.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5958,636671888905300000,10,14,15,361.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5959,636671888905300000,10,14,16,375.24,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5960,636671888905300000,10,14,17,388.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5961,636671888905300000,10,14,18,402.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5962,636671888905300000,10,14,19,416.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5963,636671888905300000,10,14,20,429.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5964,636671888905300000,10,14,21,441.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5965,636671888905300000,10,14,22,457.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5966,636671888905300000,10,14,23,470.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5967,636671888905300000,10,14,24,484.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5968,636671888905300000,10,14,25,497.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5969,636671888905300000,10,14,26,511.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5970,636671888905300000,10,14,27,525.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5971,636671888905300000,10,14,28,538.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5972,636671888905300000,10,14,29,550.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5973,636671888905300000,10,15,1,1900.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5974,636671888905300000,10,15,2,187.98,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5975,636671888905300000,10,15,3,202.09,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5976,636671888905300000,10,15,4,216.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5977,636671888905300000,10,15,5,230.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5978,636671888905300000,10,15,6,245.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5979,636671888905300000,10,15,7,258.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5980,636671888905300000,10,15,8,272.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5981,636671888905300000,10,15,9,286.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5982,636671888905300000,10,15,10,302.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5983,636671888905300000,10,15,11,314.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5984,636671888905300000,10,15,12,329.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5985,636671888905300000,10,15,13,344.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5986,636671888905300000,10,15,14,358.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5987,636671888905300000,10,15,15,372.67,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5988,636671888905300000,10,15,16,385.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5989,636671888905300000,10,15,17,400.89,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5990,636671888905300000,10,15,18,415.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5991,636671888905300000,10,15,19,429.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5992,636671888905300000,10,15,20,441.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5993,636671888905300000,10,15,21,457.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5994,636671888905300000,10,15,22,471.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5995,636671888905300000,10,15,23,485.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5996,636671888905300000,10,15,24,499.65,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5997,636671888905300000,10,15,25,513.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5998,636671888905300000,10,15,26,527.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(5999,636671888905300000,10,15,27,541.97,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6000,636671888905300000,10,15,28,557.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6001,636671888905300000,10,15,29,570.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6002,636671888905300000,10,16,1,2000.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6003,636671888905300000,10,16,2,193.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6004,636671888905300000,10,16,3,207.22,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6005,636671888905300000,10,16,4,221.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6006,636671888905300000,10,16,5,235.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6007,636671888905300000,10,16,6,252.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6008,636671888905300000,10,16,7,266.22,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6009,636671888905300000,10,16,8,280.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6010,636671888905300000,10,16,9,295.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6011,636671888905300000,10,16,10,309.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6012,636671888905300000,10,16,11,323.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6013,636671888905300000,10,16,12,339.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6014,636671888905300000,10,16,13,354.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6015,636671888905300000,10,16,14,368.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6016,636671888905300000,10,16,15,382.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6017,636671888905300000,10,16,16,398.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6018,636671888905300000,10,16,17,412.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6019,636671888905300000,10,16,18,427.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6020,636671888905300000,10,16,19,441.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6021,636671888905300000,10,16,20,457.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6022,636671888905300000,10,16,21,471.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6023,636671888905300000,10,16,22,485.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6024,636671888905300000,10,16,23,499.65,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6025,636671888905300000,10,16,24,516.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6026,636671888905300000,10,16,25,530.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6027,636671888905300000,10,16,26,544.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6028,636671888905300000,10,16,27,559.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6029,636671888905300000,10,16,28,574.04,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6030,636671888905300000,10,16,29,588.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6031,636671888905300000,10,17,1,2100.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6032,636671888905300000,10,17,2,202.09,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6033,636671888905300000,10,17,3,217.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6034,636671888905300000,10,17,4,232.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6035,636671888905300000,10,17,5,249.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6036,636671888905300000,10,17,6,264.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6037,636671888905300000,10,17,7,280.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6038,636671888905300000,10,17,8,297.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6039,636671888905300000,10,17,9,312.39,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6040,636671888905300000,10,17,10,327.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6041,636671888905300000,10,17,11,344.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6042,636671888905300000,10,17,12,359.85,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6043,636671888905300000,10,17,13,375.24,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6044,636671888905300000,10,17,14,390.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6045,636671888905300000,10,17,15,407.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6046,636671888905300000,10,17,16,422.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6047,636671888905300000,10,17,17,438.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6048,636671888905300000,10,17,18,454.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6049,636671888905300000,10,17,19,470.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6050,636671888905300000,10,17,20,485.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6051,636671888905300000,10,17,21,502.21,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6052,636671888905300000,10,17,22,517.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6053,636671888905300000,10,17,23,533.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6054,636671888905300000,10,17,24,548.39,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6055,636671888905300000,10,17,25,565.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6056,636671888905300000,10,17,26,580.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6057,636671888905300000,10,17,27,595.84,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6058,636671888905300000,10,17,28,612.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6059,636671888905300000,10,17,29,627.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6060,636671888905300000,10,18,1,2200.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6061,636671888905300000,10,18,2,205.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6062,636671888905300000,10,18,3,222.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6063,636671888905300000,10,18,4,239.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6064,636671888905300000,10,18,5,254.67,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6065,636671888905300000,10,18,6,271.35,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6066,636671888905300000,10,18,7,286.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6067,636671888905300000,10,18,8,304.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6068,636671888905300000,10,18,9,320.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6069,636671888905300000,10,18,10,335.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6070,636671888905300000,10,18,11,353.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6071,636671888905300000,10,18,12,368.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6072,636671888905300000,10,18,13,385.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6073,636671888905300000,10,18,14,402.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6074,636671888905300000,10,18,15,417.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6075,636671888905300000,10,18,16,434.24,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6076,636671888905300000,10,18,17,450.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6077,636671888905300000,10,18,18,467.58,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6078,636671888905300000,10,18,19,482.98,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6079,636671888905300000,10,18,20,498.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6080,636671888905300000,10,18,21,516.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6081,636671888905300000,10,18,22,531.71,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6082,636671888905300000,10,18,23,548.39,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6083,636671888905300000,10,18,24,565.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6084,636671888905300000,10,18,25,580.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6085,636671888905300000,10,18,26,597.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6086,636671888905300000,10,18,27,613.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6087,636671888905300000,10,18,28,630.47,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6088,636671888905300000,10,18,29,645.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6089,636671888905300000,10,19,1,2300.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6090,636671888905300000,10,19,2,211.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6091,636671888905300000,10,19,3,226.46,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6092,636671888905300000,10,19,4,244.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6093,636671888905300000,10,19,5,261.09,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6094,636671888905300000,10,19,6,277.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6095,636671888905300000,10,19,7,295.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6096,636671888905300000,10,19,8,311.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6097,636671888905300000,10,19,9,327.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6098,636671888905300000,10,19,10,345.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6099,636671888905300000,10,19,11,362.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6100,636671888905300000,10,19,12,377.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6101,636671888905300000,10,19,13,394.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6102,636671888905300000,10,19,14,412.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6103,636671888905300000,10,19,15,429.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6104,636671888905300000,10,19,16,445.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6105,636671888905300000,10,19,17,462.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6106,636671888905300000,10,19,18,479.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6107,636671888905300000,10,19,19,495.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6108,636671888905300000,10,19,20,513.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6109,636671888905300000,10,19,21,530.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6110,636671888905300000,10,19,22,545.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6111,636671888905300000,10,19,23,563.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6112,636671888905300000,10,19,24,580.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6113,636671888905300000,10,19,25,597.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6114,636671888905300000,10,19,26,615.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6115,636671888905300000,10,19,27,630.47,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6116,636671888905300000,10,19,28,647.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6117,636671888905300000,10,19,29,665.10,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6118,636671888905300000,10,20,1,2400.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6119,636671888905300000,10,20,2,214.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6120,636671888905300000,10,20,3,231.59,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6121,636671888905300000,10,20,4,249.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6122,636671888905300000,10,20,5,267.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6123,636671888905300000,10,20,6,284.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6124,636671888905300000,10,20,7,302.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6125,636671888905300000,10,20,8,318.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6126,636671888905300000,10,20,9,335.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6127,636671888905300000,10,20,10,353.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6128,636671888905300000,10,20,11,371.39,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6129,636671888905300000,10,20,12,388.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6130,636671888905300000,10,20,13,406.02,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6131,636671888905300000,10,20,14,422.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6132,636671888905300000,10,20,15,439.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6133,636671888905300000,10,20,16,457.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6134,636671888905300000,10,20,17,475.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6135,636671888905300000,10,20,18,491.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6136,636671888905300000,10,20,19,509.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6137,636671888905300000,10,20,20,526.58,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6138,636671888905300000,10,20,21,543.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6139,636671888905300000,10,20,22,562.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6140,636671888905300000,10,20,23,579.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6141,636671888905300000,10,20,24,595.84,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6142,636671888905300000,10,20,25,613.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6143,636671888905300000,10,20,26,630.47,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6144,636671888905300000,10,20,27,647.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6145,636671888905300000,10,20,28,666.39,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6146,636671888905300000,10,20,29,683.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6147,636671888905300000,10,21,1,2500.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6148,636671888905300000,10,21,2,218.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6149,636671888905300000,10,21,3,236.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6150,636671888905300000,10,21,4,254.67,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6151,636671888905300000,10,21,5,272.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6152,636671888905300000,10,21,6,291.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6153,636671888905300000,10,21,7,308.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6154,636671888905300000,10,21,8,326.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6155,636671888905300000,10,21,9,344.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6156,636671888905300000,10,21,10,362.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6157,636671888905300000,10,21,11,379.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6158,636671888905300000,10,21,12,398.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6159,636671888905300000,10,21,13,416.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6160,636671888905300000,10,21,14,432.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6161,636671888905300000,10,21,15,452.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6162,636671888905300000,10,21,16,468.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6163,636671888905300000,10,21,17,486.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6164,636671888905300000,10,21,18,504.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6165,636671888905300000,10,21,19,522.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6166,636671888905300000,10,21,20,540.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6167,636671888905300000,10,21,21,558.65,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6168,636671888905300000,10,21,22,576.60,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6169,636671888905300000,10,21,23,593.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6170,636671888905300000,10,21,24,612.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6171,636671888905300000,10,21,25,630.47,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6172,636671888905300000,10,21,26,647.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6173,636671888905300000,10,21,27,666.39,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6174,636671888905300000,10,21,28,683.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6175,636671888905300000,10,21,29,701.02,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6176,636671888905300000,10,22,1,2600.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6177,636671888905300000,10,22,2,223.89,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6178,636671888905300000,10,22,3,243.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6179,636671888905300000,10,22,4,261.09,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6180,636671888905300000,10,22,5,279.04,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6181,636671888905300000,10,22,6,298.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6182,636671888905300000,10,22,7,314.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6183,636671888905300000,10,22,8,332.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6184,636671888905300000,10,22,9,352.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6185,636671888905300000,10,22,10,370.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6186,636671888905300000,10,22,11,388.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6187,636671888905300000,10,22,12,407.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6188,636671888905300000,10,22,13,425.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6189,636671888905300000,10,22,14,443.21,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6190,636671888905300000,10,22,15,462.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6191,636671888905300000,10,22,16,480.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6192,636671888905300000,10,22,17,498.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6193,636671888905300000,10,22,18,517.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6194,636671888905300000,10,22,19,535.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6195,636671888905300000,10,22,20,554.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6196,636671888905300000,10,22,21,572.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6197,636671888905300000,10,22,22,590.71,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6198,636671888905300000,10,22,23,609.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6199,636671888905300000,10,22,24,627.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6200,636671888905300000,10,22,25,645.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6201,636671888905300000,10,22,26,665.10,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6202,636671888905300000,10,22,27,683.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6203,636671888905300000,10,22,28,701.02,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6204,636671888905300000,10,22,29,720.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6205,636671888905300000,10,23,1,2700.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6206,636671888905300000,10,23,2,227.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6207,636671888905300000,10,23,3,246.98,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6208,636671888905300000,10,23,4,266.22,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6209,636671888905300000,10,23,5,284.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6210,636671888905300000,10,23,6,303.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6211,636671888905300000,10,23,7,322.65,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6212,636671888905300000,10,23,8,340.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6213,636671888905300000,10,23,9,361.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6214,636671888905300000,10,23,10,379.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6215,636671888905300000,10,23,11,398.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6216,636671888905300000,10,23,12,417.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6217,636671888905300000,10,23,13,435.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6218,636671888905300000,10,23,14,454.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6219,636671888905300000,10,23,15,474.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6220,636671888905300000,10,23,16,491.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6221,636671888905300000,10,23,17,511.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6222,636671888905300000,10,23,18,530.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6223,636671888905300000,10,23,19,548.39,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6224,636671888905300000,10,23,20,567.63,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6225,636671888905300000,10,23,21,586.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6226,636671888905300000,10,23,22,604.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6227,636671888905300000,10,23,23,625.34,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6228,636671888905300000,10,23,24,643.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6229,636671888905300000,10,23,25,662.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6230,636671888905300000,10,23,26,681.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6231,636671888905300000,10,23,27,699.73,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6232,636671888905300000,10,23,28,718.97,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6233,636671888905300000,10,23,29,738.21,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6234,636671888905300000,10,24,1,2800.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6235,636671888905300000,10,24,2,231.59,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6236,636671888905300000,10,24,3,252.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6237,636671888905300000,10,24,4,271.35,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6238,636671888905300000,10,24,5,291.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6239,636671888905300000,10,24,6,309.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6240,636671888905300000,10,24,7,329.06,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6241,636671888905300000,10,24,8,349.58,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6242,636671888905300000,10,24,9,368.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6243,636671888905300000,10,24,10,386.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6244,636671888905300000,10,24,11,407.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6245,636671888905300000,10,24,12,426.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6246,636671888905300000,10,24,13,445.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6247,636671888905300000,10,24,14,465.02,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6248,636671888905300000,10,24,15,484.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6249,636671888905300000,10,24,16,504.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6250,636671888905300000,10,24,17,524.02,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6251,636671888905300000,10,24,18,541.97,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6252,636671888905300000,10,24,19,562.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6253,636671888905300000,10,24,20,581.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6254,636671888905300000,10,24,21,600.97,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6255,636671888905300000,10,24,22,620.21,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6256,636671888905300000,10,24,23,639.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6257,636671888905300000,10,24,24,659.97,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6258,636671888905300000,10,24,25,679.21,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6259,636671888905300000,10,24,26,697.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6260,636671888905300000,10,24,27,717.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6261,636671888905300000,10,24,28,736.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6262,636671888905300000,10,24,29,756.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6263,636671888905300000,10,25,1,2900.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6264,636671888905300000,10,25,2,236.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6265,636671888905300000,10,25,3,257.24,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6266,636671888905300000,10,25,4,276.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6267,636671888905300000,10,25,5,297.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6268,636671888905300000,10,25,6,316.24,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6269,636671888905300000,10,25,7,335.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6270,636671888905300000,10,25,8,357.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6271,636671888905300000,10,25,9,376.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6272,636671888905300000,10,25,10,397.04,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6273,636671888905300000,10,25,11,416.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6274,636671888905300000,10,25,12,435.52,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6275,636671888905300000,10,25,13,456.04,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6276,636671888905300000,10,25,14,475.28,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6277,636671888905300000,10,25,15,495.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6278,636671888905300000,10,25,16,516.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6279,636671888905300000,10,25,17,535.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6280,636671888905300000,10,25,18,556.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6281,636671888905300000,10,25,19,575.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6282,636671888905300000,10,25,20,594.56,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6283,636671888905300000,10,25,21,615.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6284,636671888905300000,10,25,22,635.60,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6285,636671888905300000,10,25,23,654.84,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6286,636671888905300000,10,25,24,675.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6287,636671888905300000,10,25,25,694.60,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6288,636671888905300000,10,25,26,715.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6289,636671888905300000,10,25,27,734.36,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6290,636671888905300000,10,25,28,753.60,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6291,636671888905300000,10,25,29,775.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6292,636671888905300000,10,26,1,3000.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6293,636671888905300000,10,26,2,241.85,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6294,636671888905300000,10,26,3,262.37,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6295,636671888905300000,10,26,4,281.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6296,636671888905300000,10,26,5,303.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6297,636671888905300000,10,26,6,322.65,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6298,636671888905300000,10,26,7,344.45,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6299,636671888905300000,10,26,8,363.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6300,636671888905300000,10,26,9,384.21,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6301,636671888905300000,10,26,10,404.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6302,636671888905300000,10,26,11,425.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6303,636671888905300000,10,26,12,444.50,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6304,636671888905300000,10,26,13,466.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6305,636671888905300000,10,26,14,486.82,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6306,636671888905300000,10,26,15,507.34,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6307,636671888905300000,10,26,16,527.87,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6308,636671888905300000,10,26,17,547.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6309,636671888905300000,10,26,18,568.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6310,636671888905300000,10,26,19,588.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6311,636671888905300000,10,26,20,609.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6312,636671888905300000,10,26,21,629.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6313,636671888905300000,10,26,22,649.71,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6314,636671888905300000,10,26,23,670.23,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6315,636671888905300000,10,26,24,690.76,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6316,636671888905300000,10,26,25,710.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6317,636671888905300000,10,26,26,731.80,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6318,636671888905300000,10,26,27,752.32,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6319,636671888905300000,10,26,28,772.84,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6320,636671888905300000,10,26,29,793.36,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6321,636671888905300000,10,1,30,3400.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6322,636671888905300000,10,2,30,327.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6323,636671888905300000,10,3,30,348.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6324,636671888905300000,10,4,30,366.26,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6325,636671888905300000,10,5,30,384.21,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6326,636671888905300000,10,6,30,404.74,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6327,636671888905300000,10,7,30,422.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6328,636671888905300000,10,8,30,440.65,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6329,636671888905300000,10,9,30,461.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6330,636671888905300000,10,10,30,479.13,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6331,636671888905300000,10,11,30,497.08,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6332,636671888905300000,10,12,30,517.61,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6333,636671888905300000,10,13,30,547.11,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6334,636671888905300000,10,14,30,566.34,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6335,636671888905300000,10,15,30,584.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6336,636671888905300000,10,16,30,603.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6337,636671888905300000,10,17,30,643.30,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6338,636671888905300000,10,18,30,662.54,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6339,636671888905300000,10,19,30,681.78,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6340,636671888905300000,10,20,30,699.73,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6341,636671888905300000,10,21,30,718.97,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6342,636671888905300000,10,22,30,738.21,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6343,636671888905300000,10,23,30,756.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6344,636671888905300000,10,24,30,775.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6345,636671888905300000,10,25,30,794.65,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6346,636671888905300000,10,26,30,812.60,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6347,636671888905300000,10,1,31,3500.00,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6348,636671888905300000,10,2,31,335.48,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6349,636671888905300000,10,3,31,354.72,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6350,636671888905300000,10,4,31,373.95,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6351,636671888905300000,10,5,31,393.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6352,636671888905300000,10,6,31,413.71,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6353,636671888905300000,10,7,31,431.67,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6354,636671888905300000,10,8,31,452.19,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6355,636671888905300000,10,9,31,471.43,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6356,636671888905300000,10,10,31,490.67,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6357,636671888905300000,10,11,31,509.91,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6358,636671888905300000,10,12,31,529.15,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6359,636671888905300000,10,13,31,561.21,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6360,636671888905300000,10,14,31,579.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6361,636671888905300000,10,15,31,598.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6362,636671888905300000,10,16,31,618.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6363,636671888905300000,10,17,31,659.97,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6364,636671888905300000,10,18,31,679.21,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6365,636671888905300000,10,19,31,697.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6366,636671888905300000,10,20,31,717.69,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6367,636671888905300000,10,21,31,736.93,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6368,636671888905300000,10,22,31,756.17,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6369,636671888905300000,10,23,31,775.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6370,636671888905300000,10,24,31,794.65,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6371,636671888905300000,10,25,31,813.89,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6372,636671888905300000,10,26,31,834.41,1,2,NULL,NULL,'2018-07-14 18:14:50.530000','2018-07-24 19:09:56.880000'),(6373,636680643349430000,13,1,1,0.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6374,636680643349430000,13,2,1,600.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6375,636680643349430000,13,3,1,700.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6376,636680643349430000,13,4,1,800.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6377,636680643349430000,13,5,1,900.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6378,636680643349430000,13,1,2,600.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6379,636680643349430000,13,2,2,126.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6380,636680643349430000,13,3,2,131.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6381,636680643349430000,13,4,2,136.67,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6382,636680643349430000,13,5,2,141.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6383,636680643349430000,13,1,3,700.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6384,636680643349430000,13,2,3,135.39,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6385,636680643349430000,13,3,3,140.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6386,636680643349430000,13,4,3,144.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6387,636680643349430000,13,5,3,149.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6388,636680643349430000,13,1,4,800.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6389,636680643349430000,13,2,4,141.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6390,636680643349430000,13,3,4,148.22,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6391,636680643349430000,13,4,4,153.35,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6392,636680643349430000,13,5,4,158.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6393,636680643349430000,13,1,5,900.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6394,636680643349430000,13,2,5,149.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6395,636680643349430000,13,3,5,154.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6396,636680643349430000,13,4,5,161.04,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6397,636680643349430000,13,5,5,166.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6398,636680643349430000,13,1,6,1000.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6399,636680643349430000,13,2,6,155.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6400,636680643349430000,13,3,6,162.33,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6401,636680643349430000,13,4,6,168.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6402,636680643349430000,13,5,6,175.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6403,636680643349430000,13,1,7,1100.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6404,636680643349430000,13,2,7,163.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6405,636680643349430000,13,3,7,170.02,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6406,636680643349430000,13,4,7,176.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6407,636680643349430000,13,5,7,184.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6408,636680643349430000,13,1,8,1200.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6409,636680643349430000,13,2,8,170.02,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6410,636680643349430000,13,3,8,177.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6411,636680643349430000,13,4,8,186.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6412,636680643349430000,13,5,8,193.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6413,636680643349430000,13,1,9,1300.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6414,636680643349430000,13,2,9,177.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6415,636680643349430000,13,3,9,186.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6416,636680643349430000,13,4,9,194.39,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6417,636680643349430000,13,5,9,202.09,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6418,636680643349430000,13,1,10,1400.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6419,636680643349430000,13,2,10,184.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6420,636680643349430000,13,3,10,194.39,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6421,636680643349430000,13,4,10,202.09,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6422,636680643349430000,13,5,10,211.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6423,636680643349430000,13,1,11,1500.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6424,636680643349430000,13,2,11,193.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6425,636680643349430000,13,3,11,200.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6426,636680643349430000,13,4,11,209.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6427,636680643349430000,13,5,11,218.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6428,636680643349430000,13,1,12,1600.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6429,636680643349430000,13,2,12,199.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6430,636680643349430000,13,3,12,208.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6431,636680643349430000,13,4,12,218.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6432,636680643349430000,13,5,12,227.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6433,636680643349430000,13,1,13,1700.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6434,636680643349430000,13,2,13,207.22,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6435,636680643349430000,13,3,13,216.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6436,636680643349430000,13,4,13,226.46,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6437,636680643349430000,13,5,13,236.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6438,636680643349430000,13,1,14,1800.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6439,636680643349430000,13,2,14,213.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6440,636680643349430000,13,3,14,223.89,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6441,636680643349430000,13,4,14,234.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6442,636680643349430000,13,5,14,245.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6443,636680643349430000,13,1,15,1900.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6444,636680643349430000,13,2,15,220.04,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6445,636680643349430000,13,3,15,231.59,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6446,636680643349430000,13,4,15,243.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6447,636680643349430000,13,5,15,254.67,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6448,636680643349430000,13,1,16,2000.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6449,636680643349430000,13,2,16,227.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6450,636680643349430000,13,3,16,240.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6451,636680643349430000,13,4,16,252.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6452,636680643349430000,13,5,16,262.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6453,636680643349430000,13,1,17,2100.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6454,636680643349430000,13,2,17,234.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6455,636680643349430000,13,3,17,248.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6456,636680643349430000,13,4,17,259.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6457,636680643349430000,13,5,17,271.35,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6458,636680643349430000,13,1,18,2200.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6459,636680643349430000,13,2,18,243.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6460,636680643349430000,13,3,18,254.67,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6461,636680643349430000,13,4,18,267.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6462,636680643349430000,13,5,18,280.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6463,636680643349430000,13,1,19,2300.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6464,636680643349430000,13,2,19,249.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6465,636680643349430000,13,3,19,262.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6466,636680643349430000,13,4,19,275.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6467,636680643349430000,13,5,19,288.02,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6468,636680643349430000,13,1,20,2400.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6469,636680643349430000,13,2,20,257.24,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6470,636680643349430000,13,3,20,270.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6471,636680643349430000,13,4,20,284.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6472,636680643349430000,13,5,20,298.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6473,636680643349430000,13,1,21,2500.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6474,636680643349430000,13,2,21,263.65,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6475,636680643349430000,13,3,21,277.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6476,636680643349430000,13,4,21,293.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6477,636680643349430000,13,5,21,307.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6478,636680643349430000,13,1,22,2600.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6479,636680643349430000,13,2,22,271.35,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6480,636680643349430000,13,3,22,285.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6481,636680643349430000,13,4,22,300.85,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6482,636680643349430000,13,5,22,314.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6483,636680643349430000,13,1,23,2700.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6484,636680643349430000,13,2,23,277.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6485,636680643349430000,13,3,23,294.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6486,636680643349430000,13,4,23,308.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6487,636680643349430000,13,5,23,323.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6488,636680643349430000,13,1,24,2800.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6489,636680643349430000,13,2,24,285.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6490,636680643349430000,13,3,24,302.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6491,636680643349430000,13,4,24,317.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6492,636680643349430000,13,5,24,332.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6493,636680643349430000,13,1,25,2900.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6494,636680643349430000,13,2,25,293.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6495,636680643349430000,13,3,25,308.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6496,636680643349430000,13,4,25,325.22,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6497,636680643349430000,13,5,25,340.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6498,636680643349430000,13,6,1,1000.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6499,636680643349430000,13,6,2,145.65,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6500,636680643349430000,13,6,3,154.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6501,636680643349430000,13,6,4,163.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6502,636680643349430000,13,6,5,172.59,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6503,636680643349430000,13,6,6,181.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6504,636680643349430000,13,6,7,191.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6505,636680643349430000,13,6,8,200.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6506,636680643349430000,13,6,9,209.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6507,636680643349430000,13,6,10,218.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6508,636680643349430000,13,6,11,227.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6509,636680643349430000,13,6,12,236.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6510,636680643349430000,13,6,13,246.98,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6511,636680643349430000,13,6,14,255.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6512,636680643349430000,13,6,15,264.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6513,636680643349430000,13,6,16,273.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6514,636680643349430000,13,6,17,282.89,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6515,636680643349430000,13,6,18,293.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6516,636680643349430000,13,6,19,302.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6517,636680643349430000,13,6,20,311.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6518,636680643349430000,13,6,21,320.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6519,636680643349430000,13,6,22,329.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6520,636680643349430000,13,6,23,338.04,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6521,636680643349430000,13,6,24,348.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6522,636680643349430000,13,6,25,358.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6523,636680643349430000,13,7,1,1100.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6524,636680643349430000,13,7,2,149.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6525,636680643349430000,13,7,3,159.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6526,636680643349430000,13,7,4,168.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6527,636680643349430000,13,7,5,177.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6528,636680643349430000,13,7,6,189.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6529,636680643349430000,13,7,7,198.24,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6530,636680643349430000,13,7,8,208.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6531,636680643349430000,13,7,9,217.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6532,636680643349430000,13,7,10,227.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6533,636680643349430000,13,7,11,236.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6534,636680643349430000,13,7,12,246.98,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6535,636680643349430000,13,7,13,257.24,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6536,636680643349430000,13,7,14,266.22,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6537,636680643349430000,13,7,15,276.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6538,636680643349430000,13,7,16,285.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6539,636680643349430000,13,7,17,297.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6540,636680643349430000,13,7,18,305.98,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6541,636680643349430000,13,7,19,314.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6542,636680643349430000,13,7,20,325.22,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6543,636680643349430000,13,7,21,334.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6544,636680643349430000,13,7,22,345.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6545,636680643349430000,13,7,23,354.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6546,636680643349430000,13,7,24,363.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6547,636680643349430000,13,7,25,373.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6548,636680643349430000,13,8,1,1200.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6549,636680643349430000,13,8,2,154.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6550,636680643349430000,13,8,3,163.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6551,636680643349430000,13,8,4,173.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6552,636680643349430000,13,8,5,184.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6553,636680643349430000,13,8,6,195.67,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6554,636680643349430000,13,8,7,205.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6555,636680643349430000,13,8,8,214.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6556,636680643349430000,13,8,9,225.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6557,636680643349430000,13,8,10,235.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6558,636680643349430000,13,8,11,246.98,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6559,636680643349430000,13,8,12,257.24,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6560,636680643349430000,13,8,13,267.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6561,636680643349430000,13,8,14,276.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6562,636680643349430000,13,8,15,286.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6563,636680643349430000,13,8,16,298.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6564,636680643349430000,13,8,17,308.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6565,636680643349430000,13,8,18,318.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6566,636680643349430000,13,8,19,327.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6567,636680643349430000,13,8,20,338.04,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6568,636680643349430000,13,8,21,349.58,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6569,636680643349430000,13,8,22,359.85,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6570,636680643349430000,13,8,23,370.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6571,636680643349430000,13,8,24,379.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6572,636680643349430000,13,8,25,389.35,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6573,636680643349430000,13,9,1,1300.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6574,636680643349430000,13,9,2,158.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6575,636680643349430000,13,9,3,168.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6576,636680643349430000,13,9,4,179.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6577,636680643349430000,13,9,5,191.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6578,636680643349430000,13,9,6,202.09,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6579,636680643349430000,13,9,7,212.35,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6580,636680643349430000,13,9,8,222.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6581,636680643349430000,13,9,9,232.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6582,636680643349430000,13,9,10,245.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6583,636680643349430000,13,9,11,255.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6584,636680643349430000,13,9,12,266.22,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6585,636680643349430000,13,9,13,276.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6586,636680643349430000,13,9,14,286.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6587,636680643349430000,13,9,15,299.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6588,636680643349430000,13,9,16,309.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6589,636680643349430000,13,9,17,320.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6590,636680643349430000,13,9,18,330.35,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6591,636680643349430000,13,9,19,340.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6592,636680643349430000,13,9,20,353.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6593,636680643349430000,13,9,21,363.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6594,636680643349430000,13,9,22,373.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6595,636680643349430000,13,9,23,384.21,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6596,636680643349430000,13,9,24,394.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6597,636680643349430000,13,9,25,407.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6598,636680643349430000,13,10,1,1400.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6599,636680643349430000,13,10,2,162.33,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6600,636680643349430000,13,10,3,173.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6601,636680643349430000,13,10,4,184.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6602,636680643349430000,13,10,5,196.96,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6603,636680643349430000,13,10,6,208.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6604,636680643349430000,13,10,7,218.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6605,636680643349430000,13,10,8,230.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6606,636680643349430000,13,10,9,241.85,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6607,636680643349430000,13,10,10,253.39,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6608,636680643349430000,13,10,11,264.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6609,636680643349430000,13,10,12,275.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6610,636680643349430000,13,10,13,286.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6611,636680643349430000,13,10,14,298.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6612,636680643349430000,13,10,15,309.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6613,636680643349430000,13,10,16,321.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6614,636680643349430000,13,10,17,331.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6615,636680643349430000,13,10,18,344.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6616,636680643349430000,13,10,19,354.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6617,636680643349430000,13,10,20,366.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6618,636680643349430000,13,10,21,377.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6619,636680643349430000,13,10,22,388.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6620,636680643349430000,13,10,23,400.89,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6621,636680643349430000,13,10,24,411.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6622,636680643349430000,13,10,25,422.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6623,636680643349430000,13,11,1,1500.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6624,636680643349430000,13,11,2,167.46,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6625,636680643349430000,13,11,3,179.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6626,636680643349430000,13,11,4,191.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6627,636680643349430000,13,11,5,203.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6628,636680643349430000,13,11,6,214.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6629,636680643349430000,13,11,7,226.46,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6630,636680643349430000,13,11,8,239.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6631,636680643349430000,13,11,9,250.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6632,636680643349430000,13,11,10,262.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6633,636680643349430000,13,11,11,273.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6634,636680643349430000,13,11,12,285.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6635,636680643349430000,13,11,13,298.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6636,636680643349430000,13,11,14,309.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6637,636680643349430000,13,11,15,321.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6638,636680643349430000,13,11,16,332.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6639,636680643349430000,13,11,17,344.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6640,636680643349430000,13,11,18,356.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6641,636680643349430000,13,11,19,367.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6642,636680643349430000,13,11,20,379.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6643,636680643349430000,13,11,21,390.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6644,636680643349430000,13,11,22,403.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6645,636680643349430000,13,11,23,415.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6646,636680643349430000,13,11,24,426.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6647,636680643349430000,13,11,25,438.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6648,636680643349430000,13,12,1,1600.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6649,636680643349430000,13,12,2,171.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6650,636680643349430000,13,12,3,182.85,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6651,636680643349430000,13,12,4,196.96,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6652,636680643349430000,13,12,5,208.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6653,636680643349430000,13,12,6,220.04,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6654,636680643349430000,13,12,7,232.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6655,636680643349430000,13,12,8,245.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6656,636680643349430000,13,12,9,258.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6657,636680643349430000,13,12,10,270.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6658,636680643349430000,13,12,11,281.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6659,636680643349430000,13,12,12,295.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6660,636680643349430000,13,12,13,307.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6661,636680643349430000,13,12,14,320.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6662,636680643349430000,13,12,15,331.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6663,636680643349430000,13,12,16,344.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6664,636680643349430000,13,12,17,357.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6665,636680643349430000,13,12,18,368.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6666,636680643349430000,13,12,19,381.65,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6667,636680643349430000,13,12,20,393.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6668,636680643349430000,13,12,21,406.02,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6669,636680643349430000,13,12,22,418.85,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6670,636680643349430000,13,12,23,430.39,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6671,636680643349430000,13,12,24,441.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6672,636680643349430000,13,12,25,456.04,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6673,636680643349430000,13,13,1,1700.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6674,636680643349430000,13,13,2,179.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6675,636680643349430000,13,13,3,193.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6676,636680643349430000,13,13,4,205.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6677,636680643349430000,13,13,5,218.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6678,636680643349430000,13,13,6,231.59,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6679,636680643349430000,13,13,7,245.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6680,636680643349430000,13,13,8,258.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6681,636680643349430000,13,13,9,271.35,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6682,636680643349430000,13,13,10,284.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6683,636680643349430000,13,13,11,298.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6684,636680643349430000,13,13,12,311.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6685,636680643349430000,13,13,13,323.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6686,636680643349430000,13,13,14,336.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6687,636680643349430000,13,13,15,350.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6688,636680643349430000,13,13,16,363.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6689,636680643349430000,13,13,17,376.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6690,636680643349430000,13,13,18,389.35,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6691,636680643349430000,13,13,19,403.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6692,636680643349430000,13,13,20,416.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6693,636680643349430000,13,13,21,429.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6694,636680643349430000,13,13,22,441.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6695,636680643349430000,13,13,23,456.04,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6696,636680643349430000,13,13,24,468.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6697,636680643349430000,13,13,25,481.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6698,636680643349430000,13,14,1,1800.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6699,636680643349430000,13,14,2,182.85,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6700,636680643349430000,13,14,3,198.24,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6701,636680643349430000,13,14,4,211.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6702,636680643349430000,13,14,5,223.89,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6703,636680643349430000,13,14,6,239.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6704,636680643349430000,13,14,7,252.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6705,636680643349430000,13,14,8,264.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6706,636680643349430000,13,14,9,279.04,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6707,636680643349430000,13,14,10,293.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6708,636680643349430000,13,14,11,307.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6709,636680643349430000,13,14,12,320.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6710,636680643349430000,13,14,13,332.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6711,636680643349430000,13,14,14,348.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6712,636680643349430000,13,14,15,361.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6713,636680643349430000,13,14,16,375.24,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6714,636680643349430000,13,14,17,388.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6715,636680643349430000,13,14,18,402.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6716,636680643349430000,13,14,19,416.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6717,636680643349430000,13,14,20,429.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6718,636680643349430000,13,14,21,441.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6719,636680643349430000,13,14,22,457.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6720,636680643349430000,13,14,23,470.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6721,636680643349430000,13,14,24,484.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6722,636680643349430000,13,14,25,497.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6723,636680643349430000,13,15,1,1900.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6724,636680643349430000,13,15,2,187.98,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6725,636680643349430000,13,15,3,202.09,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6726,636680643349430000,13,15,4,216.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6727,636680643349430000,13,15,5,230.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6728,636680643349430000,13,15,6,245.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6729,636680643349430000,13,15,7,258.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6730,636680643349430000,13,15,8,272.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6731,636680643349430000,13,15,9,286.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6732,636680643349430000,13,15,10,302.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6733,636680643349430000,13,15,11,314.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6734,636680643349430000,13,15,12,329.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6735,636680643349430000,13,15,13,344.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6736,636680643349430000,13,15,14,358.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6737,636680643349430000,13,15,15,372.67,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6738,636680643349430000,13,15,16,385.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6739,636680643349430000,13,15,17,400.89,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6740,636680643349430000,13,15,18,415.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6741,636680643349430000,13,15,19,429.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6742,636680643349430000,13,15,20,441.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6743,636680643349430000,13,15,21,457.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6744,636680643349430000,13,15,22,471.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6745,636680643349430000,13,15,23,485.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6746,636680643349430000,13,15,24,499.65,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6747,636680643349430000,13,15,25,513.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6748,636680643349430000,13,16,1,2000.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6749,636680643349430000,13,16,2,193.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6750,636680643349430000,13,16,3,207.22,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6751,636680643349430000,13,16,4,221.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6752,636680643349430000,13,16,5,235.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6753,636680643349430000,13,16,6,252.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6754,636680643349430000,13,16,7,266.22,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6755,636680643349430000,13,16,8,280.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6756,636680643349430000,13,16,9,295.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6757,636680643349430000,13,16,10,309.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6758,636680643349430000,13,16,11,323.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6759,636680643349430000,13,16,12,339.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6760,636680643349430000,13,16,13,354.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6761,636680643349430000,13,16,14,368.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6762,636680643349430000,13,16,15,382.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6763,636680643349430000,13,16,16,398.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6764,636680643349430000,13,16,17,412.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6765,636680643349430000,13,16,18,427.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6766,636680643349430000,13,16,19,441.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6767,636680643349430000,13,16,20,457.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6768,636680643349430000,13,16,21,471.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6769,636680643349430000,13,16,22,485.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6770,636680643349430000,13,16,23,499.65,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6771,636680643349430000,13,16,24,516.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6772,636680643349430000,13,16,25,530.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6773,636680643349430000,13,17,1,2100.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6774,636680643349430000,13,17,2,202.09,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6775,636680643349430000,13,17,3,217.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6776,636680643349430000,13,17,4,232.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6777,636680643349430000,13,17,5,249.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6778,636680643349430000,13,17,6,264.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6779,636680643349430000,13,17,7,280.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6780,636680643349430000,13,17,8,297.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6781,636680643349430000,13,17,9,312.39,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6782,636680643349430000,13,17,10,327.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6783,636680643349430000,13,17,11,344.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6784,636680643349430000,13,17,12,359.85,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6785,636680643349430000,13,17,13,375.24,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6786,636680643349430000,13,17,14,390.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6787,636680643349430000,13,17,15,407.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6788,636680643349430000,13,17,16,422.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6789,636680643349430000,13,17,17,438.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6790,636680643349430000,13,17,18,454.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6791,636680643349430000,13,17,19,470.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6792,636680643349430000,13,17,20,485.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6793,636680643349430000,13,17,21,502.21,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6794,636680643349430000,13,17,22,517.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6795,636680643349430000,13,17,23,533.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6796,636680643349430000,13,17,24,548.39,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6797,636680643349430000,13,17,25,565.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6798,636680643349430000,13,18,1,2200.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6799,636680643349430000,13,18,2,205.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6800,636680643349430000,13,18,3,222.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6801,636680643349430000,13,18,4,239.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6802,636680643349430000,13,18,5,254.67,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6803,636680643349430000,13,18,6,271.35,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6804,636680643349430000,13,18,7,286.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6805,636680643349430000,13,18,8,304.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6806,636680643349430000,13,18,9,320.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6807,636680643349430000,13,18,10,335.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6808,636680643349430000,13,18,11,353.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6809,636680643349430000,13,18,12,368.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6810,636680643349430000,13,18,13,385.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6811,636680643349430000,13,18,14,402.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6812,636680643349430000,13,18,15,417.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6813,636680643349430000,13,18,16,434.24,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6814,636680643349430000,13,18,17,450.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6815,636680643349430000,13,18,18,467.58,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6816,636680643349430000,13,18,19,482.98,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6817,636680643349430000,13,18,20,498.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6818,636680643349430000,13,18,21,516.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6819,636680643349430000,13,18,22,531.71,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6820,636680643349430000,13,18,23,548.39,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6821,636680643349430000,13,18,24,565.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6822,636680643349430000,13,18,25,580.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6823,636680643349430000,13,19,1,2300.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6824,636680643349430000,13,19,2,211.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6825,636680643349430000,13,19,3,226.46,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6826,636680643349430000,13,19,4,244.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6827,636680643349430000,13,19,5,261.09,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6828,636680643349430000,13,19,6,277.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6829,636680643349430000,13,19,7,295.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6830,636680643349430000,13,19,8,311.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6831,636680643349430000,13,19,9,327.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6832,636680643349430000,13,19,10,345.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6833,636680643349430000,13,19,11,362.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6834,636680643349430000,13,19,12,377.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6835,636680643349430000,13,19,13,394.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6836,636680643349430000,13,19,14,412.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6837,636680643349430000,13,19,15,429.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6838,636680643349430000,13,19,16,445.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6839,636680643349430000,13,19,17,462.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6840,636680643349430000,13,19,18,479.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6841,636680643349430000,13,19,19,495.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6842,636680643349430000,13,19,20,513.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6843,636680643349430000,13,19,21,530.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6844,636680643349430000,13,19,22,545.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6845,636680643349430000,13,19,23,563.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6846,636680643349430000,13,19,24,580.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6847,636680643349430000,13,19,25,597.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6848,636680643349430000,13,20,1,2400.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6849,636680643349430000,13,20,2,214.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6850,636680643349430000,13,20,3,231.59,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6851,636680643349430000,13,20,4,249.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6852,636680643349430000,13,20,5,267.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6853,636680643349430000,13,20,6,284.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6854,636680643349430000,13,20,7,302.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6855,636680643349430000,13,20,8,318.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6856,636680643349430000,13,20,9,335.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6857,636680643349430000,13,20,10,353.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6858,636680643349430000,13,20,11,371.39,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6859,636680643349430000,13,20,12,388.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6860,636680643349430000,13,20,13,406.02,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6861,636680643349430000,13,20,14,422.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6862,636680643349430000,13,20,15,439.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6863,636680643349430000,13,20,16,457.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6864,636680643349430000,13,20,17,475.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6865,636680643349430000,13,20,18,491.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6866,636680643349430000,13,20,19,509.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6867,636680643349430000,13,20,20,526.58,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6868,636680643349430000,13,20,21,543.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6869,636680643349430000,13,20,22,562.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6870,636680643349430000,13,20,23,579.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6871,636680643349430000,13,20,24,595.84,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6872,636680643349430000,13,20,25,613.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6873,636680643349430000,13,21,1,2500.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6874,636680643349430000,13,21,2,218.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6875,636680643349430000,13,21,3,236.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6876,636680643349430000,13,21,4,254.67,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6877,636680643349430000,13,21,5,272.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6878,636680643349430000,13,21,6,291.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6879,636680643349430000,13,21,7,308.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6880,636680643349430000,13,21,8,326.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6881,636680643349430000,13,21,9,344.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6882,636680643349430000,13,21,10,362.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6883,636680643349430000,13,21,11,379.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6884,636680643349430000,13,21,12,398.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6885,636680643349430000,13,21,13,416.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6886,636680643349430000,13,21,14,432.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6887,636680643349430000,13,21,15,452.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6888,636680643349430000,13,21,16,468.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6889,636680643349430000,13,21,17,486.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6890,636680643349430000,13,21,18,504.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6891,636680643349430000,13,21,19,522.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6892,636680643349430000,13,21,20,540.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6893,636680643349430000,13,21,21,558.65,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6894,636680643349430000,13,21,22,576.60,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6895,636680643349430000,13,21,23,593.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6896,636680643349430000,13,21,24,612.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6897,636680643349430000,13,21,25,630.47,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6898,636680643349430000,13,22,1,2600.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6899,636680643349430000,13,22,2,223.89,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6900,636680643349430000,13,22,3,243.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6901,636680643349430000,13,22,4,261.09,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6902,636680643349430000,13,22,5,279.04,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6903,636680643349430000,13,22,6,298.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6904,636680643349430000,13,22,7,314.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6905,636680643349430000,13,22,8,332.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6906,636680643349430000,13,22,9,352.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6907,636680643349430000,13,22,10,370.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6908,636680643349430000,13,22,11,388.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6909,636680643349430000,13,22,12,407.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6910,636680643349430000,13,22,13,425.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6911,636680643349430000,13,22,14,443.21,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6912,636680643349430000,13,22,15,462.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6913,636680643349430000,13,22,16,480.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6914,636680643349430000,13,22,17,498.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6915,636680643349430000,13,22,18,517.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6916,636680643349430000,13,22,19,535.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6917,636680643349430000,13,22,20,554.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6918,636680643349430000,13,22,21,572.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6919,636680643349430000,13,22,22,590.71,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6920,636680643349430000,13,22,23,609.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6921,636680643349430000,13,22,24,627.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6922,636680643349430000,13,22,25,645.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6923,636680643349430000,13,1,26,3000.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6924,636680643349430000,13,2,26,299.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6925,636680643349430000,13,3,26,316.24,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6926,636680643349430000,13,4,26,332.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6927,636680643349430000,13,5,26,350.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6928,636680643349430000,13,6,26,367.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6929,636680643349430000,13,7,26,382.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6930,636680643349430000,13,8,26,400.89,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6931,636680643349430000,13,9,26,417.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6932,636680643349430000,13,10,26,434.24,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6933,636680643349430000,13,11,26,450.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6934,636680643349430000,13,12,26,467.58,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6935,636680643349430000,13,13,26,494.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6936,636680643349430000,13,14,26,511.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6937,636680643349430000,13,15,26,527.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6938,636680643349430000,13,16,26,544.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6939,636680643349430000,13,17,26,580.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6940,636680643349430000,13,18,26,597.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6941,636680643349430000,13,19,26,615.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6942,636680643349430000,13,20,26,630.47,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6943,636680643349430000,13,21,26,647.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6944,636680643349430000,13,22,26,665.10,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6945,636680643349430000,13,1,27,3100.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6946,636680643349430000,13,2,27,307.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6947,636680643349430000,13,3,27,323.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6948,636680643349430000,13,4,27,340.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6949,636680643349430000,13,5,27,358.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6950,636680643349430000,13,6,27,376.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6951,636680643349430000,13,7,27,393.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6952,636680643349430000,13,8,27,411.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6953,636680643349430000,13,9,27,427.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6954,636680643349430000,13,10,27,444.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6955,636680643349430000,13,11,27,462.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6956,636680643349430000,13,12,27,480.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6957,636680643349430000,13,13,27,508.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6958,636680643349430000,13,14,27,525.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6959,636680643349430000,13,15,27,541.97,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6960,636680643349430000,13,16,27,559.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6961,636680643349430000,13,17,27,595.84,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6962,636680643349430000,13,18,27,613.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6963,636680643349430000,13,19,27,630.47,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6964,636680643349430000,13,20,27,647.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6965,636680643349430000,13,21,27,666.39,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6966,636680643349430000,13,22,27,683.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6967,636680643349430000,13,1,28,3200.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6968,636680643349430000,13,2,28,313.67,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6969,636680643349430000,13,3,28,331.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6970,636680643349430000,13,4,28,349.58,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6971,636680643349430000,13,5,28,367.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6972,636680643349430000,13,6,28,385.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6973,636680643349430000,13,7,28,403.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6974,636680643349430000,13,8,28,421.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6975,636680643349430000,13,9,28,438.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6976,636680643349430000,13,10,28,457.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6977,636680643349430000,13,11,28,474.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6978,636680643349430000,13,12,28,491.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6979,636680643349430000,13,13,28,521.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6980,636680643349430000,13,14,28,538.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6981,636680643349430000,13,15,28,557.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6982,636680643349430000,13,16,28,574.04,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6983,636680643349430000,13,17,28,612.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6984,636680643349430000,13,18,28,630.47,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6985,636680643349430000,13,19,28,647.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6986,636680643349430000,13,20,28,666.39,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6987,636680643349430000,13,21,28,683.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6988,636680643349430000,13,22,28,701.02,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6989,636680643349430000,13,1,29,3300.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6990,636680643349430000,13,2,29,321.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6991,636680643349430000,13,3,29,339.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6992,636680643349430000,13,4,29,358.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6993,636680643349430000,13,5,29,376.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6994,636680643349430000,13,6,29,394.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6995,636680643349430000,13,7,29,413.71,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6996,636680643349430000,13,8,29,431.67,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6997,636680643349430000,13,9,29,450.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6998,636680643349430000,13,10,29,467.58,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(6999,636680643349430000,13,11,29,485.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7000,636680643349430000,13,12,29,504.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7001,636680643349430000,13,13,29,534.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7002,636680643349430000,13,14,29,550.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7003,636680643349430000,13,15,29,570.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7004,636680643349430000,13,16,29,588.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7005,636680643349430000,13,17,29,627.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7006,636680643349430000,13,18,29,645.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7007,636680643349430000,13,19,29,665.10,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7008,636680643349430000,13,20,29,683.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7009,636680643349430000,13,21,29,701.02,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7010,636680643349430000,13,22,29,720.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7011,636680643349430000,13,1,30,3400.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7012,636680643349430000,13,2,30,327.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7013,636680643349430000,13,3,30,348.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7014,636680643349430000,13,4,30,366.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7015,636680643349430000,13,5,30,384.21,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7016,636680643349430000,13,6,30,404.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7017,636680643349430000,13,7,30,422.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7018,636680643349430000,13,8,30,440.65,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7019,636680643349430000,13,9,30,461.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7020,636680643349430000,13,10,30,479.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7021,636680643349430000,13,11,30,497.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7022,636680643349430000,13,12,30,517.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7023,636680643349430000,13,13,30,547.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7024,636680643349430000,13,14,30,566.34,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7025,636680643349430000,13,15,30,584.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7026,636680643349430000,13,16,30,603.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7027,636680643349430000,13,17,30,643.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7028,636680643349430000,13,18,30,662.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7029,636680643349430000,13,19,30,681.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7030,636680643349430000,13,20,30,699.73,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7031,636680643349430000,13,21,30,718.97,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7032,636680643349430000,13,22,30,738.21,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7033,636680643349430000,13,23,1,2700.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7034,636680643349430000,13,23,2,227.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7035,636680643349430000,13,23,3,246.98,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7036,636680643349430000,13,23,4,266.22,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7037,636680643349430000,13,23,5,284.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7038,636680643349430000,13,23,6,303.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7039,636680643349430000,13,23,7,322.65,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7040,636680643349430000,13,23,8,340.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7041,636680643349430000,13,23,9,361.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7042,636680643349430000,13,23,10,379.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7043,636680643349430000,13,23,11,398.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7044,636680643349430000,13,23,12,417.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7045,636680643349430000,13,23,13,435.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7046,636680643349430000,13,23,14,454.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7047,636680643349430000,13,23,15,474.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7048,636680643349430000,13,23,16,491.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7049,636680643349430000,13,23,17,511.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7050,636680643349430000,13,23,18,530.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7051,636680643349430000,13,23,19,548.39,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7052,636680643349430000,13,23,20,567.63,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7053,636680643349430000,13,23,21,586.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7054,636680643349430000,13,23,22,604.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7055,636680643349430000,13,23,23,625.34,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7056,636680643349430000,13,23,24,643.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7057,636680643349430000,13,23,25,662.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7058,636680643349430000,13,23,26,681.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7059,636680643349430000,13,23,27,699.73,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7060,636680643349430000,13,23,28,718.97,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7061,636680643349430000,13,23,29,738.21,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7062,636680643349430000,13,23,30,756.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7063,636680643349430000,13,24,1,2800.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7064,636680643349430000,13,24,2,231.59,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7065,636680643349430000,13,24,3,252.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7066,636680643349430000,13,24,4,271.35,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7067,636680643349430000,13,24,5,291.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7068,636680643349430000,13,24,6,309.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7069,636680643349430000,13,24,7,329.06,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7070,636680643349430000,13,24,8,349.58,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7071,636680643349430000,13,24,9,368.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7072,636680643349430000,13,24,10,386.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7073,636680643349430000,13,24,11,407.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7074,636680643349430000,13,24,12,426.54,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7075,636680643349430000,13,24,13,445.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7076,636680643349430000,13,24,14,465.02,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7077,636680643349430000,13,24,15,484.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7078,636680643349430000,13,24,16,504.78,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7079,636680643349430000,13,24,17,524.02,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7080,636680643349430000,13,24,18,541.97,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7081,636680643349430000,13,24,19,562.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7082,636680643349430000,13,24,20,581.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7083,636680643349430000,13,24,21,600.97,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7084,636680643349430000,13,24,22,620.21,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7085,636680643349430000,13,24,23,639.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7086,636680643349430000,13,24,24,659.97,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7087,636680643349430000,13,24,25,679.21,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7088,636680643349430000,13,24,26,697.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7089,636680643349430000,13,24,27,717.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7090,636680643349430000,13,24,28,736.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7091,636680643349430000,13,24,29,756.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7092,636680643349430000,13,24,30,775.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7093,636680643349430000,13,25,1,2900.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7094,636680643349430000,13,25,2,236.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7095,636680643349430000,13,25,3,257.24,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7096,636680643349430000,13,25,4,276.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7097,636680643349430000,13,25,5,297.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7098,636680643349430000,13,25,6,316.24,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7099,636680643349430000,13,25,7,335.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7100,636680643349430000,13,25,8,357.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7101,636680643349430000,13,25,9,376.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7102,636680643349430000,13,25,10,397.04,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7103,636680643349430000,13,25,11,416.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7104,636680643349430000,13,25,12,435.52,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7105,636680643349430000,13,25,13,456.04,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7106,636680643349430000,13,25,14,475.28,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7107,636680643349430000,13,25,15,495.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7108,636680643349430000,13,25,16,516.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7109,636680643349430000,13,25,17,535.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7110,636680643349430000,13,25,18,556.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7111,636680643349430000,13,25,19,575.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7112,636680643349430000,13,25,20,594.56,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7113,636680643349430000,13,25,21,615.08,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7114,636680643349430000,13,25,22,635.60,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7115,636680643349430000,13,25,23,654.84,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7116,636680643349430000,13,25,24,675.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7117,636680643349430000,13,25,25,694.60,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7118,636680643349430000,13,25,26,715.13,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7119,636680643349430000,13,25,27,734.36,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7120,636680643349430000,13,25,28,753.60,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7121,636680643349430000,13,25,29,775.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7122,636680643349430000,13,25,30,794.65,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7123,636680643349430000,13,26,1,3000.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7124,636680643349430000,13,26,2,241.85,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7125,636680643349430000,13,26,3,262.37,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7126,636680643349430000,13,26,4,281.61,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7127,636680643349430000,13,26,5,303.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7128,636680643349430000,13,26,6,322.65,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7129,636680643349430000,13,26,7,344.45,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7130,636680643349430000,13,26,8,363.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7131,636680643349430000,13,26,9,384.21,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7132,636680643349430000,13,26,10,404.74,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7133,636680643349430000,13,26,11,425.26,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7134,636680643349430000,13,26,12,444.50,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7135,636680643349430000,13,26,13,466.30,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7136,636680643349430000,13,26,14,486.82,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7137,636680643349430000,13,26,15,507.34,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7138,636680643349430000,13,26,16,527.87,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7139,636680643349430000,13,26,17,547.11,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7140,636680643349430000,13,26,18,568.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7141,636680643349430000,13,26,19,588.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7142,636680643349430000,13,26,20,609.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7143,636680643349430000,13,26,21,629.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7144,636680643349430000,13,26,22,649.71,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7145,636680643349430000,13,26,23,670.23,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7146,636680643349430000,13,26,24,690.76,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7147,636680643349430000,13,26,25,710.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7148,636680643349430000,13,26,26,731.80,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7149,636680643349430000,13,26,27,752.32,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7150,636680643349430000,13,26,28,772.84,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7151,636680643349430000,13,26,29,793.36,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7152,636680643349430000,13,26,30,812.60,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7153,636680643349430000,13,1,31,3500.00,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7154,636680643349430000,13,2,31,335.48,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7155,636680643349430000,13,3,31,354.72,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7156,636680643349430000,13,4,31,373.95,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7157,636680643349430000,13,5,31,393.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7158,636680643349430000,13,6,31,413.71,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7159,636680643349430000,13,7,31,431.67,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7160,636680643349430000,13,8,31,452.19,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7161,636680643349430000,13,9,31,471.43,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7162,636680643349430000,13,10,31,490.67,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7163,636680643349430000,13,11,31,509.91,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7164,636680643349430000,13,12,31,529.15,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7165,636680643349430000,13,13,31,561.21,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7166,636680643349430000,13,14,31,579.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7167,636680643349430000,13,15,31,598.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7168,636680643349430000,13,16,31,618.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7169,636680643349430000,13,17,31,659.97,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7170,636680643349430000,13,18,31,679.21,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7171,636680643349430000,13,19,31,697.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7172,636680643349430000,13,20,31,717.69,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7173,636680643349430000,13,21,31,736.93,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7174,636680643349430000,13,22,31,756.17,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7175,636680643349430000,13,23,31,775.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7176,636680643349430000,13,24,31,794.65,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7177,636680643349430000,13,25,31,813.89,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7178,636680643349430000,13,26,31,834.41,1,2,NULL,NULL,'2018-07-24 21:25:34.943000','2018-07-24 21:25:34.950000'),(7179,636680645019070000,13,1,1,0.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7180,636680645019070000,13,2,1,600.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7181,636680645019070000,13,3,1,700.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7182,636680645019070000,13,4,1,800.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7183,636680645019070000,13,5,1,900.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7184,636680645019070000,13,1,2,600.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7185,636680645019070000,13,2,2,126.41,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7186,636680645019070000,13,3,2,131.54,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7187,636680645019070000,13,4,2,136.67,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7188,636680645019070000,13,5,2,141.80,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7189,636680645019070000,13,1,3,700.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7190,636680645019070000,13,2,3,135.39,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7191,636680645019070000,13,3,3,140.52,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7192,636680645019070000,13,4,3,145.65,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7193,636680645019070000,13,5,3,150.78,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7194,636680645019070000,13,1,4,800.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7195,636680645019070000,13,2,4,144.37,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7196,636680645019070000,13,3,4,149.50,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7197,636680645019070000,13,4,4,154.63,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7198,636680645019070000,13,5,4,159.76,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7199,636680645019070000,13,1,5,900.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7200,636680645019070000,13,2,5,153.35,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7201,636680645019070000,13,3,5,158.48,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7202,636680645019070000,13,4,5,163.61,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7203,636680645019070000,13,5,5,168.74,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7204,636680645019070000,13,1,6,1000.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7205,636680645019070000,13,2,6,162.33,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7206,636680645019070000,13,3,6,167.46,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7207,636680645019070000,13,4,6,172.59,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7208,636680645019070000,13,5,6,177.72,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7209,636680645019070000,13,1,7,1100.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7210,636680645019070000,13,2,7,171.31,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7211,636680645019070000,13,3,7,176.44,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7212,636680645019070000,13,4,7,181.57,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7213,636680645019070000,13,5,7,186.70,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7214,636680645019070000,13,1,8,1200.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7215,636680645019070000,13,2,8,180.29,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7216,636680645019070000,13,3,8,185.42,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7217,636680645019070000,13,4,8,190.55,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7218,636680645019070000,13,5,8,195.68,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7219,636680645019070000,13,1,9,1300.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7220,636680645019070000,13,2,9,189.27,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7221,636680645019070000,13,3,9,194.40,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7222,636680645019070000,13,4,9,199.53,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7223,636680645019070000,13,5,9,204.66,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7224,636680645019070000,13,1,10,1400.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7225,636680645019070000,13,2,10,198.25,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7226,636680645019070000,13,3,10,203.38,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7227,636680645019070000,13,4,10,208.51,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7228,636680645019070000,13,5,10,213.64,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7229,636680645019070000,13,1,11,1500.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7230,636680645019070000,13,2,11,207.23,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7231,636680645019070000,13,3,11,212.36,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7232,636680645019070000,13,4,11,217.49,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7233,636680645019070000,13,5,11,222.62,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7234,636680645019070000,13,1,12,1600.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7235,636680645019070000,13,2,12,216.21,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7236,636680645019070000,13,3,12,221.34,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7237,636680645019070000,13,4,12,226.47,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7238,636680645019070000,13,5,12,231.60,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7239,636680645019070000,13,1,13,1700.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7240,636680645019070000,13,2,13,225.19,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7241,636680645019070000,13,3,13,230.32,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7242,636680645019070000,13,4,13,235.45,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7243,636680645019070000,13,5,13,240.58,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7244,636680645019070000,13,1,14,1800.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7245,636680645019070000,13,2,14,234.17,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7246,636680645019070000,13,3,14,239.30,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7247,636680645019070000,13,4,14,244.43,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7248,636680645019070000,13,5,14,249.56,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7249,636680645019070000,13,1,15,1900.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7250,636680645019070000,13,2,15,243.15,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7251,636680645019070000,13,3,15,248.28,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7252,636680645019070000,13,4,15,253.41,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7253,636680645019070000,13,5,15,258.54,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7254,636680645019070000,13,1,16,2000.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7255,636680645019070000,13,2,16,252.13,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7256,636680645019070000,13,3,16,257.26,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7257,636680645019070000,13,4,16,262.39,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7258,636680645019070000,13,5,16,267.52,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7259,636680645019070000,13,1,17,2100.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7260,636680645019070000,13,2,17,261.11,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7261,636680645019070000,13,3,17,266.24,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7262,636680645019070000,13,4,17,271.37,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7263,636680645019070000,13,5,17,276.50,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7264,636680645019070000,13,1,18,2200.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7265,636680645019070000,13,2,18,270.09,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7266,636680645019070000,13,3,18,275.22,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7267,636680645019070000,13,4,18,280.35,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7268,636680645019070000,13,5,18,285.48,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7269,636680645019070000,13,1,19,2300.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7270,636680645019070000,13,2,19,279.07,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7271,636680645019070000,13,3,19,284.20,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7272,636680645019070000,13,4,19,289.33,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7273,636680645019070000,13,5,19,294.46,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7274,636680645019070000,13,1,20,2400.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7275,636680645019070000,13,2,20,288.05,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7276,636680645019070000,13,3,20,293.18,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7277,636680645019070000,13,4,20,298.31,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7278,636680645019070000,13,5,20,303.44,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7279,636680645019070000,13,1,21,2500.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7280,636680645019070000,13,2,21,297.03,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7281,636680645019070000,13,3,21,302.16,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7282,636680645019070000,13,4,21,307.29,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7283,636680645019070000,13,5,21,312.42,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7284,636680645019070000,13,1,22,2600.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7285,636680645019070000,13,2,22,306.01,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7286,636680645019070000,13,3,22,311.14,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7287,636680645019070000,13,4,22,316.27,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7288,636680645019070000,13,5,22,321.40,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7289,636680645019070000,13,1,23,2700.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7290,636680645019070000,13,2,23,314.99,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7291,636680645019070000,13,3,23,320.12,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7292,636680645019070000,13,4,23,325.25,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7293,636680645019070000,13,5,23,330.38,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7294,636680645019070000,13,1,24,2800.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7295,636680645019070000,13,2,24,323.97,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7296,636680645019070000,13,3,24,329.10,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7297,636680645019070000,13,4,24,334.23,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7298,636680645019070000,13,5,24,339.36,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7299,636680645019070000,13,1,25,2900.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7300,636680645019070000,13,2,25,332.95,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7301,636680645019070000,13,3,25,338.08,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7302,636680645019070000,13,4,25,343.21,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7303,636680645019070000,13,5,25,348.34,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7304,636680645019070000,13,1,26,3000.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7305,636680645019070000,13,2,26,341.93,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7306,636680645019070000,13,3,26,347.06,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7307,636680645019070000,13,4,26,352.19,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7308,636680645019070000,13,5,26,357.32,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7309,636680645019070000,13,1,27,3100.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7310,636680645019070000,13,2,27,350.91,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7311,636680645019070000,13,3,27,356.04,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7312,636680645019070000,13,4,27,361.17,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7313,636680645019070000,13,5,27,366.30,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7314,636680645019070000,13,1,28,3200.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7315,636680645019070000,13,2,28,359.89,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7316,636680645019070000,13,3,28,365.02,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7317,636680645019070000,13,4,28,370.15,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7318,636680645019070000,13,5,28,375.28,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7319,636680645019070000,13,1,29,3300.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7320,636680645019070000,13,2,29,368.87,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7321,636680645019070000,13,3,29,374.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7322,636680645019070000,13,4,29,379.13,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7323,636680645019070000,13,5,29,384.26,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7324,636680645019070000,13,1,30,3400.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7325,636680645019070000,13,2,30,377.85,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7326,636680645019070000,13,3,30,382.98,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7327,636680645019070000,13,4,30,388.11,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7328,636680645019070000,13,5,30,393.24,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7329,636680645019070000,13,6,1,1000.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7330,636680645019070000,13,6,2,146.93,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7331,636680645019070000,13,6,3,155.91,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7332,636680645019070000,13,6,4,164.89,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7333,636680645019070000,13,6,5,173.87,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7334,636680645019070000,13,6,6,182.85,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7335,636680645019070000,13,6,7,191.83,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7336,636680645019070000,13,6,8,200.81,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7337,636680645019070000,13,6,9,209.79,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7338,636680645019070000,13,6,10,218.77,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7339,636680645019070000,13,6,11,227.75,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7340,636680645019070000,13,6,12,236.73,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7341,636680645019070000,13,6,13,245.71,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7342,636680645019070000,13,6,14,254.69,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7343,636680645019070000,13,6,15,263.67,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7344,636680645019070000,13,6,16,272.65,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7345,636680645019070000,13,6,17,281.63,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7346,636680645019070000,13,6,18,290.61,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7347,636680645019070000,13,6,19,299.59,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7348,636680645019070000,13,6,20,308.57,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7349,636680645019070000,13,6,21,317.55,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7350,636680645019070000,13,6,22,326.53,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7351,636680645019070000,13,6,23,335.51,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7352,636680645019070000,13,6,24,344.49,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7353,636680645019070000,13,6,25,353.47,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7354,636680645019070000,13,6,26,362.45,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7355,636680645019070000,13,6,27,371.43,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7356,636680645019070000,13,6,28,380.41,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7357,636680645019070000,13,6,29,389.39,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7358,636680645019070000,13,6,30,398.37,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7359,636680645019070000,13,7,1,1100.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7360,636680645019070000,13,7,2,152.06,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7361,636680645019070000,13,7,3,161.04,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7362,636680645019070000,13,7,4,170.02,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7363,636680645019070000,13,7,5,179.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7364,636680645019070000,13,7,6,187.98,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7365,636680645019070000,13,7,7,196.96,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7366,636680645019070000,13,7,8,205.94,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7367,636680645019070000,13,7,9,214.92,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7368,636680645019070000,13,7,10,223.90,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7369,636680645019070000,13,7,11,232.88,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7370,636680645019070000,13,7,12,241.86,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7371,636680645019070000,13,7,13,250.84,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7372,636680645019070000,13,7,14,259.82,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7373,636680645019070000,13,7,15,268.80,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7374,636680645019070000,13,7,16,277.78,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7375,636680645019070000,13,7,17,286.76,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7376,636680645019070000,13,7,18,295.74,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7377,636680645019070000,13,7,19,304.72,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7378,636680645019070000,13,7,20,313.70,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7379,636680645019070000,13,7,21,322.68,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7380,636680645019070000,13,7,22,331.66,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7381,636680645019070000,13,7,23,340.64,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7382,636680645019070000,13,7,24,349.62,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7383,636680645019070000,13,7,25,358.60,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7384,636680645019070000,13,7,26,367.58,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7385,636680645019070000,13,7,27,376.56,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7386,636680645019070000,13,7,28,385.54,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7387,636680645019070000,13,7,29,394.52,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7388,636680645019070000,13,7,30,403.50,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7389,636680645019070000,13,8,1,1200.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7390,636680645019070000,13,8,2,157.19,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7391,636680645019070000,13,8,3,166.17,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7392,636680645019070000,13,8,4,175.15,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7393,636680645019070000,13,8,5,184.13,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7394,636680645019070000,13,8,6,193.11,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7395,636680645019070000,13,8,7,202.09,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7396,636680645019070000,13,8,8,211.07,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7397,636680645019070000,13,8,9,220.05,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7398,636680645019070000,13,8,10,229.03,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7399,636680645019070000,13,8,11,238.01,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7400,636680645019070000,13,8,12,246.99,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7401,636680645019070000,13,8,13,255.97,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7402,636680645019070000,13,8,14,264.95,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7403,636680645019070000,13,8,15,273.93,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7404,636680645019070000,13,8,16,282.91,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7405,636680645019070000,13,8,17,291.89,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7406,636680645019070000,13,8,18,300.87,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7407,636680645019070000,13,8,19,309.85,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7408,636680645019070000,13,8,20,318.83,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7409,636680645019070000,13,8,21,327.81,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7410,636680645019070000,13,8,22,336.79,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7411,636680645019070000,13,8,23,345.77,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7412,636680645019070000,13,8,24,354.75,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7413,636680645019070000,13,8,25,363.73,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7414,636680645019070000,13,8,26,372.71,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7415,636680645019070000,13,8,27,381.69,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7416,636680645019070000,13,8,28,390.67,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7417,636680645019070000,13,8,29,399.65,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7418,636680645019070000,13,8,30,408.63,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7419,636680645019070000,13,9,1,1300.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7420,636680645019070000,13,9,2,162.32,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7421,636680645019070000,13,9,3,171.30,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7422,636680645019070000,13,9,4,180.28,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7423,636680645019070000,13,9,5,189.26,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7424,636680645019070000,13,9,6,198.24,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7425,636680645019070000,13,9,7,207.22,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7426,636680645019070000,13,9,8,216.20,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7427,636680645019070000,13,9,9,225.18,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7428,636680645019070000,13,9,10,234.16,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7429,636680645019070000,13,9,11,243.14,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7430,636680645019070000,13,9,12,252.12,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7431,636680645019070000,13,9,13,261.10,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7432,636680645019070000,13,9,14,270.08,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7433,636680645019070000,13,9,15,279.06,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7434,636680645019070000,13,9,16,288.04,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7435,636680645019070000,13,9,17,297.02,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7436,636680645019070000,13,9,18,306.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7437,636680645019070000,13,9,19,314.98,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7438,636680645019070000,13,9,20,323.96,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7439,636680645019070000,13,9,21,332.94,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7440,636680645019070000,13,9,22,341.92,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7441,636680645019070000,13,9,23,350.90,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7442,636680645019070000,13,9,24,359.88,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7443,636680645019070000,13,9,25,368.86,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7444,636680645019070000,13,9,26,377.84,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7445,636680645019070000,13,9,27,386.82,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7446,636680645019070000,13,9,28,395.80,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7447,636680645019070000,13,9,29,404.78,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7448,636680645019070000,13,9,30,413.76,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7449,636680645019070000,13,10,1,1400.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7450,636680645019070000,13,10,2,167.45,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7451,636680645019070000,13,10,3,176.43,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7452,636680645019070000,13,10,4,185.41,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7453,636680645019070000,13,10,5,194.39,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7454,636680645019070000,13,10,6,203.37,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7455,636680645019070000,13,10,7,212.35,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7456,636680645019070000,13,10,8,221.33,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7457,636680645019070000,13,10,9,230.31,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7458,636680645019070000,13,10,10,239.29,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7459,636680645019070000,13,10,11,248.27,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7460,636680645019070000,13,10,12,257.25,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7461,636680645019070000,13,10,13,266.23,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7462,636680645019070000,13,10,14,275.21,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7463,636680645019070000,13,10,15,284.19,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7464,636680645019070000,13,10,16,293.17,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7465,636680645019070000,13,10,17,302.15,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7466,636680645019070000,13,10,18,311.13,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7467,636680645019070000,13,10,19,320.11,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7468,636680645019070000,13,10,20,329.09,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7469,636680645019070000,13,10,21,338.07,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7470,636680645019070000,13,10,22,347.05,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7471,636680645019070000,13,10,23,356.03,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7472,636680645019070000,13,10,24,365.01,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7473,636680645019070000,13,10,25,373.99,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7474,636680645019070000,13,10,26,382.97,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7475,636680645019070000,13,10,27,391.95,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7476,636680645019070000,13,10,28,400.93,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7477,636680645019070000,13,10,29,409.91,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7478,636680645019070000,13,10,30,418.89,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7479,636680645019070000,13,11,1,1500.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7480,636680645019070000,13,11,2,172.58,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7481,636680645019070000,13,11,3,181.56,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7482,636680645019070000,13,11,4,190.54,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7483,636680645019070000,13,11,5,199.52,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7484,636680645019070000,13,11,6,208.50,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7485,636680645019070000,13,11,7,217.48,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7486,636680645019070000,13,11,8,226.46,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7487,636680645019070000,13,11,9,235.44,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7488,636680645019070000,13,11,10,244.42,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7489,636680645019070000,13,11,11,253.40,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7490,636680645019070000,13,11,12,262.38,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7491,636680645019070000,13,11,13,271.36,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7492,636680645019070000,13,11,14,280.34,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7493,636680645019070000,13,11,15,289.32,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7494,636680645019070000,13,11,16,298.30,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7495,636680645019070000,13,11,17,307.28,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7496,636680645019070000,13,11,18,316.26,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7497,636680645019070000,13,11,19,325.24,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7498,636680645019070000,13,11,20,334.22,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7499,636680645019070000,13,11,21,343.20,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7500,636680645019070000,13,11,22,352.18,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7501,636680645019070000,13,11,23,361.16,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7502,636680645019070000,13,11,24,370.14,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7503,636680645019070000,13,11,25,379.12,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7504,636680645019070000,13,11,26,388.10,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7505,636680645019070000,13,11,27,397.08,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7506,636680645019070000,13,11,28,406.06,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7507,636680645019070000,13,11,29,415.04,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7508,636680645019070000,13,11,30,424.02,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7509,636680645019070000,13,12,1,1600.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7510,636680645019070000,13,12,2,177.71,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7511,636680645019070000,13,12,3,186.69,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7512,636680645019070000,13,12,4,195.67,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7513,636680645019070000,13,12,5,204.65,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7514,636680645019070000,13,12,6,213.63,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7515,636680645019070000,13,12,7,222.61,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7516,636680645019070000,13,12,8,231.59,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7517,636680645019070000,13,12,9,240.57,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7518,636680645019070000,13,12,10,249.55,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7519,636680645019070000,13,12,11,258.53,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7520,636680645019070000,13,12,12,267.51,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7521,636680645019070000,13,12,13,276.49,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7522,636680645019070000,13,12,14,285.47,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7523,636680645019070000,13,12,15,294.45,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7524,636680645019070000,13,12,16,303.43,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7525,636680645019070000,13,12,17,312.41,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7526,636680645019070000,13,12,18,321.39,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7527,636680645019070000,13,12,19,330.37,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7528,636680645019070000,13,12,20,339.35,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7529,636680645019070000,13,12,21,348.33,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7530,636680645019070000,13,12,22,357.31,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7531,636680645019070000,13,12,23,366.29,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7532,636680645019070000,13,12,24,375.27,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7533,636680645019070000,13,12,25,384.25,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7534,636680645019070000,13,12,26,393.23,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7535,636680645019070000,13,12,27,402.21,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7536,636680645019070000,13,12,28,411.19,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7537,636680645019070000,13,12,29,420.17,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7538,636680645019070000,13,12,30,429.15,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7539,636680645019070000,13,13,1,1700.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7540,636680645019070000,13,13,2,182.84,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7541,636680645019070000,13,13,3,191.82,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7542,636680645019070000,13,13,4,200.80,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7543,636680645019070000,13,13,5,209.78,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7544,636680645019070000,13,13,6,218.76,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7545,636680645019070000,13,13,7,227.74,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7546,636680645019070000,13,13,8,236.72,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7547,636680645019070000,13,13,9,245.70,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7548,636680645019070000,13,13,10,254.68,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7549,636680645019070000,13,13,11,263.66,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7550,636680645019070000,13,13,12,272.64,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7551,636680645019070000,13,13,13,281.62,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7552,636680645019070000,13,13,14,290.60,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7553,636680645019070000,13,13,15,299.58,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7554,636680645019070000,13,13,16,308.56,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7555,636680645019070000,13,13,17,317.54,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7556,636680645019070000,13,13,18,326.52,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7557,636680645019070000,13,13,19,335.50,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7558,636680645019070000,13,13,20,344.48,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7559,636680645019070000,13,13,21,353.46,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7560,636680645019070000,13,13,22,362.44,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7561,636680645019070000,13,13,23,371.42,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7562,636680645019070000,13,13,24,380.40,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7563,636680645019070000,13,13,25,389.38,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7564,636680645019070000,13,13,26,398.36,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7565,636680645019070000,13,13,27,407.34,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7566,636680645019070000,13,13,28,416.32,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7567,636680645019070000,13,13,29,425.30,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7568,636680645019070000,13,13,30,434.28,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7569,636680645019070000,13,14,1,1800.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7570,636680645019070000,13,14,2,187.97,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7571,636680645019070000,13,14,3,196.95,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7572,636680645019070000,13,14,4,205.93,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7573,636680645019070000,13,14,5,214.91,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7574,636680645019070000,13,14,6,223.89,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7575,636680645019070000,13,14,7,232.87,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7576,636680645019070000,13,14,8,241.85,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7577,636680645019070000,13,14,9,250.83,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7578,636680645019070000,13,14,10,259.81,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7579,636680645019070000,13,14,11,268.79,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7580,636680645019070000,13,14,12,277.77,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7581,636680645019070000,13,14,13,286.75,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7582,636680645019070000,13,14,14,295.73,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7583,636680645019070000,13,14,15,304.71,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7584,636680645019070000,13,14,16,313.69,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7585,636680645019070000,13,14,17,322.67,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7586,636680645019070000,13,14,18,331.65,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7587,636680645019070000,13,14,19,340.63,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7588,636680645019070000,13,14,20,349.61,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7589,636680645019070000,13,14,21,358.59,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7590,636680645019070000,13,14,22,367.57,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7591,636680645019070000,13,14,23,376.55,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7592,636680645019070000,13,14,24,385.53,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7593,636680645019070000,13,14,25,394.51,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7594,636680645019070000,13,14,26,403.49,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7595,636680645019070000,13,14,27,412.47,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7596,636680645019070000,13,14,28,421.45,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7597,636680645019070000,13,14,29,430.43,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7598,636680645019070000,13,14,30,439.41,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7599,636680645019070000,13,15,1,1900.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7600,636680645019070000,13,15,2,193.10,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7601,636680645019070000,13,15,3,202.08,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7602,636680645019070000,13,15,4,211.06,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7603,636680645019070000,13,15,5,220.04,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7604,636680645019070000,13,15,6,229.02,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7605,636680645019070000,13,15,7,238.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7606,636680645019070000,13,15,8,246.98,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7607,636680645019070000,13,15,9,255.96,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7608,636680645019070000,13,15,10,264.94,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7609,636680645019070000,13,15,11,273.92,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7610,636680645019070000,13,15,12,282.90,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7611,636680645019070000,13,15,13,291.88,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7612,636680645019070000,13,15,14,300.86,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7613,636680645019070000,13,15,15,309.84,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7614,636680645019070000,13,15,16,318.82,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7615,636680645019070000,13,15,17,327.80,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7616,636680645019070000,13,15,18,336.78,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7617,636680645019070000,13,15,19,345.76,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7618,636680645019070000,13,15,20,354.74,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7619,636680645019070000,13,15,21,363.72,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7620,636680645019070000,13,15,22,372.70,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7621,636680645019070000,13,15,23,381.68,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7622,636680645019070000,13,15,24,390.66,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7623,636680645019070000,13,15,25,399.64,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7624,636680645019070000,13,15,26,408.62,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7625,636680645019070000,13,15,27,417.60,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7626,636680645019070000,13,15,28,426.58,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7627,636680645019070000,13,15,29,435.56,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7628,636680645019070000,13,15,30,444.54,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7629,636680645019070000,13,16,1,2000.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7630,636680645019070000,13,16,2,198.23,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7631,636680645019070000,13,16,3,207.21,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7632,636680645019070000,13,16,4,216.19,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7633,636680645019070000,13,16,5,225.17,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7634,636680645019070000,13,16,6,234.15,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7635,636680645019070000,13,16,7,243.13,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7636,636680645019070000,13,16,8,252.11,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7637,636680645019070000,13,16,9,261.09,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7638,636680645019070000,13,16,10,270.07,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7639,636680645019070000,13,16,11,279.05,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7640,636680645019070000,13,16,12,288.03,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7641,636680645019070000,13,16,13,297.01,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7642,636680645019070000,13,16,14,305.99,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7643,636680645019070000,13,16,15,314.97,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7644,636680645019070000,13,16,16,323.95,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7645,636680645019070000,13,16,17,332.93,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7646,636680645019070000,13,16,18,341.91,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7647,636680645019070000,13,16,19,350.89,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7648,636680645019070000,13,16,20,359.87,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7649,636680645019070000,13,16,21,368.85,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7650,636680645019070000,13,16,22,377.83,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7651,636680645019070000,13,16,23,386.81,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7652,636680645019070000,13,16,24,395.79,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7653,636680645019070000,13,16,25,404.77,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7654,636680645019070000,13,16,26,413.75,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7655,636680645019070000,13,16,27,422.73,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7656,636680645019070000,13,16,28,431.71,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7657,636680645019070000,13,16,29,440.69,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7658,636680645019070000,13,16,30,449.67,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7659,636680645019070000,13,17,1,2100.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7660,636680645019070000,13,17,2,203.36,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7661,636680645019070000,13,17,3,212.34,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7662,636680645019070000,13,17,4,221.32,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7663,636680645019070000,13,17,5,230.30,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7664,636680645019070000,13,17,6,239.28,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7665,636680645019070000,13,17,7,248.26,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7666,636680645019070000,13,17,8,257.24,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7667,636680645019070000,13,17,9,266.22,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7668,636680645019070000,13,17,10,275.20,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7669,636680645019070000,13,17,11,284.18,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7670,636680645019070000,13,17,12,293.16,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7671,636680645019070000,13,17,13,302.14,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7672,636680645019070000,13,17,14,311.12,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7673,636680645019070000,13,17,15,320.10,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7674,636680645019070000,13,17,16,329.08,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7675,636680645019070000,13,17,17,338.06,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7676,636680645019070000,13,17,18,347.04,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7677,636680645019070000,13,17,19,356.02,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7678,636680645019070000,13,17,20,365.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7679,636680645019070000,13,17,21,373.98,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7680,636680645019070000,13,17,22,382.96,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7681,636680645019070000,13,17,23,391.94,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7682,636680645019070000,13,17,24,400.92,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7683,636680645019070000,13,17,25,409.90,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7684,636680645019070000,13,17,26,418.88,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7685,636680645019070000,13,17,27,427.86,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7686,636680645019070000,13,17,28,436.84,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7687,636680645019070000,13,17,29,445.82,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7688,636680645019070000,13,17,30,454.80,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7689,636680645019070000,13,18,1,2200.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7690,636680645019070000,13,18,2,208.49,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7691,636680645019070000,13,18,3,217.47,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7692,636680645019070000,13,18,4,226.45,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7693,636680645019070000,13,18,5,235.43,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7694,636680645019070000,13,18,6,244.41,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7695,636680645019070000,13,18,7,253.39,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7696,636680645019070000,13,18,8,262.37,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7697,636680645019070000,13,18,9,271.35,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7698,636680645019070000,13,18,10,280.33,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7699,636680645019070000,13,18,11,289.31,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7700,636680645019070000,13,18,12,298.29,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7701,636680645019070000,13,18,13,307.27,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7702,636680645019070000,13,18,14,316.25,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7703,636680645019070000,13,18,15,325.23,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7704,636680645019070000,13,18,16,334.21,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7705,636680645019070000,13,18,17,343.19,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7706,636680645019070000,13,18,18,352.17,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7707,636680645019070000,13,18,19,361.15,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7708,636680645019070000,13,18,20,370.13,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7709,636680645019070000,13,18,21,379.11,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7710,636680645019070000,13,18,22,388.09,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7711,636680645019070000,13,18,23,397.07,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7712,636680645019070000,13,18,24,406.05,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7713,636680645019070000,13,18,25,415.03,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7714,636680645019070000,13,18,26,424.01,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7715,636680645019070000,13,18,27,432.99,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7716,636680645019070000,13,18,28,441.97,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7717,636680645019070000,13,18,29,450.95,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7718,636680645019070000,13,18,30,459.93,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7719,636680645019070000,13,19,1,2300.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7720,636680645019070000,13,19,2,213.62,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7721,636680645019070000,13,19,3,222.60,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7722,636680645019070000,13,19,4,231.58,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7723,636680645019070000,13,19,5,240.56,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7724,636680645019070000,13,19,6,249.54,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7725,636680645019070000,13,19,7,258.52,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7726,636680645019070000,13,19,8,267.50,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7727,636680645019070000,13,19,9,276.48,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7728,636680645019070000,13,19,10,285.46,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7729,636680645019070000,13,19,11,294.44,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7730,636680645019070000,13,19,12,303.42,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7731,636680645019070000,13,19,13,312.40,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7732,636680645019070000,13,19,14,321.38,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7733,636680645019070000,13,19,15,330.36,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7734,636680645019070000,13,19,16,339.34,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7735,636680645019070000,13,19,17,348.32,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7736,636680645019070000,13,19,18,357.30,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7737,636680645019070000,13,19,19,366.28,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7738,636680645019070000,13,19,20,375.26,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7739,636680645019070000,13,19,21,384.24,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7740,636680645019070000,13,19,22,393.22,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7741,636680645019070000,13,19,23,402.20,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7742,636680645019070000,13,19,24,411.18,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7743,636680645019070000,13,19,25,420.16,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7744,636680645019070000,13,19,26,429.14,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7745,636680645019070000,13,19,27,438.12,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7746,636680645019070000,13,19,28,447.10,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7747,636680645019070000,13,19,29,456.08,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7748,636680645019070000,13,19,30,465.06,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7749,636680645019070000,13,20,1,2400.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7750,636680645019070000,13,20,2,218.75,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7751,636680645019070000,13,20,3,227.73,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7752,636680645019070000,13,20,4,236.71,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7753,636680645019070000,13,20,5,245.69,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7754,636680645019070000,13,20,6,254.67,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7755,636680645019070000,13,20,7,263.65,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7756,636680645019070000,13,20,8,272.63,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7757,636680645019070000,13,20,9,281.61,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7758,636680645019070000,13,20,10,290.59,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7759,636680645019070000,13,20,11,299.57,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7760,636680645019070000,13,20,12,308.55,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7761,636680645019070000,13,20,13,317.53,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7762,636680645019070000,13,20,14,326.51,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7763,636680645019070000,13,20,15,335.49,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7764,636680645019070000,13,20,16,344.47,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7765,636680645019070000,13,20,17,353.45,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7766,636680645019070000,13,20,18,362.43,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7767,636680645019070000,13,20,19,371.41,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7768,636680645019070000,13,20,20,380.39,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7769,636680645019070000,13,20,21,389.37,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7770,636680645019070000,13,20,22,398.35,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7771,636680645019070000,13,20,23,407.33,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7772,636680645019070000,13,20,24,416.31,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7773,636680645019070000,13,20,25,425.29,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7774,636680645019070000,13,20,26,434.27,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7775,636680645019070000,13,20,27,443.25,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7776,636680645019070000,13,20,28,452.23,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7777,636680645019070000,13,20,29,461.21,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7778,636680645019070000,13,20,30,470.19,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7779,636680645019070000,13,21,1,2500.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7780,636680645019070000,13,21,2,223.88,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7781,636680645019070000,13,21,3,232.86,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7782,636680645019070000,13,21,4,241.84,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7783,636680645019070000,13,21,5,250.82,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7784,636680645019070000,13,21,6,259.80,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7785,636680645019070000,13,21,7,268.78,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7786,636680645019070000,13,21,8,277.76,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7787,636680645019070000,13,21,9,286.74,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7788,636680645019070000,13,21,10,295.72,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7789,636680645019070000,13,21,11,304.70,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7790,636680645019070000,13,21,12,313.68,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7791,636680645019070000,13,21,13,322.66,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7792,636680645019070000,13,21,14,331.64,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7793,636680645019070000,13,21,15,340.62,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7794,636680645019070000,13,21,16,349.60,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7795,636680645019070000,13,21,17,358.58,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7796,636680645019070000,13,21,18,367.56,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7797,636680645019070000,13,21,19,376.54,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7798,636680645019070000,13,21,20,385.52,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7799,636680645019070000,13,21,21,394.50,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7800,636680645019070000,13,21,22,403.48,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7801,636680645019070000,13,21,23,412.46,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7802,636680645019070000,13,21,24,421.44,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7803,636680645019070000,13,21,25,430.42,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7804,636680645019070000,13,21,26,439.40,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7805,636680645019070000,13,21,27,448.38,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7806,636680645019070000,13,21,28,457.36,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7807,636680645019070000,13,21,29,466.34,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7808,636680645019070000,13,21,30,475.32,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7809,636680645019070000,13,22,1,2600.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7810,636680645019070000,13,22,2,229.01,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7811,636680645019070000,13,22,3,237.99,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7812,636680645019070000,13,22,4,246.97,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7813,636680645019070000,13,22,5,255.95,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7814,636680645019070000,13,22,6,264.93,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7815,636680645019070000,13,22,7,273.91,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7816,636680645019070000,13,22,8,282.89,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7817,636680645019070000,13,22,9,291.87,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7818,636680645019070000,13,22,10,300.85,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7819,636680645019070000,13,22,11,309.83,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7820,636680645019070000,13,22,12,318.81,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7821,636680645019070000,13,22,13,327.79,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7822,636680645019070000,13,22,14,336.77,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7823,636680645019070000,13,22,15,345.75,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7824,636680645019070000,13,22,16,354.73,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7825,636680645019070000,13,22,17,363.71,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7826,636680645019070000,13,22,18,372.69,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7827,636680645019070000,13,22,19,381.67,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7828,636680645019070000,13,22,20,390.65,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7829,636680645019070000,13,22,21,399.63,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7830,636680645019070000,13,22,22,408.61,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7831,636680645019070000,13,22,23,417.59,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7832,636680645019070000,13,22,24,426.57,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7833,636680645019070000,13,22,25,435.55,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7834,636680645019070000,13,22,26,444.53,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7835,636680645019070000,13,22,27,453.51,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7836,636680645019070000,13,22,28,462.49,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7837,636680645019070000,13,22,29,471.47,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7838,636680645019070000,13,22,30,480.45,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7839,636680645019070000,13,23,1,2700.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7840,636680645019070000,13,23,2,234.14,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7841,636680645019070000,13,23,3,243.12,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7842,636680645019070000,13,23,4,252.10,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7843,636680645019070000,13,23,5,261.08,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7844,636680645019070000,13,23,6,270.06,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7845,636680645019070000,13,23,7,279.04,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7846,636680645019070000,13,23,8,288.02,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7847,636680645019070000,13,23,9,297.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7848,636680645019070000,13,23,10,305.98,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7849,636680645019070000,13,23,11,314.96,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7850,636680645019070000,13,23,12,323.94,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7851,636680645019070000,13,23,13,332.92,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7852,636680645019070000,13,23,14,341.90,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7853,636680645019070000,13,23,15,350.88,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7854,636680645019070000,13,23,16,359.86,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7855,636680645019070000,13,23,17,368.84,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7856,636680645019070000,13,23,18,377.82,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7857,636680645019070000,13,23,19,386.80,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7858,636680645019070000,13,23,20,395.78,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7859,636680645019070000,13,23,21,404.76,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7860,636680645019070000,13,23,22,413.74,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7861,636680645019070000,13,23,23,422.72,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7862,636680645019070000,13,23,24,431.70,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7863,636680645019070000,13,23,25,440.68,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7864,636680645019070000,13,23,26,449.66,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7865,636680645019070000,13,23,27,458.64,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7866,636680645019070000,13,23,28,467.62,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7867,636680645019070000,13,23,29,476.60,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7868,636680645019070000,13,23,30,485.58,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7869,636680645019070000,13,24,1,2800.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7870,636680645019070000,13,24,2,239.27,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7871,636680645019070000,13,24,3,248.25,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7872,636680645019070000,13,24,4,257.23,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7873,636680645019070000,13,24,5,266.21,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7874,636680645019070000,13,24,6,275.19,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7875,636680645019070000,13,24,7,284.17,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7876,636680645019070000,13,24,8,293.15,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7877,636680645019070000,13,24,9,302.13,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7878,636680645019070000,13,24,10,311.11,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7879,636680645019070000,13,24,11,320.09,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7880,636680645019070000,13,24,12,329.07,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7881,636680645019070000,13,24,13,338.05,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7882,636680645019070000,13,24,14,347.03,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7883,636680645019070000,13,24,15,356.01,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7884,636680645019070000,13,24,16,364.99,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7885,636680645019070000,13,24,17,373.97,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7886,636680645019070000,13,24,18,382.95,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7887,636680645019070000,13,24,19,391.93,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7888,636680645019070000,13,24,20,400.91,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7889,636680645019070000,13,24,21,409.89,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7890,636680645019070000,13,24,22,418.87,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7891,636680645019070000,13,24,23,427.85,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7892,636680645019070000,13,24,24,436.83,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7893,636680645019070000,13,24,25,445.81,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7894,636680645019070000,13,24,26,454.79,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7895,636680645019070000,13,24,27,463.77,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7896,636680645019070000,13,24,28,472.75,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7897,636680645019070000,13,24,29,481.73,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7898,636680645019070000,13,24,30,490.71,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7899,636680645019070000,13,25,1,2900.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7900,636680645019070000,13,25,2,244.40,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7901,636680645019070000,13,25,3,253.38,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7902,636680645019070000,13,25,4,262.36,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7903,636680645019070000,13,25,5,271.34,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7904,636680645019070000,13,25,6,280.32,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7905,636680645019070000,13,25,7,289.30,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7906,636680645019070000,13,25,8,298.28,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7907,636680645019070000,13,25,9,307.26,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7908,636680645019070000,13,25,10,316.24,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7909,636680645019070000,13,25,11,325.22,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7910,636680645019070000,13,25,12,334.20,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7911,636680645019070000,13,25,13,343.18,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7912,636680645019070000,13,25,14,352.16,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7913,636680645019070000,13,25,15,361.14,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7914,636680645019070000,13,25,16,370.12,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7915,636680645019070000,13,25,17,379.10,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7916,636680645019070000,13,25,18,388.08,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7917,636680645019070000,13,25,19,397.06,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7918,636680645019070000,13,25,20,406.04,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7919,636680645019070000,13,25,21,415.02,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7920,636680645019070000,13,25,22,424.00,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7921,636680645019070000,13,25,23,432.98,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7922,636680645019070000,13,25,24,441.96,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7923,636680645019070000,13,25,25,450.94,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7924,636680645019070000,13,25,26,459.92,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7925,636680645019070000,13,25,27,468.90,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7926,636680645019070000,13,25,28,477.88,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7927,636680645019070000,13,25,29,486.86,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(7928,636680645019070000,13,25,30,495.84,1,1,NULL,NULL,'2018-07-24 21:28:21.907000','2018-07-24 21:28:21.910000'),(8053,15353929700000000,14,1,1,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8054,15353929700000000,14,2,1,100.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8055,15353929700000000,14,3,1,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8056,15353929700000000,14,4,1,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8057,15353929700000000,14,5,1,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8058,15353929700000000,14,1,2,100.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8059,15353929700000000,14,2,2,100.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8060,15353929700000000,14,3,2,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8061,15353929700000000,14,4,2,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8062,15353929700000000,14,5,2,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8063,15353929700000000,14,1,3,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8064,15353929700000000,14,2,3,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8065,15353929700000000,14,3,3,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8066,15353929700000000,14,4,3,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8067,15353929700000000,14,5,3,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8068,15353929700000000,14,1,4,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8069,15353929700000000,14,2,4,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8070,15353929700000000,14,3,4,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8071,15353929700000000,14,4,4,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8072,15353929700000000,14,5,4,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8073,15353929700000000,14,1,5,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8074,15353929700000000,14,2,5,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8075,15353929700000000,14,3,5,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8076,15353929700000000,14,4,5,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8077,15353929700000000,14,5,5,0.00,1,1,NULL,NULL,'2018-08-28 01:02:50.000000','2018-08-28 01:02:50.000000'),(8084,15353929900000000,14,1,1,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8085,15353929900000000,14,2,1,100.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8086,15353929900000000,14,3,1,200.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8087,15353929900000000,14,4,1,300.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8088,15353929900000000,14,5,1,400.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8089,15353929900000000,14,1,2,100.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8090,15353929900000000,14,2,2,100.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8091,15353929900000000,14,3,2,200.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8092,15353929900000000,14,4,2,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8093,15353929900000000,14,5,2,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8094,15353929900000000,14,1,3,200.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8095,15353929900000000,14,2,3,200.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8096,15353929900000000,14,3,3,300.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8097,15353929900000000,14,4,3,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8098,15353929900000000,14,5,3,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8099,15353929900000000,14,1,4,300.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8100,15353929900000000,14,2,4,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8101,15353929900000000,14,3,4,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8102,15353929900000000,14,4,4,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8103,15353929900000000,14,5,4,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8104,15353929900000000,14,1,5,400.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8105,15353929900000000,14,2,5,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8106,15353929900000000,14,3,5,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8107,15353929900000000,14,4,5,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000'),(8108,15353929900000000,14,5,5,0.00,1,2,NULL,NULL,'2018-08-28 01:03:10.000000','2018-08-28 01:03:10.000000');
+/*!40000 ALTER TABLE `productprice` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `salarypayment`
+--
+
+DROP TABLE IF EXISTS `salarypayment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `salarypayment` (
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `EmployeeId` int(11) NOT NULL,
+  `LessPAYG` decimal(18,2) DEFAULT '0.00',
+  `LessPAYGStatus` varchar(45) DEFAULT NULL,
+  `PaidFromDate` datetime DEFAULT NULL,
+  `PaidToDate` datetime DEFAULT NULL,
+  `PaidDts` datetime DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `CreateDts` datetime DEFAULT CURRENT_TIMESTAMP,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `UpdateDts` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `salarypayment`
+--
+
+LOCK TABLES `salarypayment` WRITE;
+/*!40000 ALTER TABLE `salarypayment` DISABLE KEYS */;
+INSERT INTO `salarypayment` VALUES (5,2,200.00,'Paid','2018-09-09 00:00:01','2018-09-15 23:59:00','2018-09-09 22:16:54',NULL,'2018-09-09 22:16:48',NULL,'2018-09-09 22:16:48'),(6,4,100.00,'Paid','2018-08-19 00:00:01','2018-08-25 23:59:00','2018-09-09 22:22:07',NULL,'2018-09-09 22:19:41',NULL,'2018-09-09 22:19:41');
+/*!40000 ALTER TABLE `salarypayment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sec_user`
+--
+
+DROP TABLE IF EXISTS `sec_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `sec_user` (
+  `RecId` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `UserName` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `FirstName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `LastName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `FullName` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Password` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Email` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Birthday` datetime(6) DEFAULT NULL,
+  `Age` int(11) DEFAULT NULL,
+  `Sex` int(11) DEFAULT NULL,
+  `Address` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `City` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `State` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `PhoneNumber` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `CreateDTS` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  `LastLoginDTS` datetime(6) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `ActiveStatus` int(11) DEFAULT '1',
+  `Locked` tinyint(1) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`UserName`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sec_user`
+--
+
+LOCK TABLES `sec_user` WRITE;
+/*!40000 ALTER TABLE `sec_user` DISABLE KEYS */;
+INSERT INTO `sec_user` VALUES ('FCF88E68-CEE2-4020-8C40-8A4D22A73F39','tung','tug','le',NULL,'tung',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-11 14:14:36',NULL,NULL,NULL,1,NULL,NULL);
+/*!40000 ALTER TABLE `sec_user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `settings`
+--
+
+DROP TABLE IF EXISTS `settings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `settings` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `GST` decimal(18,2) DEFAULT NULL,
+  `Contribution` decimal(18,2) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Id_UNIQUE` (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `settings`
+--
+
+LOCK TABLES `settings` WRITE;
+/*!40000 ALTER TABLE `settings` DISABLE KEYS */;
+INSERT INTO `settings` VALUES (1,10.00,95.00);
+/*!40000 ALTER TABLE `settings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `supplier`
+--
+
+DROP TABLE IF EXISTS `supplier`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `supplier` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `FirstName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `LastName` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Company` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Email` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `JobTitle` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `WebPage` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Notes` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `Address` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `ZipCode` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `City` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `State` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Country` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `BusinessPhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `MobilePhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `HomePhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Fax` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `ABN` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `IsBWC` bigint(20) DEFAULT NULL,
+  `ActiveStatus` int(11) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `supplier`
+--
+
+LOCK TABLES `supplier` WRITE;
+/*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
+INSERT INTO `supplier` VALUES (4,'tung','le','aperia','mngo@aperia.com',NULL,NULL,NULL,'quoturm',NULL,'dallas','TEXAS',NULL,NULL,NULL,'12345689',NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-12 21:55:26.000000',NULL),(5,'viet','tuan','CSC','mngo@aperia.com',NULL,NULL,'this is note','quoturm',NULL,'dallas','TEXAS',NULL,'123457890',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-13 23:51:43.000000','2018-08-26 13:18:32.000000'),(6,'Thanh','Nguyen','BWC Company','tungle@aperia.com','dev',NULL,NULL,'123 Syney Australia',NULL,'dong nai',NULL,NULL,'123456',NULL,'123456',NULL,'123abn',NULL,NULL,NULL,NULL,'2018-06-14 00:21:43.000000','2018-07-14 14:11:07.000000');
+/*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `timesheet`
+--
+
+DROP TABLE IF EXISTS `timesheet`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `timesheet` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `EmployeeId` int(11) NOT NULL,
+  `Month` datetime(6) NOT NULL,
+  `EmployeeName` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `TotalHoursInWork` decimal(18,2) DEFAULT NULL,
+  `SalaryInGrossBased` decimal(18,2) DEFAULT NULL,
+  `SocialInsurance` decimal(18,2) DEFAULT NULL,
+  `HealthInsurance` decimal(18,2) DEFAULT NULL,
+  `UnEmployementInsurance` decimal(18,2) DEFAULT NULL,
+  `PaidByEmployee` decimal(18,2) DEFAULT NULL,
+  `PaidByEmployer` decimal(18,2) DEFAULT NULL,
+  `AdditionDeduction` decimal(18,2) DEFAULT NULL,
+  `IncomeForTaxCalculation` decimal(18,2) DEFAULT NULL,
+  `NetIncome` decimal(18,2) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`EmployeeId`,`Month`),
+  UNIQUE KEY `Id_UNIQUE` (`Id`),
+  UNIQUE KEY `CreateBy` (`CreateBy`),
+  UNIQUE KEY `UpdateBy` (`UpdateBy`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `timesheet`
+--
+
+LOCK TABLES `timesheet` WRITE;
+/*!40000 ALTER TABLE `timesheet` DISABLE KEYS */;
+INSERT INTO `timesheet` VALUES (8,1,'2018-05-01 00:00:00.000000','tung le',NULL,10.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(1,1,'2018-07-28 18:22:25.973000','tung le',12.00,10.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(9,1,'2018-08-01 00:00:00.000000','tung le',NULL,10.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(23,1,'2018-09-01 00:00:01.000000','tung le',NULL,10.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(12,2,'2018-05-01 00:00:00.000000','tung tung',NULL,8.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,2,'2018-06-01 00:00:00.000000','tung tung',NULL,8.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,2,'2018-07-28 18:22:25.973000','tung tung',8.00,8.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(11,2,'2018-08-01 00:00:00.000000','tung tung',NULL,8.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(24,2,'2018-09-01 00:00:01.000000','tung tung',NULL,8.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(13,3,'2018-02-01 00:00:00.000000','bwc employee',NULL,5.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(6,3,'2018-06-01 00:00:00.000000','bwc employee',NULL,5.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,3,'2018-07-01 00:00:00.000000','bwc employee',NULL,5.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(10,3,'2018-08-01 00:00:00.000000','bwc employee',NULL,5.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(14,4,'2018-08-01 00:00:00.000000','tuan viet',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `timesheet` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `timesheetdetail`
+--
+
+DROP TABLE IF EXISTS `timesheetdetail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8 ;
+CREATE TABLE `timesheetdetail` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `EmployeeId` int(11) NOT NULL,
+  `Day` int(11) DEFAULT NULL,
+  `Month` datetime(6) DEFAULT NULL,
+  `Value` decimal(18,2) DEFAULT NULL,
+  `Type` int(11) DEFAULT NULL,
+  `Approved` tinyint(4) DEFAULT '0',
+  `ApprovedBy` varchar(64) DEFAULT NULL,
+  `CreateBy` varchar(64) DEFAULT NULL,
+  `UpdateBy` varchar(64) DEFAULT NULL,
+  `CreateDTS` datetime(6) DEFAULT NULL,
+  `UpdateDTS` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=730 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `timesheetdetail`
+--
+
+LOCK TABLES `timesheetdetail` WRITE;
+/*!40000 ALTER TABLE `timesheetdetail` DISABLE KEYS */;
+INSERT INTO `timesheetdetail` VALUES (327,3,1,'2018-07-01 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(328,3,2,'2018-07-02 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(329,3,3,'2018-07-03 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(330,3,5,'2018-07-05 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(331,3,6,'2018-07-06 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(332,3,7,'2018-07-07 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(333,3,8,'2018-07-08 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(334,3,9,'2018-07-09 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(335,3,10,'2018-07-10 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(336,3,11,'2018-07-11 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(337,3,12,'2018-07-12 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(338,3,13,'2018-07-13 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(339,3,14,'2018-07-14 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(340,3,15,'2018-07-15 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(341,3,16,'2018-07-16 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(342,3,17,'2018-07-17 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(343,3,18,'2018-07-18 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(344,3,19,'2018-07-19 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(345,3,20,'2018-07-20 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(346,3,21,'2018-07-21 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(347,3,22,'2018-07-22 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(348,3,23,'2018-07-23 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(349,3,24,'2018-07-24 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(350,3,25,'2018-07-25 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(351,3,26,'2018-07-26 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(352,3,27,'2018-07-27 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(353,3,28,'2018-07-28 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(354,3,29,'2018-07-29 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(355,3,30,'2018-07-30 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(356,3,31,'2018-07-31 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(357,2,1,'2018-07-01 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(358,2,2,'2018-07-02 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(359,2,3,'2018-07-03 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(360,2,4,'2018-07-04 02:24:00.000000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(361,2,5,'2018-07-05 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(362,2,6,'2018-07-06 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(363,2,7,'2018-07-07 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(364,2,8,'2018-07-08 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(365,2,9,'2018-07-09 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(366,2,10,'2018-07-10 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(367,2,11,'2018-07-11 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(368,2,12,'2018-07-12 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(369,2,13,'2018-07-13 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(370,2,14,'2018-07-14 02:23:59.997000',8.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(371,2,16,'2018-07-16 02:23:59.997000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(372,2,15,'2018-07-15 02:23:59.997000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(373,2,17,'2018-07-17 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(374,2,18,'2018-07-18 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(375,2,19,'2018-07-19 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(376,2,20,'2018-07-20 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(377,2,21,'2018-07-21 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(378,2,22,'2018-07-22 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(379,2,23,'2018-07-23 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(380,2,24,'2018-07-24 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(381,2,25,'2018-07-25 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(382,2,26,'2018-07-26 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(383,2,27,'2018-07-27 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(384,2,28,'2018-07-28 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(385,2,29,'2018-07-29 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(386,2,30,'2018-07-30 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(387,2,31,'2018-07-31 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(388,1,1,'2018-07-01 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(389,1,3,'2018-07-03 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(390,1,4,'2018-07-04 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(391,1,5,'2018-07-05 02:23:59.997000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(392,1,2,'2018-07-02 02:24:00.000000',4.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(393,1,6,'2018-07-06 02:23:59.997000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(394,1,7,'2018-07-07 02:23:59.997000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(395,1,8,'2018-07-08 02:23:59.997000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(396,1,9,'2018-07-09 02:23:59.997000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(397,1,10,'2018-07-10 02:23:59.997000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(398,1,11,'2018-07-11 02:23:59.997000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(399,1,12,'2018-07-12 02:23:59.997000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(400,1,13,'2018-07-13 02:23:59.997000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(401,1,14,'2018-07-14 02:23:59.997000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(402,1,15,'2018-07-15 02:23:59.997000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(403,1,16,'2018-07-16 02:23:59.997000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(404,1,17,'2018-07-17 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(405,1,18,'2018-07-18 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(406,1,19,'2018-07-19 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(407,1,20,'2018-07-20 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(408,1,21,'2018-07-21 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(409,1,22,'2018-07-22 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(410,1,23,'2018-07-23 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(411,1,24,'2018-07-24 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(412,1,25,'2018-07-25 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(413,1,26,'2018-07-26 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(414,1,27,'2018-07-27 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(415,1,28,'2018-07-28 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(416,1,29,'2018-07-29 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(417,1,30,'2018-07-30 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(418,1,31,'2018-07-31 02:24:00.000000',6.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(419,3,4,'2018-07-04 02:24:00.000000',0.00,1,0,NULL,NULL,NULL,'2018-08-15 21:32:28.743000',NULL),(420,3,4,'2018-07-04 02:24:00.000000',8.00,2,0,NULL,NULL,NULL,'2018-08-15 21:32:28.793000',NULL),(613,4,2,'2018-08-02 00:00:10.000000',4.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(614,4,20,'2018-08-20 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(615,4,1,'2018-08-01 00:00:10.000000',1.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(616,4,3,'2018-08-03 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(617,2,6,'2018-08-06 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(618,2,7,'2018-08-07 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(619,2,8,'2018-08-08 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(620,2,9,'2018-08-09 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(621,2,1,'2018-08-01 00:00:10.000000',4.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(622,2,2,'2018-08-02 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(623,2,3,'2018-08-03 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(624,3,10,'2018-08-10 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(625,3,6,'2018-08-06 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(626,3,8,'2018-08-08 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(627,3,5,'2018-08-05 00:00:10.000000',0.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(628,3,1,'2018-08-01 00:00:10.000000',4.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(629,3,7,'2018-08-07 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(630,3,9,'2018-08-09 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(631,3,3,'2018-08-03 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(632,3,2,'2018-08-02 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(633,1,1,'2018-08-01 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(634,1,9,'2018-08-09 00:00:10.000000',4.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(635,1,8,'2018-08-08 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(636,1,2,'2018-08-02 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(637,1,10,'2018-08-10 00:00:10.000000',4.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(638,1,5,'2018-08-05 00:00:10.000000',0.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(639,1,3,'2018-08-03 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(640,1,7,'2018-08-07 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(641,1,6,'2018-08-06 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(642,2,4,'2018-08-04 00:00:10.000000',0.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(643,2,5,'2018-08-05 00:00:10.000000',0.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(644,3,4,'2018-08-04 00:00:10.000000',0.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(645,1,4,'2018-08-04 00:00:10.000000',0.00,1,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(676,4,2,'2018-08-02 00:00:10.000000',4.00,2,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(677,4,21,'2018-08-21 00:00:10.000000',4.00,2,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(678,2,10,'2018-08-10 00:00:10.000000',8.00,2,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(679,3,2,'2018-08-02 00:00:10.000000',8.00,2,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(680,1,9,'2018-08-09 00:00:10.000000',4.00,2,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(681,1,1,'2018-08-01 00:00:10.000000',0.00,2,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(683,4,21,'2018-08-21 00:00:10.000000',4.00,3,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(684,2,1,'2018-08-01 00:00:10.000000',4.00,3,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(685,1,10,'2018-08-10 00:00:10.000000',4.00,3,1,NULL,NULL,NULL,'2018-08-30 21:00:30.000000',NULL),(692,2,4,'2018-05-04 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-09-08 17:11:22.000000',NULL),(693,1,4,'2018-05-04 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-09-08 17:11:22.000000',NULL),(694,2,7,'2018-05-07 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-09-08 17:11:22.000000',NULL),(695,1,7,'2018-05-07 00:00:10.000000',8.00,1,1,NULL,NULL,NULL,'2018-09-08 17:11:22.000000',NULL),(699,1,8,'2018-05-08 00:00:10.000000',4.00,2,1,NULL,NULL,NULL,'2018-09-08 17:11:22.000000',NULL),(700,1,8,'2018-05-08 00:00:10.000000',4.00,3,1,NULL,NULL,NULL,'2018-09-08 17:11:23.000000',NULL),(701,2,8,'2018-05-08 00:00:10.000000',8.00,4,1,NULL,NULL,NULL,'2018-09-08 17:11:23.000000',NULL),(716,2,3,'2018-09-03 00:00:10.000000',8.00,1,0,NULL,NULL,NULL,'2018-09-09 14:58:43.000000',NULL),(717,1,4,'2018-09-04 00:00:10.000000',8.00,1,0,NULL,NULL,NULL,'2018-09-09 14:58:43.000000',NULL),(718,1,7,'2018-09-07 00:00:10.000000',8.00,1,0,NULL,NULL,NULL,'2018-09-09 14:58:43.000000',NULL),(719,1,3,'2018-09-03 00:00:10.000000',8.00,1,0,NULL,NULL,NULL,'2018-09-09 14:58:43.000000',NULL),(720,2,10,'2018-09-10 00:00:10.000000',8.00,1,0,NULL,NULL,NULL,'2018-09-09 14:58:43.000000',NULL),(723,1,5,'2018-09-05 00:00:10.000000',0.00,2,0,NULL,NULL,NULL,'2018-09-09 14:58:47.000000',NULL),(724,1,6,'2018-09-06 00:00:10.000000',4.00,2,0,NULL,NULL,NULL,'2018-09-09 14:58:47.000000',NULL),(726,1,6,'2018-09-06 00:00:10.000000',4.00,3,0,NULL,NULL,NULL,'2018-09-09 14:58:47.000000',NULL),(727,2,4,'2018-09-04 00:00:10.000000',8.00,4,0,NULL,NULL,NULL,'2018-09-09 14:58:47.000000',NULL),(728,1,5,'2018-09-05 00:00:10.000000',8.00,4,0,NULL,NULL,NULL,'2018-09-09 14:58:47.000000',NULL),(729,2,11,'2018-09-11 00:00:10.000000',8.00,4,0,NULL,NULL,NULL,'2018-09-09 14:58:47.000000',NULL);
+/*!40000 ALTER TABLE `timesheetdetail` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'bwc'
+--
+/*!50003 DROP PROCEDURE IF EXISTS `sp_ApproveTimeSheet` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_ApproveTimeSheet`(
+	i_From VARCHAR(100),
+	i_To VARCHAR(100)
+)
+BEGIN	
+	DECLARE i_FromDate DATETIME;
+	DECLARE	i_ToDate DATETIME;
+	SET i_FromDate := STR_TO_DATE(CONCAT(i_From, ' 00:00:00'),'%d/%m/%Y %H:%i:%s');	
+	SET i_ToDate := STR_TO_DATE(CONCAT(i_To, ' 23:59:00'),'%d/%m/%Y %H:%i:%s');
+
+
+	UPDATE TimeSheetDetail t
+    SET t.Approved = 1
+	WHERE t.`month` BETWEEN i_FromDate AND i_ToDate;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_AuthenticateUser` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_AuthenticateUser`(
+	i_UserName varchar(200),
+	i_UserPassword varchar(100)
+)
+BEGIN
+	DECLARE Result INT;
+	DECLARE UserStatus INT;
+	DECLARE Locked INT;
+	DECLARE WrongPassword INT;
+    
+    SET Result = 0;
+	
+	IF (SELECT COUNT(*) FROM SEC_User WHERE UserName = i_UserName) = 0 THEN
+		SET Result = 0; -- User is not exist
+	ELSE 
+		SELECT ActiveStatus
+			,	Locked 
+			INTO 
+				UserStatus
+			, 	Locked
+		FROM SEC_User 
+		WHERE UserName=UserName;
+		
+		IF(SELECT COUNT(*) FROM SEC_User WHERE UserName = i_UserName AND Password = i_UserPassword) = 0 THEN
+			SET WrongPassword = 1;
+		END IF;
+		
+		IF UserStatus = 0 THEN
+			SET Result = 2; -- User is inActive
+		ELSEIF Locked = 1 THEN
+			SET Result = 3; -- User locked	
+		ELSEIF WrongPassword = 1 THEN
+			SET Result = 4; -- Wrong Password
+		ELSE 
+			SET Result = 1; -- Successful
+		END IF;
+        
+	END IF;
+    
+	IF Result = 1 THEN
+		SELECT *, Result AS Authenticate FROM SEC_User WHERE UserName = i_UserName;
+	ELSE
+		SELECT Result AS Authenticate;	
+    END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_CalculateOrderAmount` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_CalculateOrderAmount`(
+	i_OrderId BIGINT
+)
+BEGIN	
+	DECLARE i_TotalPaid DECIMAL(18,2);
+	DECLARE	i_TotalReceived DECIMAL(18,2);
+	DECLARE	i_TotalAmount DECIMAL(18,2);
+	DECLARE	i_TotalAmountExcGST DECIMAL(18,2);
+	DECLARE i_Balance DECIMAL(18,2);
+	DECLARE i_NeedToReview BIT;
+
+	CREATE TEMPORARY TABLE IF NOT EXISTS OrderSummary AS
+	SELECT 
+		tb.OrderId, 
+		SUM(tb.TotalAmount) AS TotalAmount,
+		SUM(tb.TotalReceived) AS TotalReceived
+	FROM (
+			SELECT 
+				op.OrderId AS OrderId,
+				(op.UnitPrice + IFNULL(op.ExtendPrice,0) - ((op.UnitPrice + IFNULL(op.ExtendPrice,0)) * IFNULL(op.Discount,0)/100)) * op.Quantity AS TotalAmount,
+				(op.UnitPrice + IFNULL(op.ExtendPrice,0) - ((op.UnitPrice + IFNULL(op.ExtendPrice,0)) * IFNULL(op.Discount,0)/100)) * op.Received AS TotalReceived
+			FROM `Order` o
+				join OrderProduct op ON o.Id = op.OrderId	
+			WHERE o.Id =  i_OrderId
+			UNION ALL
+			SELECT 
+				op.OrderId AS OrderId,
+				(op.Price + IFNULL(op.ExtendPrice,0) - ((op.Price + IFNULL(op.ExtendPrice,0) )* IFNULL(op.Discount,0)/100)) * op.Quantity AS TotalAmount,
+				(op.Price + IFNULL(op.ExtendPrice,0) - ((op.Price + IFNULL(op.ExtendPrice,0)) * IFNULL(op.Discount,0)/100)) * op.Received AS TotalAmount
+			 FROM `Order` o 
+				join OrderComponent op ON o.Id = op.OrderId
+				join Component c ON c.Id = op.ComponentId
+			WHERE o.Id =  i_OrderId
+            
+		) AS tb
+	GROUP BY tb.OrderId;
+
+	SELECT 
+		(IFNULL(os.TotalAmount,0) * o.Taxes/100) + IFNULL(os.TotalAmount,0),
+		(IFNULL(os.TotalReceived,0) * o.Taxes/100) + IFNULL(os.TotalReceived,0),
+		IFNULL(os.TotalAmount,0)
+        INTO 
+        i_TotalAmount,
+        i_TotalReceived,
+        i_TotalAmountExcGST
+	FROM `Order` o 
+		LEFT JOIN OrderSummary os ON o.Id = os.OrderId
+	WHERE o.Id =  i_OrderId;
+
+
+	SELECT  SUM(op.AmountPaid) INTO i_TotalPaid 
+	FROM  OrderPayment op
+	WHERE op.OrderId = i_OrderId
+	GROUP BY op.OrderId;
+	
+	-- check order need to review or not
+	IF (SELECT COUNT(*) FROM OrderComponent WHERE OrderId = i_OrderId AND TotalAmount <= 0) > 0
+		OR (SELECT COUNT(*) FROM OrderProduct WHERE OrderId = i_OrderId AND TotalAmount <= 0) > 0
+    THEN
+		SET i_NeedToReview := 1;
+	END IF;
+
+	IF i_TotalAmount <= 0 THEN
+		SET i_NeedToReview := 1;
+	END IF;
+    
+	UPDATE `Order`
+	SET TotalAmount = IFNULL(i_TotalAmount,0)
+	,	TotalReceived = IFNULL(i_TotalReceived,0)
+	,	TotalPaid	= IFNULL(i_TotalPaid,0)
+	,	Balance = IFNULL(i_TotalReceived,0) - IFNULL(i_TotalPaid,0)
+	,	NeedToReview = i_NeedToReview
+	,	TotalAmountExcGST = i_TotalAmountExcGST
+    WHERE Id = i_OrderId;
+
+	DROP TEMPORARY TABLE OrderSummary;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_CopyOrder` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_CopyOrder`(
+	i_Id BIGINT,
+	i_NewId BIGINT
+)
+BEGIN	
+	-- copy order info
+	INSERT INTO `Order`( Id
+						,EmployeeId
+						,EmployeeName
+						,Step
+						,Taxes
+						,Surcharge
+						,Discount
+						,OrderDate
+						,Notes
+						,SupplierId
+						,SupplierName
+						,SupplierAddress
+						,SupplierEmail
+						,SupplierPhone
+						,OrderRefNo
+						,OrderType
+						,CreateDTS
+						,ActiveStatus)
+
+	SELECT i_NewId
+		,EmployeeId
+		,EmployeeName
+		,2 -- Submitted
+		,Taxes
+		,Surcharge
+		,Discount
+		,NOW()
+		,Notes
+		,SupplierId
+		,SupplierName
+		,SupplierAddress
+		,SupplierEmail
+		,SupplierPhone
+		,OrderRefNo
+		,OrderType
+		,NOW()
+		,ActiveStatus
+	FROM `Order`
+	WHERE Id=i_Id;
+
+	-- Copy components that step is new(id=1)
+	INSERT INTO OrderComponent(	OrderId
+								,OrderType
+								,ComponentId
+								,ColorId
+								,Quantity
+								,Price
+								,ExtCharge
+								,UnitId
+								,Step
+								,AMTExcGST
+								,GST
+								,AMTIncGST
+								,CreateDTS
+								)
+	SELECT i_NewId
+			,OrderType
+			,ComponentId
+			,ColorId
+			,IFNULL(Quantity,0) - IFNULL(Received,0)
+			,Price
+			,ExtCharge
+			,UnitId
+			,Step
+			,AMTExcGST
+			,GST
+			,AMTIncGST
+			,NOW()
+	FROM OrderComponent
+	WHERE OrderId = i_Id AND IFNULL(Quantity,0) > IFNULL(Received,0);
+
+	-- Copy product that step is new(id=1)
+	INSERT INTO OrderProduct (	OrderId
+								,OrderType
+								,ProductId
+								,MaterialId
+								,LocationId
+								,ColorId
+								,ControlSideId
+								,UnitId
+								,`Drop`
+								,Width
+								,Quantity
+								,Discount
+								,ExtendPrice
+								,UnitPrice
+								,TotalAmount
+								,Received
+								,BackOrder
+								,Step
+								,AMTExcGST
+								,GST
+								,AMTIncGST
+								,CreateDTS
+								,ActiveStatus
+								)
+	SELECT i_NewId
+			,OrderType
+			,ProductId
+			,MaterialId
+			,LocationId
+			,ColorId
+			,ControlSideId
+			,UnitId
+			,`Drop`
+			,Width
+			,IFNULL(Quantity,0) - IFNULL(Received,0)
+			,Discount
+			,ExtendPrice
+			,UnitPrice
+			,TotalAmount
+			,Received
+			,BackOrder
+			,Step
+			,AMTExcGST
+			,GST
+			,AMTIncGST
+			,NOW()
+			,ActiveStatus
+	FROM OrderProduct
+	WHERE OrderId = i_Id AND IFNULL(Quantity,0) > IFNULL(Received,0);
+
+	-- Step 2: update amount
+	CALL sp_CalculateOrderAmount (i_NewId);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_CopyProductMaterialPrice` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_CopyProductMaterialPrice`(
+	i_ProductMaterialId INT,
+	i_PriceType INT
+)
+BEGIN	
+	DECLARE i_CurrentDTS DATETIME;
+	DECLARE	i_GroupId BIGINT;
+    
+	SET i_CurrentDTS := NOW();
+	SET	i_GroupId := UNIX_TIMESTAMP(i_CurrentDTS)* 10000000;
+
+	-- copy order info
+	INSERT INTO ProductPrice(ProductMaterialId,`Row`,`Column`,`Value`,UpdateDTS,CreateDTS,IsActive,GroupId,PriceType)
+	SELECT i_ProductMaterialId,`Row`,`Column`,`Value`,i_CurrentDTS,i_CurrentDTS,1,i_GroupId,PriceType
+	FROM ProductPrice
+	WHERE ProductMaterialId = i_ProductMaterialId 
+		AND IsActive = 1
+		AND PriceType = i_PriceType;
+
+	UPDATE ProductPrice
+	SET IsActive = 0
+	WHERE ProductMaterialId = i_ProductMaterialId 
+		AND GroupId <> i_GroupId
+		AND PriceType = i_PriceType;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteComponent`(
+	i_Id INT
+)
+BEGIN	
+	DELETE FROM Component
+	WHERE Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteCustomer` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteCustomer`(
+	i_Id INT
+)
+BEGIN	
+	DELETE FROM Customer	
+	WHERE Id = i_Id;    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteDiscount` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteDiscount`(
+	i_Id INT
+)
+BEGIN	
+	DELETE FROM Discount	
+	WHERE Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteEmployee` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteEmployee`(
+	i_Id INT
+)
+BEGIN	
+	DELETE FROM Employee	
+	WHERE Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteMaterial` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteMaterial`(
+	i_Id INT
+)
+BEGIN	
+	DELETE FROM Material
+	WHERE Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteOrder` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteOrder`(
+	i_Id BIGINT
+)
+BEGIN	
+	DELETE FROM `Order`
+	WHERE Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteOrderComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteOrderComponent`(
+	i_Id INT
+)
+BEGIN	
+	DECLARE i_OrderId BIGINT;
+
+	SELECT  OrderId INTO i_OrderId
+	FROM OrderComponent
+	WHERE Id = i_Id;
+
+	DELETE FROM OrderComponent
+	WHERE Id =  i_Id;
+    
+	-- Step 2: update amount
+	CALL sp_CalculateOrderAmount(i_OrderId);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteOrderInvoice` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteOrderInvoice`(
+	i_Id INT
+)
+BEGIN	
+	DELETE FROM OrderInvoice
+	WHERE Id = i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteOrderPayment` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteOrderPayment`(
+	i_Id INT
+)
+BEGIN	    
+	DECLARE i_OrderId BIGINT;
+
+	SELECT  OrderId INTO i_OrderId
+	FROM OrderPayment
+	WHERE Id = i_Id;
+
+	DELETE FROM OrderPayment
+	WHERE Id = i_Id;
+
+	-- Step 2: update amount
+	CALL sp_CalculateOrderAmount(i_OrderId);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteOrderProduct` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteOrderProduct`(
+	i_Id INT
+)
+BEGIN	
+	DECLARE i_OrderId BIGINT;
+
+	SELECT OrderId INTO i_OrderId
+	FROM OrderPayment
+	WHERE Id = i_Id;
+
+	DELETE FROM OrderProduct
+	WHERE Id =  i_Id;
+	
+	-- Step 2: update amount
+	CALL sp_CalculateOrderAmount(i_OrderId);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteProduct` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteProduct`(
+	i_Id INT
+)
+BEGIN	
+	DELETE FROM Product
+	WHERE Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteProductComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteProductComponent`(
+	i_Id INT
+)
+BEGIN	
+	DELETE FROM ProductComponent
+	WHERE Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteProductMaterial` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteProductMaterial`(
+	i_Id INT
+)
+BEGIN	
+	DELETE FROM ProductMaterial
+	WHERE Id = i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteProductPrice` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteProductPrice`(
+	i_Id BIGINT
+)
+BEGIN	
+	DELETE FROM ProductPrice
+	WHERE GroupId = i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_DeleteSupplier` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_DeleteSupplier`(
+	i_Id INT
+    )
+BEGIN	
+	DELETE FROM Supplier	
+	WHERE Id=i_Id;    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllCategory` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllCategory`()
+BEGIN	
+	SELECT c.*
+	FROM Category c 
+    ORDER BY CategoryCode ASC;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllColor` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllColor`()
+BEGIN
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+	SELECT * FROM Color ;
+COMMIT ;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllComponent`()
+BEGIN	
+	SELECT c.*, s.Company AS SupplierName
+	FROM Component c
+	LEFT JOIN Supplier s ON c.SupplierId = s.Id;    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllComponentBySupplier` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllComponentBySupplier`(
+	i_Id INT
+    )
+BEGIN	
+	SELECT c.*, s.FirstName +' '+ s.LastName AS SupplierName
+	FROM Component c
+	INNER JOIN Supplier s ON c.SupplierId = s.Id
+	WHERE s.Id = i_Id OR i_Id = 0;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllCustomer` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllCustomer`()
+BEGIN	
+	SELECT * FROM Customer
+    ORDER BY IsBWC DESC, Id DESC;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllDiscount` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllDiscount`(
+	i_DiscountType INT
+)
+BEGIN	
+	
+	CREATE TEMPORARY TABLE IF NOT EXISTS Temp AS 
+	SELECT d.*
+	, p.ProductName AS ProductName
+	FROM Discount d 
+		JOIN Product p ON d.ProductId = p.Id
+	WHERE d.DiscountType = i_DiscountType;
+
+	IF(i_DiscountType = 0) THEN
+		SELECT t.*, s.Company AS ObjectName 
+		FROM Temp t
+		LEFT JOIN Supplier s ON s.Id = t.ObjectId;
+	ELSE
+		SELECT t.*, s.Company AS ObjectName 
+		FROM Temp t
+		LEFT JOIN Customer s ON s.Id = t.ObjectId;
+	END IF;
+    
+	DROP TEMPORARY TABLE IF EXISTS `Temp`;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllEmployee` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllEmployee`()
+BEGIN	
+	SELECT * FROM Employee;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllEmployeeTimeSheet` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllEmployeeTimeSheet`(
+	i_From VARCHAR(100),
+	i_To VARCHAR(100)
+)
+BEGIN	
+	DECLARE i_FromDate DATETIME;
+	DECLARE	i_ToDate DATETIME;
+	SET i_FromDate := STR_TO_DATE(CONCAT(i_From, ' 00:00:00'),'%d/%m/%Y %H:%i:%s');	
+	SET i_ToDate := STR_TO_DATE(CONCAT(i_To, ' 23:59:00'),'%d/%m/%Y %H:%i:%s');
+
+
+	SELECT DISTINCT t.*
+	FROM TimeSheet t
+	WHERE t.`month` BETWEEN i_FromDate AND i_ToDate
+    ORDER BY t.Id DESC;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllMaterial` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllMaterial`()
+BEGIN	
+	SELECT c.*, s.Company AS SupplierName
+	FROM Material c 
+	LEFT JOIN Supplier s  ON c.SupplierId = s.Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllOrder` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllOrder`(
+	i_OrderType INT
+)
+BEGIN	
+	DROP TEMPORARY TABLE IF EXISTS OrderPayment;
+    
+	CREATE TEMPORARY TABLE OrderPayment AS
+	SELECT OrderId , MAX(DatePaid) AS DatePaid
+	FROM OrderPayment
+	GROUP BY OrderId;
+
+
+	SELECT o.*,
+		op.DatePaid AS DatePaid
+	FROM `Order` o
+		LEFT JOIN OrderPayment op ON op.OrderId = o.Id
+    WHERE 
+	OrderType = 
+		CASE WHEN i_OrderType = 3 -- if type is quotation then change to the order
+		THEN  2 -- Order 
+		ELSE i_OrderType 
+		END
+	AND Step >= 
+		CASE 
+		WHEN i_OrderType = 2 -- Order: get these step > 1
+		THEN  2
+		ELSE Step 
+		END
+	AND Step = 
+		CASE 
+		WHEN i_OrderType = 3 -- Quotation: get these step = 1 only
+		THEN  1
+		ELSE Step 
+		END
+
+	ORDER BY o.Id DESC;
+	
+	DROP TEMPORARY TABLE IF EXISTS OrderPayment;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllOrderByDateRange` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllOrderByDateRange`(
+	i_OrderType INT,
+	i_From VARCHAR(100),
+	i_To VARCHAR(100)
+)
+BEGIN	
+	DECLARE i_FromDate DATETIME;
+	DECLARE	i_ToDate DATETIME;
+	SET i_FromDate := STR_TO_DATE(CONCAT(i_From, ' 00:00:00'),'%d/%m/%Y %H:%i:%s');	
+	SET i_ToDate := STR_TO_DATE(CONCAT(i_To, ' 23:59:00'),'%d/%m/%Y %H:%i:%s');
+
+	SELECT o.*
+	FROM `Order` o
+    WHERE OrderType=i_OrderType
+		AND OrderDate between i_FromDate and i_ToDate
+	ORDER BY o.Id DESC;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllOrderComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllOrderComponent`(
+	i_OrderId BIGINT
+)
+BEGIN	
+	SELECT pc.*
+	,c.ColorName AS Color
+	,p.ComponentName AS ComponentName
+	,p.ComponentCode AS ComponentCode
+	,p.Description AS Description
+	FROM OrderComponent pc	
+		JOIN Component p ON pc.ComponentId = p.Id
+		LEFT JOIN Color c ON pc.ColorId = c.Id
+	WHERE pc.OrderId = i_OrderId;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllOrderInvoice` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllOrderInvoice`(
+	i_OrderId BIGINT,
+	i_OrderType INT
+)
+BEGIN	
+	SELECT pc.*
+	FROM OrderInvoice pc
+	WHERE pc.OrderId = i_OrderId;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllOrderPayment` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllOrderPayment`(
+	i_OrderId BIGINT,
+	i_OrderType INT
+)
+BEGIN	
+	SELECT pc.*
+	FROM OrderPayment pc
+	WHERE pc.OrderId = i_OrderId;    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllOrderProduct` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllOrderProduct`(
+	i_OrderId BIGINT
+)
+BEGIN	
+	SELECT pc.*
+	,m.MaterialName AS MaterialName
+	,c.ColorName AS ColorName
+	,p.ProductName AS ProductName
+	,p.ProductCode AS ProductCode
+	FROM OrderProduct pc 	
+	JOIN Product p  ON pc.ProductId = p.Id
+	LEFT JOIN Color c ON pc.ColorId = c.Id
+	LEFT JOIN Material m  ON m.Id = pc.MaterialId
+	WHERE pc.OrderId = i_OrderId;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllProduct` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllProduct`()
+BEGIN	
+	SELECT p.*, c.CategoryName AS CategoryName 
+	FROM Product p
+	LEFT JOIN Category c ON p.CategoryId = c.Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllProductComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllProductComponent`(
+	i_Productid INT
+)
+BEGIN	
+	SELECT pc.*
+	,c.ColorName AS Color
+	,p.ComponentName AS ComponentName
+	,p.ComponentCode AS ComponentCode
+	FROM ProductComponent pc 	
+	JOIN Component p ON pc.ComponentId = p.Id
+	LEFT JOIN Color c ON pc.ColorId = c.Id
+	WHERE pc.ProductId = i_Productid;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllProductMaterial` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllProductMaterial`(
+	i_Productid INT
+)
+BEGIN	
+	SELECT pm.*
+	,m.MaterialName AS MaterialName
+	,m.Description AS Description
+	FROM ProductMaterial pm	
+	INNER JOIN Material m ON pm.MaterialId = m.Id
+	WHERE pm.ProductId = i_Productid
+    ORDER BY pm.Id DESC;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllProductPrice` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllProductPrice`(
+	i_ProductId INT,
+	i_PriceType INT
+)
+BEGIN	
+	SELECT pp.*
+		, pm.MaterialId AS MaterialId
+		, pm.ProductId AS ProductId
+		, pm.Id AS Id
+	FROM ProductPrice pp 
+		INNER JOIN ProductMaterial pm ON pp.ProductMaterialId = pm.Id
+	WHERE pm.ProductId= i_ProductId AND IsActive = 1 AND PriceType=i_PriceType;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllProductPriceByGroup` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllProductPriceByGroup`(
+	i_GroupId BIGINT,
+	i_PriceType INT
+)
+BEGIN	
+	SELECT pp.*, pm.MaterialId AS MaterialId,pm.ProductId AS ProductId
+	FROM ProductPrice pp 
+	JOIN ProductMaterial pm ON pp.ProductMaterialId = pm.Id
+	WHERE pp.GroupId= i_GroupId;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllSettings` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllSettings`()
+BEGIN	
+	SELECT *
+	FROM Settings;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllSupplier` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllSupplier`()
+BEGIN	
+	SELECT * FROM Supplier ;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetAllTimeSheet` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetAllTimeSheet`(
+	i_From VARCHAR(100),
+	i_To VARCHAR(100),
+    i_IsPaid BOOLEAN
+)
+BEGIN	
+	DECLARE i_FromDate DATETIME;
+	DECLARE	i_ToDate DATETIME;
+    DECLARE	i_BeginYear DATETIME;
+    DECLARE i_Contribution DECIMAL(18,2);
+	SET i_FromDate := STR_TO_DATE(CONCAT(i_From, ' 00:00:00'),'%d/%m/%Y %H:%i:%s');	
+	SET i_ToDate := STR_TO_DATE(CONCAT(i_To, ' 23:59:00'),'%d/%m/%Y %H:%i:%s');
+    SET i_BeginYear := STR_TO_DATE(CONCAT('01/01/',YEAR(i_FromDate), ' 00:00:00'),'%d/%m/%Y %H:%i:%s');	
+	
+    SELECT Contribution INTO i_Contribution FROM Settings LIMIT 1;
+    
+    IF i_IsPaid = 1 THEN
+		UPDATE salarypayment
+		SET LessPAYGStatus = 'Paid'
+			, PaidDts = NOW()
+		WHERE PaidFromDate BETWEEN i_FromDate AND i_ToDate;
+    END IF;
+    
+    
+    DROP TEMPORARY TABLE IF EXISTS Temp;    
+	 CREATE TEMPORARY TABLE Temp AS
+	 SELECT EmployeeId
+	 ,	`Month`
+	 FROM TimeSheetDetail td 
+	 WHERE td.`month` BETWEEN i_FromDate AND i_ToDate;
+    
+    DROP TEMPORARY TABLE IF EXISTS Temp1;
+    CREATE TEMPORARY TABLE Temp1 AS
+	SELECT DISTINCT 
+			t.EmployeeId
+		,	t.EmployeeName
+        ,	e.Address AS EmployeeAddress
+        ,	IFNULL(e.SalaryPerHours,0) AS Rate
+        ,	IFNULL(e.SickLeaveRate,0) AS SickLeaveRate
+        ,	IFNULL(e.AnnualLeaveRate,0) AS AnnualLeaveRate
+		,	e.JobTitle AS JobTitle
+        ,	e.SuperannuationName AS SuperannuationName
+        ,	'SuperannuationMemberNumber' AS SuperannuationMemberNumber
+		,	(
+			SELECT IFNULL(SUM(td.`Value`),0)
+			FROM TimeSheetDetail td
+			WHERE td.EmployeeId = t.EmployeeId 	
+			AND td.`month` BETWEEN i_FromDate AND i_ToDate
+			AND `Type` = 1 -- Working
+            LIMIT 1
+            
+		)AS TotalHoursInWork
+        ,	(
+			SELECT IFNULL(SUM(td.`Value`),0)
+			FROM TimeSheetDetail td
+			WHERE td.EmployeeId = t.EmployeeId 	
+			AND td.`month` BETWEEN i_BeginYear AND i_ToDate
+			AND `Type` = 1 -- Working
+            LIMIT 1
+            
+		)AS TotalHoursInWorkYTD
+		,	(
+			SELECT IFNULL(SUM(td.`Value`),0)
+			FROM TimeSheetDetail td
+			WHERE td.EmployeeId = t.EmployeeId 
+			AND td.`month` BETWEEN i_FromDate AND i_ToDate
+			AND `Type` = 2 -- Annual Leave
+            LIMIT 1
+		)AS TotalAnnualLeaveHours
+        ,	(
+			SELECT IFNULL(SUM(td.`Value`),0)
+			FROM TimeSheetDetail td
+			WHERE td.EmployeeId = t.EmployeeId 
+			AND td.`month` BETWEEN i_BeginYear AND i_ToDate
+			AND `Type` = 2 -- Annual Leave
+            LIMIT 1
+		)AS TotalAnnualLeaveHoursYTD
+		,	(
+			SELECT IFNULL(SUM(td.`Value`),0)
+			FROM TimeSheetDetail td
+			WHERE td.EmployeeId = t.EmployeeId 	
+			AND td.`month` BETWEEN i_FromDate AND i_ToDate
+			AND `Type` = 3 -- Sick Leave
+            LIMIT 1
+		)AS TotalSickLeaveHours
+        ,	(
+			SELECT IFNULL(SUM(td.`Value`),0)
+			FROM TimeSheetDetail td
+			WHERE td.EmployeeId = t.EmployeeId 	
+			AND td.`month` BETWEEN i_BeginYear AND i_ToDate
+			AND `Type` = 3 -- Sick Leave
+            LIMIT 1
+		)AS TotalSickLeaveHoursYTD
+        ,	(
+			SELECT IFNULL(SUM(td.`Value`),0)
+			FROM TimeSheetDetail td
+			WHERE td.EmployeeId = t.EmployeeId 	
+			AND td.`month` BETWEEN i_FromDate AND i_ToDate
+			AND `Type` = 4 -- Publish Holiday
+            LIMIT 1
+		)AS TotalPublishHolidayHours
+        ,	(
+			SELECT IFNULL(SUM(td.`Value`),0)
+			FROM TimeSheetDetail td
+			WHERE td.EmployeeId = t.EmployeeId 	
+			AND td.`month` BETWEEN i_BeginYear AND i_ToDate
+			AND `Type` = 4 -- Publish Holiday
+            LIMIT 1
+		)AS TotalPublishHolidayHoursYTD
+        
+	FROM TimeSheet t
+	JOIN Temp td ON t.EmployeeId = td.EmployeeId 
+		 AND MONTH(t.`month`) = MONTH(td.`month`)
+         AND YEAR(t.`month`) = YEAR(td.`month`)
+	JOIN Employee e ON t.EmployeeId = e.Id
+    ORDER BY t.EmployeeName ASC;	
+    
+    
+    DROP TEMPORARY TABLE IF EXISTS Temp2;
+    CREATE TEMPORARY TABLE Temp2 AS
+	SELECT * 
+		,	Rate * TotalHoursInWork AS NormalAmount
+        ,	Rate * TotalPublishHolidayHours AS PublicHolidayAmount
+        ,	Rate * TotalSickLeaveHours AS SickLeaveAmount
+        ,	Rate * TotalAnnualLeaveHours AS AnnualLeaveAmount
+        ,	Rate * TotalHoursInWorkYTD AS NormalAmountYTD
+        ,	Rate * TotalPublishHolidayHoursYTD AS PublicHolidayAmountYTD
+        ,	Rate * TotalSickLeaveHoursYTD AS SickLeaveAmountYTD
+        ,	Rate * TotalAnnualLeaveHoursYTD AS AnnualLeaveAmountYTD
+        ,	SickLeaveRate * (TotalHoursInWorkYTD + TotalPublishHolidayHoursYTD) - TotalSickLeaveHoursYTD AS SickLeaveYTD
+        ,	AnnualLeaveRate * (TotalHoursInWorkYTD + TotalPublishHolidayHoursYTD) - TotalAnnualLeaveHoursYTD AS AnnualLeaveYTD
+    FROM Temp1;
+    
+    SELECT * 
+    ,	NormalAmount + PublicHolidayAmount + SickLeaveAmount + AnnualLeaveAmount AS TaxableIncome
+    ,	NormalAmountYTD + PublicHolidayAmountYTD + SickLeaveAmountYTD + AnnualLeaveAmountYTD AS TaxableIncomeYTD
+    ,	NormalAmount + PublicHolidayAmount + SickLeaveAmount + AnnualLeaveAmount - IFNULL(sp.LessPAYG,0) AS NetPaidAmount
+    ,	NormalAmountYTD + PublicHolidayAmountYTD + SickLeaveAmountYTD + AnnualLeaveAmountYTD - (SELECT IFNULL(SUM(p.LessPAYG),0)
+																								FROM salarypayment p
+																								WHERE p.EmployeeId = t.EmployeeId 	
+																								AND p.PaidFromDate BETWEEN i_BeginYear AND i_ToDate
+																								LIMIT 1) 
+		AS NetPaidAmountYTD
+    ,	sp.LessPAYG AS LessPAYG
+    ,	(
+			SELECT IFNULL(SUM(p.LessPAYG),0)
+			FROM salarypayment p
+			WHERE p.EmployeeId = t.EmployeeId 	
+			AND p.PaidFromDate BETWEEN i_BeginYear AND i_ToDate
+            LIMIT 1
+		) AS LessPAYGYTD
+    ,	IFNULL(sp.LessPAYG,0) * i_Contribution/100 AS Contribution
+    ,	(SELECT IFNULL(SUM(p.LessPAYG),0)
+			FROM salarypayment p
+			WHERE p.EmployeeId = t.EmployeeId 	
+			AND p.PaidFromDate BETWEEN i_BeginYear AND i_ToDate
+            LIMIT 1) * i_Contribution/100 
+		AS ContributionYTD
+    ,	sp.PaidDts AS SalaryPaidDate
+    ,	sp.LessPAYGStatus AS LessPAYGStatus
+    FROM Temp2 t
+    LEFT JOIN salarypayment sp 
+		ON t.EmployeeId = sp.EmployeeId
+        AND sp.PaidFromDate BETWEEN i_FromDate AND i_ToDate ;
+    
+	DROP TEMPORARY TABLE Temp;
+    DROP TEMPORARY TABLE Temp1;
+    DROP TEMPORARY TABLE Temp2;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetCategory` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetCategory`(
+	i_Id INT
+)
+BEGIN	
+	SELECT * FROM Category	
+	WHERE Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetComponent`(
+	i_Id INT
+)
+BEGIN	
+	SELECT * FROM Component	
+	WHERE Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetCustomer` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetCustomer`(
+	i_Id INT
+)
+BEGIN	
+	SELECT * FROM Customer
+	WHERE Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetDiscount` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetDiscount`(
+	i_Id INT
+)
+BEGIN		
+	SELECT *
+	FROM Discount
+	WHERE Id =  i_Id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetEmployee` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetEmployee`(
+	i_Id INT
+)
+BEGIN	
+	SELECT * FROM Employee	
+	WHERE Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetItemsInOrder` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetItemsInOrder`(
+	i_OrderType INT
+)
+BEGIN	
+	SELECT 
+		op.Id AS Id,
+		op.OrderId AS OrderId,
+		op.ProductId AS ItemId,	
+		p.ProductName AS ItemName,
+		op.Quantity AS Quantity,
+		op.UnitPrice AS Price,
+		op.UnitId AS UnitId,
+		-- op.TotalAmount AS Total,
+		op.Discount AS Discount,
+		op.Step AS Step,
+		'Product' AS ItemType,
+		op.TotalAmount AS TotalAmount
+	FROM `Order` o 
+		join OrderProduct op ON o.Id = op.OrderId	
+		left join Product p ON p.Id = op.ProductId
+	WHERE o.OrderType=i_OrderType
+	UNION 
+	SELECT 
+		op.Id AS OrderItemId,
+		op.OrderId AS OrderId,
+		op.ComponentId AS ItemId,
+		c.ComponentName AS ItemName,
+		op.Quantity AS Quantity,
+		op.Price AS Price,
+		op.UnitId AS UnitId,
+		-- 0 AS Total,
+		op.Discount AS Discount,
+		op.Step AS Step,
+		'Component' AS ItemType,
+		op.TotalAmount AS TotalAmount
+	 FROM `Order` o	
+		join OrderComponent op ON o.Id = op.OrderId
+		left join Component c ON c.Id = op.ComponentId
+	WHERE o.OrderType=i_OrderType;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetListGroupPriceByProduct` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetListGroupPriceByProduct`(
+	i_ProductMaterialId INT,
+	i_PriceType INT
+)
+BEGIN	
+	SELECT DISTINCT GroupId,ProductMaterialId,CreateDTS,UpdateDTS,IsActive
+	FROM ProductPrice 
+	WHERE ProductMaterialId= i_ProductMaterialId AND PriceType = i_PriceType
+    ORDER BY GroupId DESC;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetMaterial` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetMaterial`(
+	i_Id INT
+)
+BEGIN	
+	SELECT * FROM Material 
+	WHERE Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetOrder` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetOrder`(
+	i_Id BIGINT
+)
+BEGIN	
+	SELECT o.*
+	FROM `Order` o 
+	WHERE o.Id =  i_Id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetOrderComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetOrderComponent`(
+	i_Id INT
+)
+BEGIN	
+	SELECT pc.*
+	,c.ColorName AS Color
+	,p.ComponentName AS ComponentName
+	,p.ComponentCode AS ComponentCode
+	FROM OrderComponent pc
+		JOIN Component p ON pc.ComponentId = p.Id
+		LEFT JOIN Color c ON pc.ColorId = c.Id
+	WHERE pc.Id = i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetOrderInvoice` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetOrderInvoice`(
+	i_Id INT,
+	i_OrderType INT
+)
+BEGIN	
+	SELECT pc.*
+	FROM OrderInvoice pc
+	WHERE pc.Id = i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetOrderPayment` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetOrderPayment`(
+	i_Id INT,
+	i_OrderType INT
+)
+BEGIN	
+	SELECT pc.*
+	FROM OrderPayment pc	
+	WHERE pc.Id = i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetOrderProduct` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetOrderProduct`(
+	i_Id INT
+)
+BEGIN	
+	SELECT pc.*
+	-- ,c.ColorName AS ColorName
+	,p.ProductName AS ProductName
+	,p.ProductCode AS ProductCode
+	FROM OrderProduct pc 	
+		JOIN Product p ON pc.ProductId = p.Id
+		LEFT JOIN Color c ON pc.ColorId = c.Id
+	WHERE pc.Id = i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetProduct` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetProduct`(
+	i_Id INT
+)
+BEGIN	
+	SELECT p.*, c.CategoryName AS CategoryName 
+	FROM Product p 
+		LEFT JOIN Category c ON p.CategoryId = c.Id	
+	WHERE p.Id =  i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetProductComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetProductComponent`(
+	i_Id INT
+)
+BEGIN	
+	SELECT pc.*
+	,c.ColorName AS Color
+	,p.ComponentName AS ComponentName
+	,p.ComponentCode AS ComponentCode
+	FROM ProductComponent pc 	
+	JOIN Component p ON pc.ComponentId = p.Id
+	LEFT JOIN Color c ON pc.ColorId = c.Id
+	WHERE pc.Id = i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetProductMaterialPrice` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetProductMaterialPrice`(
+	i_ProductMaterialId INT,
+	i_PriceType INT
+)
+BEGIN	
+	SELECT * 
+	FROM ProductPrice 
+	WHERE ProductMaterialId= i_ProductMaterialId AND IsActive = 1 AND PriceType = i_PriceType;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetSupplier` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetSupplier`(
+	i_Id INT
+)
+BEGIN	
+	SELECT * FROM Supplier
+	WHERE Id =  i_Id;    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetSystemInfo` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetSystemInfo`()
+BEGIN	
+	SELECT * FROM Customer	
+	WHERE IsBWC = 1
+    LIMIT 1;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_GetTimeSheetDetail` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_GetTimeSheetDetail`(
+	i_Date VARCHAR(100)
+)
+BEGIN	
+	DECLARE i_FromDate DATETIME;
+	DECLARE	i_ToDate DATETIME;
+	DECLARE	i_DateTime VARCHAR(100);
+	SET i_DateTime := REPLACE(i_Date,'/','');
+	SET i_FromDate := DATE_ADD(CONCAT(RIGHT(i_DateTime,4), CONCAT(LEFT(i_DateTime,2)),"01"), INTERVAL 0 SECOND);
+	SET i_ToDate := DATE_ADD(CONCAT(RIGHT(i_DateTime,4), CONCAT(LEFT(i_DateTime,2)),"01"), INTERVAL 1 MONTH);
+    SET i_ToDate := DATE_ADD(i_ToDate, INTERVAL -10 second); -- Back to one day
+	
+
+	SELECT e.EmployeeId AS EmployeeId
+		, e.EmployeeName AS EmployeeName
+		, e.TotalHoursInWork AS TotalHoursInWork
+		, t.`Day` AS `Day`
+		, t.`Month` AS `Month`
+		, t.`Value` AS `Value`
+		, t.`Type` AS`Type`
+        , t.Approved AS Approved
+        , t.ApprovedBy AS ApprovedBy
+	FROM TimeSheet e 	
+	LEFT JOIN TimeSheetDetail t ON e.EmployeeId = t.EmployeeId 
+		 AND MONTH(t.`month`) = MONTH(e.`month`)
+         AND YEAR(t.`month`) = YEAR(e.`month`)
+	WHERE e.`month` BETWEEN i_FromDate AND i_ToDate
+    ORDER BY e.id DESC;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertComponent`(
+    i_ComponentCode NVARCHAR(250),
+    i_ComponentName NVARCHAR(250),
+    i_SupplierId INT,
+    i_Price DECIMAL(18,2),
+	i_PurchasePrice DECIMAL(18,2),
+    i_Color NVARCHAR(250),
+    i_Unit NVARCHAR(250),
+    i_Description  NVARCHAR(21844),
+	i_Discount DECIMAL(18,2),
+    i_ActiveStatus INT
+)
+BEGIN	
+	INSERT Component(
+		ComponentCode,
+		ComponentName,
+		SupplierId,
+		Price,
+		PurchasePrice,
+		Color,
+		Unit,
+		Description,
+		Discount,
+		ActiveStatus,
+        CreateDTS)
+	SELECT 
+        i_ComponentCode,
+		i_ComponentName,
+		i_SupplierId,
+		i_Price,
+		i_PurchasePrice,
+		i_Color,
+		i_Unit,
+		i_Description,
+		i_Discount,
+		i_ActiveStatus,
+        NOW();
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertCustomer` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertCustomer`(
+    i_FirstName NVARCHAR(250),
+    i_LastName NVARCHAR(250),
+    i_Company NVARCHAR(250),
+    i_Email NVARCHAR(250),
+    i_JobTitle NVARCHAR(250),
+    i_WebPage NVARCHAR(250),
+    i_Notes NVARCHAR(21844),
+    i_Address NVARCHAR(500),
+    i_ZipCode NVARCHAR(250),
+    i_City NVARCHAR(250),
+    i_State NVARCHAR(250),
+    i_Country NVARCHAR(250),
+    i_BusinessPhone NVARCHAR(250),
+    i_MobilePhone NVARCHAR(250),
+    i_HomePhone NVARCHAR(250),
+    i_Fax NVARCHAR(250),
+	i_Discount DECIMAL(18,2),
+	i_ABN NVARCHAR(250)
+)
+BEGIN	
+	INSERT Customer(
+		FirstName,
+        LastName,
+        Company,
+        Email,
+        JobTitle,
+        WebPage,
+        Notes,
+        Address,
+        ZipCode,
+        City,
+        State,
+        Country,
+        BusinessPhone,
+        MobilePhone,
+        HomePhone,
+        Fax,
+		Discount,
+		ABN,
+        CreateDTS)
+	SELECT 
+        i_FirstName,
+        i_LastName,
+        i_Company,
+        i_Email,
+        i_JobTitle,
+        i_WebPage,
+        i_Notes,
+        i_Address,
+        i_ZipCode,
+        i_City,
+        i_State,
+        i_Country,
+        i_BusinessPhone,
+        i_MobilePhone,
+        i_HomePhone,
+        i_Fax,
+		i_Discount,
+		i_ABN,
+        NOW();
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertDiscount` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertDiscount`(
+    i_ObjectId INT,
+	i_ProductId INT,
+	i_DiscountValue DECIMAL(18,2),
+	i_DiscountType INT
+)
+BEGIN	
+	INSERT Discount(
+		ObjectId,
+		ProductId,
+		DiscountValue,
+		DiscountType,
+        CreateDTS)
+	SELECT 
+        i_ObjectId,
+		i_ProductId,
+		i_DiscountValue,
+		i_DiscountType,
+        NOW();
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertEmployee` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertEmployee`(
+    i_FirstName NVARCHAR(250),
+    i_LastName NVARCHAR(250),
+    i_Company NVARCHAR(250),
+    i_Email NVARCHAR(250),
+    i_JobTitle NVARCHAR(250),
+    i_WebPage NVARCHAR(250),
+    i_Notes NVARCHAR(21844),
+    i_Address NVARCHAR(500),
+    i_ZipCode NVARCHAR(250),
+    i_City NVARCHAR(250),
+    i_State NVARCHAR(250),
+    i_Country NVARCHAR(250),
+    i_BusinessPhone NVARCHAR(250),
+    i_MobilePhone NVARCHAR(250),
+    i_HomePhone NVARCHAR(250),
+    i_Fax NVARCHAR(250),
+	i_TaxFileNumber INT,
+	i_SuperannuationName NVARCHAR(550),
+	i_FundABN NVARCHAR(550),
+	i_FundAddress NVARCHAR(550),
+	i_FundUSI NVARCHAR(550),
+	i_SuperannuationMemberNumber INT,
+	i_SalaryPerHours NUMERIC(18,2),
+	i_SickLeaveRate NUMERIC(18,8),
+	i_AnnualLeaveRate NUMERIC(18,8)
+)
+BEGIN	
+	INSERT Employee(
+		FirstName,
+        LastName,
+        Company,
+        Email,
+        JobTitle,
+        WebPage,
+        Notes,
+        Address,
+        ZipCode,
+        City,
+        State,
+        Country,
+        BusinessPhone,
+        MobilePhone,
+        HomePhone,
+        Fax,
+		SalaryPerHours,
+		TaxFileNumber,
+		SuperannuationName,
+		FundABN,
+		FundAddress,
+		FundUSI,
+		SuperannuationMemberNumber,
+        SickLeaveRate,
+        AnnualLeaveRate,
+        CreateDTS)
+	SELECT 
+        i_FirstName,
+        i_LastName,
+        i_Company,
+        i_Email,
+        i_JobTitle,
+        i_WebPage,
+        i_Notes,
+        i_Address,
+        i_ZipCode,
+        i_City,
+        i_State,
+        i_Country,
+        i_BusinessPhone,
+        i_MobilePhone,
+        i_HomePhone,
+        i_Fax,
+		i_SalaryPerHours,
+		i_TaxFileNumber,
+		i_SuperannuationName,
+		i_FundABN,
+		i_FundAddress,
+		i_FundUSI,
+		i_SuperannuationMemberNumber,
+        i_SickLeaveRate,
+        i_AnnualLeaveRate,
+        NOW();
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertMaterial` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertMaterial`(
+    i_MaterialCode NVARCHAR(250),
+	i_MaterialName NVARCHAR(250),
+	i_Color NVARCHAR(250),
+    i_SupplierId INT,
+    i_Price DECIMAL(18,2),
+    i_Description NVARCHAR(21844), 
+    i_ActiveStatus INT
+)
+BEGIN	
+	INSERT Material(
+		MaterialCode,
+		MaterialName,		
+		SupplierId,
+		Price,
+		Description,
+		ActiveStatus,
+		Color,
+        CreateDTS)
+	SELECT 
+		i_MaterialCode,
+		i_MaterialName,
+		i_SupplierId,
+		i_Price,
+		i_Description,
+		i_ActiveStatus,
+		i_Color,
+        NOW();
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertOrder` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertOrder`(
+	i_Id BIGINT,
+    i_EmployeeId INT,
+    i_EmployeeName NVARCHAR(250),
+    i_Step VARCHAR(50),
+    i_Taxes DECIMAL(18,2),
+    i_Surcharge DECIMAL(18,2),
+    i_Discount DECIMAL(18,2),
+    i_OrderDate DateTime,
+    i_FirtReceiveDate DateTime,
+    i_LastUpdate DateTime,
+    i_DeliveryDate DateTime,
+	i_DeliveryNo NVARCHAR(250),
+    i_Notes NVARCHAR(21844),
+    i_SupplierId INT,
+    i_SupplierName NVARCHAR(500),
+    i_SupplierAddress NVARCHAR(500),
+    i_SupplierEmail NVARCHAR(250),
+    i_SupplierPhone NVARCHAR(250),	
+	i_CustomerId INT,
+    i_CustomerName NVARCHAR(500),
+    i_CustomerAddress NVARCHAR(500),
+    i_CustomerEmail NVARCHAR(250),
+    i_CustomerPhone NVARCHAR(250),
+    i_OrderRefNo NVARCHAR(250),
+    i_OrderType INT,
+	i_AMTExcGST DECIMAL(18,2),
+	i_GST DECIMAL(18,2),
+	i_AMTIncGST DECIMAL(18,2),
+    i_ActiveStatus INT,
+	i_InvoiceNoForOrderOnly NVARCHAR(500),
+	i_InvoiceDateForOrderOnly DateTime,
+    i_PickupDateForOrderOnly DateTime,
+    i_CompleteDateForOrderOnly DateTime
+)
+BEGIN	
+	INSERT `Order`(
+		Id,
+		EmployeeId,
+		EmployeeName,
+		Step,
+		Taxes,
+		Surcharge,
+		Discount,
+		OrderDate,
+		FirtReceiveDate,
+		LastUpdate,
+		DeliveryDate,	
+		DeliveryNo,	
+		Notes,
+		SupplierId,
+		SupplierName,
+		SupplierAddress,
+		SupplierEmail,
+		SupplierPhone,
+		CustomerId,
+		CustomerName,
+		CustomerAddress,
+		CustomerEmail,
+		CustomerPhone,
+		OrderRefNo,
+		OrderType,
+		AMTExcGST,
+		GST,
+		AMTIncGST,
+		ActiveStatus,
+		InvoiceNoForOrderOnly,
+		InvoiceDateForOrderOnly,
+		PickupDateForOrderOnly,
+		CompleteDateForOrderOnly,
+        CreateDTS)
+	SELECT 
+		i_Id,
+        i_EmployeeId,
+		i_EmployeeName,
+		i_Step,
+		i_Taxes,
+		i_Surcharge,
+		i_Discount,
+		NOW(),
+		i_FirtReceiveDate,
+		i_LastUpdate,
+		i_DeliveryDate,		
+		i_DeliveryNo,
+		i_Notes,
+		i_SupplierId,
+		i_SupplierName,
+		i_SupplierAddress,
+		i_SupplierEmail,
+		i_SupplierPhone,
+		i_CustomerId,
+		i_CustomerName,
+		i_CustomerAddress,
+		i_CustomerEmail,
+		i_CustomerPhone,
+		i_OrderRefNo,
+		i_OrderType,
+		i_AMTExcGST,
+		i_GST,
+		i_AMTIncGST,
+		i_ActiveStatus,
+		i_InvoiceNoForOrderOnly,
+		i_InvoiceDateForOrderOnly,
+		i_PickupDateForOrderOnly,
+		i_CompleteDateForOrderOnly,
+        NOW();
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertOrderComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertOrderComponent`(
+    i_OrderType INT,
+    i_OrderId BIGINT,
+    i_ComponentId INT,
+    i_ColorId INT,
+    i_Quantity INT,
+    i_Price DECIMAL(18,2),
+	i_ExtendPrice DECIMAL(18,2),
+    i_ExtCharge BIT,
+	i_UnitId INT,
+	i_UnitName NVARCHAR(250),
+	i_Step INT,
+	i_TotalAmount DECIMAL(18,2),
+	i_DeliveryNo NVARCHAR(250),
+	i_DeliveryDate DATETIME,
+	i_Received INT,
+	i_BackOrder INT,
+	i_AMTExcGST DECIMAL(18,2),
+	i_GST DECIMAL(18,2),
+	i_AMTIncGST DECIMAL(18,2),
+	i_ReceivedAMTExcGST DECIMAL(18,2),
+	i_ReceivedGST DECIMAL(18,2),
+	i_ReceivedAMTIncGST DECIMAL(18,2),
+	i_Size NVARCHAR(250),
+	i_Discount DECIMAL(18,2)
+)
+BEGIN	
+	INSERT OrderComponent(
+		OrderType,
+		OrderId,
+		ComponentId,
+		ColorId,
+		Quantity,
+		Price,
+		ExtendPrice,
+		ExtCharge,
+		UnitId,
+		UnitName,
+		Step,	
+		TotalAmount,
+		DeliveryNo,
+		DeliveryDate,
+		Received,
+		BackOrder,	
+		AMTExcGST,
+		GST,
+		AMTIncGST,
+		ReceivedAMTExcGST,
+		ReceivedGST,
+		ReceivedAMTIncGST,
+		Size,
+		Discount,
+        CreateDTS)
+	SELECT 
+		i_OrderType,
+        i_OrderId,
+		i_ComponentId,
+		i_ColorId,
+		i_Quantity,
+		i_Price,
+		i_ExtendPrice,
+		i_ExtCharge,
+		i_UnitId,
+		i_UnitName,
+		i_Step,
+		i_TotalAmount,
+		i_DeliveryNo,
+		i_DeliveryDate,
+		i_Received,
+		i_BackOrder,
+		i_AMTExcGST,
+		i_GST,
+		i_AMTIncGST,
+		i_ReceivedAMTExcGST,
+		i_ReceivedGST,
+		i_ReceivedAMTIncGST,
+		i_Size,
+		i_Discount,
+        NOW();
+    
+	-- Step 2: update amount
+	CALL sp_CalculateOrderAmount (i_OrderId);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertOrderComponentFromOrder` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertOrderComponentFromOrder`(
+	i_OrderId BIGINT,	
+    i_Xml MEDIUMTEXT
+)
+BEGIN	
+	DECLARE i_index INT UNSIGNED DEFAULT 0;
+	DECLARE i_rowCount INT UNSIGNED;
+	DECLARE i_xpath TEXT;
+    
+	DROP TEMPORARY TABLE IF EXISTS `XMLColumns`;
+    CREATE TEMPORARY TABLE XMLColumns (Id INT);
+    
+	-- item count in the collection
+    SET i_rowCount := extractValue(i_Xml,'count(//ArrayOfOrderComponent/OrderComponent)');
+    
+    -- iterate over list
+	  WHILE i_index < i_rowCount DO        
+		SET i_index := i_index + 1;
+		SET i_xpath := concat('//ArrayOfOrderComponent/OrderComponent[',i_index, ']');
+
+		INSERT INTO XMLColumns VALUES (
+		  extractValue(i_Xml, concat(i_xpath,'/@Id'))
+		);
+	  END WHILE;
+
+	-- step 2: insert new components into order
+	INSERT INTO OrderComponent(OrderId
+								,ComponentId
+								,ColorId
+								,ColorName
+								,Quantity
+								,Price
+								,ExtendPrice
+								,ExtCharge
+								,UnitId
+								,UnitName
+								,TotalAmount
+								,Discount
+								,OrderRefNo
+								,Size
+								,CreateDTS)
+	SELECT i_OrderId
+		,oc.ComponentId
+		,oc.ColorId
+		,oc.ColorName
+		,oc.Quantity
+		,oc.Price
+		,oc.ExtendPrice
+		,oc.ExtCharge
+		,oc.UnitId
+		,oc.UnitName
+		,oc.TotalAmount
+		,oc.Discount
+		,oc.OrderId
+		,oc.Size
+		,NOW()
+	FROM XMLColumns t
+	JOIN OrderComponent oc ON t.Id = oc.Id;
+    
+	-- Step 3: update amount
+	CALL sp_CalculateOrderAmount (i_OrderId);
+
+	-- Step 4: update component step to in-process: 2
+	UPDATE OrderComponent oc
+	JOIN XMLColumns t ON t.Id = oc.Id
+	SET oc.Step = 2;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertOrderInvoice` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertOrderInvoice`(
+    i_OrderId BIGINT,
+	i_InvoiceNo NVARCHAR(250),
+    i_InvoiceAmount DECIMAL(18,2),
+    i_CutLengthCharge NVARCHAR(250),
+	i_DeliveryCharge NVARCHAR(250),
+	i_AMTExcGST DECIMAL(18,2),
+	i_GST DECIMAL(18,2),
+	i_AMTIncGST DECIMAL(18,2),
+	i_ActiveStatus INT
+)
+BEGIN	
+	INSERT OrderInvoice(
+		OrderId,
+		InvoiceNo,
+		InvoiceDate,
+		InvoiceAmount,
+		CutLengthCharge,
+		DeliveryCharge,
+		AMTExcGST,
+		GST,
+		AMTIncGST,
+		CreateDTS)
+	SELECT 
+        i_OrderId,
+		i_InvoiceNo,
+		NOW(),
+		i_InvoiceAmount,
+		i_CutLengthCharge,
+		i_DeliveryCharge,
+		i_AMTExcGST,
+		i_GST,
+		i_AMTIncGST,
+        NOW();
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertOrderPayment` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertOrderPayment`(
+    i_OrderId BIGINT,
+    i_AmountPaid DECIMAL(18,2),
+    i_PaymentType NVARCHAR(250),
+	i_DatePaid DATETIME,
+	i_ActiveStatus INT
+)
+BEGIN	
+
+	DECLARE i_TotalPaid DECIMAL(18,2);
+	DECLARE	i_TotalReceived DECIMAL(18,2);
+    
+	-- Step 1: insert
+	INSERT OrderPayment(
+		OrderId,
+		DatePaid,
+		AmountPaid,
+		PaymentType,
+		CreateDTS)
+	SELECT 
+        i_OrderId,
+		i_DatePaid,
+		i_AmountPaid,
+		i_PaymentType,
+        NOW();
+
+	-- Step 2: update amount
+	CALL sp_CalculateOrderAmount(i_OrderId);
+
+	-- Step 3: change order step
+	SELECT  TotalPaid
+		,	TotalReceived
+    INTO i_TotalPaid
+		,i_TotalReceived
+	FROM `Order`
+	WHERE Id = i_OrderId;
+
+	IF(i_TotalPaid - i_TotalReceived >= 0)
+	THEN
+		UPDATE `Order`
+		SET Step = 5 -- PAID
+		WHERE Id = i_OrderId;
+	END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertOrderProduct` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertOrderProduct`(
+    i_OrderId BIGINT,
+	i_OrderType INT,
+	i_ProductId INT,
+	i_MaterialId INT,
+	i_LocationId INT,
+	i_ColorId INT,
+	i_ColorName NVARCHAR(250),
+	i_ControlSideId INT,
+	i_UnitId INT, 
+	i_Drop INT,
+	i_Width INT,
+	i_Quantity INT,
+	i_Discount INT,
+	i_ExtendPrice DECIMAL(18,2),
+	i_UnitPrice DECIMAL(18,2),
+	i_TotalAmount DECIMAL(18,2),
+	i_DeliveryNo NVARCHAR(250),
+	i_DeliveryDate DATETIME,
+	i_Received INT,
+	i_BackOrder INT,
+	i_Step INT,	
+	i_AMTExcGST DECIMAL(18,2),
+	i_GST DECIMAL(18,2),
+	i_AMTIncGST DECIMAL(18,2),
+	i_ReceivedAMTExcGST DECIMAL(18,2),
+	i_ReceivedGST DECIMAL(18,2),
+	i_ReceivedAMTIncGST DECIMAL(18,2)
+)
+BEGIN	
+	INSERT OrderProduct(
+		OrderId,
+		ProductId,
+		MaterialId,
+		LocationId,
+		ColorId,
+		ColorName,
+		ControlSideId,
+		UnitId,
+		`Drop`,
+		Width,
+		Quantity,
+		Discount,
+		ExtendPrice,
+		UnitPrice,
+		TotalAmount,
+		DeliveryNo,
+		DeliveryDate,
+		Received,
+		BackOrder,
+		Step,
+		AMTExcGST,
+		GST,
+		AMTIncGST,
+		ReceivedAMTExcGST,
+		ReceivedGST,
+		ReceivedAMTIncGST,
+		CreateDTS)
+	SELECT 
+        i_OrderId,
+		i_ProductId,
+		i_MaterialId,
+		i_LocationId,
+		i_ColorId,
+		i_ColorName,
+		i_ControlSideId,
+		i_UnitId,
+		i_Drop,
+		i_Width,
+		i_Quantity,
+		i_Discount,
+		i_ExtendPrice,
+		i_UnitPrice,
+		i_TotalAmount,
+		i_DeliveryNo,
+		i_DeliveryDate,
+		i_Received,
+		i_BackOrder,
+		i_Step,
+		i_AMTExcGST,
+		i_GST,
+		i_AMTIncGST,
+		i_ReceivedAMTExcGST,
+		i_ReceivedGST,
+		i_ReceivedAMTIncGST,
+        NOW();
+
+    -- Step 2: update amount
+	CALL sp_CalculateOrderAmount(i_OrderId);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertOrderProductFromOrder` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertOrderProductFromOrder`(
+	i_OrderId BIGINT,	
+    i_Xml mediumtext
+)
+BEGIN	
+	DECLARE i_OrderId BIGINT;
+	DECLARE i_index INT UNSIGNED DEFAULT 0;
+	DECLARE i_rowCount INT UNSIGNED;
+	DECLARE i_xpath TEXT;
+    
+	DROP TEMPORARY TABLE IF EXISTS `XMLColumns`;
+    CREATE TEMPORARY TABLE XMLColumns (Id INT);
+    
+	-- item count in the collection
+    SET i_rowCount := extractValue(i_Xml,'count(//ArrayOfOrderProduct/OrderProduct)');
+    
+    -- iterate over list
+	  WHILE i_index < i_rowCount DO        
+		SET i_index := i_index + 1;
+		SET i_xpath := concat('//ArrayOfOrderProduct/OrderProduct[',i_index, ']');
+
+		INSERT INTO XMLColumns VALUES (
+		  extractValue(i_Xml, concat(i_xpath,'/Id'))
+		);
+	  END WHILE;
+	-- step 2: insert new Products into order
+	INSERT INTO OrderProduct(OrderId
+								,ProductId
+								,MaterialId
+								,LocationId
+								,ColorId
+								,ColorName
+								,ControlSideId
+								,UnitId
+								,`Drop`
+								,Width
+								,Quantity
+								,Discount
+								,ExtendPrice
+								,UnitPrice
+								,TotalAmount
+								,OrderRefNo
+								,CreateDTS)
+	SELECT i_OrderId
+	,oc.ProductId
+	,oc.MaterialId
+	,oc.LocationId
+	,oc.ColorId
+	,oc.ColorName
+	,oc.ControlSideId
+	,oc.UnitId
+	,oc.`Drop`
+	,oc.Width
+	,oc.Quantity
+	,oc.Discount
+	,oc.ExtendPrice
+	,oc.UnitPrice
+	,oc.TotalAmount
+	,oc.OrderId
+	,NOW()
+	FROM XMLColumns t
+	JOIN OrderProduct oc ON t.Id = oc.Id;
+    
+	-- Step 3: update amount
+	CALL sp_CalculateOrderAmount(i_OrderId);
+
+	-- Step 4: update Product step to in-process: 2
+	UPDATE XMLColumns t
+	JOIN OrderProduct oc ON t.Id = oc.Id
+	SET oc.Step = 2;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertProduct` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertProduct`(
+    i_ProductCode NVARCHAR(250),
+    i_ProductName NVARCHAR(250),
+    i_CategoryId INT,
+    i_Notes  NVARCHAR(21844),
+    i_ActiveStatus INT
+)
+BEGIN	
+	INSERT Product(
+		ProductCode,
+		ProductName,
+		CategoryId,
+		Notes,
+		ActiveStatus,
+        CreateDTS)
+	SELECT 
+        i_ProductCode,
+		i_ProductName,
+		i_CategoryId,
+		i_Notes,
+		i_ActiveStatus,
+        NOW();
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertProductComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertProductComponent`(
+    i_ProductId INT,
+    i_ComponentId INT,
+    i_ColorId INT,
+    i_Quantity INT,
+    i_Price DECIMAL(18,2),
+    i_ExtCharge BIT
+)
+BEGIN	
+	INSERT ProductComponent(
+		ProductId,
+		ComponentId,
+		ColorId,
+		Quantity,
+		Price,
+		ExtCharge,
+        CreateDTS)
+	SELECT 
+        i_ProductId,
+		i_ComponentId,
+		i_ColorId,
+		i_Quantity,
+		i_Price,
+		i_ExtCharge,
+        NOW();    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertProductMaterial` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertProductMaterial`(
+    i_ProductId INT,
+    i_MaterialId INT
+)
+BEGIN	
+	INSERT ProductMaterial(
+		ProductId,
+		MaterialId,
+        CreateDTS)
+	SELECT 
+        i_ProductId,
+		i_MaterialId,
+        NOW();
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertSupplier` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertSupplier`(
+    i_FirstName NVARCHAR(250),
+    i_LastName NVARCHAR(250),
+    i_Company NVARCHAR(250),
+    i_Email NVARCHAR(250),
+    i_JobTitle NVARCHAR(250),
+    i_WebPage NVARCHAR(250),
+    i_Notes NVARCHAR(21844),
+    i_Address NVARCHAR(500),
+    i_ZipCode NVARCHAR(250),
+    i_City NVARCHAR(250),
+    i_State NVARCHAR(250),
+    i_Country NVARCHAR(250),
+    i_BusinessPhone NVARCHAR(250),
+    i_MobilePhone NVARCHAR(250),
+    i_HomePhone NVARCHAR(250),
+    i_Fax NVARCHAR(250),
+	i_ABN NVARCHAR(250)
+)
+BEGIN	
+	INSERT Supplier(
+		FirstName,
+        LastName,
+        Company,
+        Email,
+        JobTitle,
+        WebPage,
+        Notes,
+        Address,
+        ZipCode,
+        City,
+        State,
+        Country,
+        BusinessPhone,
+        MobilePhone,
+        HomePhone,
+        Fax,
+		ABN,
+        CreateDTS)
+	SELECT 
+        i_FirstName,
+        i_LastName,
+        i_Company,
+        i_Email,
+        i_JobTitle,
+        i_WebPage,
+        i_Notes,
+        i_Address,
+        i_ZipCode,
+        i_City,
+        i_State,
+        i_Country,
+        i_BusinessPhone,
+        i_MobilePhone,
+        i_HomePhone,
+        i_Fax,
+		i_ABN,
+        NOW();
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_InsertTimeSheetEmployee` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_InsertTimeSheetEmployee`(
+	i_Date VARCHAR(100),
+	i_EmployeeId INT
+)
+BEGIN	
+	DECLARE i_FromDate DATETIME;
+	DECLARE	i_ToDate DATETIME;
+	DECLARE	i_DateTime VARCHAR(100);
+    
+	SET i_DateTime := REPLACE(i_Date,'/','');
+	SET i_FromDate := DATE_ADD(CONCAT(RIGHT(i_DateTime,4), LEFT(i_DateTime,2),"01"), INTERVAL 1 SECOND);
+	SET i_ToDate := DATE_ADD(CONCAT(RIGHT(i_DateTime,4), LEFT(i_DateTime,2),"01"), INTERVAL 1 MONTH);
+	
+	IF (SELECT COUNT(*) FROM TimeSheet WHERE EmployeeId = i_EmployeeId AND `month` BETWEEN i_FromDate AND i_ToDate) = 0
+	THEN
+		INSERT TimeSheet (EmployeeId,EmployeeName,`Month`,SalaryInGrossBased)
+		SELECT Id
+			,	CONCAT(FirstName,' ',LastName)
+			,	i_FromDate
+			,	SalaryPerHours
+		FROM Employee 
+        WHERE Id = i_EmployeeId;
+	END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_MarkToCompleteOrderComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_MarkToCompleteOrderComponent`(
+    i_Xml Mediumtext
+)
+BEGIN	
+	DECLARE i_OrderId BIGINT;
+	DECLARE i_index INT UNSIGNED DEFAULT 0;
+	DECLARE i_rowCount INT UNSIGNED;
+	DECLARE i_xpath TEXT;
+    
+	DROP TEMPORARY TABLE IF EXISTS `XMLColumns`;
+    CREATE TEMPORARY TABLE XMLColumns (Id INT, OrderId BIGINT);
+    
+	-- item count in the collection
+    SET i_rowCount := extractValue(i_Xml,'count(//ArrayOfOrderComponent/OrderComponent)');
+    
+    -- iterate over list
+	  WHILE i_index < i_rowCount DO        
+		SET i_index := i_index + 1;
+		SET i_xpath := concat('//ArrayOfOrderComponent/OrderComponent[',i_index, ']');
+
+		INSERT INTO XMLColumns VALUES (
+		  extractValue(i_Xml, concat(i_xpath,'/Id')),
+          extractValue(i_Xml, concat(i_xpath,'/OrderId'))
+		);
+	  END WHILE;
+	
+
+	-- Step 1: update Component step to complete
+	UPDATE XMLColumns t
+	JOIN OrderComponent oc ON t.Id = oc.Id AND t.OrderId = oc.OrderId    
+	SET oc.Step = 3; -- complete
+	
+	-- Step 2: check status of all items in order. If all items are completed then update order to complete
+	SELECT OrderId INTO i_OrderId FROM XMLColumns LIMIT 1;
+
+	IF (SELECT COUNT(*) FROM OrderProduct WHERE OrderId = i_OrderId AND Step <> 3) = 0
+	AND (SELECT COUNT(*) FROM OrderComponent WHERE OrderId = i_OrderId AND Step <> 3) = 0
+	THEN
+		UPDATE `Order`
+		SET Step = 3
+		WHERE Id = i_OrderId;
+	END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_MarkToCompleteOrderProduct` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_MarkToCompleteOrderProduct`(
+    i_Xml MEDIUMTEXT
+)
+BEGIN	
+	DECLARE i_OrderId BIGINT;
+	DECLARE i_index INT UNSIGNED DEFAULT 0;
+	DECLARE i_rowCount INT UNSIGNED;
+	DECLARE i_xpath TEXT;
+    
+	DROP TEMPORARY TABLE IF EXISTS `XMLColumns`;
+    CREATE TEMPORARY TABLE XMLColumns (Id INT, OrderId BIGINT);
+    
+	-- item count in the collection
+    SET i_rowCount := extractValue(i_Xml,'count(//ArrayOfOrderProduct/OrderProduct)');
+    
+    -- iterate over list
+	  WHILE i_index < i_rowCount DO        
+		SET i_index := i_index + 1;
+		SET i_xpath := concat('//ArrayOfOrderProduct/OrderProduct[',i_index, ']');
+
+		INSERT INTO XMLColumns VALUES (
+		  extractValue(i_Xml, concat(i_xpath,'/Id')),
+          extractValue(i_Xml, concat(i_xpath,'/OrderId'))
+		);
+	  END WHILE;
+      
+	-- Step 1: update Product step to complete
+	UPDATE XMLColumns t
+	JOIN OrderProduct oc ON t.Id = oc.Id AND t.OrderId = oc.OrderId    
+	SET oc.Step = 3; -- complete
+	
+	-- Step 2: check status of all items in order. If all items are completed then update order to complete
+	SELECT OrderId INTO i_OrderId FROM XMLColumns LIMIT 1;
+    
+	IF (SELECT COUNT(*) FROM OrderProduct WHERE OrderId = i_OrderId AND Step <> 3) = 0
+	AND (SELECT COUNT(*) FROM OrderComponent WHERE OrderId = i_OrderId AND Step <> 3) = 0
+	THEN
+		UPDATE `Order`
+		SET Step = 3
+		WHERE Id = i_OrderId;
+	END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateCategory` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateCategory`(
+	i_Id INT,
+    i_CategoryCode NVARCHAR(500),
+    i_CategoryName NVARCHAR(500),
+    i_Description NVARCHAR(5000),
+    i_TubeWidth INT,
+	i_TubeTypewidthLess INT,
+    i_TubeTypeWidthGreater INT,
+    i_BottomRailWidth INT,
+    i_MaterialWidth INT,
+    i_MaterialDrop INT,
+    i_HoodEqualWidth TINYINT,
+    i_FrameWidth INT,
+    i_FrameDrop INT,
+    i_MeshWidth INT,
+    i_MeshDrop INT,
+    i_TubeType INT,
+    i_OuterTrackDrop INT,
+    i_InnerTrackDrop INT,
+    i_MaterialKederWidth INT,
+    i_BoxTypeDrop INT,
+    i_BoxLength INT,
+    i_BottomBarHeight INT,
+    i_BottomBarLength INT,
+    i_SlatHeight INT,
+    i_SlatAmount INT,
+    i_SlatLenght INT,
+    i_AxleLenght INT,
+    i_GuideLenght INT,
+    i_ActiveStatus INT
+)
+BEGIN	
+	UPDATE Category
+	SET CategoryCode=IFNULL(i_CategoryCode,CategoryCode),
+        CategoryName=IFNULL(i_CategoryName,CategoryName),
+        Description=IFNULL(i_Description,Description),
+        TubeWidth=IFNULL(i_TubeWidth,TubeWidth),
+		TubeTypewidthLess=IFNULL(i_TubeTypewidthLess,TubeTypewidthLess),
+        TubeTypeWidthGreater=IFNULL(i_TubeTypeWidthGreater,TubeTypeWidthGreater),
+        BottomRailWidth=IFNULL(i_BottomRailWidth,BottomRailWidth),
+        MaterialWidth=IFNULL(i_MaterialWidth,MaterialWidth),
+		MaterialDrop=IFNULL(i_MaterialDrop,MaterialDrop),
+		HoodEqualWidth=IFNULL(i_HoodEqualWidth,HoodEqualWidth),
+		FrameWidth=IFNULL(i_FrameWidth,FrameWidth),
+		FrameDrop=IFNULL(i_FrameDrop,FrameDrop),
+		MeshWidth=IFNULL(i_MeshWidth,MeshWidth),
+		MeshDrop=IFNULL(i_MeshDrop,MeshDrop),
+		TubeType=IFNULL(i_TubeType,TubeType),
+		OuterTrackDrop=IFNULL(i_OuterTrackDrop,OuterTrackDrop),        
+		InnerTrackDrop=IFNULL(i_InnerTrackDrop,InnerTrackDrop),
+        MaterialKederWidth=IFNULL(i_MaterialKederWidth,MaterialKederWidth),
+        BoxTypeDrop=IFNULL(i_BoxTypeDrop,BoxTypeDrop),
+        BoxLength=IFNULL(i_BoxLength,BoxLength),
+        BottomBarHeight=IFNULL(i_BottomBarHeight,BottomBarHeight),
+        BottomBarLength=IFNULL(i_BottomBarLength,BottomBarLength),
+        SlatHeight=IFNULL(i_SlatHeight,SlatHeight),        
+		SlatAmount=IFNULL(i_SlatAmount,SlatAmount),
+        SlatLenght=IFNULL(i_SlatLenght,SlatLenght),
+        AxleLenght=IFNULL(i_AxleLenght,AxleLenght),
+        GuideLenght=IFNULL(i_GuideLenght,GuideLenght),
+        ActiveStatus=IFNULL(i_ActiveStatus,ActiveStatus),
+        UpdateDTS= NOW()
+    WHERE Id=i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateComponent`(
+	i_Id INT,
+    i_ComponentCode NVARCHAR(250),
+    i_ComponentName NVARCHAR(250),
+    i_SupplierId INT,
+    i_Price DECIMAL(18,2),
+	i_PurchasePrice DECIMAL(18,2),
+    i_Color NVARCHAR(250),
+    i_Unit NVARCHAR(250),
+    i_Description  NVARCHAR(21844),
+	i_Discount DECIMAL(18,2),
+    i_ActiveStatus INT
+)
+BEGIN	
+	UPDATE Component
+	SET ComponentCode=IFNULL(i_ComponentCode,ComponentCode),
+        ComponentName=IFNULL(i_ComponentName,ComponentName),
+        SupplierId=IFNULL(i_SupplierId,SupplierId),
+        Price=IFNULL(i_Price,Price),
+		PurchasePrice=IFNULL(i_PurchasePrice,PurchasePrice),
+        Color=IFNULL(i_Color,Color),
+        Unit=IFNULL(i_Unit,Unit),
+        Description=IFNULL(i_Description,Description),
+		Discount=IFNULL(i_Discount,Discount),
+        ActiveStatus=IFNULL(i_ActiveStatus,ActiveStatus),
+        UpdateDTS= NOW()
+    WHERE Id=i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateCustomer` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateCustomer`(
+	i_Id INT,
+    i_FirstName NVARCHAR(250),
+    i_LastName NVARCHAR(250),
+    i_Company NVARCHAR(250),
+    i_Email NVARCHAR(250),
+    i_JobTitle NVARCHAR(250),
+    i_WebPage NVARCHAR(250),
+    i_Notes NVARCHAR(21844),
+    i_Address NVARCHAR(500),
+    i_ZipCode NVARCHAR(250),
+    i_City NVARCHAR(250),
+    i_State NVARCHAR(250),
+    i_Country NVARCHAR(250),
+    i_BusinessPhone NVARCHAR(250),
+    i_MobilePhone NVARCHAR(250),
+    i_HomePhone NVARCHAR(250),
+    i_Fax NVARCHAR(250),
+	i_Discount DECIMAL(18,2),
+	i_ABN NVARCHAR(250)
+)
+BEGIN	
+	UPDATE Customer
+	SET 
+        FirstName=IFNULL(i_FirstName,FirstName),
+        LastName=IFNULL(i_LastName,LastName),
+        Company=IFNULL(i_Company,Company),
+        Email=IFNULL(i_Email,Email),
+        JobTitle=IFNULL(i_JobTitle,JobTitle),
+        WebPage=IFNULL(i_WebPage,WebPage),
+        Notes=IFNULL(i_Notes,Notes),
+        Address=IFNULL(i_Address,Address),
+        ZipCode=IFNULL(i_ZipCode,ZipCode),
+        City=IFNULL(i_City,City),
+        State=IFNULL(i_State,State),
+        Country=IFNULL(i_Country,Country),
+        BusinessPhone=IFNULL(i_BusinessPhone,BusinessPhone),
+        MobilePhone=IFNULL(i_MobilePhone,MobilePhone),
+        HomePhone=IFNULL(i_HomePhone,HomePhone),
+        Fax=IFNULL(i_Fax,Fax),
+		Discount=IFNULL(i_Discount,Discount),
+		ABN=IFNULL(i_ABN,ABN),
+        UpdateDTS= NOW()
+    WHERE Id=i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateDiscount` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateDiscount`(
+	i_Id INT,
+    i_ObjectId INT,
+	i_ProductId INT,
+	i_DiscountValue DECIMAL(18,2),
+	i_DiscountType INT
+)
+BEGIN	
+	UPDATE Discount
+	SET 
+		ObjectId = IFNULL(i_ObjectId,ObjectId),
+		ProductId = IFNULL(i_ProductId,ProductId),
+		DiscountValue= IFNULL(i_DiscountValue,DiscountValue),
+		DiscountType= IFNULL(i_DiscountType,DiscountType),
+        UpdateDTS = NOW()
+	WHERE Id = i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateEmployee` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateEmployee`(
+	i_Id INT,
+    i_FirstName NVARCHAR(250),
+    i_LastName NVARCHAR(250),
+    i_Company NVARCHAR(250),
+    i_Email NVARCHAR(250),
+    i_JobTitle NVARCHAR(250),
+    i_WebPage NVARCHAR(250),
+    i_Notes NVARCHAR(21844),
+    i_Address NVARCHAR(500),
+    i_ZipCode NVARCHAR(250),
+    i_City NVARCHAR(250),
+    i_State NVARCHAR(250),
+    i_Country NVARCHAR(250),
+    i_BusinessPhone NVARCHAR(250),
+    i_MobilePhone NVARCHAR(250),
+    i_HomePhone NVARCHAR(250),
+    i_Fax NVARCHAR(250),
+	i_TaxFileNumber INT,
+	i_SuperannuationName NVARCHAR(550),
+	i_FundABN NVARCHAR(550),
+	i_FundAddress NVARCHAR(550),
+	i_FundUSI NVARCHAR(550),
+	i_SuperannuationMemberNumber INT,
+	i_SalaryPerHours NUMERIC(18,2),
+	i_SickLeaveRate NUMERIC(18,8),
+	i_AnnualLeaveRate NUMERIC(18,8)
+)
+BEGIN	
+	UPDATE Employee
+	SET 
+        FirstName=IFNULL(i_FirstName,FirstName),
+        LastName=IFNULL(i_LastName,LastName),
+        Company=IFNULL(i_Company,Company),
+        Email=IFNULL(i_Email,Email),
+        JobTitle=IFNULL(i_JobTitle,JobTitle),
+        WebPage=IFNULL(i_WebPage,WebPage),
+        Notes=IFNULL(i_Notes,Notes),
+        Address=IFNULL(i_Address,Address),
+        ZipCode=IFNULL(i_ZipCode,ZipCode),
+        City=IFNULL(i_City,City),
+        State=IFNULL(i_State,State),
+        Country=IFNULL(i_Country,Country),
+        BusinessPhone=IFNULL(i_BusinessPhone,BusinessPhone),
+        MobilePhone=IFNULL(i_MobilePhone,MobilePhone),
+        HomePhone=IFNULL(i_HomePhone,HomePhone),
+        Fax=IFNULL(i_Fax,Fax),
+		TaxFileNumber=IFNULL(i_TaxFileNumber,TaxFileNumber),
+		SuperannuationName=IFNULL(i_SuperannuationName,SuperannuationName),
+		FundABN=IFNULL(i_FundABN,FundABN),
+		FundAddress=IFNULL(i_FundAddress,FundAddress),
+		FundUSI=IFNULL(i_FundUSI,FundUSI),
+		SuperannuationMemberNumber=IFNULL(i_SuperannuationMemberNumber,SuperannuationMemberNumber),
+		SalaryPerHours=IFNULL(i_SalaryPerHours,SalaryPerHours),
+		SickLeaveRate=IFNULL(i_SickLeaveRate,SickLeaveRate),
+		AnnualLeaveRate=IFNULL(i_AnnualLeaveRate,AnnualLeaveRate),
+        UpdateDTS= NOW()
+    WHERE Id=i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateLessPAYG` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateLessPAYG`(
+	i_From NVARCHAR(50),
+    i_To NVARCHAR(50),
+    i_Xml MEDIUMTEXT
+)
+BEGIN		
+	DECLARE i_FromDate DATETIME;
+	DECLARE	i_ToDate DATETIME;
+    
+	DECLARE i_index INT UNSIGNED DEFAULT 0;
+	DECLARE i_rowCount INT UNSIGNED;
+	DECLARE i_xpath TEXT;
+    
+	DROP TEMPORARY TABLE IF EXISTS `XMLColumns`;
+    CREATE TEMPORARY TABLE XMLColumns (EmployeeId INT, LessPAYG DECIMAL(18,2));
+    
+	-- item count in the collection
+    SET i_rowCount := extractValue(i_Xml,'count(//ArrayOfTimeSheetLessPAYG/TimeSheetLessPAYG)');
+    
+    -- iterate over list
+	  WHILE i_index < i_rowCount DO        
+		SET i_index := i_index + 1;
+		SET i_xpath := concat('//ArrayOfTimeSheetLessPAYG/TimeSheetLessPAYG[',i_index, ']');
+
+		INSERT INTO XMLColumns VALUES (
+		  extractValue(i_Xml, concat(i_xpath,'/EmployeeId')),
+		  extractValue(i_Xml, concat(i_xpath,'/LessPAYG'))
+		);
+	  END WHILE;
+
+	
+	SET i_FromDate := STR_TO_DATE(CONCAT(i_From, ' 00:00:01'),'%d/%m/%Y %H:%i:%s');	
+	SET i_ToDate := STR_TO_DATE(CONCAT(i_To, ' 23:59:00'),'%d/%m/%Y %H:%i:%s');
+    
+	-- step 1: delete old data
+	DELETE SP 
+    FROM SalaryPayment sp
+    JOIN XMLColumns x ON x.EmployeeId = sp.EmployeeId
+	WHERE sp.PaidFromDate BETWEEN i_FromDate AND i_ToDate;
+
+	-- step 2: insert new data
+	INSERT SalaryPayment (EmployeeId,LessPAYG,PaidFromDate,PaidToDate,CreateDTS,UpdateDTS)
+	SELECT  EmployeeId,
+			LessPAYG,
+            i_FromDate,
+            i_ToDate,
+			NOW(),
+            NOW()
+	FROM XMLColumns;
+    
+    DROP TEMPORARY TABLE XMLColumns;
+	
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateMaterial` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateMaterial`(
+	i_Id INT,
+	i_MaterialCode NVARCHAR(250),
+    i_MaterialName NVARCHAR(250),
+	i_Color NVARCHAR(250),
+    i_SupplierId INT,
+    i_Price DECIMAL(18,2),
+    i_Description NVARCHAR(21844), 
+    i_ActiveStatus INT
+)
+BEGIN	
+	UPDATE Material
+	SET MaterialCode=IFNULL(i_MaterialCode,MaterialCode),
+		MaterialName=IFNULL(i_MaterialName,MaterialName),
+        SupplierId=IFNULL(i_SupplierId,SupplierId),
+        Price=IFNULL(i_Price,Price),
+        Description=IFNULL(i_Description, Description),                                   
+        ActiveStatus=IFNULL(i_ActiveStatus,ActiveStatus),
+		Color=IFNULL(i_Color,Color),
+        UpdateDTS= NOW()
+    WHERE Id=i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateOrder` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateOrder`(
+	i_Id BIGINT,
+    i_EmployeeId INT,
+    i_EmployeeName NVARCHAR(250),
+    i_Step VARCHAR(50),
+    i_Taxes DECIMAL(18,2),
+    i_Surcharge DECIMAL(18,2),
+    i_Discount DECIMAL(18,2),
+    i_OrderDate DateTime,
+    i_FirtReceiveDate DateTime,
+    i_LastUpdate DateTime,
+    i_DeliveryDate DateTime,
+	i_DeliveryNo NVARCHAR(250),
+    i_Notes NVARCHAR(21844),
+    i_SupplierId INT,
+    i_SupplierName NVARCHAR(500),
+    i_SupplierAddress NVARCHAR(500),
+    i_SupplierEmail NVARCHAR(250),
+    i_SupplierPhone NVARCHAR(250),
+	i_CustomerId INT,
+    i_CustomerName NVARCHAR(500),
+    i_CustomerAddress NVARCHAR(500),
+    i_CustomerEmail NVARCHAR(250),
+    i_CustomerPhone NVARCHAR(250),
+    i_OrderRefNo NVARCHAR(250),
+    i_OrderType INT,
+	i_AMTExcGST DECIMAL(18,2),
+	i_GST DECIMAL(18,2),
+	i_AMTIncGST DECIMAL(18,2),
+    i_ActiveStatus INT,
+	i_InvoiceNoForOrderOnly NVARCHAR(500),
+	i_InvoiceDateForOrderOnly DateTime,
+    i_PickupDateForOrderOnly DateTime,
+    i_CompleteDateForOrderOnly DateTime
+)
+BEGIN	
+	UPDATE `Order`
+	SET EmployeeId=IFNULL(i_EmployeeId,EmployeeId),
+		EmployeeName =IFNULL(i_EmployeeName,EmployeeName),
+		Step=IFNULL(i_Step,Step),
+		Taxes=IFNULL(i_Taxes,Taxes),
+        Surcharge=IFNULL(i_Surcharge,Surcharge),
+        Discount=IFNULL(i_Discount,Discount),
+        -- OrderDate=IFNULL(i_OrderDate,OrderDate),
+        FirtReceiveDate=IFNULL(i_FirtReceiveDate,FirtReceiveDate),
+        LastUpdate=IFNULL(i_LastUpdate,LastUpdate),
+        DeliveryDate=IFNULL(i_DeliveryDate,DeliveryDate),
+		DeliveryNo=IFNULL(i_DeliveryNo,DeliveryNo),
+        Notes=IFNULL(i_Notes,Notes),
+        SupplierId=IFNULL(i_SupplierId,SupplierId),
+        SupplierName=IFNULL(i_SupplierName,SupplierName),
+        SupplierAddress=IFNULL(i_SupplierAddress,SupplierAddress),
+        SupplierEmail=IFNULL(i_SupplierEmail,SupplierEmail),
+        SupplierPhone=IFNULL(i_SupplierPhone,SupplierPhone),
+		CustomerId=IFNULL(i_CustomerId,CustomerId),
+        CustomerName=IFNULL(i_CustomerName,CustomerName),
+        CustomerAddress=IFNULL(i_CustomerAddress,CustomerAddress),
+        CustomerEmail=IFNULL(i_CustomerEmail,CustomerEmail),
+        CustomerPhone=IFNULL(i_CustomerPhone,CustomerPhone),
+        OrderRefNo=IFNULL(i_OrderRefNo,OrderRefNo),
+        OrderType=IFNULL(i_OrderType,i_OrderType),
+		AMTExcGST=IFNULL(i_AMTExcGST,AMTExcGST),
+		GST=IFNULL(i_GST,GST),
+		AMTIncGST=IFNULL(i_AMTIncGST,AMTIncGST),
+        ActiveStatus=IFNULL(i_ActiveStatus,ActiveStatus),
+		InvoiceNoForOrderOnly=IFNULL(i_InvoiceNoForOrderOnly,InvoiceNoForOrderOnly),
+		InvoiceDateForOrderOnly=IFNULL(i_InvoiceDateForOrderOnly,InvoiceDateForOrderOnly),
+		PickupDateForOrderOnly=IFNULL(i_PickupDateForOrderOnly,PickupDateForOrderOnly),
+		CompleteDateForOrderOnly=IFNULL(i_CompleteDateForOrderOnly,CompleteDateForOrderOnly),
+        UpdateDts=NOW()
+    WHERE Id=i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateOrderComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateOrderComponent`(
+	i_Id INT,
+	i_OrderType INT,
+    i_OrderId BIGINT,
+    i_ComponentId INT,
+    i_ColorId INT,
+    i_Quantity INT,
+    i_Price DECIMAL(18,2),
+	i_ExtendPrice DECIMAL(18,2),
+    i_ExtCharge BIT,
+	i_UnitId INT,
+	i_UnitName NVARCHAR(250),
+	i_Step INT,
+	i_TotalAmount DECIMAL(18,2),
+	i_DeliveryNo NVARCHAR(250),
+	i_DeliveryDate DATETIME,
+	i_Received INT,
+	i_BackOrder INT,
+	i_AMTExcGST DECIMAL(18,2),
+	i_GST DECIMAL(18,2),
+	i_AMTIncGST DECIMAL(18,2),
+	i_ReceivedAMTExcGST DECIMAL(18,2),
+	i_ReceivedGST DECIMAL(18,2),
+	i_ReceivedAMTIncGST DECIMAL(18,2),
+	i_Size NVARCHAR(250),
+	i_Discount DECIMAL(18,2)
+)
+BEGIN	
+	DECLARE i_OdId BIGINT;
+
+	UPDATE OrderComponent
+	SET
+        OrderId=IFNULL(i_OrderId,OrderId),
+		ComponentId=IFNULL(i_ComponentId,ComponentId),
+		ColorId=IFNULL(i_ColorId,ColorId),
+		Quantity=IFNULL(i_Quantity,Quantity),
+		Price=IFNULL(i_Price,Price),
+		ExtendPrice=IFNULL(i_ExtendPrice,ExtendPrice),
+		ExtCharge=IFNULL(i_ExtCharge,ExtCharge),
+		UnitId=IFNULL(i_UnitId,UnitId),
+		UnitName=IFNULL(i_UnitName,UnitName),
+		Step=IFNULL(i_Step,Step),
+		TotalAmount =IFNULL(i_TotalAmount,TotalAmount),
+		DeliveryNo =IFNULL(i_DeliveryNo,DeliveryNo),
+		DeliveryDate =IFNULL(i_DeliveryDate,DeliveryDate),
+		Received =IFNULL(i_Received,Received),
+		BackOrder =IFNULL(i_BackOrder,BackOrder),
+		AMTExcGST=IFNULL(i_AMTExcGST,AMTExcGST),
+		GST=IFNULL(i_GST,GST),
+		AMTIncGST=IFNULL(i_AMTIncGST,AMTIncGST),
+		ReceivedAMTExcGST=IFNULL(i_ReceivedAMTExcGST,ReceivedAMTExcGST),
+		ReceivedGST=IFNULL(i_ReceivedGST,ReceivedGST),
+		ReceivedAMTIncGST=IFNULL(i_ReceivedAMTIncGST,ReceivedAMTIncGST),
+		Size = IFNULL(i_Size,Size),
+		Discount = IFNULL(i_Discount,Discount),
+        UpdateDTS = NOW()
+    WHERE
+		Id = i_Id;
+
+	SELECT OrderId INTO i_OdId FROM OrderComponent
+	WHERE Id = i_Id;
+
+	-- Step 2: re-caculate total amount
+	UPDATE OrderComponent
+	SET TotalAmount = ((Price + IFNULL(ExtendPrice,0)) - ((Price + IFNULL(ExtendPrice,0)) * IFNULL(Discount,0)/100)) * Quantity
+	WHERE Id = i_Id;
+
+	-- Step 3: update amount
+	CALL sp_CalculateOrderAmount (i_OdId);
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateOrderInvoice` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateOrderInvoice`(
+	i_Id INT,
+	i_OrderId BIGINT,
+	i_InvoiceNo NVARCHAR(250),
+    i_InvoiceAmount DECIMAL(18,2),
+    i_CutLengthCharge NVARCHAR(250),
+	i_DeliveryCharge NVARCHAR(250),	
+	i_AMTExcGST DECIMAL(18,2),
+	i_GST DECIMAL(18,2),
+	i_AMTIncGST DECIMAL(18,2),
+	i_ActiveStatus INT
+)
+BEGIN	
+	UPDATE OrderInvoice
+	SET
+        OrderId=IFNULL(i_OrderId,OrderId),
+		InvoiceNo=IFNULL(i_InvoiceNo,InvoiceNo),
+		InvoiceAmount=IFNULL(i_InvoiceAmount,InvoiceAmount),
+		CutLengthCharge=IFNULL(i_CutLengthCharge,CutLengthCharge),
+		DeliveryCharge=IFNULL(i_DeliveryCharge,DeliveryCharge),
+		AMTExcGST=IFNULL(i_AMTExcGST,AMTExcGST),
+		GST=IFNULL(i_GST,GST),
+		AMTIncGST=IFNULL(i_AMTIncGST,AMTIncGST),
+        ActiveStatus=IFNULL(i_ActiveStatus,ActiveStatus),
+        UpdateDTS= NOW()
+    WHERE
+		Id = i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateOrderListComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateOrderListComponent`(
+	i_OrderId BIGINT,	
+    i_Xml MEDIUMTEXT
+)
+BEGIN	
+	DECLARE i_index INT UNSIGNED DEFAULT 0;
+	DECLARE i_rowCount INT UNSIGNED;
+	DECLARE i_xpath TEXT;
+    
+	DROP TEMPORARY TABLE IF EXISTS `XMLColumns`;
+    CREATE TEMPORARY TABLE XMLColumns (Id INT, Quantity INT, Price DECIMAL(18,2), Discount DECIMAL(18,2), Step INT, ExtendPrice DECIMAL(18,2), Size NVARCHAR(500));
+    
+	-- item count in the collection
+    SET i_rowCount := extractValue(i_Xml,'count(//ArrayOfComponent/Component)');
+    
+    -- iterate over list
+	  WHILE i_index < i_rowCount DO        
+		SET i_index := i_index + 1;
+		SET i_xpath := concat('//ArrayOfComponent/Component[',i_index, ']');
+
+		INSERT INTO XMLColumns VALUES (
+		  extractValue(i_Xml, concat(i_xpath,'/Id')),
+          extractValue(i_Xml, concat(i_xpath,'/Quantity')),
+          extractValue(i_Xml, concat(i_xpath,'/Price')),
+          extractValue(i_Xml, concat(i_xpath,'/Discount')),
+          -- extractValue(i_Xml, concat(i_xpath,'/Step')),
+          1,
+          -- extractValue(i_Xml, concat(i_xpath,'/ExtendPrice')),
+          0,
+          extractValue(i_Xml, concat(i_xpath,'/Size'))
+		);
+	  END WHILE;
+	
+	-- step 1: delete all component of order
+	DELETE FROM OrderComponent
+	WHERE OrderId=i_OrderId;
+	
+	-- step 2: insert new components into order
+	INSERT INTO OrderComponent(OrderId,ComponentId,ColorName,Price,UnitName,TotalAmount, Quantity, Discount, Step, size, CreateDTS)
+	SELECT i_OrderId
+		,c.Id
+		,c.Color
+		,t.Price
+		,c.Unit
+		,(t.Price + t.ExtendPrice - ((t.Price + t.ExtendPrice) * IFNULL(t.Discount,0)/100)) * t.Quantity
+		,t.Quantity
+		,t.Discount
+		,t.Step
+		,t.Size
+		,NOW()
+	FROM XMLColumns t
+	JOIN Component c ON t.Id = c.Id;
+    
+	-- Step 3: update amount
+	CALL sp_CalculateOrderAmount (i_OrderId);
+    
+    DROP TEMPORARY TABLE XMLColumns;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateOrderPayment` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateOrderPayment`(
+	i_Id INT,
+	i_OrderId BIGINT,
+    i_AmountPaid DECIMAL(18,2),
+    i_PaymentType NVARCHAR(250),	
+	i_DatePaid DATETIME,
+	i_ActiveStatus INT
+)
+BEGIN	
+
+	DECLARE i_TotalPaid DECIMAL(18,2);
+	DECLARE	i_TotalReceived DECIMAL(18,2);
+    
+	-- Step 1: insert
+	UPDATE OrderPayment
+	SET
+        OrderId=IFNULL(i_OrderId,OrderId),
+		AmountPaid=IFNULL(i_AmountPaid,AmountPaid),
+		PaymentType=IFNULL(i_PaymentType,PaymentType),
+		DatePaid=IFNULL(i_DatePaid,DatePaid),
+        UpdateDTS= NOW()
+    WHERE
+		Id = i_Id;
+    
+	-- Step 2: update amount
+	CALL sp_CalculateOrderAmount(i_OrderId);
+
+	-- Step 3: change order step
+	SELECT  TotalPaid, TotalReceived
+    INTO i_TotalPaid, i_TotalReceived
+	FROM `Order`
+	WHERE Id = i_OrderId;
+
+	IF i_TotalPaid - i_TotalReceived >= 0
+	THEN
+		UPDATE `Order`
+		SET Step = 5 -- PAID
+		WHERE Id = i_OrderId;
+	END IF;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateOrderProduct` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateOrderProduct`(
+	i_Id INT,
+	i_OrderId BIGINT,
+	i_OrderType INT,
+	i_ProductId INT,
+	i_MaterialId INT,
+	i_LocationId INT,
+	i_ColorId INT,
+	i_ColorName NVARCHAR(250),
+	i_ControlSideId INT,
+	i_UnitId INT, 
+	i_Drop INT,
+	i_Width INT,
+	i_Quantity INT,
+	i_Discount INT,
+	i_ExtendPrice DECIMAL(18,2),
+	i_UnitPrice DECIMAL(18,2),
+	i_TotalAmount DECIMAL(18,2),
+	i_DeliveryNo NVARCHAR(250),
+	i_DeliveryDate DATETIME,
+	i_Received INT,
+	i_BackOrder INT,
+	i_Step INT,
+	i_AMTExcGST DECIMAL(18,2),
+	i_GST DECIMAL(18,2),
+	i_AMTIncGST DECIMAL(18,2),
+	i_ReceivedAMTExcGST DECIMAL(18,2),
+	i_ReceivedGST DECIMAL(18,2),
+	i_ReceivedAMTIncGST DECIMAL(18,2)
+)
+BEGIN	
+	DECLARE i_OdId BIGINT;
+
+	UPDATE OrderProduct 
+	SET
+        OrderId =IFNULL(i_OrderId,OrderId),
+		ProductId =IFNULL(i_ProductId,ProductId),
+		MaterialId =IFNULL(i_MaterialId,MaterialId),
+		LocationId =IFNULL(i_LocationId,LocationId),
+		ColorId =IFNULL(i_ColorId,ColorId),
+		ColorName=IFNULL(i_ColorName,ColorName),
+		ControlSideId =IFNULL(i_ControlSideId ,ControlSideId),
+		UnitId =IFNULL(i_UnitId,UnitId),
+		`Drop` =IFNULL(i_Drop,`Drop`),
+		Width =IFNULL(i_Width,Width),
+		Quantity =IFNULL(i_Quantity,Quantity),
+		Discount =IFNULL(i_Discount,Discount),
+		ExtendPrice =IFNULL(i_ExtendPrice,ExtendPrice),
+		UnitPrice =IFNULL(i_UnitPrice,UnitPrice),
+		TotalAmount =IFNULL(i_TotalAmount,TotalAmount),
+		DeliveryNo =IFNULL(i_DeliveryNo,DeliveryNo),
+		DeliveryDate =IFNULL(i_DeliveryDate,DeliveryDate),
+		Received =IFNULL(i_Received,Received),
+		BackOrder =IFNULL(i_BackOrder,BackOrder),
+		Step=IFNULL(i_Step,Step),	
+		AMTExcGST=IFNULL(i_AMTExcGST,AMTExcGST),
+		GST=IFNULL(i_GST,GST),
+		AMTIncGST=IFNULL(i_AMTIncGST,AMTIncGST),
+		ReceivedAMTExcGST=IFNULL(i_ReceivedAMTExcGST,ReceivedAMTExcGST),
+		ReceivedGST=IFNULL(i_ReceivedGST,ReceivedGST),
+		ReceivedAMTIncGST=IFNULL(i_ReceivedAMTIncGST,ReceivedAMTIncGST),
+        UpdateDTS= NOW()
+    WHERE
+		Id=i_Id;
+
+	UPDATE OrderProduct
+	SET TotalAmount = IFNULL((UnitPrice + ExtendPrice - ((UnitPrice + ExtendPrice) * IFNULL(Discount,0)/100)) * Quantity,TotalAmount)    
+	WHERE
+		Id=i_Id;
+
+	-- Step 2: update amount
+	SELECT OrderId INTO i_OdId FROM OrderProduct
+	WHERE Id = i_Id;
+    
+	CALL sp_CalculateOrderAmount(i_OdId);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateProduct` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateProduct`(
+	i_Id INT,
+    i_ProductCode NVARCHAR(250),
+    i_ProductName NVARCHAR(250),
+    i_CategoryId INT,
+    i_Notes  NVARCHAR(21844),
+    i_ActiveStatus INT
+)
+BEGIN	
+	UPDATE Product
+	SET ProductCode=IFNULL(i_ProductCode,ProductCode),
+        ProductName=IFNULL(i_ProductName,ProductName),
+        CategoryId=IFNULL(i_CategoryId,CategoryId),
+        Notes=IFNULL(i_Notes,Notes),
+        ActiveStatus=IFNULL(i_ActiveStatus,ActiveStatus),
+        UpdateDTS= NOW()
+    WHERE Id=i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateProductComponent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateProductComponent`(
+	i_Id INT,
+    i_ProductId INT,
+    i_ComponentId INT,
+    i_ColorId INT,
+    i_Quantity INT,
+    i_Price DECIMAL(18,2),
+    i_ExtCharge BIT
+)
+BEGIN	
+	UPDATE ProductComponent
+	SET
+        ProductId=IFNULL(i_ProductId,ProductId),
+		ComponentId=IFNULL(i_ComponentId,ComponentId),
+		ColorId=IFNULL(i_ColorId,ColorId),
+		Quantity=IFNULL(i_Quantity,Quantity),
+		Price=IFNULL(i_Price,Price),
+		ExtCharge=IFNULL(i_ExtCharge,ExtCharge),
+        UpdateDTS= NOW()
+    WHERE
+		Id = i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateProductMaterialPrice` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateProductMaterialPrice`(
+	i_ProductMaterialId INT,
+	i_GroupId BIGINT,
+    i_Xml MEDIUMTEXT,
+	i_PriceType INT
+)
+BEGIN		
+	DECLARE i_CreateDTS DATETIME DEFAULT NULL;
+    
+    DECLARE i_index INT UNSIGNED DEFAULT 0;
+	DECLARE i_rowCount INT UNSIGNED;
+	DECLARE i_xpath TEXT;
+    
+	DROP TEMPORARY TABLE IF EXISTS `XMLColumns`;
+    CREATE TEMPORARY TABLE XMLColumns (`Row` INT, `Column` INT, `Value` NVARCHAR(50));
+    
+	-- item count in the collection
+    SET i_rowCount := extractValue(i_Xml,'count(//ArrayOfProductPrice/ProductPrice)');
+    
+    -- iterate over list
+	  WHILE i_index < i_rowCount DO        
+		SET i_index := i_index + 1;
+		SET i_xpath := concat('//ArrayOfProductPrice/ProductPrice[',i_index, ']');
+
+		INSERT INTO XMLColumns VALUES (
+		  extractValue(i_Xml, concat(i_xpath,'/Row')),
+          extractValue(i_Xml, concat(i_xpath,'/Column')),
+          extractValue(i_Xml, concat(i_xpath,'/Value'))
+		);
+	  END WHILE;
+	
+    SET i_CreateDTS := NULL;
+    
+	-- step 1: get create dts of group active
+	SELECT CreateDTS INTO i_CreateDTS
+	FROM ProductPrice 
+	WHERE ProductMaterialId = i_ProductMaterialId 
+    AND IsActive = 1 
+    AND PriceType = i_PriceType
+    LIMIT 1;
+
+	-- step 2: check null i_CreateDTS & i_GroupId
+	IF i_CreateDTS IS NULL
+	THEN
+		SET i_CreateDTS := NOW();
+		SET	i_GroupId :=  UNIX_TIMESTAMP(i_CreateDTS)* 10000000;
+		
+	END IF;
+
+	-- step 3: Delete data of group
+    DELETE FROM ProductPrice
+	WHERE ProductMaterialId = i_ProductMaterialId 
+    AND GroupId = i_GroupId 
+    AND PriceType = i_PriceType;
+
+	-- step 4: update all group to inactive
+	UPDATE ProductPrice
+	SET IsActive = 0 
+	WHERE ProductMaterialId = i_ProductMaterialId 
+    AND PriceType = i_PriceType;
+
+	-- step 5: insert new group, set this group is active
+	INSERT INTO ProductPrice(ProductMaterialId,`Row`,`Column`,`Value`,UpdateDTS,CreateDTS,IsActive,GroupId,PriceType)
+	SELECT i_ProductMaterialId,`Row`,`Column`,`Value`,NOW(),i_CreateDTS,1,i_GroupId,i_PriceType
+	FROM XMLColumns;
+    
+    DROP TEMPORARY TABLE XMLColumns;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateSettings` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateSettings`(
+	i_Id INT,
+    i_GST DECIMAL(18,2),
+    i_Contribution DECIMAL(18,2)
+)
+BEGIN	
+	IF (SELECT COUNT(*) FROM Settings) > 0 THEN
+		UPDATE Settings
+		SET GST = i_GST,
+			Contribution = i_Contribution;
+	ELSE
+		INSERT Settings(
+				GST
+			,	Contribution
+			)
+		SELECT i_GST
+			,	i_Contribution;
+    END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateSupplier` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateSupplier`(
+	i_Id INT,
+    i_FirstName NVARCHAR(250),
+    i_LastName NVARCHAR(250),
+    i_Company NVARCHAR(250),
+    i_Email NVARCHAR(250),
+    i_JobTitle NVARCHAR(250),
+    i_WebPage NVARCHAR(250),
+    i_Notes NVARCHAR(21844),
+    i_Address NVARCHAR(500),
+    i_ZipCode NVARCHAR(250),
+    i_City NVARCHAR(250),
+    i_State NVARCHAR(250),
+    i_Country NVARCHAR(250),
+    i_BusinessPhone NVARCHAR(250),
+    i_MobilePhone NVARCHAR(250),
+    i_HomePhone NVARCHAR(250),
+    i_Fax NVARCHAR(250),
+	i_ABN NVARCHAR(250)
+)
+BEGIN	
+	UPDATE Supplier
+	SET 
+        FirstName=IFNULL(i_FirstName,FirstName),
+        LastName=IFNULL(i_LastName,LastName),
+        Company=IFNULL(i_Company,Company),
+        Email=IFNULL(i_Email,Email),
+        JobTitle=IFNULL(i_JobTitle,JobTitle),
+        WebPage=IFNULL(i_WebPage,WebPage),
+        Notes=IFNULL(i_Notes,Notes),
+        Address=IFNULL(i_Address,Address),
+        ZipCode=IFNULL(i_ZipCode,ZipCode),
+        City=IFNULL(i_City,City),
+        State=IFNULL(i_State,State),
+        Country=IFNULL(i_Country,Country),
+        BusinessPhone=IFNULL(i_BusinessPhone,BusinessPhone),
+        MobilePhone=IFNULL(i_MobilePhone,MobilePhone),
+        HomePhone=IFNULL(i_HomePhone,HomePhone),
+        Fax=IFNULL(i_Fax,Fax),
+		ABN=IFNULL(i_ABN,ABN),
+        UpdateDTS= NOW()
+    WHERE Id=i_Id;
+    
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_UpdateTimeSheet` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE  PROCEDURE `sp_UpdateTimeSheet`(
+	i_Date NVARCHAR(50),
+    i_Xml MEDIUMTEXT
+)
+BEGIN		
+	DECLARE i_FromDate DATETIME;
+	DECLARE	i_ToDate DATETIME;
+	DECLARE i_DateTime VARCHAR(100);
+    
+	DECLARE i_index INT UNSIGNED DEFAULT 0;
+	DECLARE i_rowCount INT UNSIGNED;
+	DECLARE i_xpath TEXT;
+    
+	DROP TEMPORARY TABLE IF EXISTS `XMLColumns`;
+    CREATE TEMPORARY TABLE XMLColumns (`Day` INT, `Month` NVARCHAR(50), `Value` NVARCHAR(50), EmployeeId INT, `Type` INT);
+    
+	-- item count in the collection
+    SET i_rowCount := extractValue(i_Xml,'count(//ArrayOfTimeSheetDetail/TimeSheetDetail)');
+    
+    -- iterate over list
+	  WHILE i_index < i_rowCount DO        
+		SET i_index := i_index + 1;
+		SET i_xpath := concat('//ArrayOfTimeSheetDetail/TimeSheetDetail[',i_index, ']');
+
+		INSERT INTO XMLColumns VALUES (
+		  extractValue(i_Xml, concat(i_xpath,'/Day')),
+          extractValue(i_Xml, concat(i_xpath,'/Month')),
+          extractValue(i_Xml, concat(i_xpath,'/Value')),
+          extractValue(i_Xml, concat(i_xpath,'/EmployeeId')),
+          extractValue(i_Xml, concat(i_xpath,'/Type'))
+		);
+	  END WHILE;
+	
+            
+	SET i_DateTime := REPLACE(i_Date,'/',''); 
+	SET i_FromDate := DATE_ADD(CONCAT(RIGHT(i_DateTime,4), LEFT(i_DateTime,2),"01"), INTERVAL 0 SECOND);
+	SET i_ToDate := DATE_ADD(CONCAT(RIGHT(i_DateTime,4), LEFT(i_DateTime,2),"01"), INTERVAL 1 MONTH);
+	
+	-- step 1: delete old data
+	DELETE FROM TimeSheetDetail
+	WHERE `month` BETWEEN i_FromDate AND i_ToDate
+	AND `Type` IN (SELECT `Type` FROM XMLColumns WHERE `Day` > 0);
+
+	-- step 2: insert new data
+	INSERT TimeSheetDetail (EmployeeId,`Day`,`Month`,`Value`,`Type`,CreateDTS)
+	SELECT  EmployeeId,
+			`Day`,
+            DATE_ADD(CONCAT(RIGHT(i_Date,4), LEFT(i_Date,2),CASE WHEN `Day` < 10 THEN concat('0',`Day`) ELSE `Day` END),INTERVAL 10 SECOND),
+			`Value`,
+			`Type`,
+			NOW()
+	FROM XMLColumns
+	WHERE `Day` > 0;
+    
+    DROP TEMPORARY TABLE XMLColumns;
+	
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-09-11 22:42:27
