@@ -55,6 +55,10 @@ export default new Vuex.Store({
     units:[],
     locations:[],
     controlSides:[],
+    flaps:[],
+    bSplines:[],
+    tSplines:[],
+    rolls:[],
     paymentType:[],
     sessionWarning:false,
     forceReloadPage:null,
@@ -73,6 +77,10 @@ export default new Vuex.Store({
     units:state=>state.units,  
     locations:state=>state.locations,  
     controlSides:state=>state.controlSides,  
+    flaps:state=>state.flaps,  
+    bSplines:state=>state.bSplines,  
+    tSplines:state=>state.tSplines,  
+    rolls:state=>state.rolls,  
     rootUrl:state=>state.rootUrl,  
     paymentType:state=>state.paymentType,
     sessionWarning:state=>state.sessionWarning,
@@ -124,6 +132,18 @@ export default new Vuex.Store({
     pushControlSides(state,controlSides){
       state.controlSides=controlSides
     },
+    pushFlaps(state,flaps){
+      state.flaps=flaps
+    },
+    pushBSplines(state,bSplines){
+      state.bSplines=bSplines
+    },
+    pushTSplines(state,tSplines){
+      state.tSplines=tSplines
+    },
+    pushRolls(state,rolls){
+      state.rolls=rolls
+    },
     pushPaymentType(state,paymentType){
       state.paymentType=paymentType
     },
@@ -168,6 +188,18 @@ export default new Vuex.Store({
     },
     pushControlSides({commit},controlSides){
       commit('pushControlSides',controlSides)
+    },
+    pushFlaps({commit},flaps){
+      commit('pushFlaps',flaps)
+    },
+    pushBSplines({commit},bSplines){
+      commit('pushBSplines',bSplines)
+    },
+    pushTSplines({commit},tSplines){
+      commit('pushTSplines',tSplines)
+    },
+    pushRolls({commit},rolls){
+      commit('pushRolls',rolls)
     },
     pushPaymentType({commit},paymentType){
       commit('pushPaymentType',paymentType)

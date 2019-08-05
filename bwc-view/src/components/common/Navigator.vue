@@ -31,7 +31,7 @@
               <span slot="title">Purchase</span>
             </template>
             <el-menu-item index="supplier/list"> <router-link to="/supplier/list">Suppliers</router-link></el-menu-item>
-            <el-menu-item index="supplier/discount"><router-link to="/supplier/discount">Manage Discount</router-link></el-menu-item>
+            <el-menu-item index="supplier/discount"><router-link to="/supplier/discount">Supplier's Discount</router-link></el-menu-item>
             <el-menu-item index="purchase/list"> <router-link to="/purchase/list">Purchases Summary</router-link></el-menu-item>
             <el-menu-item index="purchase/payment"> <router-link to="/purchase/payment">Auto Pay</router-link></el-menu-item>
             <el-menu-item index="purchase/report"> <router-link to="/purchase/report">Reporting</router-link></el-menu-item>
@@ -43,7 +43,7 @@
               <span slot="title">Sales</span>
             </template>            
             <el-menu-item index="customer/list"> <router-link to="/customer/list">Customers</router-link></el-menu-item>
-            <el-menu-item index="customer/discount"><router-link to="/customer/discount">Manage Discount</router-link></el-menu-item>
+            <el-menu-item index="customer/discount"><router-link to="/customer/discount">Customer's Discount</router-link></el-menu-item>
             <el-menu-item index="order/list"> <router-link to="/order/list">Sales Summary</router-link></el-menu-item>
             <el-menu-item index="service/list"> <router-link to="/service/list">Services</router-link></el-menu-item>
           </el-submenu>

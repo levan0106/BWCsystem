@@ -5,57 +5,87 @@
             <el-col :span="14">
                 <el-row :gutter="20">
                     <el-col :span="12">
-                        <el-form-item label="Order Id" >
-                            <el-input v-model="form.Id" auto-complete="off" disabled></el-input>
-                        </el-form-item>	
-                        <el-form-item label="Employee" >
-                            <el-input v-model="form.EmployeeName" disabled></el-input>
+                        <el-form-item label="Customer Name" prop="CustomerId" 
+                        :rules="rules.Required" >
+                            <bwc-hidden-field :value="form.CustomerName"/>
+                            <el-select v-model="form.CustomerId" 
+                            filterable
+                            placeholder="Please select a customer"
+                            class="textbox-fs"
+                            @change="customerChange">
+                                <el-option v-for="sup in customerList" 
+                                    :label="sup.Company" 
+                                    :value="sup.Id" 
+                                    :key="sup.Id">
+                                </el-option>
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item label="Ref/Name" >
+                            <el-input 
+                            v-model="form.OrderRefNo" 
+                            auto-complete="off"></el-input>
+                        </el-form-item>
+                        <el-form-item label="Site Address" >
+                            <el-input 
+                            v-model="form.CustomerAddress" 
+                            auto-complete="off"></el-input>
+                        </el-form-item>
+                        <el-form-item label="Email" >
+                            <el-input 
+                            v-model="form.CustomerEmail" 
+                            auto-complete="off"></el-input>
+                        </el-form-item>
+                        <el-form-item label="Phone" >
+                            <el-input 
+                            v-model="form.CustomerPhone" 
+                            auto-complete="off"></el-input>
                         </el-form-item>
                         
-                        <el-form-item label="GST (%)" prop="GST">
-                            <el-input v-model="form.Taxes" auto-complete="off"></el-input>
-                        </el-form-item> 
-
-                        <el-form-item label="Ref No." >
-                            <el-input v-model="form.OrderRefNo" auto-complete="off"></el-input>
-                        </el-form-item>
                     </el-col>
-                    <el-col :span="12">
+                    <el-col :span="12">                        
+                        <el-form-item label="Taxes (GST)" prop="GST">
+                            <el-input 
+                            v-model="form.Taxes" 
+                            auto-complete="off"></el-input>
+                        </el-form-item> 
                         <el-form-item label="Invoice No." >
-                            <el-input v-model="form.InvoiceNoForOrderOnly" 
+                            <el-input 
+                            v-model="form.InvoiceNoForOrderOnly" 
                             auto-complete="off"></el-input>
                         </el-form-item>	
                         <el-form-item label="Invoice Date" >
                             <el-date-picker
-                                v-model="form.InvoiceDateForOrderOnly"
-                                type="date"
-                                format="dd/MM/yyyy"
-                                value-format="yyyy-MM-dd"
-                                placeholder="Pick a day">
+                            v-model="form.InvoiceDateForOrderOnly"
+                            type="date"
+                            format="dd/MM/yyyy"
+                            value-format="yyyy-MM-dd"
+                            placeholder="Pick a day">
                             </el-date-picker>
                         </el-form-item>
                         <el-form-item label="Pickup Date" >
                             <el-date-picker
-                                v-model="form.PickupDateForOrderOnly"
-                                type="date"
-                                format="dd/MM/yyyy"
-                                value-format="yyyy-MM-dd"
-                                placeholder="Pick a day">
+                            v-model="form.PickupDateForOrderOnly"
+                            type="date"
+                            format="dd/MM/yyyy"
+                            value-format="yyyy-MM-dd"
+                            placeholder="Pick a day"
+                            :disabled="form.PickupDateForOrderOnly != null && form.Step >=4">
                             </el-date-picker>
                         </el-form-item>	  
                         <el-form-item label="Complete Date" >
                             <el-date-picker
-                                v-model="form.CompleteDateForOrderOnly"
-                                type="date"
-                                format="dd/MM/yyyy"
-                                value-format="yyyy-MM-dd"
-                                placeholder="Pick a day">
+                            v-model="form.CompleteDateForOrderOnly"
+                            type="date"
+                            format="dd/MM/yyyy"
+                            value-format="yyyy-MM-dd"
+                            placeholder="Pick a day"
+                            :disabled="form.CompleteDateForOrderOnly != null && form.Step >=3">
                             </el-date-picker>
                         </el-form-item>
                     </el-col>
                 </el-row>
                 <el-row>
-                    <el-form-item label="Note" >
+                    <el-form-item label="Notes" >
                         <el-input
                             type="textarea"
                             :rows="5"
@@ -66,29 +96,17 @@
                 </el-row>
             </el-col>	
             <el-col :span="10">
-                <el-form-item label="Customer" prop="CustomerId" 
-                :rules="rules.Required" >
-                     <bwc-hidden-field :value="form.CustomerName"/>
-                    <el-select v-model="form.CustomerId" 
-                    placeholder="Please select a customer"
-                    class="textbox-fs"
-                    @change="customerChange">
-                        <el-option v-for="sup in customerList" 
-                            :label="sup.Company" 
-                            :value="sup.Id" 
-                            :key="sup.Id">
-                        </el-option>
-                    </el-select>
+                <el-form-item label="Employee" >
+                    <el-input 
+                    v-model="form.EmployeeName" 
+                    disabled></el-input>
                 </el-form-item>
-                <el-form-item label="Address" >
-                    <el-input v-model="form.CustomerAddress" auto-complete="off"></el-input>
-                </el-form-item>
-                <el-form-item label="Email" >
-                    <el-input v-model="form.CustomerEmail" auto-complete="off"></el-input>
-                </el-form-item>
-                <el-form-item label="Phone" >
-                    <el-input v-model="form.CustomerPhone" auto-complete="off"></el-input>
-                </el-form-item>
+                <el-form-item label="Sale Id" >
+                    <el-input 
+                    v-model="form.Id" 
+                    auto-complete="off" 
+                    disabled></el-input>
+                </el-form-item>	
             </el-col>						
         </el-row>
         <el-row class="text-right" v-if="type != 'edit'">
@@ -98,19 +116,21 @@
                 <i v-else class="el-icon-d-arrow-right"></i>
             </el-button>
         </el-row>
-        <bwc-modal-footer v-else>
+            
+        <el-row class="pos-fixed-bottom button-group" v-else>
             <el-button @click="handleCloseModal">Cancel</el-button>
             <el-button type="primary" @click="saveData">
                 Save
                 <i v-if="processing" class="el-icon-loading"></i>
             </el-button>
-        </bwc-modal-footer>
+        </el-row>
+            
     </el-form>
 </div>
 </template>
 
 <script>
-import Authenticate from '@/plugin/authenticate'
+import Authentication from '@/plugin/authentication'
 import ValidattionRules from '@/plugin/rule'
 
 export default {
@@ -123,7 +143,7 @@ export default {
             formLabelWidth:"120px",
             form:{
                 Id:Date.now(),
-                EmployeeName: Authenticate.system.currentUser(),
+                EmployeeName: Authentication.system.currentUser(),
                 Taxes:10,
                 Step:1
             },

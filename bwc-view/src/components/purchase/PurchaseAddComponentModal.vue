@@ -28,7 +28,7 @@
                     
                     <el-table-column
                         prop="Color"
-                        label="Color">					  
+                        label="Colour">					  
                     </el-table-column>
 
                     <el-table-column

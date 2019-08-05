@@ -84,7 +84,7 @@
 						@do-delete="doDelete"></bwc-delete-item>
                     </template>
                 </el-table-column>
-		  	</grid-data>
+			</grid-data>
 		</el-row>
 </template>
 <script>

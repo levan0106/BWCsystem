@@ -3,13 +3,40 @@
     :bread-crumb="breadCrumb" 
     back-to="/Category/list"
     back-to-label="Category list">
-        <bwc-roller-blind-form-create :id="id" :data="data" v-if="data.CategoryCode.indexOf('ROLLERBLIND') !== -1"></bwc-roller-blind-form-create>
-        <bwc-zip-screen-form-create :id="id" :data="data" v-else-if="data.CategoryCode.indexOf('ZIPSCREEN') !== -1"></bwc-zip-screen-form-create>
-        <bwc-fly-screen-form-create :id="id" :data="data" v-else-if="data.CategoryCode.indexOf('FLYSCREEN') !== -1"></bwc-fly-screen-form-create>
-        <bwc-security-fly-door-form-create :id="id" :data="data" 
-        v-else-if="data.CategoryCode.indexOf('SECURITY') !== -1 || data.CategoryCode.indexOf('FLYDOOR') !== -1"></bwc-security-fly-door-form-create>
-        <bwc-rs-form-create :id="id" :data="data" v-else-if="data.CategoryCode.indexOf('RS') !== -1"></bwc-rs-form-create>
-        <bwc-category-form-create :id="id" :data="data" v-else></bwc-category-form-create>
+        <bwc-roller-blind-form-create 
+        :id="id" 
+        :data="data" 
+        v-if="data.CategoryCode.indexOf('ROLLERBLIND') !== -1">
+        </bwc-roller-blind-form-create>
+
+        <bwc-zip-screen-form-create 
+        :id="id" 
+        :data="data" 
+        v-else-if="data.CategoryCode.indexOf('ZIPSCREEN') !== -1">
+        </bwc-zip-screen-form-create>
+
+        <bwc-fly-screen-form-create 
+        :id="id" 
+        :data="data" 
+        v-else-if="data.CategoryCode.indexOf('FLYSCREEN') !== -1">
+        </bwc-fly-screen-form-create>
+
+        <bwc-security-fly-door-form-create 
+        :id="id" 
+        :data="data" 
+        v-else-if="data.CategoryCode.indexOf('SECURITY') !== -1 || data.CategoryCode.indexOf('FLYDOOR') !== -1">
+        </bwc-security-fly-door-form-create>
+
+        <bwc-rs-form-create 
+        :id="id" 
+        :data="data" 
+        v-else-if="data.CategoryCode.indexOf('RS') !== -1">
+        </bwc-rs-form-create>
+        
+        <bwc-category-form-create 
+        :id="id" 
+        :data="data" 
+        v-else></bwc-category-form-create>
     </bwc-layout>
 </template>
 

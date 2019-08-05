@@ -7,6 +7,7 @@
                             <el-form-item label="Supplier" :label-width="formLabelWidth"
                             prop="SupplierId" :rules="rules.Required">
                                 <el-select v-model="form.SupplierId" 
+                                filterable
                                 placeholder="Please select a supplier"
                                 class="textbox-fs">
                                     <el-option v-for="sup in supplierList" 
@@ -33,11 +34,12 @@
                                     v-model="form.Description">
                                 </el-input>
                             </el-form-item>
-                            <el-form-item label="Color" :label-width="formLabelWidth">
+                            <el-form-item label="Colour" :label-width="formLabelWidth">
                                 <el-input v-model="form.Color" auto-complete="off" ></el-input>
                             </el-form-item>
                             <el-form-item label="Status" :label-width="formLabelWidth">
                                 <el-select v-model="form.ActiveStatus" 
+                                filterable
                                 placeholder="Please select a status"
                                 class="textbox-fs">
                                     <el-option v-for="sta in status" 

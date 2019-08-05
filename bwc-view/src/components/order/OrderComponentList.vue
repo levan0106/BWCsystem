@@ -27,40 +27,39 @@
             <el-table-column
             prop="Id"
             width="40"
-            type="index"
-            >
+            type="index">
             </el-table-column>
 
             <el-table-column
-                prop="ComponentCode"
-                width="120"
-                label="Code">
+            prop="ComponentCode"
+            width="120"
+            label="Code">
             </el-table-column>
             
             <el-table-column
-                prop="Description"
-                label="Description">
+            prop="Description"
+            label="Description">
                 <template slot-scope="scope">
                     {{scope.row.Description|nullValue}}
                 </template>
             </el-table-column>
 
             <el-table-column
-                prop="Size"
-                width="120"
-                label="Size">					  
+            prop="Size"
+            width="120"
+            label="Size">					  
             </el-table-column>
             
             <el-table-column
-                prop="Color"
-                width="140"
-                label="Color">					  
+            prop="Color"
+            width="140"
+            label="Colour">					  
             </el-table-column>
             
             <el-table-column
-                prop="Quantity"
-                width="100"
-                label="Order Qty">
+            prop="Quantity"
+            width="100"
+            label="Order Qty">
             </el-table-column>
 
            <!-- <el-table-column
@@ -87,27 +86,43 @@
             </el-table-column> -->
 
             <el-table-column
-                prop="UnitName"
-                width="120"
-                label="Unit">
+            prop="UnitName"
+            width="120"
+            label="Unit">
                 <template slot-scope="scope">
                     {{scope.row.UnitName|nullValue}}
                 </template>
             </el-table-column>
 
             <el-table-column
-                prop="UnitPrice"
-                width="120"
-                label="Unit Price">
+            prop="UnitPrice"
+            width="120"
+            label="Unit Price">
                 <template slot-scope="scope">
                     {{scope.row.Price|currency}}
                 </template>
             </el-table-column>
 
             <el-table-column
-                prop="Discount"
-                width="100"
-                label="Discount">
+            prop="ExtendPrice"
+            width="140"
+            label="Ext Price">
+                <template slot-scope="scope">
+                    <bwc-input-action 
+                        v-model="scope.row.ExtendPrice" 
+                        type="currency" 
+                        :id="scope.row.Id"
+                        @save-data="updateExtendPrice"
+                        v-if="order.Step < 6">
+                    </bwc-input-action>
+                    <span v-else>{{scope.row.ExtendPrice|currency}}</span>
+                </template>
+            </el-table-column>
+
+            <el-table-column
+            prop="Discount"
+            width="100"
+            label="Discount">
                 <template slot-scope="scope">
                     {{scope.row.Discount|percent}}
                 </template>
@@ -123,10 +138,10 @@
             </el-table-column> -->
 
             <el-table-column
-                fixed="right"
-                label="Operations"
-                width="100"
-                class-name="no-print">
+            fixed="right"
+            label="Operations"
+            width="100"
+            class-name="no-print">
                 <template slot-scope="scope">
                     <el-button type="text" class="el-icon-edit-outline" 
                     @click="editItem(scope.row.Id)" ></el-button> | 
@@ -231,6 +246,21 @@ export default {
         //         functions.message.success()
         //     })
         // }
+        updateExtendPrice(id, value){
+            let data = {
+                Id:id,
+                ExtendPrice:value
+            }
+            this.$store.dispatch('order/updateComponent',{
+                id:id,
+                data:data
+            }).then(_=>{
+                this.$emit('save-data');
+                //show message
+                functions.$this = this
+                functions.message.success()
+            })
+        },
     }
 }
 </script>

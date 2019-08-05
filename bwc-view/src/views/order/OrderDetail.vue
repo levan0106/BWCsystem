@@ -15,8 +15,11 @@
         </el-col>
     </el-row>
         <el-row>
-            <bwc-order-information :id="id" :data="orderInfo" :loading="loading" />
-            <bwc-order-payment-information :order-id="id" 
+            <bwc-order-information :id="id" 
+            :data="orderInfo" 
+            :loading="loading" />
+            <bwc-order-payment-information 
+            :order-id="id" 
             :max-value="orderInfo.TotalAmount"/>
         </el-row>
         
@@ -39,6 +42,18 @@
         @save-data="loadOrderInfo"   
         @selection-change="handleSelectComponent"  
         ></bwc-order-component-list>
+
+        <bwc-title>Services</bwc-title>
+        
+        <bwc-order-service-list 
+        from="order"
+        :order-id="id"
+        :order="orderInfo"
+        :supplier-id="orderInfo.SupplierId"   
+        @save-data="loadOrderInfo"   
+        @selection-change="handleSelectComponent"  
+        ></bwc-order-service-list>
+
         <br/>
         <el-row class="pos-fixed-bottom">
             <el-button-group>
@@ -64,7 +79,7 @@
                     :icon="isMakerSheetExport?'el-icon-loading':'el-icon-printer'" 
                     v-if="orderInfo.Step <= 2"
                     @click="printMakerSheet" >
-                    Print Maker Sheet
+                    Production Sheet
                 </el-button>
                 <el-button type="primary" icon="el-icon-plus"
                 v-if="orderInfo.Step <= 2"
@@ -114,6 +129,7 @@ import BwcOrderInformation from '@/components/order/OrderInformation.vue'
 import BwcOrderPaymentInformation from '@/components/order/OrderPaymentInformation.vue'
 import BwcOrderProductList from '@/components/order/OrderProductList.vue'
 import BwcOrderComponentList from '@/components/order/OrderComponentList.vue'
+import BwcOrderServiceList from '@/components/order/OrderServiceList.vue'
 import functions from '@/plugin/function'
 import BwcOrderInvoiceExport from '@/components/order/OrderInvoiceExport.vue'
 import BwcMakerSheetExport from '@/components/order/MakerSheetExport.vue'
@@ -127,7 +143,8 @@ export default {
         BwcOrderProductList,
         BwcOrderComponentList,
         BwcOrderInvoiceExport,
-        BwcMakerSheetExport
+        BwcMakerSheetExport,
+        BwcOrderServiceList
     },
     props:['id'],
     data(){
@@ -208,9 +225,20 @@ export default {
         },
         updateStep(step){
             let sefl=this
-            let Order = {Step:step}
-            this.$store.dispatch('order/update',{id:this.id,data:Order})
-            .then(response=>{
+            let order = {
+                Step:step
+            }
+
+            if(step == 3){
+                order.CompleteDateForOrderOnly = new Date()
+            }else if(step == 4){
+                order.PickupDateForOrderOnly = new Date()
+            }
+            
+            this.$store.dispatch('order/update',{
+                id:this.id,
+                data:order
+            }).then(response=>{
                 sefl.$store.dispatch('order/pullInfo',sefl.id) 
                 .then(()=>{                
                     sefl.loading=false;  
@@ -254,10 +282,5 @@ export default {
     text-align: center;
     border-radius: 5px;
 }
-.pos-fixed-bottom{
-    position: fixed !important;
-    bottom: 0;
-    z-index: 999;
-    right: 0;
-}
+
 </style>

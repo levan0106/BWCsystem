@@ -13,7 +13,7 @@
                     <th>Width</th>
                     <th>Drop</th>
                     <th>Quantity</th>
-                    <th>Color</th>
+                    <th>Colour</th>
                     <th>Tube</th>
                     <th>Tube Type</th>
                     <th>BOTTOM RAIL</th>

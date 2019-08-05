@@ -126,7 +126,7 @@ export default {
 			//console.log("column: " + this.totalColumn)
 			for (let index = 1; index < this.columns; index++) {
 				
-				var items=self.items.filter(i => i.Column == index).map(function(item,idx){
+				var columns=self.items.filter(i => i.Column == index).map(function(item,idx){
 			
 					var itemValue = self.data.filter(function(i){
 										return i.Column == index + 1 && i.Row == item.Row
@@ -141,9 +141,9 @@ export default {
 					return newItem;
 				});
 				//update value for new items
-				var newData= self.items.concat(items);	
+				var newColumns= self.items.concat(columns);	
 				//update list items
-				self.items = newData;
+				self.items = newColumns;
 			}	
 		},		
 		getItem(row,column){
@@ -242,9 +242,6 @@ export default {
 	>div{
 		overflow: auto;
 		max-height: 400px;
-		&.auto-height{
-			//max-height: 100%;
-		}
 	}
 	.el-input__inner {
 		min-width: 70px;

@@ -20,7 +20,7 @@
         
         <bwc-discount-list :data="data" 
         :loading="loading" 
-        discount-type="1"
+        discount-type="customer"
         @do-delete="doDelete"
         @do-update="doUpdate"/>
     </bwc-layout>

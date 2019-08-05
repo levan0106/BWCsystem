@@ -7,6 +7,7 @@
                             prop="SupplierId" :rules="rules.Required">
                                 <el-select v-model="form.SupplierId" 
                                 placeholder="Please select a supplier"
+                                filterable
                                 class="textbox-fs">
                                     <el-option v-for="sup in supplierList" 
                                     :label="sup.Company"
@@ -68,9 +69,9 @@
                                 :key="c.TypeId"></el-option>
                             </el-select>
                         </el-form-item>
-                        <el-form-item label="Color" >
+                        <el-form-item label="Colour" >
                             <el-select v-model="form.Color" 
-                            placeholder="Please select a color"
+                            placeholder="Please select a Colour"
                             class="textbox-fs"
                             filterable>
                                 <el-option v-for="c in colors" 
@@ -100,6 +101,7 @@
                         
                        <el-form-item label="Status" >
                             <el-select v-model="form.ActiveStatus" 
+                            filterable
                             placeholder="Please select a status"
                             class="textbox-fs">
                                 <el-option v-for="st in status" 

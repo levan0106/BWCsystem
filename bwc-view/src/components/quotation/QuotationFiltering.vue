@@ -3,7 +3,10 @@
 		<el-col :span="6" class="block">
 			<div>
 				<span class="demonstration">Customer</span>
-				<el-select v-model="filter.customer" slot="prepend" placeholder="Select..">
+				<el-select v-model="filter.customer" 
+				filterable
+				slot="prepend" 
+				placeholder="Select ...">
 					<el-option v-for="item in customers" 
 					:label="item.Company" 
 					:value="item.Id"

@@ -3,26 +3,29 @@
     <bwc-loading :loading="loading">
         <!-- <bwc-title no-padding>Informations</bwc-title> -->
         <el-row>
-            <el-col :span="8">
-                <bwc-form-control label="Order No">{{data.Id|nullValue}}</bwc-form-control>
-                <bwc-form-control label="Employee">{{data.EmployeeName|nullValue}}</bwc-form-control>
-                <bwc-form-control label="Order Date">{{data.OrderDate|nullValue}}</bwc-form-control>    
-            </el-col>
             <el-col :span="8">            
                 <bwc-form-control label="Customer Name">{{data.CustomerName|nullValue}}</bwc-form-control> 
-                <bwc-form-control label="Order Ref No">{{data.OrderRefNo|nullValue}}</bwc-form-control>                                 
-                <bwc-form-control label="Taxes (GST)">{{data.Taxes|percent|nullValue}}</bwc-form-control>
+                <bwc-form-control label="Ref/Name">{{data.OrderRefNo|nullValue}}</bwc-form-control>                                 
+                <bwc-form-control label="Site Address">{{data.CustomerAddress|nullValue}}</bwc-form-control> 
+                <bwc-form-control label="Email">{{data.CustomerEmail|nullValue}}</bwc-form-control> 
+                <bwc-form-control label="Phone">{{data.CustomerPhone|nullValue}}</bwc-form-control>       
             </el-col>
             <el-col :span="8">           
                 <!-- <bwc-form-control label="Delivery Date">{{data.DeliveryDate|date|nullValue}}</bwc-form-control>
                 <bwc-form-control label="Delivery No">{{data.DeliveryNo|nullValue}}</bwc-form-control>             
                 <bwc-form-control label="AMT Exc GST">{{data.AMTExcGST|currency|nullValue}}</bwc-form-control>
                 <bwc-form-control label="GST">{{data.GST|currency|nullValue}}</bwc-form-control>
-                <bwc-form-control label="AMT Inc GST">{{data.AMTIncGST|currency|nullValue}}</bwc-form-control> -->
-                <bwc-form-control label="Complete Date">{{data.CompleteDateForOrderOnly|date|nullValue}}</bwc-form-control>
+                <bwc-form-control label="AMT Inc GST">{{data.AMTIncGST|currency|nullValue}}</bwc-form-control> -->                          
+                <bwc-form-control label="Taxes (GST)">{{data.Taxes|percent|nullValue}}</bwc-form-control>
+                <!-- <bwc-form-control label="Complete Date">{{data.CompleteDateForOrderOnly|date|nullValue}}</bwc-form-control> -->
                 <bwc-form-control label="Invoice No.">{{data.InvoiceNoForOrderOnly|nullValue}}</bwc-form-control>
                 <bwc-form-control label="Invoice Date">{{data.InvoiceDateForOrderOnly|date|nullValue}}</bwc-form-control>
                 <bwc-form-control label="Pickup Date">{{data.PickupDateForOrderOnly|date|nullValue}}</bwc-form-control>
+            </el-col>
+            <el-col :span="8">
+                <bwc-form-control label="Employee Name">{{data.EmployeeName|nullValue}}</bwc-form-control>
+                <bwc-form-control label="Sale ID">{{data.Id|nullValue}}</bwc-form-control>
+                <bwc-form-control label="Sale Date">{{data.OrderDate|datetime|nullValue}}</bwc-form-control>    
             </el-col>
         </el-row>
     

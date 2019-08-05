@@ -3,7 +3,10 @@
 		<el-col :span="6" class="block">
 			<div>
 				<span class="demonstration">Supplier</span>
-				<el-select v-model="filter.supplier" slot="prepend" placeholder="Select..">
+				<el-select v-model="filter.supplier" 
+				filterable
+				slot="prepend" 
+				placeholder="Select ...">
 					<el-option v-for="item in suppliers" 
 					:label="item.Company" 
 					:value="item.Id"
@@ -14,7 +17,10 @@
 		<el-col :span="6" class="block">
 			<div>
 				<span class="demonstration">Purchase Status</span>
-				<el-select v-model="filter.status" slot="prepend" placeholder="Select..">
+				<el-select v-model="filter.status" 
+				filterable
+				slot="prepend" 
+				placeholder="Select ...">
 					<el-option v-for="ste in steps" 
 					:label="ste.Label" 
 					:value="ste.Value" 

@@ -9,7 +9,8 @@
                     <el-form-item label="Component" prop="ComponentId"
                     :rules="rules.Required">
                         <el-select v-model="form.ComponentId" 
-                        filterable placeholder="Select"
+                        filterable 
+                        placeholder="Select"
                         class="textbox-fs">
                             <el-option
                             v-for="item in data"
@@ -31,6 +32,7 @@
                     <el-form-item label="Color" prop="ColorId"
                     :rules="rules.Required">
                         <el-select v-model="form.ColorId" 
+                        filterable
                         placeholder="Please select a color"
                         class="textbox-fs">
                             <el-option

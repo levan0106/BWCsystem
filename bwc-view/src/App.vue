@@ -57,12 +57,32 @@ export default {
         {LocationName:'NA',Id:1},
       ],
       controlSides:[
-        {ControlSideName:'Top',Id:1},
-        {ControlSideName:'Botton',Id:2},
-        {ControlSideName:'Left',Id:3},
-        {ControlSideName:'Right',Id:4},
-        {ControlSideName:'Central',Id:5},
-        {ControlSideName:'NA',Id:6}
+        {Name:'Top',Id:1},
+        {Name:'Botton',Id:2},
+        {Name:'Left',Id:3},
+        {Name:'Right',Id:4},
+        {Name:'Central',Id:5},
+        {Name:'NA',Id:6}
+      ],
+      flaps:[
+        {Name:'Straight',Id:1},
+        {Name:'Scallop',Id:2},
+        {Name:'Spline',Id:3},
+        {Name:'Pocket',Id:4}
+      ],
+      bSplines:[
+        {Name:'N/A',Id:1},
+        {Name:'Small',Id:2},
+        {Name:'Big',Id:3},
+      ],
+      tSplines:[
+        {Name:'N/A',Id:1},
+        {Name:'Small',Id:2},
+        {Name:'Big',Id:3},
+      ],
+      rolls:[
+        {Name:'Under',Id:1},
+        {Name:'Over',Id:2},
       ],
       paymentType:[
         {PaymentTypeName:'C.O.D',Id:1},
@@ -87,6 +107,10 @@ export default {
     this.$store.dispatch('pushUnits',this.units)
     this.$store.dispatch('pushLocations',this.locations)
     this.$store.dispatch('pushControlSides',this.controlSides)
+    this.$store.dispatch('pushRolls',this.rolls)
+    this.$store.dispatch('pushTSplines',this.tSplines)
+    this.$store.dispatch('pushBSplines',this.bSplines)
+    this.$store.dispatch('pushFlaps',this.flaps)
     this.$store.dispatch('pushPaymentType',this.paymentType)
     this.$store.dispatch('pullSystemInfo')
   }
@@ -155,6 +179,15 @@ body,html{
     }
     .textbox-fs{
       width: 100%!important;
+    }
+    .pos-fixed-bottom{
+      position: fixed !important;
+      bottom: 0;
+      z-index: 999;
+      right: 0;
+    }
+    .button-group{
+        margin-right: 36px;
     }
 }
 #app { 
@@ -272,12 +305,8 @@ body,html{
       width: auto !important;
     }
     
-      .el-table--border td, .el-table--border th, .el-table__body-wrapper .el-table--border.is-scrolling-left~.el-table__fixed{
-        border: none !important;
-      }
-    col{
-      //width: auto !important;
-      //min-width: 80px!important;
+    .el-table--border td, .el-table--border th, .el-table__body-wrapper .el-table--border.is-scrolling-left~.el-table__fixed{
+      border: none !important;
     }
    
   }

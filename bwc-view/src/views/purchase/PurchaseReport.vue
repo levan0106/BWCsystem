@@ -89,15 +89,17 @@ export default {
 			.then(_=>{
 				this.loading=false;
 			}) 
+
 			//set filter values
 			this.filterValues = args
 			this.data = this.originalData.filter(function(item){
 			//console.log(item.OrderDate)
 				let condition = ( args.supplier == '' || args.supplier == 0 || item.SupplierId == args.supplier )
+				
 				if(args.dateRange == null || args.dateRange == ''){				
 					return condition
 				}
-				
+
 				let fromDate = new Date(args.dateRange[0].setHours(0,0,0,999))
 				let toDate = new Date(args.dateRange[1].setHours(23,59,59,999))
 
@@ -107,11 +109,14 @@ export default {
 					|| new Date(item.OrderDate) >= fromDate && new Date(item.OrderDate) <= toDate
 					|| new Date(item.DeliveryDate) >= fromDate && new Date(item.DeliveryDate) <= toDate )
 				}else if(args.type == 1){ //Paid Date
-					return condition && new Date(item.DatePaid) >= fromDate && new Date(item.DatePaid) <= toDate 
+					return condition 
+					&& new Date(item.DatePaid) >= fromDate && new Date(item.DatePaid) <= toDate 
 				}else if(args.type == 2){//Order Date
-					return condition && new Date(item.OrderDate) >= fromDate && new Date(item.OrderDate) <= toDate 
+					return condition 
+					&& new Date(item.OrderDate) >= fromDate && new Date(item.OrderDate) <= toDate 
 				}else if(args.type == 3){//Invoice Date
-					return condition &&  new Date(item.DeliveryDate) >= fromDate && new Date(item.DeliveryDate) <= toDate
+					return condition 
+					&&  new Date(item.DeliveryDate) >= fromDate && new Date(item.DeliveryDate) <= toDate
 				}
 				return condition
 			})

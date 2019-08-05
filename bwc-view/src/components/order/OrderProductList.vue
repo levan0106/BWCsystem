@@ -57,7 +57,7 @@
             
             <el-table-column
                 prop="ColorName"
-                label="Color">					  
+                label="Colour">					  
             </el-table-column>             
             
             <el-table-column
@@ -103,6 +103,7 @@
 
             <el-table-column
                 prop="ExtendPrice"
+                width="140"
                 label="Ext Price">
                 <template slot-scope="scope">
                     <bwc-input-action 
@@ -225,9 +226,14 @@ export default {
         //     })
         // },
         updateExtendPrice(id, value){
-            let data = {Id:id,ExtendPrice:value}
-            this.$store.dispatch('order/updateProduct',{id:id,data:data})
-            .then(_=>{
+            let data = {
+                Id:id,
+                ExtendPrice:value
+            }
+            this.$store.dispatch('order/updateProduct',{
+                id:id,
+                data:data
+            }).then(_=>{
                 this.$emit('save-data');
                 //show message
                 functions.$this = this

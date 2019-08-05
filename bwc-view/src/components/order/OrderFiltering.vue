@@ -3,7 +3,10 @@
 		<el-col :span="6" class="block">
 			<div>
 				<span class="demonstration">Customer</span>
-				<el-select v-model="filter.customer" slot="prepend" placeholder="Select..">
+				<el-select v-model="filter.customer" 
+				filterable
+				slot="prepend" 
+				placeholder="Select ..">
 					<el-option v-for="item in customers" 
 					:label="item.Company" 
 					:value="item.Id"
@@ -14,7 +17,10 @@
 		<el-col :span="6" class="block">
 			<div>
 				<span class="demonstration">Order Status</span>
-				<el-select v-model="filter.status" slot="prepend" placeholder="Select..">
+				<el-select v-model="filter.status" 
+				filterable
+				slot="prepend" 
+				placeholder="Select ...">
 					<el-option v-for="ste in steps" 
 					:label="ste.Label" 
 					:value="ste.Value" 
@@ -25,15 +31,15 @@
 		<el-col :span="9" class="block">
 			<span class="demonstration">Order Date</span>
 			<el-date-picker
-			  v-model="filter.dateRange"
-			  type="daterange"
-			  align="right"
-			  unlink-panels
-			  range-separator="To"
-			  start-placeholder="Start date"
-			  end-placeholder="End date"
-			  format="dd/MM/yyyy"
-			  :picker-options="pickerOptions">
+			v-model="filter.dateRange"
+			type="daterange"
+			align="right"
+			unlink-panels
+			range-separator="To"
+			start-placeholder="Start date"
+			end-placeholder="End date"
+			format="dd/MM/yyyy"
+			:picker-options="pickerOptions">
 			</el-date-picker>
 		</el-col>
 		<el-col :span="3" class="block button-panel">
@@ -47,7 +53,7 @@ export default {
     name:"OrderFiltering",
     data(){
         return({
-          	pickerOptions: {
+			pickerOptions: {
 				shortcuts: [{
 					text: 'Last week',
 					onClick(picker) {
@@ -102,7 +108,6 @@ export default {
 }
 </script>
 <style lang="less">
-	
 	.block {
     text-align: center;
     -ms-flex: 1;
@@ -118,7 +123,7 @@ export default {
 	.filter-panel{
 		display: flex;
 		.button-panel{
-			    margin: auto auto 0;
+			margin: auto auto 0;
 		}
 	}
 </style>

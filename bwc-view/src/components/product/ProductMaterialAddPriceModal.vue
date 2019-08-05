@@ -79,13 +79,13 @@
         </el-col>
     </el-row>
     
-    <bwc-modal-footer>
-            <el-button @click="closeModal">Cancel</el-button>                                 
-            <el-button type="primary" @click="saveData">
-                Save
-                <i v-if="processing" class="el-icon-loading"></i>
-            </el-button>
-        </bwc-modal-footer>
+    <el-row class="pos-fixed-bottom button-group">
+        <el-button @click="closeModal">Cancel</el-button>                                 
+        <el-button type="primary" @click="saveData">
+            Save
+            <i v-if="processing" class="el-icon-loading"></i>
+        </el-button>
+    </el-row>
 </div>
 </template>
 

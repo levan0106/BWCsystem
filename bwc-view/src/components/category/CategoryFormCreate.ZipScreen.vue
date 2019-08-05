@@ -8,12 +8,11 @@
                         auto-complete="off" disabled></el-input>
                     </el-form-item>   
                     
-                    <el-form-item label="Category Name" 
+                    <!-- <el-form-item label="Category Name" 
                     prop="CategoryName" :rules="rules.Required">
                         <el-input v-model="form.CategoryName" 
-                        auto-complete="off"
-                            ></el-input>
-                    </el-form-item>
+                        auto-complete="off"></el-input>
+                    </el-form-item> -->
 
                     <el-form-item label="Description" >
                         <el-input
@@ -26,6 +25,7 @@
                     </el-form-item>
                     <!-- <el-form-item label="Status" >
                         <el-select v-model="form.ActiveStatus" 
+                        filterable
                         placeholder="Please select a status"
                         class="textbox-fs">
                             <el-option v-for="st in status" 

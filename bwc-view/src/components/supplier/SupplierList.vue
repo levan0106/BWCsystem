@@ -6,15 +6,15 @@
 			:loading="loading"
 			>
 				<el-table-column
-					type="index"
-					prop="Id"
-					width="70px">
+				type="index"
+				prop="Id"
+				width="70px">
 				</el-table-column>
 				
 				<el-table-column
-					prop="Company"
-					sortable
-					label="Company">
+				prop="Company"
+				sortable
+				label="Company Name">
 					<template slot-scope="scope">
 						<router-link :to="{name:'supplierDetail',params:{id:scope.row.Id}}">
 							{{ scope.row.Company}}
@@ -30,25 +30,34 @@
 				</el-table-column> -->
 
 				<el-table-column
-					prop="Address"
-					sortable
-					label="Address">
+				prop="Address"
+				sortable
+				label="Business Address">
 				</el-table-column>
 
 				<el-table-column
-					prop="Email"
-					sortable
-					label="Email">
+				prop="Email"
+				sortable
+				label="Email">
 				</el-table-column>
 
 				<el-table-column
-					prop="BusinessPhone"
-					sortable
-					label="Business Phone">
+				prop="BusinessPhone"
+				sortable
+				label="Phone">
 					<template slot-scope="scope">
 						{{ scope.row.BusinessPhone|nullValue}}
 					</template>
 				</el-table-column>
+
+				<el-table-column
+				sortable
+				label="Primary Contact">
+					<template slot-scope="scope">
+						{{ scope.row.FirstName + " " + scope.row.LastName}}
+					</template>
+				</el-table-column>
+
 				<el-table-column
                     fixed="right"
                     label="Operations"

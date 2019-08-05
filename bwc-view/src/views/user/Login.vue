@@ -52,7 +52,7 @@
 
 <script>
 import LayoutLogin from '@/views/user/LayoutLogin'
-import Authenticate from '@/plugin/authenticate'
+import Authentication from '@/plugin/authentication'
 import functions from '@/plugin/function'
 
 
@@ -95,9 +95,22 @@ export default {
                     this.$store.dispatch('login/doLogin',{user:this.form.UserName,password:this.form.Password})
                     .then(_=>{
                         if(this.$store.getters['login/status']){
-                            let token = this.$store.getters['login/token']
-                            Authenticate.system.setAuth({token:token,userId:self.form.UserName,userName: 'bwc '+ self.form.UserName})
-                            self.$store.dispatch("setCurrentUser",{UserId:self.form.UserName,UserName:'bwc '+ self.form.UserName })
+                            let accessToken = this.$store.getters['login/accessToken']
+                            let refreshToken = this.$store.getters['login/refreshToken']
+                            let expiresIn = this.$store.getters['login/expiresIn']
+
+                            Authentication.system.setAuth({
+                                accessToken:accessToken,
+                                refreshToken:refreshToken,
+                                expiresIn:expiresIn,
+                                userId:self.form.UserName,
+                                userName: 'bwc '+ self.form.UserName
+                            })
+
+                            self.$store.dispatch("setCurrentUser",{
+                                UserId:self.form.UserName,
+                                UserName:'bwc '+ self.form.UserName
+                            })
 
                             window.location.href = "/";
                         }else{
@@ -108,10 +121,8 @@ export default {
                         console.log(e)
                         self.loginFail()
                     })
-                }
-                
-            })
-           
+                }                
+            })           
         },
         loginFail() {
             //this.isLoginFail=true;

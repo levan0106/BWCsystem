@@ -4,15 +4,15 @@
 	:loading="loading"
 	>
 		<el-table-column
-			type="index"
-			prop="Id"
-			width="70px">
+		type="index"
+		prop="Id"
+		width="70px">
 		</el-table-column>
 		
 		<el-table-column
-			prop="ObjectName"
-			sortable
-			label="Name">
+		prop="ObjectName"
+		sortable
+		:label="discountType =='customer' ?'Customer Name':'Supplier Name'">
 			<template slot-scope="scope">
 				<a @click="doUpdate(scope.row.Id)">
 					{{ scope.row.ObjectName}}
@@ -21,21 +21,20 @@
 		</el-table-column>
 
 		<el-table-column
-			prop="ProductName"
-			sortable
-			label="Product Name">
+		prop="ProductName"
+		sortable
+		label="Product Name">
 		</el-table-column>
 
 		<el-table-column
-			prop="DiscountValue"
-			label="Discount (%)">
+		prop="DiscountValue"
+		label="Discount (%)">
 		</el-table-column>
 
 		<el-table-column
-			fixed="right"
-			label="Operations"
-			width="120"
-			>
+		fixed="right"
+		label="Operations"
+		width="120">
 			<template slot-scope="scope">					
 				<el-button type="text" class="el-icon-edit-outline"  
 				@click="doUpdate(scope.row.Id)">

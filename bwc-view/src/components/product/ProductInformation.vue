@@ -74,7 +74,7 @@ export default {
             let cat = this.$store.getters['category/all'].filter(item =>{
                         return item.Id == self.data.CategoryId
                     }) 
-            return cat.length > 0 ? cat[0].CategoryName : ''
+            return cat.length > 0 ? cat[0].CategoryCode : ''
         },
         data(){
             return this.$store.getters['product/info']

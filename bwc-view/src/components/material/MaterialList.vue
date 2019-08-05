@@ -1,6 +1,6 @@
 <template>
     <el-row>
-		  <grid-data
+		<grid-data
 			:data="data"
 			:loading="loading"
 			:default-sort = "{prop: 'Id', order: 'descending'}"
@@ -33,9 +33,9 @@
 				</el-table-column>
 
 				<el-table-column
-					prop="Color"
+					prop="color"
 					sortable
-					label="Color">
+					label="Colour">
                     <template slot-scope="scope">
 						{{scope.row.Color|nullValue}}
                     </template>
@@ -56,8 +56,8 @@
                     @do-delete="doDelete"></bwc-delete-item>
                     </template>
                 </el-table-column>
-		  </grid-data>
-		 </el-row>
+		</grid-data>
+		</el-row>
 </template>
 <script>
 import GridData from '@/components/common/GridData.vue'

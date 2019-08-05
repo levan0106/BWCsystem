@@ -12,7 +12,10 @@
         </el-form-item>
         <el-form-item label="Payment Type" prop="PaymentType"
         :rules="rules.Required">
-            <el-select v-model="form.PaymentType" placeholder="Select" class="textbox-fs">
+            <el-select v-model="form.PaymentType" 
+            filterable
+            placeholder="Select" 
+            class="textbox-fs">
                 <el-option
                 v-for="item in PaymentTypes"
                 :key="item.Id"

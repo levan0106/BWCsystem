@@ -11,11 +11,11 @@
 			</el-table-column>
 
 			<el-table-column
-				prop="CategoryName"
+				prop="CategoryCode"
 				label="Category Name">
 				<template slot-scope="scope">
 					<router-link :to="{name:'categoryDetail',params:{id:scope.row.Id}}">
-						{{ scope.row.CategoryName }}
+						{{ scope.row.CategoryCode }}
 					</router-link>	
 				</template>
 			</el-table-column>

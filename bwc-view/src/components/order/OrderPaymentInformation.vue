@@ -14,6 +14,9 @@
         <el-table-column
             prop="DatePaid"
             label="Date Paid">
+            <template slot-scope="scope">
+                {{scope.row.DatePaid|date}}
+            </template>
         </el-table-column>
         <el-table-column
             prop="PaymentType"

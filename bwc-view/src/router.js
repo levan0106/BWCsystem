@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Auth from './plugin/authenticate'
+import Authentication from './plugin/authentication'
 
 import Home from './views/Home.vue'
 import About from './views/About.vue'
@@ -344,7 +344,7 @@ const router = new Router({
 })
 router. beforeEach((to, from, next) => {
   next();
-  if (to.matched.some(record => record.meta.requiresAuth) && !Auth.system.isAuthenticated()) {
+  if (to.matched.some(record => record.meta.requiresAuth) && !Authentication.system.isAuthenticated()) {
     next({ path: '/login', query: { redirect: to.fullPath }});
   } else {
     next();

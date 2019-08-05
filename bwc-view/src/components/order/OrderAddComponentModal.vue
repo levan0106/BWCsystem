@@ -6,10 +6,13 @@
             <bwc-loading :loading="loading">
             <el-row :gutter="20">
                 <el-col :span="12">                
-                    <el-form-item label="Component" prop="ComponentId"
+                    <el-form-item 
+                    label="Component" 
+                    prop="ComponentId"
                     :rules="rules.Required">
                         <el-select v-model="form.ComponentId" 
-                        filterable placeholder="Select"
+                        filterable 
+                        placeholder="Select"
                         class="textbox-fs"
                         @change="componentChange">
                             <el-option
@@ -20,27 +23,13 @@
                             </el-option>
                         </el-select>
                     </el-form-item>
-                    <el-form-item label="Quantity">
-                        <el-input-number v-model="form.Quantity" auto-complete="off"
-                        controls-position="right" class="input-number-fs"
-                        :min=0></el-input-number>
-                    </el-form-item>   
-                    <el-form-item label="Discount (%)">
-                        <el-input-number v-model="form.Discount" auto-complete="off"
-                        controls-position="right" class="input-number-fs"
-                        :min=0></el-input-number>
-                    </el-form-item>    
-                    <el-form-item label="Size">
-                        <el-input v-model="form.Size" 
-                            controls-position="right" 
-                            class="input-number-fs"></el-input>
-                    </el-form-item>    
-                </el-col>
-                <el-col :span="12">
-                    <el-form-item label="Color" prop="ColorId"
+
+                    <el-form-item 
+                    label="Colour" 
+                    prop="ColorId"
                     :rules="rules.Required">
                         <el-select v-model="form.ColorId" 
-                        placeholder="Please select a color"
+                        placeholder="Please select a Colour"
                         class="textbox-fs"
                         filterable >
                             <el-option
@@ -50,13 +39,30 @@
                             :value="item.Id"></el-option>
                         </el-select>
                     </el-form-item>
+
+                    <el-form-item label="Quantity">
+                        <el-input-number 
+                        v-model="form.Quantity" 
+                        auto-complete="off"
+                        controls-position="right" class="input-number-fs"
+                        :min=0></el-input-number>
+                    </el-form-item>   
+
+                    <el-form-item label="Size">
+                        <el-input v-model="form.Size" 
+                            controls-position="right" 
+                            class="input-number-fs"></el-input>
+                    </el-form-item>    
+                </el-col>
+                <el-col :span="12">
                     
-                    <el-form-item label="Unit">
+                    
+                    <!-- <el-form-item label="Unit">
                         <el-input v-model="form.UnitName" auto-complete="off"
                         disabled
                         controls-position="right" class="input-number-fs">
                         </el-input>
-                    </el-form-item>
+                    </el-form-item> -->
 
                     <el-form-item label="Unit Price">
                         <el-input v-model="form.Price" auto-complete="off"
@@ -64,6 +70,21 @@
                         controls-position="right" class="input-number-fs">
                         </el-input>
                     </el-form-item>
+                    
+                    <el-form-item label="Discount (%)">
+                        <el-input-number v-model="form.Discount" auto-complete="off"
+                        controls-position="right" class="input-number-fs"
+                        :min=0></el-input-number>
+                    </el-form-item>  
+                    
+                    <el-form-item label="Extend Price">
+                        <bwc-input-currency 
+                        v-model="form.ExtendPrice" 
+                        class="input-number-fs"
+                        controls-position="right"
+                        ></bwc-input-currency>
+                    </el-form-item>   
+
                 </el-col>
             </el-row>
             </bwc-loading> 

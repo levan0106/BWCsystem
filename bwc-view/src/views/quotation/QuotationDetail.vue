@@ -157,10 +157,4 @@ export default {
     text-align: center;
     border-radius: 5px;
 }
-.pos-fixed-bottom{
-    position: fixed !important;
-    bottom: 0;
-    z-index: 999;
-    right: 0;
-}
 </style>

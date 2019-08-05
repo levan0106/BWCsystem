@@ -3,30 +3,43 @@ import * as types from './type'
 
 const login = {
     namespaced:true,
-    state: { 
-      token:'',
-      status:false
-     },
-    mutations: { 
-      [types.DO_LOGIN](state,{status,token}){
-            state.status = true
-            state.token = token
-      },
-      
-     },
+    state: {
+        accessToken: '',
+        refreshToken: '',
+        tokenExpiresIn:0,
+        status: false
+    },
+    mutations: {
+        [types.DO_LOGIN](state, { status, accessToken, refreshToken, tokenExpiresIn }) {
+            state.status = status
+            state.accessToken = accessToken
+            state.refreshToken = refreshToken
+            state.tokenExpiresIn = tokenExpiresIn
+        },
+
+    },
     actions: {
       doLogin({commit},{user,password}){
         return new Promise((resolve, reject) => {
             
-            HTTP.get('authorization/'+user+'/'+password)
-            .then(response=>{
-                var status = response.statusText;           
-                var token = response.headers["token"];
-                if(status === 'OK' && token != '')
-                {
-                    commit(types.DO_LOGIN,{status:true,token:token})
-                }else{
-                    commit(types.DO_LOGIN,{status:false,token:''})
+            HTTP.post('authentication', { 
+                UserName: user, 
+                Password: password 
+            }).then(response=>{
+                // debugger
+                var status = response.status;           
+                var accessToken = response.headers["access_token"];
+                var refreshToken = response.headers["refresh_token"];
+                var tokenExpiresIn = response.headers["expires_in"];
+                if (status === 200 && accessToken != '') {
+                    commit(types.DO_LOGIN, { 
+                        status: true, 
+                        accessToken: accessToken, 
+                        refreshToken: refreshToken, 
+                        tokenExpiresIn: tokenExpiresIn 
+                    })
+                } else {
+                    commit(types.DO_LOGIN, { status: false })
                 }
             
                 resolve()
@@ -38,8 +51,10 @@ const login = {
       },
      },
     getters: { 
-      token: state => state.token,
-      status: state => state.status,
-     }
+        accessToken: state => state.accessToken,
+        refreshToken: state => state.refreshToken,
+        tokenExpiresIn: state => state.tokenExpiresIn,
+        status: state => state.status,
+    }
   }
 export default login

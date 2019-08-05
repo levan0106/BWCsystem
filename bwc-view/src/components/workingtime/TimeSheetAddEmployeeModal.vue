@@ -5,7 +5,8 @@
             prop="EmployeeId"
             :rules="rules.Required">
                 <el-select v-model="form.EmployeeId" 
-                filterable placeholder="Select"
+                filterable 
+                placeholder="Select ..."
                 class="textbox-fs">
                     <el-option
                     v-for="item in data"

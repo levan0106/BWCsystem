@@ -130,6 +130,11 @@ export default {
         updateStep(step){
             let sefl=this
             let purchase = {Step:step}
+            if(step == 3){
+                purchase.DeliveryDate= new Date()
+            }else if(step == 4){
+                purchase.InvoiceDateForOrderOnly = new Date()
+            }
             this.$store.dispatch('purchase/update',{id:this.id,data:purchase})
             .then(response=>{
                 sefl.$store.dispatch('purchase/pullInfo',sefl.id) 
@@ -169,12 +174,6 @@ export default {
     background: #e9e9e9;
     text-align: center;
     border-radius: 5px;
-}
-.pos-fixed-bottom{
-    position: fixed !important;
-    bottom: 0;
-    z-index: 999;
-    right: 0;
 }
 </style>
 

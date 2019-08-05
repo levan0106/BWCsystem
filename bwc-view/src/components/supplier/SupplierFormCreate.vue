@@ -11,19 +11,9 @@
                     :rules="rules.Required"  > 
                         <el-input v-model="form.Company"  ></el-input>
                     </el-form-item>
-
                     <el-form-item label="ABN" > 
                         <el-input v-model="form.ABN"></el-input>
-                    </el-form-item>
-                     
-                    <el-form-item label="Email" prop="Email" :rules="rules.Email" >
-                        <el-input
-                            auto-complete="off" 
-                            v-model="form.Email"
-                            type="email">
-                        </el-input>
-                    </el-form-item> 
-
+                    </el-form-item>                     
                     <el-form-item label="Web Page" >
                         <el-input
                             auto-complete="off" 
@@ -32,7 +22,7 @@
                     </el-form-item>                         
                 </el-col>
                 <el-col :span="12">                      
-                    <bwc-title>Phone Numbers</bwc-title>
+                    <bwc-title>Business Contact</bwc-title>
                     <el-form-item label="Business Phone" prop="BusinessPhone" 
                     :rules="rules.Required"  >
                         <el-input v-model="form.BusinessPhone" 
@@ -43,6 +33,13 @@
                         <el-input v-model="form.FaxNumber" 
                         auto-complete="off" 
                         ></el-input>
+                    </el-form-item> 
+                    <el-form-item label="Email" prop="Email" :rules="rules.Email" >
+                        <el-input
+                            auto-complete="off" 
+                            v-model="form.Email"
+                            type="email">
+                        </el-input>
                     </el-form-item> 
                 </el-col>
                 <el-col :span="24">
@@ -56,7 +53,7 @@
                 </el-col>
             </el-col>
             <el-col :span="6">
-                <bwc-title>Address/Phones</bwc-title>
+                <bwc-title>Business Address</bwc-title>
                 <el-form-item label="Address" prop="Address" :rules="rules.Required" >
                     <el-input
                     v-model="form.Address" 

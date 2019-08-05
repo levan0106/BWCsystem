@@ -8,22 +8,20 @@
 			@expand-change="doExpandChange"			
 			>
 				<el-table-column
-					type="expand"
-					width="50"
-					prop="Id"	>
+				type="expand"
+				width="50"
+				prop="Id">
 					<template slot-scope="scope">
 						<div :class-name="scope.row.Id" class="panel-container">
 							<bwc-grid-data
-								:data="purchaseItems.filter(function(item){return item.OrderId == scope.row.Id })"
-								:no-paging="true"
-								@select="doSelect"
-								@select-all="doSelectAll"
-								@header-click="doHeaderClick"
-								>
+							:data="purchaseItems.filter(function(item){return item.OrderId == scope.row.Id })"
+							:no-paging="true"
+							@select="doSelect"
+							@select-all="doSelectAll"
+							@header-click="doHeaderClick">
 								<el-table-column
-									width="50"
-									type="index"
-									>
+								width="50"
+								type="index">
 								</el-table-column>
 								<!-- <el-table-column
 									type="selection"
@@ -35,32 +33,32 @@
 								</el-table-column>	 -->
 
 								<el-table-column
-									prop="ItemType"
-									label="Item Type">
+								prop="ItemType"
+								label="Item Type">
 									<template slot-scope="scope">
 										{{ scope.row.ItemType }}
 									</template>
 								</el-table-column>
 
 								<el-table-column
-									prop="ItemName"
-									label="Item Name">
+								prop="ItemName"
+								label="Item Name">
 									<template slot-scope="scope">
 										{{ scope.row.ItemName|nullValue }}
 									</template>
 								</el-table-column>
 															
 								<el-table-column
-									prop="Quantity"
-									label="Quantity">
+								prop="Quantity"
+								label="Quantity">
 									<template slot-scope="scope">
 										{{ scope.row.Quantity|number }}
 									</template>
 								</el-table-column>
 								
 								<el-table-column
-									prop="Price"
-									label="Price">
+								prop="Price"
+								label="Price">
 									<template slot-scope="scope">
 									{{ scope.row.Price|currency }}
 									</template>
@@ -74,16 +72,16 @@
 									</template>
 								</el-table-column> -->
 								<el-table-column
-									prop="Discount"
-									label="Discount (%)">
+								prop="Discount"
+								label="Discount (%)">
 									<template slot-scope="scope">
 										{{ scope.row.Discount|percent  }}
 									</template>
 								</el-table-column>
 
 								<el-table-column
-									prop="TotalAmount"
-									label="Total Amount">
+								prop="TotalAmount"
+								label="Total Amount">
 									<template slot-scope="scope">
 										{{ scope.row.TotalAmount|currency  }}
 									</template>
@@ -103,49 +101,37 @@
 				</el-table-column>
 				
 				<el-table-column
-					prop="Id"
-					label="Purchase Id"
-					sortable
-					width="140">
+				prop="Id"
+				label="Purchase ID"
+				sortable
+				width="140">
 					<template slot-scope="scope">
-							<router-link 
-							:to="{name:'purchaseDetail',params:{id:scope.row.Id}}">
+						<router-link 
+						:to="{name:'purchaseDetail',params:{id:scope.row.Id}}">
 							<bwc-color :show="scope.row.NeedToReview">
 								{{ scope.row.Id }}
 							</bwc-color>
-							</router-link>	
+						</router-link>	
 					</template>
 				</el-table-column>
 
 				<el-table-column
-					prop="SupplierName"
-					sortable
-					width="150"
-					label="Supplier">
+				prop="SupplierName"
+				sortable
+				width="160"
+				label="Customer Name">
 					<template slot-scope="scope">
 						<bwc-color :show="scope.row.NeedToReview">
 							{{ scope.row.SupplierName|nullValue }}
 						</bwc-color>
 					</template>
 				</el-table-column>
-				
-				<el-table-column
-					prop="OrderDate"
-					sortable
-					width="180"
-					label="Purchase Date">
-					<template slot-scope="scope">
-						<bwc-color :show="scope.row.NeedToReview">
-							{{ scope.row.OrderDate|datetime|nullValue }}
-						</bwc-color>
-					</template>
-				</el-table-column>
 
 				<el-table-column
-					prop="OrderRefNo"
-					width="140"
-					sortable
-					label="Order Ref No">
+				prop="OrderRefNo"
+				width="140"
+				sortable
+				label="Ref/Name">
 					<template slot-scope="scope">
 						<bwc-color :show="scope.row.NeedToReview">
 							{{ scope.row.OrderRefNo|nullValue }}
@@ -153,6 +139,17 @@
 					</template>
 				</el-table-column>
 				
+				<el-table-column
+				prop="OrderDate"
+				sortable
+				width="180"
+				label="Purchase Date">
+					<template slot-scope="scope">
+						<bwc-color :show="scope.row.NeedToReview">
+							{{ scope.row.OrderDate|datetime|nullValue }}
+						</bwc-color>
+					</template>
+				</el-table-column>
 				
 				<!-- <el-table-column
 					prop="FirtReceiveDate"
@@ -189,10 +186,10 @@
 				</el-table-column> -->
 				
 				<el-table-column
-					prop="Taxes"
-					label="GST (%)"
-					width="100"
-					sortable>
+				prop="Taxes"
+				label="% GST"
+				width="100"
+				sortable>
 					<template slot-scope="scope">
 						<bwc-color :show="scope.row.NeedToReview">
 							{{scope.row.Taxes | percent}}
@@ -201,10 +198,10 @@
 				</el-table-column>
 				
 				<el-table-column
-					prop="TotalReceived"
-					label="Delivery Amount"
-					width="160"
-					sortable>
+				prop="TotalReceived"
+				label="Delivery Amt"
+				width="160"
+				sortable>
 					<template slot-scope="scope">
 						<bwc-color :show="scope.row.NeedToReview">
 							{{ scope.row.TotalReceived|currency }}
@@ -225,10 +222,10 @@
 				</el-table-column> -->
 
 				<el-table-column
-					prop="TotalPaid"
-					label="Paid Amount"
-					width="140"
-					sortable>
+				prop="TotalPaid"
+				label="Paid Amt"
+				width="140"
+				sortable>
 					<template slot-scope="scope">
 						<bwc-color :show="scope.row.NeedToReview">
 							{{ scope.row.TotalPaid|currency }}
@@ -237,10 +234,10 @@
 				</el-table-column>
 
 				<el-table-column
-					prop="Balance"
-					label="Balance"
-					width="130"
-					sortable>
+				prop="Balance"
+				label="Balance"
+				width="130"
+				sortable>
 					<template slot-scope="scope">
 						<bwc-color :show="scope.row.NeedToReview">
 							{{ scope.row.Balance|currency }}
@@ -249,10 +246,10 @@
 				</el-table-column>
 
 				<el-table-column
-					prop="Step"
-					width="100"
-					label="Status"
-					sortable>
+				prop="Step"
+				width="100"
+				label="Status"
+				sortable>
 					<template slot-scope="scope">
 						<bwc-color :show="scope.row.NeedToReview">
 							{{getStep(scope.row.Step)}}

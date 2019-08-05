@@ -14,10 +14,11 @@
                                 <el-form-item label="Category" prop="CategoryId" 
                                 :rules="rules.Required">
                                     <el-select v-model="form.CategoryId" 
+                                    filterable
                                     placeholder="Please select a category"
                                     class="textbox-fs">
                                         <el-option v-for="cat in categories" 
-                                        :label="cat.CategoryName" 
+                                        :label="cat.CategoryCode" 
                                         :value="cat.Id"
                                         :key="cat.Id"></el-option>
                                     </el-select>
@@ -25,6 +26,7 @@
                                 <el-form-item label="Status" prop="ActiveStatus" 
                                 :rules="rules.Required">
                                     <el-select v-model="form.ActiveStatus" 
+                                    filterable
                                     placeholder="Please select a status"
                                     class="textbox-fs">
                                         <el-option v-for="sta in status" 

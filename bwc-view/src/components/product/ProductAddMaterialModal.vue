@@ -15,7 +15,8 @@
             prop="MaterialId"
             :rules="rules.Required">
                 <el-select v-model="form.MaterialId" 
-                filterable placeholder="Select"
+                filterable 
+                placeholder="Select"
                 class="textbox-fs">
                     <el-option
                     v-for="item in data"
@@ -62,12 +63,12 @@ export default {
                 if(_.valid){
                     self.processing=true
                     self.$store.dispatch('product/addMaterial',self.form)
-                    .then(resolve=>{
+                    .then(()=>{
                         this.isOpen=false
                         this.$emit('save-data');
                         self.processing=false
                     })
-                    .catch(error=>{
+                    .catch(()=>{
                         self.processing=false
                     })
                 }else{

@@ -25,9 +25,9 @@
                     mode="view" />
             </el-col>
         </el-row>
-        <bwc-modal-footer>
+        <el-row class="pos-fixed-bottom button-group">
             <el-button @click="closeModal">Close</el-button>
-        </bwc-modal-footer>
+        </el-row>
     </div>
 </template>
 

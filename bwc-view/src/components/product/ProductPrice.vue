@@ -17,7 +17,8 @@
         <el-form :model="form" :rules="rules" ref="form" status-icon>
             <el-form-item label="Choose material" prop="MaterialId" >
                 <el-select v-model="form.MaterialId" 
-                filterable placeholder="Select"
+                filterable 
+                placeholder="Select"
                 class="textbox-fs">
                     <el-option
                     v-for="item in materialList"

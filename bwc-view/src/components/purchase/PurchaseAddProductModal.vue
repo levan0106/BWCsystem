@@ -215,7 +215,7 @@
                     </el-table-column>
                 </bwc-grid-data>
             </el-col>
-            <el-col :span="components.length > 0 ? 12:24">
+            <!-- <el-col :span="components.length > 0 ? 12:24">
                 <bwc-modal-footer>
                     <el-button @click="closeModal">Cancel</el-button>                                 
                     <el-button v-if="id > 0" type="primary" @click="updateData">
@@ -227,9 +227,19 @@
                         <i v-if="processing" class="el-icon-loading"></i>
                     </el-button>
                 </bwc-modal-footer>
-            </el-col>
+            </el-col> -->
         </el-row>
-        
+        <el-row class="pos-fixed-bottom button-group">
+            <el-button @click="closeModal">Cancel</el-button>                                 
+                    <el-button v-if="id > 0" type="primary" @click="updateData">
+                        Save
+                        <i v-if="processing" class="el-icon-loading"></i>
+                    </el-button>
+                    <el-button v-else type="primary" @click="saveData">
+                        Add
+                        <i v-if="processing" class="el-icon-loading"></i>
+                    </el-button>
+        </el-row>
     </el-dialog>
 </div>
 </template>

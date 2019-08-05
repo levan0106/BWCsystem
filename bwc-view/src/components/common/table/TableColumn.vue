@@ -11,7 +11,7 @@
 		<span v-if="readOnly">{{data.Value}}</span>
 		
 		<textarea v-else
-  		rows="1"
+		rows="1"
 		v-model="data.Value" 
 		size="small" 
 		class="input"
@@ -32,7 +32,7 @@ export default {
     props: ['data','readOnly','rowEnd','columnEnd'],
 	methods:{
 		onpaste(val){			
-			setTimeout(_=>{
+			setTimeout(()=>{
 				this.$emit('on-paste',val.srcElement.value, this.data.Row, this.data.Column)
 			}, 10);
 		},

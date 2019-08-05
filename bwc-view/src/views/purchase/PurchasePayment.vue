@@ -40,7 +40,9 @@
 						<el-col :span="8" class="filter-item">
 							<div>
 								<span class="demonstration">Payment Type</span>
-								<el-select v-model="filter.paymentType" placeholder="Select" 
+								<el-select v-model="filter.paymentType" 
+								filterable
+								placeholder="Select" 
 								class="textbox-fs"
 								:disabled="data.length == 0 || paying">
 									<el-option

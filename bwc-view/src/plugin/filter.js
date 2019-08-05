@@ -35,3 +35,5 @@ Vue.filter('status', function(val) {
   
   return val==1?'Active':'Inactive'
 });
+const filter ={}
+export default filter

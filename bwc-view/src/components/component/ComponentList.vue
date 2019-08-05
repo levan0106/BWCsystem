@@ -1,6 +1,6 @@
 <template>
     <el-row>
-		  <grid-data
+		<grid-data
 			:data="data"
 			:loading="loading"
 			:default-sort = "{prop: 'Id', order: 'descending'}"
@@ -32,24 +32,26 @@
 				</el-table-column>
 				
 				<el-table-column
-					prop="Color"
-					label="Color">
+					prop="color"
+					label="Colour"
+					width="120">
 				</el-table-column>
 				
-				<el-table-column
+				<!-- <el-table-column
 					prop="Unit"
 					width="100"
 					label="Unit">
-				</el-table-column>
+				</el-table-column> -->
 				
-				<el-table-column
+				<!-- <el-table-column
 					prop="Description"
 					label="Description">
-				</el-table-column>
+				</el-table-column> -->
 
 				<el-table-column
 					prop="Price"
-					label="Unit Price (Exc GST)">
+					label="Unit Price"
+					width="120">
 					<template slot-scope="scope">
 						{{scope.row.Price|currency}}
 					</template>
@@ -57,7 +59,7 @@
 
 				<el-table-column
 					prop="PurchasePrice"
-					label="Purchase Unit Price (Exc GST)">
+					label="Purchase Unit Price">
 					<template slot-scope="scope">
 						{{scope.row.PurchasePrice|currency}}
 					</template>
@@ -65,7 +67,7 @@
 
 				<el-table-column
 					prop="Discount"
-					label="Discount (%)">
+					label="Purchase Discount (%)">
 					<template slot-scope="scope">
 						{{scope.row.Discount|percent}}
 					</template>
@@ -85,8 +87,8 @@
 						@do-delete="doDelete"></bwc-delete-item>
                     </template>
                 </el-table-column>
-		  </grid-data>
-		 </el-row>
+			</grid-data>
+		</el-row>
 </template>
 <script>
 import GridData from '@/components/common/GridData.vue'

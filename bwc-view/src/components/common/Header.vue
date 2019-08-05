@@ -14,7 +14,7 @@
 <script>
 import BackTo from '@/components/common/BackTo.vue'
 import Logout from '@/views/user/Logout.vue'
-import Authenticate from '@/plugin/authenticate'
+import Authentication from '@/plugin/authentication'
 
 export default {
     name:'Header',    
@@ -33,7 +33,7 @@ export default {
             return this.$store.getters.backTo.label ;
         },
         username(){
-            return Authenticate.system.currentUser();
+            return Authentication.system.currentUser();
         }
     }
 }

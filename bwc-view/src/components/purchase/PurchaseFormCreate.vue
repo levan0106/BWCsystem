@@ -4,21 +4,34 @@
 				<el-row :gutter="20">
 					<el-col :span="16">
                         <el-row :gutter="20">
-                            <el-col :span="8">
-                                <el-form-item label="Purchase Id" >
-                                    <el-input v-model="form.Id" disabled></el-input>
-                                </el-form-item>	                               
-                                <el-form-item label="Employee" >
-                                    <bwc-hidden-field :value="form.EmployeeName"/> 
-                                    <el-input v-model="form.EmployeeName" disabled></el-input>
-                                    <!-- <el-select v-model="form.EmployeeId" 
-                                    placeholder="Select an employee"
+                            <el-col :span="12">
+                                <el-form-item label="Supplier name" prop="SupplierId" 
+                                :rules="rules.Required">
+                                    <bwc-hidden-field :value="form.SupplierName"/>
+                                    <el-select v-model="form.SupplierId" 
+                                    filterable
+                                    placeholder="Please select a supplier"
                                     class="textbox-fs"
-                                    @change="employeeChange">
-                                        <el-option v-for="emp in employeeList" 
-                                        :label="emp.Name" :value="emp.Id" :key="emp.Id"></el-option>
-                                    </el-select> -->
-                                </el-form-item>  
+                                    @change="supplierChange">
+                                        <el-option v-for="sup in supplierList" 
+                                            :label="sup.Company" 
+                                            :value="sup.Id" 
+                                            :key="sup.Id"></el-option>
+                                    </el-select>
+                                </el-form-item>
+
+                                <el-form-item label="Ref/Name" >
+                                <el-input v-model="form.OrderRefNo" auto-complete="off"></el-input>
+                                </el-form-item> 
+        
+                                <el-form-item label="Taxes (GST) (%)" >
+                                    <el-input-number v-model="form.Taxes" 
+                                    auto-complete="off"
+                                    class="input-number-fs"
+                                    controls-position="right">
+                                    </el-input-number>
+                                </el-form-item>
+                                
                                 <!-- <el-form-item label="Status" >
                                     <el-select v-model="form.Step" 
                                     placeholder="Please select a type"
@@ -31,15 +44,37 @@
                                 </el-form-item> -->
                                 
                             </el-col>
-                            <el-col :span="8">
-                                                        
-                                <el-form-item label="Taxes (GST) (%)" >
-                                    <el-input-number v-model="form.Taxes" 
-                                    auto-complete="off"
-                                    class="input-number-fs"
-                                    controls-position="right">
-                                    </el-input-number>
-                                </el-form-item>
+                            <el-col :span="12">
+                                <el-form-item label="Delivery No">
+                                    <el-input v-model="form.DeliveryNo" 
+                                    auto-complete="off"></el-input>
+                                </el-form-item>  
+
+                                <el-form-item label="Delivery Date" >
+                                    <el-date-picker
+                                    v-model="form.DeliveryDate"
+                                    type="date"
+                                    format="dd/MM/yyyy"
+                                    value-format="yyyy-MM-dd"
+                                    placeholder="Pick a day">
+                                    </el-date-picker>
+                                </el-form-item>  
+
+                                <el-form-item label="Invoice No">
+                                    <el-input v-model="form.InvoiceNoForOrderOnly" 
+                                    auto-complete="off"></el-input>
+                                </el-form-item>  
+
+                                <el-form-item label="Invoice Date" >
+                                    <el-date-picker
+                                    v-model="form.InvoiceDateForOrderOnly"
+                                    type="date"
+                                    format="dd/MM/yyyy"
+                                    value-format="yyyy-MM-dd"
+                                    placeholder="Pick a day">
+                                    </el-date-picker>
+                                </el-form-item>  
+
                                 <!-- <el-form-item label="Surcharge" >
                                     <bwc-input-currency v-model="form.Surcharge"
                                     class="input-number-fs"
@@ -50,27 +85,10 @@
                                     class="input-number-fs"
                                     controls-position="right"></bwc-input-currency>
                                 </el-form-item>     -->
-                                
-                                <el-form-item label="Ref No." >
-                                <el-input v-model="form.OrderRefNo" auto-complete="off"></el-input>
-                                </el-form-item>                            
+                                                           
                                 
                             </el-col>
-                            <el-col :span="8">
-                                  
-                                <el-form-item label="Supplier name" prop="SupplierId" 
-                                 :rules="rules.Required">
-                                <bwc-hidden-field :value="form.SupplierName"/>
-                                <el-select v-model="form.SupplierId" 
-                                placeholder="Please select a supplier"
-                                class="textbox-fs"
-                                @change="supplierChange">
-                                    <el-option v-for="sup in supplierList" 
-                                        :label="sup.Company" 
-                                        :value="sup.Id" 
-                                        :key="sup.Id"></el-option>
-                                </el-select>
-                                </el-form-item>
+                            
                                 <!-- <el-form-item label="Order Date" >
                                     <el-date-picker
                                         v-model="form.OrderDate"
@@ -106,7 +124,6 @@
                                         placeholder="Pick a day">
                                     </el-date-picker>
                                 </el-form-item> -->
-                            </el-col>
                         </el-row>
                        <el-row>                             
                            <el-form-item label="Notes" >
@@ -120,36 +137,41 @@
                        </el-row>
 					</el-col>	
 					<el-col :span="8">
-                        <el-form-item label="Delivery Date" >
-                            <el-date-picker
-                                v-model="form.DeliveryDate"
-                                type="date"
-                                format="dd/MM/yyyy"
-                                value-format="yyyy-MM-dd"
-                                placeholder="Pick a day">
-                            </el-date-picker>
-                        </el-form-item>
-                        <el-form-item label="Delivery No" >
-						  <el-input v-model="form.DeliveryNo" auto-complete="off"></el-input>
-						</el-form-item>
+                        
+                        <el-form-item label="Purchase Id" >
+                            <el-input v-model="form.Id" disabled></el-input>
+                        </el-form-item>	
+
+                        <el-form-item label="Employee Name" >
+                            <bwc-hidden-field :value="form.EmployeeName"/> 
+                            <el-input v-model="form.EmployeeName" disabled></el-input>
+                            <!-- <el-select v-model="form.EmployeeId" 
+                            placeholder="Select an employee"
+                            class="textbox-fs"
+                            @change="employeeChange">
+                                <el-option v-for="emp in employeeList" 
+                                :label="emp.Name" :value="emp.Id" :key="emp.Id"></el-option>
+                            </el-select> -->
+                        </el-form-item>  
+                        
                         <!-- <el-form-item label="AMT Exc GST" >
-						  <bwc-input-currency v-model="form.AMTExcGST" auto-complete="off" 
-                          class="textbox-fs" controls-position="right"></bwc-input-currency>
+						    <bwc-input-currency v-model="form.AMTExcGST" auto-complete="off" 
+                            class="textbox-fs" controls-position="right"></bwc-input-currency>
 						</el-form-item>
                         <el-form-item label="GST" >
-						  <bwc-input-currency v-model="form.GST" auto-complete="off" 
-                          class="textbox-fs" controls-position="right"></bwc-input-currency>
+						    <bwc-input-currency v-model="form.GST" auto-complete="off" 
+                            class="textbox-fs" controls-position="right"></bwc-input-currency>
 						</el-form-item>
                         <el-form-item label="AMT Inc GST" >
-						  <bwc-input-currency v-model="form.AMTIncGST" auto-complete="off"
-                           class="textbox-fs" controls-position="right"></bwc-input-currency>
+						    <bwc-input-currency v-model="form.AMTIncGST" auto-complete="off"
+                            class="textbox-fs" controls-position="right"></bwc-input-currency>
 						</el-form-item> -->
                         <!-- <el-form-item label="Supplier name" prop="SupplierId" >
                         <bwc-hidden-field :value="form.SupplierName"/>
-						  <el-select v-model="form.SupplierId" 
-                          placeholder="Please select a supplier"
-                          class="textbox-fs"
-                          @change="supplierChange">
+						    <el-select v-model="form.SupplierId" 
+                            placeholder="Please select a supplier"
+                            class="textbox-fs"
+                            @change="supplierChange">
 							<el-option v-for="sup in supplierList" 
                                 :label="sup.Company" 
                                 :value="sup.Id" 
@@ -157,13 +179,13 @@
 						  </el-select>
 						</el-form-item>
                         <el-form-item label="Supplier Address" prop="SupplierAddress" >
-						  <el-input v-model="form.SupplierAddress" auto-complete="off"></el-input>
+						    <el-input v-model="form.SupplierAddress" auto-complete="off"></el-input>
 						</el-form-item>
                         <el-form-item label="Supplier Email" prop="SupplierEmail" >
-						  <el-input v-model="form.SupplierEmail" auto-complete="off"></el-input>
+						    <el-input v-model="form.SupplierEmail" auto-complete="off"></el-input>
 						</el-form-item>
                         <el-form-item label="Supplier Phone" prop="SupplierPhone" >
-						  <el-input v-model="form.SupplierPhone" auto-complete="off"></el-input>
+						    <el-input v-model="form.SupplierPhone" auto-complete="off"></el-input>
 						</el-form-item> -->
                         
 					</el-col>						
@@ -187,7 +209,7 @@
 </template>
 
 <script>
-import Authenticate from '@/plugin/authenticate'
+import Authentication from '@/plugin/authentication'
 import ValidattionRules from '@/plugin/rule'
 
 export default {
@@ -200,7 +222,7 @@ export default {
             formLabelWidth:"120px",
             form:{
                 Id:Date.now(),
-                EmployeeName: Authenticate.system.currentUser(),
+                EmployeeName: Authentication.system.currentUser(),
                 Taxes:10,
                 Step:1,
                 DeliveryDate:this.type == 'create'?'':new Date()
@@ -257,13 +279,13 @@ export default {
                     //save data
                     if(self.id > 0){
                         self.$store.dispatch('purchase/update',{id:self.id,data:self.form})
-                        .then(_=>{
+                        .then(()=>{
                             this.processing=false
                             this.handleCloseModal()
                         })  
                     }else{
                         self.$store.dispatch('purchase/insert',self.form)
-                        .then(_=>{
+                        .then(()=>{
             
                             let productSelected = this.$store.getters['order/productSelected']
                             let componentSelected = this.$store.getters['order/componentSelected']
@@ -272,12 +294,12 @@ export default {
                                 purchaseId:self.form.Id,
                                 data:productSelected
                                 })
-                            .then(_=>{                                    
+                            .then(()=>{                                    
                                 self.$store.dispatch('purchase/addComponentFromOrder',{
                                     purchaseId:self.form.Id,
                                     data:componentSelected
                                     })
-                                .then(_=>{                            
+                                .then(()=>{                            
                                     window.location.href = window.bwc.rootUrl + "/purchase/"+self.form.Id+"/detail"
                                 })
                             })

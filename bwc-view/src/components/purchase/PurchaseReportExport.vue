@@ -101,7 +101,7 @@ export default {
                 let tablePrices = table.cloneNode(true)
                 tablePrices.style.fontSize = "8px";
                 // creat table header
-                var headerNames = ['#','Order Id','Supplier','Order Date','Order Ref No','Invoice Date','Invoice','Paid Date','Paid','Balance']
+                var headerNames = ['#','Order Id','Supplier','Order Date','Ref/Name','Invoice Date','Invoice','Paid Date','Paid','Balance']
                 
                 // Create an empty <tr> element and add it to the 1st position of the table:
                 let rowTable = tablePrices.insertRow();  

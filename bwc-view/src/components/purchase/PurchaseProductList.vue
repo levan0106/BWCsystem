@@ -53,7 +53,7 @@
             <el-table-column
                 prop="ColorName"
                 width="100"
-                label="Color">	
+                label="Colour">	
                 <template slot-scope="scope">
                     {{scope.row.ColorName|nullValue}}
                 </template>				  

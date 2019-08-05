@@ -3,7 +3,10 @@
 		<el-col :span="6" class="block">
 			<div>
 				<span class="demonstration">Supplier</span>
-				<el-select v-model="filter.supplier" slot="prepend" placeholder="Select..">
+				<el-select v-model="filter.supplier" 
+				filterable
+				slot="prepend" 
+				placeholder="Select ...">
 					<el-option v-for="item in suppliers" 
 					:label="item.Company" 
 					:value="item.Id"
@@ -14,7 +17,10 @@
 		<el-col :span="6" class="block">
 			<div>
 				<span class="demonstration">Report Type</span>
-				<el-select v-model="filter.type" slot="prepend" placeholder="Select..">
+				<el-select v-model="filter.type" 
+				filterable
+				slot="prepend" 
+				placeholder="Select ...">
 					<el-option v-for="ste in types" 
 					:label="ste.Label" 
 					:value="ste.Value" 
@@ -83,16 +89,16 @@ export default {
 	},
 	computed:{	
 		suppliers(){
-			let data = [{Id:0,Company:'All Suppliers'}]
+			let data = [{Id:0,Company:'All'}]
 			return data.concat(this.$store.getters['supplier/all'])
 		},
 		types(){
 			let data = [
-				// {Value:0,Label:'All Types'},
+				//{Value:0,Label:'All'},
 				{Value:1,Label:'Paid Date'},
 				{Value:2,Label:'Order Date'},
 				{Value:3,Label:'Invoice Date'}
-				]
+			]
             return data
         }
 	},

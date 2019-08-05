@@ -194,7 +194,7 @@ export default {
             //return true
         },
         spiltText(value,number){
-            let length = value.length
+            let length = value != null ? value.length : 0
             let loop = Math.ceil(length/number)
             let val = ''
             let start = 0

@@ -6,7 +6,8 @@
             prop="ObjectId"
             :rules="rules.Required">
                 <el-select v-model="form.ObjectId" 
-                filterable placeholder="Select"
+                filterable 
+                placeholder="Select"
                 class="textbox-fs">
                     <el-option
                     v-for="item in objects"
@@ -20,7 +21,8 @@
             prop="ProductId"
             :rules="rules.Required">
                 <el-select v-model="form.ProductId" 
-                filterable placeholder="Select"
+                filterable 
+                placeholder="Select"
                 class="textbox-fs">
                     <el-option
                     v-for="item in products"
