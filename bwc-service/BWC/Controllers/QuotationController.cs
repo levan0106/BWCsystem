@@ -12,7 +12,7 @@ using BWC.Model;
 
 namespace BWC.Controllers
 {
-    [JwtAuthenticationAttribute]
+    [TokenAuthenticationAttribute]
     public class QuotationController : BaseApiController
     {
         readonly IOrder _quotation;

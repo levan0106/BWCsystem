@@ -124,6 +124,7 @@
     <Compile Include="Interfaces\ICustomer.cs" />
     <Compile Include="Interfaces\IEmployee.cs" />
     <Compile Include="Interfaces\ISupplier.cs" />
+    <Compile Include="Interfaces\IUserToken.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Interfaces\IProductMaterial.cs" />
     <Compile Include="Interfaces\IProductComponent.cs" />
@@ -155,6 +156,7 @@
     <Compile Include="Repositories\MySql\SupplierRepository.cs" />
     <Compile Include="Repositories\MySql\TimeSheetRepository.cs" />
     <Compile Include="Repositories\MySql\UserRepository.cs" />
+    <Compile Include="Repositories\MySql\UserTokenRepository.cs" />
     <Compile Include="Repositories\SettingRepository.cs" />
     <Compile Include="Repositories\TimeSheetRepository.cs" />
     <Compile Include="Repositories\ComponentRepository.cs" />
@@ -172,6 +174,7 @@
     <Compile Include="Repositories\CustomerRepository.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Repositories\SupplierRepository.cs" />
+    <Compile Include="Repositories\UserTokenRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup />

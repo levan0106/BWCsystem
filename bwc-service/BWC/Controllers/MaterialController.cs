@@ -20,7 +20,7 @@ namespace BWC.Controllers
             _material = material;
         }
         // GET api/<controller>
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public IEnumerable<Material> Get()
         {
             var data = _material.GetAll();
@@ -28,7 +28,7 @@ namespace BWC.Controllers
         }
 
         // GET api/<controller>/5
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public Material Get(int id)
         {
             var data = _material.GetInfo(id);
@@ -36,21 +36,21 @@ namespace BWC.Controllers
         }
 
         // POST api/<controller>
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public void Post([FromBody]Material values)
         {
             _material.Insert(values, RequestContext.Principal.Identity.Name);
         }
 
         // PUT api/<controller>/5
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public void Put(int id, [FromBody]Material values)
         {
             _material.Update(values, RequestContext.Principal.Identity.Name);
         }
 
         // DELETE api/<controller>/5
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public void Delete(int id)
         {
             _material.Delete(id, RequestContext.Principal.Identity.Name);

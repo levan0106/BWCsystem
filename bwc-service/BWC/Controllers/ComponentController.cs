@@ -13,7 +13,7 @@ namespace BWC.Controllers
 {
     //[EnableCors(origins: "*", headers: "*", methods: "*")]
 
-    [JwtAuthenticationAttribute]
+    [TokenAuthenticationAttribute]
     public class ComponentController : BaseApiController
     {
         readonly IComponent _component;

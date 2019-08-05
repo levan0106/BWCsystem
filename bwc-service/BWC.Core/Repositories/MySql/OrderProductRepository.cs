@@ -87,7 +87,19 @@ namespace BWC.Core.Repositories.MySql
                                     @AMTIncGST,
                                     @ReceivedAMTExcGST,
                                     @ReceivedGST,
-                                    @ReceivedAMTIncGST
+                                    @ReceivedAMTIncGST,
+                                    @MaterialColorName,
+                                    @BoxColorName,
+                                    @BarColorName,
+                                    @GuideColorName,
+                                    @ControlColorName,
+                                    @RollId,
+                                    @TSplineId,
+                                    @BSplineId,
+                                    @FlapId,
+                                    @ControlHBOL,
+                                    @TubeDia,
+                                    @Notes
                                 )
                     ", entity);
                     return true;
@@ -154,7 +166,20 @@ namespace BWC.Core.Repositories.MySql
                                     @AMTIncGST,
                                     @ReceivedAMTExcGST,
                                     @ReceivedGST,
-                                    @ReceivedAMTIncGST
+                                    @ReceivedAMTIncGST,
+
+                                    @MaterialColorName,
+                                    @BoxColorName,
+                                    @BarColorName,
+                                    @GuideColorName,
+                                    @ControlColorName,
+                                    @RollId,
+                                    @TSplineId,
+                                    @BSplineId,
+                                    @FlapId,
+                                    @ControlHBOL,
+                                    @TubeDia,
+                                    @Notes
                                 )
                     ", entity);
                     return true;

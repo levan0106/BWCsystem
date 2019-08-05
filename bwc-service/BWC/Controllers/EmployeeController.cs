@@ -20,7 +20,7 @@ namespace BWC.Controllers
             _employee = employee;
         }
         // GET api/<controller>
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public IEnumerable<Employee> Get()
         {
             var data = _employee.GetAll();
@@ -28,7 +28,7 @@ namespace BWC.Controllers
         }
 
         // GET api/<controller>/5
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public Employee Get(int id)
         {
             var data = _employee.GetInfo(id);
@@ -36,21 +36,21 @@ namespace BWC.Controllers
         }
 
         // POST api/<controller>
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public void Post([FromBody]Employee values)
         {
             _employee.Insert(values, RequestContext.Principal.Identity.Name );
         }
 
         // PUT api/<controller>/5
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public void Put(int id, [FromBody]Employee values)
         {
             _employee.Update(values, RequestContext.Principal.Identity.Name);
         }
 
         // DELETE api/<controller>/5
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public void Delete(int id)
         {
             _employee.Delete(id,RequestContext.Principal.Identity.Name);

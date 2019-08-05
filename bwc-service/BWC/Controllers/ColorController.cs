@@ -36,21 +36,21 @@ namespace BWC.Controllers
         }
 
         // POST api/<controller>
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public void Post([FromBody]Color values)
         {
             _color.Insert(values, RequestContext.Principal.Identity.Name );
         }
 
         // PUT api/<controller>/5
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public void Put(int id, [FromBody]Color values)
         {
             _color.Update(values, RequestContext.Principal.Identity.Name);
         }
 
         // DELETE api/<controller>/5
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         public void Delete(int id)
         {
             _color.Delete(id,RequestContext.Principal.Identity.Name);

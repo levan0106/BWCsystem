@@ -8,15 +8,21 @@ namespace BWC.Authentication.Filters
 {
     public class AuthenticationFailureResult : IHttpActionResult
     {
-        public AuthenticationFailureResult(string reasonPhrase, HttpRequestMessage request)
+        public string ReasonPhrase { get; set; }
+        public HttpRequestMessage Request { get; set; }
+        public TokenStatus Status { get; set; }
+
+        public AuthenticationFailureResult(HttpRequestMessage request, string reasonPhrase)
         {
             ReasonPhrase = reasonPhrase;
             Request = request;
         }
-
-        public string ReasonPhrase { get; set; }
-
-        public HttpRequestMessage Request { get; set; }
+        public AuthenticationFailureResult(HttpRequestMessage request, string reasonPhrase, TokenStatus status)
+        {
+            ReasonPhrase = reasonPhrase;
+            Request = request;
+            Status = status;
+        }
 
         public Task<HttpResponseMessage> ExecuteAsync(CancellationToken cancellationToken)
         {
@@ -31,6 +37,11 @@ namespace BWC.Authentication.Filters
                 ReasonPhrase = ReasonPhrase
             };
 
+            if(Status == TokenStatus.Expired)
+            {
+                response.Headers.Add("token_expired", "1");
+                response.Headers.Add("Access-Control-Expose-Headers", "token_expired");
+            }
             return response;
         }
     }

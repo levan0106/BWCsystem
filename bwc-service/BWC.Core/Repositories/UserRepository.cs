@@ -1,17 +1,13 @@
 ﻿using BWC.Core.Interfaces;
-using System;
+using BWC.Model;
+using Dapper;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper;
-using BWC.Model;
 
 namespace BWC.Core.Repositories
 {
-    class UserRepository: BaseRepository, IUser
+    public class UserRepository: BaseRepository, IUser
     {
-
         public User Authenticate(string userName, string password)
         {
             using (var connection = GetConnection())

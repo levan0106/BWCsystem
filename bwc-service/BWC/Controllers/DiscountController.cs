@@ -11,7 +11,7 @@ using BWC.Authentication.Filters;
 namespace BWC.Controllers
 {
 
-    [JwtAuthenticationAttribute]
+    [TokenAuthenticationAttribute]
     public class DiscountController : BaseApiController
     {
         readonly IDiscount _discount;

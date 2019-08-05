@@ -9118,3 +9118,163 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'NoSprint' in
    at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
    at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
    at BWC.Core.Repositories.MySql.MakerSheetRepository.GetAllComponents(Object id) in C:\Users\levan\code\BWC\BWC.Core\Repositories\MySql\MakerSheetRepository.cs:line 48
+2019-07-26 21:08:11,360 [5] ERROR BWC.Core.Common.LogManager - get system info: 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Retrieval of the RSA public key is not enabled for insecure connections.
+   at MySql.Data.MySqlClient.Authentication.CachingSha2AuthenticationPlugin.GeneratePassword()
+   at MySql.Data.MySqlClient.Authentication.CachingSha2AuthenticationPlugin.MoreData(Byte[] data)
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(Byte[] data)
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Authenticate(String authMethod, Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at T.Core.Infrastructure.DatabaseConnectionFactory.GetConnection()
+   at T.Core.Infrastructure.BaseFactory.GetConnection()
+   at BWC.Core.Repositories.MySql.CustomerRepository.GetSystemInfo() in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Core\Repositories\MySql\CustomerRepository.cs:line 127
+2019-07-26 21:08:14,156 [24] ERROR BWC.Core.Common.LogManager - get system info: 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Retrieval of the RSA public key is not enabled for insecure connections.
+   at MySql.Data.MySqlClient.Authentication.CachingSha2AuthenticationPlugin.GeneratePassword()
+   at MySql.Data.MySqlClient.Authentication.CachingSha2AuthenticationPlugin.MoreData(Byte[] data)
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ContinueAuthentication(Byte[] data)
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Authenticate(String authMethod, Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at T.Core.Infrastructure.DatabaseConnectionFactory.GetConnection()
+   at T.Core.Infrastructure.BaseFactory.GetConnection()
+   at BWC.Core.Repositories.MySql.CustomerRepository.GetSystemInfo() in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Core\Repositories\MySql\CustomerRepository.cs:line 127
+2019-07-27 00:55:52,427 [13] ERROR BWC.Core.Common.LogManager - Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BWC.Authentication.Jwt.JwtManager.GetPrincipal(String token) in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Authentication\Jwt\JwtManager.cs:line 81
+2019-07-27 00:55:54,841 [16] ERROR BWC.Core.Common.LogManager - Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden]', Current time: '[PII is hidden]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at BWC.Authentication.Jwt.JwtManager.GetPrincipal(String token) in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Authentication\Jwt\JwtManager.cs:line 81
+2019-08-03 00:06:02,676 [8] ERROR BWC.Core.Common.LogManager - Get All Time Sheet: 
+System.Data.DataException: Error parsing column 8 (SuperannuationMemberNumber=1234 - Int32) ---> System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value)
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at BWC.Core.Repositories.MySql.TimeSheetRepository.GetAllTimeSheet(Object fromDate, Object toDate, Boolean isPaid) in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Core\Repositories\MySql\TimeSheetRepository.cs:line 65
+2019-08-03 00:06:26,373 [65] ERROR BWC.Core.Common.LogManager - Get All Time Sheet: 
+System.Data.DataException: Error parsing column 8 (SuperannuationMemberNumber=1234 - Int32) ---> System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value)
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at BWC.Core.Repositories.MySql.TimeSheetRepository.GetAllTimeSheet(Object fromDate, Object toDate, Boolean isPaid) in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Core\Repositories\MySql\TimeSheetRepository.cs:line 65
+2019-08-03 00:06:29,251 [8] ERROR BWC.Core.Common.LogManager - Get All Time Sheet: 
+System.Data.DataException: Error parsing column 8 (SuperannuationMemberNumber=1234 - Int32) ---> System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value)
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at BWC.Core.Repositories.MySql.TimeSheetRepository.GetAllTimeSheet(Object fromDate, Object toDate, Boolean isPaid) in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Core\Repositories\MySql\TimeSheetRepository.cs:line 65
+2019-08-03 00:06:53,331 [8] ERROR BWC.Core.Common.LogManager - Get All Time Sheet: 
+System.Data.DataException: Error parsing column 8 (SuperannuationMemberNumber=1234 - Int32) ---> System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value)
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at BWC.Core.Repositories.MySql.TimeSheetRepository.GetAllTimeSheet(Object fromDate, Object toDate, Boolean isPaid) in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Core\Repositories\MySql\TimeSheetRepository.cs:line 65
+2019-08-03 00:08:24,511 [65] ERROR BWC.Core.Common.LogManager - Get All Time Sheet: 
+System.Data.DataException: Error parsing column 8 (SuperannuationMemberNumber=1234 - Int32) ---> System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value)
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at BWC.Core.Repositories.MySql.TimeSheetRepository.GetAllTimeSheet(Object fromDate, Object toDate, Boolean isPaid) in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Core\Repositories\MySql\TimeSheetRepository.cs:line 65
+2019-08-03 00:09:01,107 [8] ERROR BWC.Core.Common.LogManager - Get All Time Sheet: 
+System.Data.DataException: Error parsing column 8 (SuperannuationMemberNumber=1234 - Int32) ---> System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value)
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at BWC.Core.Repositories.MySql.TimeSheetRepository.GetAllTimeSheet(Object fromDate, Object toDate, Boolean isPaid) in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Core\Repositories\MySql\TimeSheetRepository.cs:line 65
+2019-08-03 00:09:29,657 [12] ERROR BWC.Core.Common.LogManager - Get All Time Sheet: 
+System.Data.DataException: Error parsing column 8 (SuperannuationMemberNumber=1234 - Int32) ---> System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value)
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at BWC.Core.Repositories.MySql.TimeSheetRepository.GetAllTimeSheet(Object fromDate, Object toDate, Boolean isPaid) in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Core\Repositories\MySql\TimeSheetRepository.cs:line 65
+2019-08-03 00:10:02,789 [8] ERROR BWC.Core.Common.LogManager - Get All Time Sheet: 
+System.Data.DataException: Error parsing column 8 (SuperannuationMemberNumber=1234 - Int32) ---> System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value)
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at BWC.Core.Repositories.MySql.TimeSheetRepository.GetAllTimeSheet(Object fromDate, Object toDate, Boolean isPaid) in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Core\Repositories\MySql\TimeSheetRepository.cs:line 65
+2019-08-03 00:11:33,371 [8] ERROR BWC.Core.Common.LogManager - Get All Time Sheet: 
+System.Data.DataException: Error parsing column 8 (SuperannuationMemberNumber=1234 - Int32) ---> System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value)
+   at Deserializeec8cdb3d-5443-4e41-8fac-02658806921f(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at BWC.Core.Repositories.MySql.TimeSheetRepository.GetAllTimeSheet(Object fromDate, Object toDate, Boolean isPaid) in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Core\Repositories\MySql\TimeSheetRepository.cs:line 65
+2019-08-03 00:14:34,268 [7] ERROR BWC.Core.Common.LogManager - Update Employee: 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Data truncated for column 'i_SuperannuationMemberNumber' at row 1
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at BWC.Core.Repositories.MySql.EmployeeRepository.Update(Employee entity, String userLogin) in C:\Users\levan\code\BWCsystem\bwc-service\BWC.Core\Repositories\MySql\EmployeeRepository.cs:line 109

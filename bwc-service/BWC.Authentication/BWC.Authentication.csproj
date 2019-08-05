@@ -60,12 +60,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums.cs" />
     <Compile Include="Filters\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="Filters\AuthenticationFailureResult.cs" />
     <Compile Include="Filters\HttpAuthenticationChallengeContextExtensions.cs" />
-    <Compile Include="Filters\JwtAuthenticationAttribute.cs" />
-    <Compile Include="Functions.cs" />
-    <Compile Include="Jwt\JwtManager.cs" />
+    <Compile Include="Filters\TokenAuthenticationAttribute.cs" />
+    <Compile Include="Jwt\TokenManager.cs" />
+    <Compile Include="Models\TokenResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

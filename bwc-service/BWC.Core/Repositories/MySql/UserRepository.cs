@@ -9,9 +9,8 @@ using BWC.Model;
 
 namespace BWC.Core.Repositories.MySql
 {
-    class UserRepository : BaseRepository, IUser
+    public class UserRepository : BaseRepository, IUser
     {
-
         public User Authenticate(string userName, string password)
         {
             using (var connection = GetConnection())

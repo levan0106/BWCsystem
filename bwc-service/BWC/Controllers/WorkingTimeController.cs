@@ -11,7 +11,7 @@ using System.Web.Http;
 
 namespace BWC.Controllers
 {
-    [JwtAuthenticationAttribute]
+    [TokenAuthenticationAttribute]
     public class WorkingTimeController : BaseApiController
     {
         readonly ITimeSheet _timeSheet;

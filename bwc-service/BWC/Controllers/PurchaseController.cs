@@ -14,7 +14,7 @@ using System.Globalization;
 namespace BWC.Controllers
 {
     
-    [JwtAuthenticationAttribute]
+    [TokenAuthenticationAttribute]
     public class PurchaseController : BaseApiController
     {
         readonly IOrder _purchase;

@@ -17,7 +17,7 @@ namespace BWC.Controllers
 {
     //[EnableCors(origins: "*", headers: "*", methods: "*")]
 
-    [JwtAuthenticationAttribute]
+    [TokenAuthenticationAttribute]
     public class ProductController : BaseApiController
     {
         readonly IProduct _product;
@@ -108,7 +108,7 @@ namespace BWC.Controllers
 
         #region Material
         // GET api/<controller>/AllMaterial/5
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         [HttpGet]
         public IEnumerable<ProductMaterial> AllMaterial(int id)
         {
@@ -117,7 +117,7 @@ namespace BWC.Controllers
         }
 
         // GET api/<controller>/Material/5
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         [HttpGet]
         public ProductMaterial Material(int id)
         {
@@ -125,7 +125,7 @@ namespace BWC.Controllers
             return data;
         }
         // POST api/<controller>/Material
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         [HttpPost]
         public void Material([FromBody]ProductMaterial values)
         {
@@ -133,7 +133,7 @@ namespace BWC.Controllers
         }
 
         // PUT api/<controller>/Material/5
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         [HttpPut]
         public void Material(int id, [FromBody]ProductMaterial values)
         {
@@ -141,7 +141,7 @@ namespace BWC.Controllers
         }
 
         // DELETE api/<controller>/DeleteMaterial/5
-        [JwtAuthenticationAttribute]
+        [TokenAuthenticationAttribute]
         [HttpDelete]
         public void DeleteMaterial(int id)
         {

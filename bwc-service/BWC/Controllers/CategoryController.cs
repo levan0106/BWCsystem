@@ -11,7 +11,7 @@ using System.Web.Http.Cors;
 
 namespace BWC.Controllers
 {
-    [JwtAuthenticationAttribute]
+    [TokenAuthenticationAttribute]
     public class CategoryController : BaseApiController
     {
         readonly ICategory _category;

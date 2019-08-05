@@ -12,7 +12,7 @@ using System.Web.Http.Cors;
 namespace BWC.Controllers
 {
     //[EnableCors(origins: "*", headers: "*", methods: "*")]
-    [JwtAuthenticationAttribute]
+    [TokenAuthenticationAttribute]
     public class SupplierController : BaseApiController
     {
         readonly ISupplier _supplier;

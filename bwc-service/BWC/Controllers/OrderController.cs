@@ -13,7 +13,7 @@ using BWC.Core.Common;
 namespace BWC.Controllers
 {
     
-    [JwtAuthenticationAttribute]
+    [TokenAuthenticationAttribute]
     public class OrderController : BaseApiController
     {
         readonly IOrder _order;

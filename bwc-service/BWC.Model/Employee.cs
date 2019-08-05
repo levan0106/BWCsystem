@@ -29,7 +29,7 @@ namespace BWC.Model
         public string FundABN { get; set; }
         public string FundAddress { get; set; }
         public string FundUSI { get; set; }
-        public int? SuperannuationMemberNumber{ get; set; }
+        public string SuperannuationMemberNumber{ get; set; }
         public double? SalaryPerHours { get; set; }
         public double? SickLeaveRate { get; set; }
         public double? AnnualLeaveRate { get; set; }

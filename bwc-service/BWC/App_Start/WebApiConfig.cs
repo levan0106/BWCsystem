@@ -25,9 +25,9 @@ namespace BWC
             config.Filters.Add(new AuthorizeAttribute());
 
             config.Routes.MapHttpRoute(
-                name: "authorization",
-                routeTemplate: "api/authorization/{userName}/{password}",
-                defaults: new { controller = "Authorization", action = "login", password = RouteParameter.Optional, userName = RouteParameter.Optional }
+                name: "authentication",
+                routeTemplate: "api/authentication/{action}",
+                defaults: new { controller = "Authentication", action = "Login" }
             );
             config.Routes.MapHttpRoute(
                 name: "Api",

@@ -36,6 +36,7 @@ namespace BWC.Core.Dependency
             registerComponent.RegisterType<ICategory, CategoryRepository>();
             registerComponent.RegisterType<ISetting, SettingRepository>();
             registerComponent.RegisterType<IMakerSheet, MakerSheetRepository>();
+            registerComponent.RegisterType<IUserToken, UserTokenRepository>();
 
         }
     }
