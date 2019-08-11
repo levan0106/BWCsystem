@@ -13,9 +13,15 @@ const category = {
       },
       [types.PULL_INFO](state,data){
         state.info=data
+      },
+      [types.CLEAR_INFO](state){
+        state.info={}
       }
      },
     actions: {
+      clearInfo({commit}){
+        commit(types.CLEAR_INFO)
+      },
       pullAll({commit}){
         return new Promise((resolve, reject) => {
           HTTP.get('category')

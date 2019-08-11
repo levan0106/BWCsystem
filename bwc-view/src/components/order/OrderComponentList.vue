@@ -109,13 +109,15 @@
             label="Ext Price">
                 <template slot-scope="scope">
                     <bwc-input-action 
-                        v-model="scope.row.ExtendPrice" 
-                        type="currency" 
-                        :id="scope.row.Id"
-                        @save-data="updateExtendPrice"
-                        v-if="order.Step < 6">
+                    v-model="scope.row.ExtendPrice" 
+                    type="currency" 
+                    :id="scope.row.Id"
+                    @save-data="updateExtendPrice"
+                    v-if="order.Step < 6">
                     </bwc-input-action>
-                    <span v-else>{{scope.row.ExtendPrice|currency}}</span>
+                    <span v-else>
+                        {{scope.row.ExtendPrice|currency}}
+                    </span>
                 </template>
             </el-table-column>
 

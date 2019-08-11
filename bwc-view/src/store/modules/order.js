@@ -37,6 +37,8 @@ const order = {
         payment:{},
         productSelected:[],
         componentSelected:[],
+        allServices:[],
+        service:{},
      },
     mutations: { 
       [PRODUCT_SELECTED](state,data){
@@ -88,7 +90,13 @@ const order = {
       },
       [types.PULL_All_ITEMS](state,data){
         state.orderItems=data
-      }
+      },
+      [types.PULL_ALL_SERVICES](state,data){
+        state.allServices=data
+      },
+      [types.PULL_SERVICE](state,data){
+        state.service=data
+      },
      },
     actions: {
       pullAll({commit}){
@@ -380,6 +388,7 @@ const order = {
         })
       },
       //End Payment
+
       //MakerSheet
       pullMakerSheet({commit},id){
         return new Promise((resolve,reject)=>{
@@ -390,6 +399,51 @@ const order = {
         })
       },
       //End MakerSheet
+
+      // Service
+      pullAllServices({commit},id){
+        return new Promise((resolve, reject) => {
+          HTTP.get('action/order/allservices/'+id)
+          .then(response =>{         
+            commit(types.PULL_All_SERVICES,response.data)
+            resolve()
+          })
+        })
+      },
+      pullService({commit},id){
+        return new Promise((resolve, reject) => {
+          HTTP.get('action/order/service/'+id)
+          .then(response =>{         
+            commit(types.PULL_SERVICE,response.data)
+            resolve()
+          })
+        })
+      },
+      addService({commit},data){
+        return new Promise((resolve,reject)=>{
+          HTTP.post('action/order/service',data)
+          .then(response =>{         
+            resolve()
+          })
+        })
+      },
+      updateService({commit},{id,data}){
+        return new Promise((resolve,reject)=>{
+          HTTP.put('action/order/service/'+id,data)
+          .then(response =>{         
+            resolve()
+          })
+        })
+      },      
+      deleteService({commit},id){
+        return new Promise((resolve,reject)=>{
+          HTTP.delete('action/order/deleteservice/'+id)
+          .then(response =>{         
+            resolve()
+          })
+        })
+      },      
+      //End Service
      },
     getters: { 
         all: state =>state.all,
@@ -407,7 +461,9 @@ const order = {
         payment:state => state.payment,
         orderItems:state => state.orderItems,
         productSelected:state => state.productSelected,
-        componentSelected:state => state.componentSelected
+        componentSelected:state => state.componentSelected,
+        allServices:state => state.allServices,
+        service:state => state.service,
      }
   }
 export default order

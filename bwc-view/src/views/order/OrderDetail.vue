@@ -30,8 +30,8 @@
         :order="orderInfo"
         :supplier-id="orderInfo.SupplierId"  
         @save-data="loadOrderInfo"
-        @selection-change="handleSelectProduct"
-        ></bwc-order-product-list>
+        @selection-change="handleSelectProduct">
+        </bwc-order-product-list>
 
         <bwc-title>Other items</bwc-title>
         <bwc-order-component-list 
@@ -40,8 +40,8 @@
         :order="orderInfo"
         :supplier-id="orderInfo.SupplierId"   
         @save-data="loadOrderInfo"   
-        @selection-change="handleSelectComponent"  
-        ></bwc-order-component-list>
+        @selection-change="handleSelectComponent">
+        </bwc-order-component-list>
 
         <bwc-title>Services</bwc-title>
         
@@ -49,10 +49,8 @@
         from="order"
         :order-id="id"
         :order="orderInfo"
-        :supplier-id="orderInfo.SupplierId"   
-        @save-data="loadOrderInfo"   
-        @selection-change="handleSelectComponent"  
-        ></bwc-order-service-list>
+        @save-data="loadOrderInfo">
+        </bwc-order-service-list>
 
         <br/>
         <el-row class="pos-fixed-bottom">
@@ -113,14 +111,14 @@
         </bwc-maker-sheet-export>
 
         <bwc-order-invoice-export
-                :is-export="isExport"
-                :file-name="'Invoice_' + id"
-                :products="products"
-                :components="components"
-				:filter-values="filterValues"
-                @export-complete="isExport=false"></bwc-order-invoice-export>
+        :is-export="isExport"
+        :file-name="'Invoice_' + id"
+        :products="products"
+        :components="components"
+        :filter-values="filterValues"
+        @export-complete="isExport=false">
+        </bwc-order-invoice-export>
     </bwc-layout>
-    
 </template>
 
 <script>

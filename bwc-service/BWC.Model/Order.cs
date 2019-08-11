@@ -30,6 +30,7 @@ namespace BWC.Model
         public DateTime? InvoiceDateForOrderOnly { get; set; }
         public DateTime? PickupDateForOrderOnly { get; set; }
         public DateTime? CompleteDateForOrderOnly { get; set; }
+        public string ProductIds { get; set; }
 
     }
 }

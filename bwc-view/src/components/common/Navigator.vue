@@ -46,6 +46,7 @@
             <el-menu-item index="customer/discount"><router-link to="/customer/discount">Customer's Discount</router-link></el-menu-item>
             <el-menu-item index="order/list"> <router-link to="/order/list">Sales Summary</router-link></el-menu-item>
             <el-menu-item index="service/list"> <router-link to="/service/list">Services</router-link></el-menu-item>
+            <el-menu-item index="order/report"> <router-link to="/order/report">Reporting</router-link></el-menu-item>
           </el-submenu>
           
           <el-submenu index="3">          
@@ -57,7 +58,7 @@
             <!-- <el-menu-item index="product/create"><router-link to="/product/create">Create Product</router-link></el-menu-item> -->
             <el-menu-item index="material/list"><router-link to="/material/list">Materials</router-link></el-menu-item>
             <el-menu-item index="component/list"><router-link to="/component/list">Components</router-link></el-menu-item>
-            <el-menu-item index="category/list"><router-link to="/category/list">Product Categories</router-link></el-menu-item>
+            <!-- <el-menu-item index="category/list"><router-link to="/category/list">Product Categories</router-link></el-menu-item> -->
           </el-submenu>
           <!-- <el-submenu index="4">          
             <template slot="title">	

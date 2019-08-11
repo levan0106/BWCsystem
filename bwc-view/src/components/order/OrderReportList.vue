@@ -38,18 +38,18 @@
 		width="130">
 			<template slot-scope="scope">
 					<router-link 
-					:to="{name:'purchaseDetail',params:{id:scope.row.Id}}">
+					:to="{name:'orderDetail',params:{id:scope.row.Id}}">
 						{{ scope.row.Id }}
 					</router-link>	
 			</template>
 		</el-table-column>
 
 		<el-table-column
-		prop="SupplierName"
+		prop="CustomerName"
 		width="140"
-		label="Supplier">
+		label="Customer">
 			<template slot-scope="scope">
-				{{ scope.row.SupplierName|nullValue }}
+				{{ scope.row.CustomerName|nullValue }}
 			</template>
 		</el-table-column>
 		
@@ -122,7 +122,7 @@
 <script>
 import BwcGridData from '@/components/common/GridData.vue'
 export default {
-	name:"PurchaseReportList",	
+	name:"OrderReportList",	
     components:{
 		BwcGridData,
 	},
@@ -131,7 +131,7 @@ export default {
 		totalData(){
 			const sums = [];
 			const cols = ['TotalReceived','TotalPaid','Balance'];
-			cols.forEach((col,index) => {
+			cols.forEach((col) => {
 				const values = this.getValuesOfColumn(col);
 				if (!values.every(value => isNaN(value) || value == '')) {
 					sums[col] = '$'+ values.reduce((prev, curr) => {

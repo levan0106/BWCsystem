@@ -10,6 +10,7 @@ import QuotationCreate from './views/quotation/QuotationCreate.vue'
 import OrderList from './views/order/OrderList.vue'
 import OrderDetail from './views/order/OrderDetail.vue'
 import OrderCreate from './views/order/OrderCreate.vue'
+import OrderReport from './views/order/OrderReport.vue'
 import PurchaseList from './views/purchase/PurchaseList.vue'
 import PurchasePayment from './views/purchase/PurchasePayment.vue'
 import PurchaseDetail from './views/purchase/PurchaseDetail.vue'
@@ -109,6 +110,11 @@ const router = new Router({
       path:'/order/create',
       name:'orderCreate',
       component: OrderCreate,
+      meta: { requiresAuth: true }
+    },{
+      path:'/order/report',
+      name:'orderReport',
+      component: OrderReport,
       meta: { requiresAuth: true }
     },{
       path:'/purchase/list',

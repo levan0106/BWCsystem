@@ -1,92 +1,91 @@
 <template>
-<div id="productcomponentmodal">    
-       
+<div id="productcomponentmodal"> 
     <el-dialog title="Add component " :visible.sync="open"  class="modal modal-lg">        
         <el-form :model="form" ref="form" status-icon> 
             <bwc-loading :loading="loading">
-            <el-row :gutter="20">
-                <el-col :span="12">                
-                    <el-form-item 
-                    label="Component" 
-                    prop="ComponentId"
-                    :rules="rules.Required">
-                        <el-select v-model="form.ComponentId" 
-                        filterable 
-                        placeholder="Select"
-                        class="textbox-fs"
-                        @change="componentChange">
-                            <el-option
-                            v-for="item in componentList"
-                            :key="item.Id"
-                            :label="item.ComponentCode"
-                            :value="item.Id">
-                            </el-option>
-                        </el-select>
-                    </el-form-item>
+                <el-row :gutter="20">
+                    <el-col :span="12">                
+                        <el-form-item 
+                        label="Component" 
+                        prop="ComponentId"
+                        :rules="rules.Required">
+                            <el-select v-model="form.ComponentId" 
+                            filterable 
+                            placeholder="Select"
+                            class="textbox-fs"
+                            @change="componentChange">
+                                <el-option
+                                v-for="item in componentList"
+                                :key="item.Id"
+                                :label="item.ComponentCode"
+                                :value="item.Id">
+                                </el-option>
+                            </el-select>
+                        </el-form-item>
 
-                    <el-form-item 
-                    label="Colour" 
-                    prop="ColorId"
-                    :rules="rules.Required">
-                        <el-select v-model="form.ColorId" 
-                        placeholder="Please select a Colour"
-                        class="textbox-fs"
-                        filterable >
-                            <el-option
-                            v-for="item in colors"
-                            :key="item.Id"
-                            :label="item.ColorName"
-                            :value="item.Id"></el-option>
-                        </el-select>
-                    </el-form-item>
+                        <el-form-item 
+                        label="Colour" 
+                        prop="ColorId"
+                        :rules="rules.Required">
+                            <el-select v-model="form.ColorId" 
+                            placeholder="Please select a Colour"
+                            class="textbox-fs"
+                            filterable >
+                                <el-option
+                                v-for="item in colors"
+                                :key="item.Id"
+                                :label="item.ColorName"
+                                :value="item.Id"></el-option>
+                            </el-select>
+                        </el-form-item>
 
-                    <el-form-item label="Quantity">
-                        <el-input-number 
-                        v-model="form.Quantity" 
-                        auto-complete="off"
-                        controls-position="right" class="input-number-fs"
-                        :min=0></el-input-number>
-                    </el-form-item>   
+                        <el-form-item label="Quantity">
+                            <el-input-number 
+                            v-model="form.Quantity" 
+                            auto-complete="off"
+                            controls-position="right" class="input-number-fs"
+                            :min=0></el-input-number>
+                        </el-form-item>   
 
-                    <el-form-item label="Size">
-                        <el-input v-model="form.Size" 
-                            controls-position="right" 
-                            class="input-number-fs"></el-input>
-                    </el-form-item>    
-                </el-col>
-                <el-col :span="12">
-                    
-                    
-                    <!-- <el-form-item label="Unit">
-                        <el-input v-model="form.UnitName" auto-complete="off"
-                        disabled
-                        controls-position="right" class="input-number-fs">
-                        </el-input>
-                    </el-form-item> -->
+                        <el-form-item label="Size">
+                            <el-input v-model="form.Size" 
+                                controls-position="right" 
+                                class="input-number-fs"></el-input>
+                        </el-form-item>    
+                    </el-col>
+                    <el-col :span="12">
+                        
+                        
+                        <!-- <el-form-item label="Unit">
+                            <el-input v-model="form.UnitName" auto-complete="off"
+                            disabled
+                            controls-position="right" class="input-number-fs">
+                            </el-input>
+                        </el-form-item> -->
 
-                    <el-form-item label="Unit Price">
-                        <el-input v-model="form.Price" auto-complete="off"
-                        disabled
-                        controls-position="right" class="input-number-fs">
-                        </el-input>
-                    </el-form-item>
-                    
-                    <el-form-item label="Discount (%)">
-                        <el-input-number v-model="form.Discount" auto-complete="off"
-                        controls-position="right" class="input-number-fs"
-                        :min=0></el-input-number>
-                    </el-form-item>  
-                    
-                    <el-form-item label="Extend Price">
-                        <bwc-input-currency 
-                        v-model="form.ExtendPrice" 
-                        class="input-number-fs"
-                        controls-position="right"
-                        ></bwc-input-currency>
-                    </el-form-item>   
+                        <el-form-item label="Unit Price">
+                            <el-input v-model="form.Price" auto-complete="off"
+                            disabled
+                            controls-position="right" class="input-number-fs">
+                            </el-input>
+                        </el-form-item>
+                        
+                        <el-form-item label="Discount (%)">
+                            <el-input-number v-model="form.Discount" auto-complete="off"
+                            controls-position="right" class="input-number-fs"
+                            :min=0></el-input-number>
+                        </el-form-item>  
+                        
+                        <el-form-item label="Extend Price">
+                            <bwc-input-currency 
+                            v-model="form.ExtendPrice" 
+                            class="input-number-fs"
+                            controls-position="right"
+                            ></bwc-input-currency>
+                        </el-form-item>   
 
-                </el-col>
-            </el-row>
+                    </el-col>
+                </el-row>
             </bwc-loading> 
         </el-form>
         <bwc-modal-footer>
@@ -106,13 +105,9 @@
 
 <script>
 import ValidattionRules from '@/plugin/rule'
-import BwcInputNumber from '@/components/controls/InputNumber.vue'
 
 export default {
     name:"OrderAddComponentModal",
-    components:{
-        BwcInputNumber
-    },
     props:['open','orderId','componentId','componentList'],
     data(){
         return({

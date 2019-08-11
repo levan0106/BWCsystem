@@ -8,21 +8,20 @@
                         auto-complete="off" disabled></el-input>
                     </el-form-item>   
                     
-                    <!-- <el-form-item label="Category Name" 
+                    <el-form-item label="Category Name" 
                     prop="CategoryName" :rules="rules.Required">
                         <el-input v-model="form.CategoryName" 
-                        auto-complete="off"></el-input>
-                    </el-form-item> -->
+                        auto-complete="off" disabled></el-input>
+                    </el-form-item>
 
-                    <el-form-item label="Description" >
+                    <!-- <el-form-item label="Description" >
                         <el-input
                             type="textarea"
                             :rows="3"
                             placeholder="Please input"
-                            v-model="form.Description"
-                            >
+                            v-model="form.Description">
                         </el-input>
-                    </el-form-item>
+                    </el-form-item> -->
                     <!-- <el-form-item label="Status" >
                         <el-select v-model="form.ActiveStatus" 
                         placeholder="Please select a status"
@@ -88,10 +87,13 @@
             <el-row :gutter="20">
                 <el-col :span="24">
                     <el-row class="text-right">  
-                            <el-button type="primary" :disabled="processing" @click="saveData">
-                                Save
-                                <i v-if="processing" class="el-icon-loading"></i> 
-                            </el-button> 
+                        <el-button @click="cancelEvent">Cancel</el-button>
+                        <el-button type="primary" 
+                        :disabled="processing" 
+                        @click="saveData">
+                            Save
+                            <i v-if="processing" class="el-icon-loading"></i> 
+                        </el-button>
                     </el-row> 
                 </el-col>
             </el-row>              
@@ -130,23 +132,24 @@ export default {
             let self = this
             this.processing=true
             this.isDisabled=true
-            //validate data
+            // Validate data
             this.validateForm('form')
             .then(_=>{
                 if(_.valid){
-                //save data
+                    // Save data
                     this.$store.dispatch('category/update',{id:this.id,data:this.form})
                     .then(_=>{
-                        window.location.href = window.bwc.rootUrl + "/category/list";
+                        //window.location.href = window.bwc.rootUrl + "/category/list";
+                        this.$emit('doSubmit');
+                        this.processing=false
+                        this.isDisabled=false
                     })  
-            }else{
-                this.processing=false
-                this.isDisabled=false
-                return false
+                }else{
+                    this.processing=false
+                    this.isDisabled=false
+                    return false
                 }
-
             })
-            
         },
         validateForm(formName) {
             return new Promise((resolve,reject)=>{
@@ -157,7 +160,10 @@ export default {
             resolve({valid:isValid})
             })
         },
+        cancelEvent(){
+            this.$emit('doCancel');
+        }
     }
-    }
+}
 </script>
 

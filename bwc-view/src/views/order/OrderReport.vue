@@ -1,13 +1,13 @@
 <template>
     <el-row>
-		<bwc-layout menu-id="purchase/report"
-		title="Purchase Report"
+		<bwc-layout menu-id="order/report"
+		title="Sale Report"
 		:bread-crumb="breadCrumb">
-			<bwc-purchase-report-filtering v-on:doSearch="handleSearch"></bwc-purchase-report-filtering>			
+			<bwc-order-report-filtering v-on:doSearch="handleSearch"></bwc-order-report-filtering>			
             <el-row v-if="isSearch" class="grid-title">
 				<el-col :span="20">
 					<h3>
-						{{filterValues.supplierName}} - {{filterValues.typeName}}
+						{{filterValues.customerName}} - {{filterValues.typeName}}
 					</h3>
 					<div>
 						<div v-if="filterValues.dateRange == null || filterValues.dateRange == ''">
@@ -25,33 +25,33 @@
 						</el-button>
 					</el-button-group>
 				</el-col>                
-                <bwc-purchase-report-export 
+                <bwc-order-report-export 
                 :is-export="isExport"
-                :file-name="'purchase_report'"
+                :file-name="'sale_report'"
                 :data="data"
 				:filter-values="filterValues"
-                @export-complete="isExport=false"></bwc-purchase-report-export>
+                @export-complete="isExport=false"></bwc-order-report-export>
             </el-row>
-            <bwc-purchase-report-list
+            <bwc-order-report-list
 			:data="data"
 			:loading="loading">
-			</bwc-purchase-report-list>
+			</bwc-order-report-list>
 				
 		</bwc-layout>
     </el-row>  
 </template>
 
 <script>
-import BwcPurchaseReportFiltering from '@/components/purchase/PurchaseReportFiltering.vue'
-import BwcPurchaseReportExport from '@/components/purchase/PurchaseReportExport.vue'
-import BwcPurchaseReportList from '@/components/purchase/PurchaseReportList.vue'
+import BwcOrderReportFiltering from '@/components/order/OrderReportFiltering.vue'
+import BwcOrderReportExport from '@/components/order/OrderReportExport.vue'
+import BwcOrderReportList from '@/components/order/OrderReportList.vue'
 
 export default {
-    name:'PurchaseMain',
+    name:'orderMain',
     components:{
-		BwcPurchaseReportFiltering,
-		BwcPurchaseReportExport,
-		BwcPurchaseReportList
+		BwcOrderReportFiltering,
+		BwcOrderReportExport,
+		BwcOrderReportList
     },
     data(){
         return({
@@ -59,7 +59,7 @@ export default {
 				data:[],
 				breadCrumb:[
 					{href:'/',name:'Home'},
-					{href:'/purchase/list',name:'Purchase'},
+					{href:'/order/list',name:'Sale'},
 					{href:'',name:'Report'}
 				],
                 isExport:false,
@@ -70,29 +70,32 @@ export default {
 		
     computed:{
 		originalData(){
-            return this.$store.getters['purchase/all']
+            return this.$store.getters['order/all']
         }
-    },
-    created(){
-        // this.$store.dispatch('purchase/pullAll')
-        // .then(_=>{
-		// 	this.loading=false;
-		// 	//this.data= this.$store.getters['purchase/all']
-        // })   
     },
     methods:{
 		handleSearch(args){
 			this.loading = true
 			this.isSearch = true
 
-			this.$store.dispatch('purchase/pullAll')
+			this.$store.dispatch('order/pullAll')
 			.then(_=>{
-
 				//set filter values
 				this.filterValues = args
 				this.data = this.originalData.filter(function(item){
 				//console.log(item.OrderDate)
-					let condition = ( args.supplier == '' || args.supplier == 0 || item.SupplierId == args.supplier )
+					// Search by customer
+					let condition = (args.customer == '' 
+									|| args.customer == 0 
+									|| args.customer == item.CustomerId)
+
+					// Search by product
+					if(condition){
+						var productList = ',' + item.ProductIds + ','
+						condition = (args.product == '' 
+									|| args.product == 0 
+									|| productList.indexOf(',' + args.product + ',') !== -1)
+					}
 					
 					if(args.dateRange == null || args.dateRange == ''){				
 						return condition
@@ -120,15 +123,12 @@ export default {
 				})
 
 				this.loading=false;
+
 			}) 
 			// setTimeout(_=>{				
 			// 	this.loading=false
 			// },200)
-        },
-        
-        getStep(id){
-            return this.$store.getters['purchase/steps'].filter(item=>item.Value==id)[0].Label
-        },
+        },        
         getUnit(id){
             let unit = this.$store.getters.units.filter(item=>item.Id==id)
             return unit.length > 0 ? unit[0].UnitName :''
@@ -142,7 +142,7 @@ export default {
 <style lang="less">
 	.grid-title{
 		display: flex;
-	   	flex: 1;
+    	flex: 1;
 	}
 	.export-button{
 		margin: auto auto 0;

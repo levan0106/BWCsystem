@@ -7,24 +7,21 @@
             @click="openModal"
             :disabled="order.Step >= 3"> Service</el-button>
 
-            <el-button 
+            <!-- <el-button 
             icon="el-icon-plus" 
             type="success">  
                 <router-link :to="{name:'serviceCreate'}">							
                     Create New Service
                 </router-link>	 
-            </el-button> 
+            </el-button>  -->
         </el-button-group>
 
-        <bwc-order-add-component-modal 
-        :data="data"  
-        :component-list="componentList"
-        :order-id="orderId"
-        :order="order"
-        :component-id="componentId"
+        <bwc-order-add-service-modal 
+        :orderId="orderId"
+        :serviceId="serviceId"
         :open="isOpen"
         @close-modal="isOpen=false"
-        @save-data="reloadComponent"/>
+        @save-data="reloadService" />
 
         <bwc-grid-data
         :data="data"
@@ -35,54 +32,56 @@
             <el-table-column
             type="selection"
             width="35"
-            v-if="from == 'order' && order.Step == 2">
+            v-if="order.Step == 2">
             </el-table-column>
 
             <el-table-column
             prop="Id"
             width="40"
-            type="index"
-            >
+            type="index">
             </el-table-column>
 
             <el-table-column
-                prop="ServiceId"
-                label="Service ID">
+            prop="ServiceId"
+            label="Service ID">
             </el-table-column>
             
             <el-table-column
-                prop="Task"
-                label="Task">
+            prop="Task"
+            label="Task">
                 <template slot-scope="scope">
                     {{scope.row.Description|nullValue}}
                 </template>
             </el-table-column>
 
             <el-table-column
-                prop="Quantity"
-                label="Quantity">					  
+            prop="Quantity"
+            label="Quantity">					  
             </el-table-column>
             
             <el-table-column
-                prop="Charge"
-                label="Charge">					  
+            prop="Charge"
+            label="Charge">		
+                <template slot-scope="scope">
+                    {{scope.row.Charge|currency}}
+                </template>			  
             </el-table-column>
             
             <el-table-column
-                prop="ServiceDate"
-                label="Service Date">
+            prop="ServiceDate"
+            label="Service Date">
             </el-table-column>
 
             <el-table-column
-                prop="ServiceTime"
-                label="Service Time">
+            prop="ServiceTime"
+            label="Service Time">
             </el-table-column>
 
             <el-table-column
-                fixed="right"
-                label="Operations"
-                width="100"
-                class-name="no-print">
+            fixed="right"
+            label="Operations"
+            width="100"
+            class-name="no-print">
                 <template slot-scope="scope">
                     <el-button type="text" class="el-icon-edit-outline" 
                     @click="editItem(scope.row.Id)" ></el-button> | 
@@ -98,67 +97,43 @@
 
 <script>
 import BwcGridData from '@/components/common/GridData.vue'
-import BwcOrderAddComponentModal from '@/components/order/OrderAddComponentModal.vue'
+import BwcOrderAddServiceModal from '@/components/order/OrderAddServiceModal.vue'
 import BwcInputAction from '@/components/controls/InputAction.vue'
-import functions from '@/plugin/function'
 
 export default {
     name:"OrderServiceList",
     components:{
-        BwcOrderAddComponentModal,
+        BwcOrderAddServiceModal,
         BwcGridData,
         BwcInputAction
     },
-    props:['orderId','supplierId','order','from'],
+    props:['orderId','order','from'],
     data(){
         return({
             isOpen:false,
             loading:false,
-            componentId:0
+            serviceId:0
         })
     },
     computed:{
         data(){
-            return this.$store.getters['order/allComponent']
+            return this.$store.getters['order/allServices']
         },
-        componentList(){
-            return this.$store.getters['component/all']
-        },
-    },
-    watch:{
-        supplierId(val){
-            this.getComponentList(val)
-        },
-    },
-    mounted(){   
-        // //get all components by order      
-        // this.$store.dispatch('order/pullAllComponent',this.orderId)
-        // .then(_=>{
-        //     this.loading=false
-        // })
     },
     methods:{
         handleSelectionChange(val){
             this.$emit('selection-change',val)
-        },
-        getComponentList(){            
-            //get component list by supplier
-            this.$store.dispatch('component/pullAllBySupplier',0)
-            .then(()=>{
-                this.loading=false
-            })
         },
         openModal(){
             //force reload page
             this.$store.dispatch('forceReloadPage')
 
             this.isOpen=true
-            this.componentId=0
-             this.getComponentList(this.supplierId)
+            this.serviceId=0
         },
-        reloadComponent(){
+        reloadService(){
             this.isOpen=false;
-            this.$store.dispatch('order/pullAllComponent',this.orderId)
+            this.$store.dispatch('order/pullAllServices',this.orderId)
             //this.$emit('save-data');
         },
         editItem(id){
@@ -166,27 +141,16 @@ export default {
             this.$store.dispatch('forceReloadPage')
 
             this.isOpen=true
-            this.componentId=id
+            this.serviceId=id
         },
         doDelete:function(id){
             let self = this
-            this.$store.dispatch('order/deleteComponent',id)
+            this.$store.dispatch('order/deleteService',id)
             .then(()=>{
                 this.$emit('save-data')
-                this.$store.dispatch('order/pullAllComponent',self.orderId)
+                this.$store.dispatch('order/pullAllServices',self.orderId)
             })
         },
-        // updateQuantityReceived(id,number){
-        //     let data = {Id:id,Received:number}
-        //     this.$store.dispatch('order/updateComponent',{id:id,data:data})
-        //     .then(()=>{
-        //         this.$emit('save-data');
-               
-        //         //show message
-        //         functions.$this = this
-        //         functions.message.success()
-        //     })
-        // }
     }
 }
 </script>
