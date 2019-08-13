@@ -105,6 +105,7 @@
     <Compile Include="Common\LogManager.cs" />
     <Compile Include="Dependency\DependencyResolver.cs" />
     <Compile Include="Interfaces\IMakerSheet.cs" />
+    <Compile Include="Interfaces\IOrderService.cs" />
     <Compile Include="Interfaces\ISetting.cs" />
     <Compile Include="Interfaces\ICategory.cs" />
     <Compile Include="Interfaces\IDiscount.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Repositories\DiscountRepository.cs" />
     <Compile Include="Repositories\MySql\BaseRepository.cs" />
     <Compile Include="Repositories\MySql\MakerSheetRepository.cs" />
+    <Compile Include="Repositories\MySql\OrderServiceRepository.cs" />
     <Compile Include="Repositories\MySql\SettingRepository.cs" />
     <Compile Include="Repositories\MySql\CategoryRepository.cs" />
     <Compile Include="Repositories\MySql\ColorRepository.cs" />
@@ -157,6 +159,7 @@
     <Compile Include="Repositories\MySql\TimeSheetRepository.cs" />
     <Compile Include="Repositories\MySql\UserRepository.cs" />
     <Compile Include="Repositories\MySql\UserTokenRepository.cs" />
+    <Compile Include="Repositories\OrderServiceRepository.cs" />
     <Compile Include="Repositories\SettingRepository.cs" />
     <Compile Include="Repositories\TimeSheetRepository.cs" />
     <Compile Include="Repositories\ComponentRepository.cs" />

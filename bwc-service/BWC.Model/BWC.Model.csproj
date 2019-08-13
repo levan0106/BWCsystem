@@ -44,6 +44,7 @@
     <Compile Include="BaseOrder.cs" />
     <Compile Include="MakerSheetComponent.cs" />
     <Compile Include="MakerSheet.cs" />
+    <Compile Include="OrderService.cs" />
     <Compile Include="Setting.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Color.cs" />
