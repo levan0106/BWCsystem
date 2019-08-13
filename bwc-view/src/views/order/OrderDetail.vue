@@ -93,11 +93,11 @@
                 @click="createInvoice">
                     Create Invoice
                 </el-button>                
-                <el-button type="primary" icon="el-icon-view">
+                <!-- <el-button type="primary" icon="el-icon-view">
                     <router-link :to="{name:'serviceList'}">
                         Services
                     </router-link>
-                </el-button>
+                </el-button> -->
             </el-button-group>
         </el-row>
         
@@ -203,12 +203,10 @@ export default {
             })
             //get all products of order
             this.$store.dispatch('order/pullAllProduct',this.id)
-            .then(_=>{
-            })
-            //get all components by order      
+            //get all components of order      
             this.$store.dispatch('order/pullAllComponent',this.id)
-            .then(_=>{
-            })
+            //get all services of order      
+            this.$store.dispatch('order/pullAllServices',this.id)
         },
         printMakerSheet(){
             this.$store.dispatch('order/pullMakerSheet',this.id)

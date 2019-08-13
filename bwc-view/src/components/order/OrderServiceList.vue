@@ -41,16 +41,16 @@
             type="index">
             </el-table-column>
 
-            <el-table-column
+            <!-- <el-table-column
             prop="ServiceId"
             label="Service ID">
-            </el-table-column>
+            </el-table-column> -->
             
             <el-table-column
             prop="Task"
             label="Task">
                 <template slot-scope="scope">
-                    {{scope.row.Description|nullValue}}
+                    {{scope.row.Task|nullValue}}
                 </template>
             </el-table-column>
 
@@ -70,11 +70,17 @@
             <el-table-column
             prop="ServiceDate"
             label="Service Date">
+                <template slot-scope="scope">
+                    {{scope.row.ServiceDate|date}}
+                </template>
             </el-table-column>
 
             <el-table-column
             prop="ServiceTime"
             label="Service Time">
+                <template slot-scope="scope">
+                    {{scope.row.ServiceTime|time}}
+                </template>
             </el-table-column>
 
             <el-table-column
@@ -134,7 +140,7 @@ export default {
         reloadService(){
             this.isOpen=false;
             this.$store.dispatch('order/pullAllServices',this.orderId)
-            //this.$emit('save-data');
+            this.$emit('save-data');
         },
         editItem(id){
             //force reload page

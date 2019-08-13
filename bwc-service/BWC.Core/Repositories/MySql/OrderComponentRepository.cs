@@ -16,7 +16,7 @@ namespace BWC.Core.Repositories.MySql
             using (var connection = GetConnection())
             {
                 return connection.Query<OrderComponent>(@"
-                  call  sp_GetAllOrderComponent (@orderId)
+                  call sp_GetAllOrderComponent (@orderId)
                 ", new { orderId }).ToList();
             }
         }

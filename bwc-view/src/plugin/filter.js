@@ -31,6 +31,9 @@ Vue.filter('date', function(d) {
 Vue.filter('datetime', function(d) {
   return formater.datetime(d)
 });
+Vue.filter('time', function(d) {
+  return formater.time(d)
+});
 Vue.filter('status', function(val) {
   
   return val==1?'Active':'Inactive'

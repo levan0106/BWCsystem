@@ -1,11 +1,5 @@
 ﻿using BWC.Core.Interfaces;
 using BWC.Core.Repositories.MySql;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace BWC.Core.Dependency
 {
@@ -37,6 +31,7 @@ namespace BWC.Core.Dependency
             registerComponent.RegisterType<ISetting, SettingRepository>();
             registerComponent.RegisterType<IMakerSheet, MakerSheetRepository>();
             registerComponent.RegisterType<IUserToken, UserTokenRepository>();
+            registerComponent.RegisterType<IOrderService, OrderServiceRepository>();
 
         }
     }

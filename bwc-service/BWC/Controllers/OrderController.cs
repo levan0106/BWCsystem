@@ -1,18 +1,14 @@
 ﻿using BWC.Authentication.Filters;
 using BWC.Common;
+using BWC.Core.Common;
 using BWC.Core.Interfaces;
 using BWC.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using BWC.Core.Common;
 
 namespace BWC.Controllers
 {
-    
     [TokenAuthenticationAttribute]
     public class OrderController : BaseApiController
     {
@@ -23,8 +19,10 @@ namespace BWC.Controllers
         readonly IOrderPayment _orderPayment;
         readonly IOrderItem _orderItem;
         readonly IMakerSheet _makerSheet;
-        public OrderController(IOrder order, IOrderComponent orderComponent,IOrderProduct orderProduct
-            ,IOrderInvoice orderInvoice, IOrderPayment orderPayment,IOrderItem orderitem, IMakerSheet makerSheet)
+        readonly IOrderService _orderService;
+        public OrderController(IOrder order, IOrderComponent orderComponent,IOrderProduct orderProduct,
+            IOrderInvoice orderInvoice, IOrderPayment orderPayment,IOrderItem orderitem, IMakerSheet makerSheet,
+            IOrderService orderService)
         {
             _order = order;
             _orderComponent = orderComponent;
@@ -33,6 +31,7 @@ namespace BWC.Controllers
             _orderPayment = orderPayment;
             _orderItem = orderitem;
             _makerSheet = makerSheet;
+            _orderService = orderService;
         }
         // GET api/<controller>
         [HttpGet]
@@ -280,6 +279,7 @@ namespace BWC.Controllers
             _orderPayment.Delete(id, RequestContext.Principal.Identity.Name);
         }
         #endregion
+
         #region MakerSheet
         // GET api/<controller>/MakerSheet/5
         [HttpGet]
@@ -298,6 +298,46 @@ namespace BWC.Controllers
 
             return dictionary;
         }
+        #endregion
+
+        #region Service
+        // GET api/<controller>/AllServices/5
+        [HttpGet]
+        public IEnumerable<OrderService> AllServices(Int64 id)
+        {
+            var data = _orderService.GetAll(id);
+            return data;
+        }
+
+        // GET api/<controller>/Service/5
+        [HttpGet]
+        public OrderService Service(int id)
+        {
+            var data = _orderService.GetInfo(id);
+            return data;
+        }
+        // POST api/<controller>/Service
+        [HttpPost]
+        public void Service([FromBody]OrderService values)
+        {
+            values.OrderType = (int)Enums.OrderType.Order;
+            _orderService.Insert(values, RequestContext.Principal.Identity.Name);
+        }
+        // PUT api/<controller>/Service/5
+        [HttpPut]
+        public void Service(Int64 id, [FromBody]OrderService values)
+        {
+            values.OrderType = (int)Enums.OrderType.Order;
+            _orderService.Update(values, RequestContext.Principal.Identity.Name);
+        }
+
+        // DELETE api/<controller>/DeleteService/5
+        [HttpDelete]
+        public void DeleteService(int id)
+        {
+            _orderService.Delete(id, RequestContext.Principal.Identity.Name);
+        }
+
         #endregion
     }
 }

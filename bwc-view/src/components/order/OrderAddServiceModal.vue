@@ -2,14 +2,14 @@
 <div id="productcomponentmodal"> 
     <el-dialog title="Add service" :visible.sync="open" 
     class="modal modal-lg">        
-        <el-form :model="form" ref="form" status-icon> 
+        <el-form :model="form" ref="form" status-icon > 
             <bwc-loading :loading="loading">
                 <el-row :gutter="20">
                     <el-col :span="12">    
-                        <el-form-item label="Task">
-                            <el-input 
-                            v-model="form.Task"
-                            :rules="rules.Required">
+                        <el-form-item label="Task"
+                        prop="Task"
+                        :rules="rules.Required">
+                            <el-input v-model="form.Task">
                             </el-input>
                         </el-form-item> 
 
@@ -45,14 +45,27 @@
                         <el-form-item label="Service Time">
                             <el-time-picker
                             v-model="form.ServiceTime"
-                            format="hh:mm"
-                            value-format="hh:mm"
+                            format="HH:mm"
+                            value-format="HH:mm"
                             :picker-options="{
-                                selectableRange: '07:00:00 - 22:00:00'
+                                selectableRange:'07:00:00 - 20:30:00'
                             }"
                             placeholder="Select time">
-                        </el-time-picker>
+                            </el-time-picker>
                         </el-form-item>
+                        <!-- <el-form-item label="Service Time">
+                            <el-time-select
+                            v-model="ServiceTime"    
+                            format="HH:mm"
+                            value-format="HH:mm"
+                            :picker-options="{
+                                start: '08:30',
+                                step: '00:15',
+                                end: '18:30'
+                            }"            
+                            placeholder="Start time">
+                            </el-time-select>
+                        </el-form-item> -->
                     </el-col>
                 </el-row>
             </bwc-loading> 
@@ -74,6 +87,7 @@
 
 <script>
 import ValidattionRules from '@/plugin/rule'
+import formater from "@/plugin/formater"
 
 export default {
     name:"OrderAddServiceModal",
@@ -92,7 +106,15 @@ export default {
     computed:{
         forceReloadPage(){
             return this.$store.getters.forceReloadPage
-        }
+        },
+        ServiceTime: {
+            get: function() {
+                return formater.time(this.form.ServiceTime)
+            },
+            set: function(modifiedValue) {                
+                this.form.ServiceTime = modifiedValue
+            }
+        },
     },
     watch:{
         forceReloadPage(val){
@@ -104,6 +126,7 @@ export default {
     },
     
     methods:{
+        
         closeModal(){
             this.$emit('close-modal')
             

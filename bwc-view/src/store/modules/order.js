@@ -91,7 +91,7 @@ const order = {
       [types.PULL_All_ITEMS](state,data){
         state.orderItems=data
       },
-      [types.PULL_ALL_SERVICES](state,data){
+      [types.PULL_All_SERVICES](state,data){
         state.allServices=data
       },
       [types.PULL_SERVICE](state,data){

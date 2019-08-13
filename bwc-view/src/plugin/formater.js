@@ -38,21 +38,24 @@ const formater ={
         var month = dateTime.getMonth()+1
         var date = dateTime.getDate()
         return ( date >= 10 ? date : '0'+date )  + "/" + ( month >= 10 ? month : '0'+month ) + "/" + dateTime.getFullYear();
-      },
+    },
     datetime: function(d) {
-        if(d == null || d == '')
-        return '';
-        var dateTime = new Date(d);        
-        var month = dateTime.getMonth()+1
-        var date = dateTime.getDate()
-        var hours = dateTime.getHours();
-        var minutes = dateTime.getMinutes();
-        var ampm = hours >= 12 ? 'pm' : 'am';
-        hours = hours % 12;
-        hours = hours ? hours : 12; // the hour '0' should be '12'
-        minutes = minutes < 10 ? '0'+minutes : minutes;
-        var strTime = hours + ':' + minutes + ' ' + ampm;
-        return ( date >= 10 ? date : '0'+date ) + "/" + ( month >= 10 ? month : '0' + month ) + "/" + dateTime.getFullYear() + "  " + strTime;
-      }
+      if(d == null || d == '')
+      return '';
+      return this.date(d) + "  " + this.time(d);
+    },
+    time: function(d) {
+      if(d == null || d == '')
+      return '';
+      var dateTime = new Date(d);  
+      var hours = dateTime.getHours();
+      var minutes = dateTime.getMinutes();
+      var ampm = hours >= 12 ? 'pm' : 'am';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+      minutes = minutes < 10 ? '0'+minutes : minutes;
+      var strTime = hours + ':' + minutes + ' ' + ampm;
+      return strTime;
+    }
 }
 export default formater

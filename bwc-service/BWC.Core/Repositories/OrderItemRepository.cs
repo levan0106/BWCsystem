@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BWC.Core.Interfaces;
+﻿using BWC.Core.Interfaces;
 using BWC.Model;
 using Dapper;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BWC.Core.Repositories
 {

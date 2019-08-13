@@ -1,6 +1,7 @@
 <template>
 <div id="productcomponentmodal"> 
-    <el-dialog title="Add component " :visible.sync="open"  class="modal modal-lg">        
+    <el-dialog title="Add component " :visible.sync="open"  
+    class="modal modal-lg">        
         <el-form :model="form" ref="form" status-icon> 
             <bwc-loading :loading="loading">
                 <el-row :gutter="20">

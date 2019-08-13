@@ -45,7 +45,7 @@
             <el-menu-item index="customer/list"> <router-link to="/customer/list">Customers</router-link></el-menu-item>
             <el-menu-item index="customer/discount"><router-link to="/customer/discount">Customer's Discount</router-link></el-menu-item>
             <el-menu-item index="order/list"> <router-link to="/order/list">Sales Summary</router-link></el-menu-item>
-            <el-menu-item index="service/list"> <router-link to="/service/list">Services</router-link></el-menu-item>
+            <!-- <el-menu-item index="service/list"> <router-link to="/service/list">Services</router-link></el-menu-item> -->
             <el-menu-item index="order/report"> <router-link to="/order/report">Reporting</router-link></el-menu-item>
           </el-submenu>
           
