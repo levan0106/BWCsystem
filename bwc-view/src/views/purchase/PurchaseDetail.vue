@@ -69,11 +69,23 @@
                 <el-button :type="purchaseInfo.Step == 4 || purchaseInfo.Step > 5 ? 'success':'primary'" @click="copyToNewPurchase" >
                     <i class="el-icon-check"></i> Copy To New Purchase
                 </el-button>                
-                <el-button type="primary" @click="printNow" >
-                    <i class="el-icon-printer"></i> Print
+                <el-button type="primary" @click="printNow" 
+                :icon="isExporting?'el-icon-loading':'el-icon-printer'" >
+                    Print
                 </el-button> 
             </el-button-group>
         </el-row>
+        <bwc-purchase-export
+            :is-export="isExporting"
+            :file-name="'Purchase_' + id "
+            :products="products"
+            :components="components"
+            :values="{
+                SupplierName:purchaseInfo.SupplierName,
+                Amount:purchaseInfo.TotalAmount
+            }"
+            @export-complete="isExporting=false">
+        </bwc-purchase-export>
     </bwc-layout>
 </template>
 
@@ -83,6 +95,7 @@ import BwcPurchaseInformation from '@/components/purchase/PurchaseInformation.vu
 import BwcPurchaseProcessInformation from '@/components/purchase/PurchaseProcessInformation.vue'
 import BwcPurchaseProductList from '@/components/purchase/PurchaseProductList.vue'
 import BwcPurchaseComponentList from '@/components/purchase/PurchaseComponentList.vue'
+import BwcPurchaseExport from '@/components/purchase/PurchaseExport.vue'
 
 export default {
     name:'PurchaseDetail',
@@ -91,7 +104,8 @@ export default {
         BwcPurchaseInformation,
         BwcPurchaseProcessInformation,
         BwcPurchaseProductList,
-        BwcPurchaseComponentList
+        BwcPurchaseComponentList,
+        BwcPurchaseExport
     },
     props:['id'],
     data(){
@@ -103,7 +117,8 @@ export default {
                 {href:'/',name:'Home'},
                 {href:'/purchase/list',name:'Purchase'},
                 //{href:'',name:this.purchaseInfo.Id}
-                ]
+            ],
+            isExporting:false,
         })
     },
     computed:{
@@ -153,11 +168,9 @@ export default {
             })
         },
         printNow(value){
-            this.print = value;
-                
-            this.$nextTick(() => {
-                window.print();
-            });
+            this.components = this.$store.getters['purchase/allComponent']
+            this.products = this.$store.getters['purchase/allProduct']
+            this.isExporting=true
         }
     }
 }

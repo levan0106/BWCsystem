@@ -4,40 +4,7 @@
     :start-export="startExport"
     :html="html"
     @export-complete="exportComplete">
-    <!-- <div slot="content">  
-        <div v-for="product in products" :key="product.Id">
-            <table style="fontSize: '9px'">
-                <tr>
-                    <th>ID</th>
-                    <th>Material</th>
-                    <th>Width</th>
-                    <th>Drop</th>
-                    <th>Quantity</th>
-                    <th>Colour</th>
-                    <th>Tube</th>
-                    <th>Tube Type</th>
-                    <th>BOTTOM RAIL</th>
-                    <th>MATERIAL WIDTH</th>
-                    <th>MATERIAL DROP</th>
-                    <th>HOOD</th>
-                </tr>
-                <tr>
-                    <th>{{product.Id}}</th>
-                    <th>{{product.MaterialName}}</th>
-                    <th>{{product.Width}}</th>
-                    <th>{{product.Drop}}</th>
-                    <th>{{product.Quantity}}</th>
-                    <th>{{product.ColorName}}</th>
-                    <th>{{product.TubeWidth}}</th>
-                    <th>{{product.TubeType}}</th>
-                    <th>{{product.BottomRailWidth}}</th>
-                    <th>{{product.MaterialWidth}}</th>
-                    <th>{{product.MaterialDrop}}</th>
-                    <th>{{product.HoodWidth}}</th>
-                </tr>
-            </table>
-        </div>      
-    </div> -->
+    
     </bwc-export-button>
 </template>
 
@@ -92,8 +59,6 @@ export default {
             this.$emit('export-complete') //raise event when export complete
         },
          async generateHtml(){
-            //return true
-            //let self = this
             let div =  exporter.element.div.cloneNode(true);
             let span =  exporter.element.span.cloneNode(true);
             //let table = exporter.element.table.cloneNode(true);
@@ -104,28 +69,38 @@ export default {
             //create container
             let divContainer = div.cloneNode(true)
 
-            // read data here
-           
-            const rowTotal = this.products.length + this.components.length
             let rowIndex = 0
 
             let styles = {
-                fontSize: "6px",
+                fontSize: "7px",
                 width: "100%"
             }
             // render product info  
             var columns = [
-                ['Material','MaterialName','static'],
-                ['Width','Width','static'],
-                ['Drop','Drop','static'],
-                ['Quantity','Quantity','static','40px'],
-                ['Color','ColorName','static'],
+                ['ID','Id','static'],
+                ['LOC','LocationName','static'],
+                ['WIDTH','Width','static'],
+                ['DROP','Drop','static'],
+                ['QTY','Quantity','static','40px'],                
+                ['MATERIAL','MaterialName','static'],
+                ['M. COL','MaterialColorName','static'],
+                ['CTRL COL','ControlColorName'],
+                ['CTRL SIDE','ControlSideId','static',this.getControlSide],
 
-                ['Tube','TubeWidth'],
+            ]
+            var makingDetailColumns=[
+                ['ID','Id'],
+                ['M. COL','MaterialColorName'],
+                ['M WIDTH','MaterialWidth'],
+                ['M DROP','MaterialDrop'],
+                ['QTY','Quantity','40px'],
+
+                ['TUBE WIDTH','TubeWidth'],
+                ['BAR COL','BarColorName'],
+                ['ROLL','RollId',this.getRoll],
+
                 ['Tube Type','TubeType'],
                 ['Bottom Rail','BottomRailWidth'],
-                ['Material Width','MaterialWidth'],
-                ['Material Drop','MaterialDrop'],
                 ['Hood','HoodWidth'],
                 ['Outer Track','OuterTrackDrop'],
                 ['Inner Track','InnerTrackDrop'],
@@ -144,102 +119,45 @@ export default {
                 ['Axle Length','AxleLenght'],
                 ['Guide Length','GuideLenght']
             ]
-            var columnsPC = [
-                ['No','Id'],
-                ['Component','ComponentCode'],
-                ['Name','ComponentName'],
-                ['Color','ColorName'],
-                ['Quantity','Quantity']
-            ]
+
             let tableElement = document.createElement("TABLE");
             tableElement.style.fontSize = styles.fontSize
             tableElement.style.width = styles.width
+
             // Product
-            this.products.forEach((row, index)=>{ 
+            const disctinctProducts = this.products.map(item=>item.ProductName)
+                                    .filter((value,index,self) => self.indexOf(value) === index)
+            
+            const rowTotal = disctinctProducts.length
+
+            disctinctProducts.forEach((row, index)=>{ 
                 rowIndex += 1
 
+                if(index > 0){
+                    let page = div.cloneNode(true) 
+                    page.className = 'html2pdf__page-break'
+                    divContainer.appendChild(page)
+                }
+
                 let productTitle = div.cloneNode(true) 
-                productTitle.innerHTML = row['ProductName'] 
+                productTitle.innerHTML = row
                 + " (" + rowIndex +" of " + rowTotal + " in order)"  
                 divContainer.appendChild(productTitle)
 
-                //create table
-                let table = tableElement.cloneNode(true)
- 
-                //render header table
-                let rowHeader = table.insertRow();
-                let rowContent = table.insertRow();
+                // get data
+                const productList = this.products.filter(item => item.ProductName === row)
 
-                columns.forEach((cell, i)=>{ // go to through all cells  
-                    
-                    // item index  
-                    let value=i  
+                // Render product
+                let productGrid = this.createDataGrid(productList,columns,tableElement)
+                divContainer.appendChild(productGrid)
 
-                    for(var property in row){
-                        if(cell[1] === property)
-                        {
-                            let func = cell[2]
-                            if(typeof func === "function"){
-                                value = func(row[property])
-                            }else{                                
-                                value = row[property]
-                            }
+                // Render Product Detail
+                let makingDetail = div.cloneNode(true) 
+                makingDetail.innerHTML = "Making Detail" 
+                divContainer.appendChild(makingDetail)
 
-                            break;
-                        }
-                    }      
-                    if(value != 0 || cell[2] === 'static'){
-                        let cellHeader = rowHeader.insertCell(); 
-                        cellHeader.innerHTML = cell[0] 
-
-                        let cellContent = rowContent.insertCell();
-                        cellContent.innerHTML = value 
-                        
-                        if(cell[3] != undefined){
-                            cellHeader.style.width = cell[3]
-                            cellContent.style.width = cell[3]
-                        }
-                    }  
-
-                })                
-            
-                divContainer.appendChild(table)
-
-                //Product component
-                let tablePC = tableElement.cloneNode(true) 
-                //render header table
-                let rowHeaderPC = tablePC.insertRow();
-                columnsPC.forEach((cell, i)=>{ 
-                        let cellHeaderPC = rowHeaderPC.insertCell(); 
-                        cellHeaderPC.innerHTML = cell[0] 
-                    }) 
-                const productComponents = this.productComponents.filter(_=>_.ProductId == row['ProductId'])
-                productComponents.forEach((row, index)=>{     
-                   
-                    let rowContentPC = tablePC.insertRow();
-
-                    columnsPC.forEach((cell, i)=>{                        
-                        // item index  
-                        let value=i  
-
-                        for(var property in row){
-                            if(cell[1] === property)
-                            {      
-                                if(property === 'Id')  {
-                                    value = index + 1
-                                }    
-                                else{
-                                    value = row[property]
-                                }                
-                                break;
-                            }
-                        }      
-                        let cellContentPC = rowContentPC.insertCell();
-                        cellContentPC.innerHTML = value 
-                    }) 
-                })
-                divContainer.appendChild(tablePC)
-                //End product component
+                let productDetailGrid = this.createDataGrid(productList,makingDetailColumns,tableElement)
+                divContainer.appendChild(productDetailGrid)
 
                 if(row['CategoryCode'] == 'SECURITY'){
                     let image = document.createElement("IMG")                    
@@ -271,51 +189,23 @@ export default {
             //End Product
 
             // Component
-            var columnsC = [
-                ['Component','ComponentCode'],
-                ['Name','ComponentName'],
-                ['Color','ColorName'],
-                ['Size','Size'],
-                ['Quantity','Quantity']
+
+            let productComponentTitle = div.cloneNode(true) 
+                productComponentTitle.innerHTML = "Components" 
+                divContainer.appendChild(productComponentTitle)
+
+            var componentColumns = [
+                ['ID','Id'],
+                ['CODE','ComponentCode'],
+                ['NAME','ComponentName'],                
+                ['QTY','Quantity'],
+                ['COLOUR','ColorName'],
+                ['SIZE','Size','',this.formaterSize],
             ]
-            this.components.forEach((row, index)=>{ 
-                rowIndex += 1
 
-                let componentTitle = div.cloneNode(true) 
-                componentTitle.innerHTML = row['ComponentName'] 
-                + " (" + rowIndex +" of " + rowTotal + " in order)"  
-                divContainer.appendChild(componentTitle)
+            let componentGrid = this.createDataGrid(this.components,componentColumns,tableElement)
+            divContainer.appendChild(componentGrid)
 
-                //create table
-                let tableC = tableElement.cloneNode(true)
- 
-                //render header table
-                let rowHeaderC = tableC.insertRow();
-                let rowContentC = tableC.insertRow();
-
-                columnsC.forEach((cell, i)=>{ // go to through all cells  
-                    
-                    // item index  
-                    let value=i  
-
-                    for(var property in row){
-                        if(cell[1] === property)
-                        {                              
-                            value = row[property]
-                            break;
-                        }
-                    }      
-                    let cellHeaderC = rowHeaderC.insertCell(); 
-                    cellHeaderC.innerHTML = cell[0] 
-
-                    let cellContentC = rowContentC.insertCell();
-                    cellContentC.innerHTML = value                     
-
-                })                
-            
-                divContainer.appendChild(tableC)
-
-            })
             //End Component
 
             // append conent
@@ -327,9 +217,74 @@ export default {
             //set container to object html
             this.html = ehtml
         },
-        caculatePrice(unitPrice){
-            return formater.currency(unitPrice)
+        createDataGrid(dataSource, columns, orginalTable){
+            let table = orginalTable.cloneNode(true)
+
+            // render content
+            let rowHeader = table.insertRow();
+            dataSource.forEach((row, index)=>{
+                let rowContent = table.insertRow();
+
+                columns.forEach((cell, i)=>{ // go to through all cells  
+                    
+                    // item index  
+                    let value=i  
+
+                    if(cell[1] ==='Id'){
+                        value = index + 1
+                    }else{
+                        for(var property in row){
+                            if(cell[1] === property)
+                            {
+                                let func = cell[3]
+                                if(typeof func === "function"){
+                                    value = func(row[property])
+                                }else{                                
+                                    value = row[property]
+                                }
+
+                                break;
+                            }
+                        }      
+                    }
+                    
+                    if(value != 0 || cell[2] === 'static'){
+                        // First row then add header
+                        if(index == 0){
+                            let cellHeader = rowHeader.insertCell(); 
+                            cellHeader.innerHTML = cell[0] 
+                            if(cell[3] != undefined){
+                                cellHeader.style.width = cell[3]
+                            }
+                        }
+
+                        let cellContent = rowContent.insertCell();
+                        cellContent.innerHTML = value                           
+                        if(cell[3] != undefined){
+                            cellContent.style.width = cell[3]
+                        }
+                    }
+                })                
+            })
+
+            return table
         },
+        getControlSide(id){
+            const controlSide = this.$store.getters.controlSides.filter(item => item.Id == id)
+                                .map(item=>item.Name)
+            return  controlSide
+        },
+        getRoll(id){
+            const roll = this.$store.getters.rolls.filter(item => item.Id == id)
+                                .map(item=>item.Name)
+            return  roll
+        },
+        formaterSize(val){
+            if(val == ''){
+                return '-'
+            }
+            return val
+        }
     }
 }
 </script>

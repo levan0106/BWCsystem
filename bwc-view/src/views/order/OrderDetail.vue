@@ -100,24 +100,27 @@
                 </el-button> -->
             </el-button-group>
         </el-row>
-        
-        <bwc-maker-sheet-export
-            :is-export="isMakerSheetExport"
-            :file-name="'MakerSheet_' + id "
-            :products="makerSheetProducts"
-            :product-components="makerSheetProductComponents"
-            :components="makerSheetComponents"
-            @export-complete="isMakerSheetExport=false">
-        </bwc-maker-sheet-export>
 
         <bwc-order-invoice-export
         :is-export="isExport"
         :file-name="'Invoice_' + id"
         :products="products"
         :components="components"
-        :filter-values="filterValues"
-        @export-complete="isExport=false">
+        :services="services"
+        :values="filterValues"
+        @export-complete="isExport=false"
+        v-if="orderInfo.Step == 4">
         </bwc-order-invoice-export>
+        
+        <bwc-maker-sheet-export
+        :is-export="isMakerSheetExport"
+        :file-name="'ProductionSheet_' + id "
+        :products="makerSheetProducts"
+        :product-components="makerSheetProductComponents"
+        :components="makerSheetComponents"
+        @export-complete="isMakerSheetExport=false"
+        v-if="orderInfo.Step <= 2">
+        </bwc-maker-sheet-export>
     </bwc-layout>
 </template>
 
@@ -178,6 +181,9 @@ export default {
         },        
         components(){
             return this.$store.getters['order/allComponent']
+        },
+        services(){
+            return this.$store.getters['order/allServices']
         }
     },
     created(){

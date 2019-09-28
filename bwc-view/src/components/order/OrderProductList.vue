@@ -56,7 +56,7 @@
             </el-table-column>   
             
             <el-table-column
-                prop="ColorName"
+                prop="MaterialColorName"
                 label="Colour">					  
             </el-table-column>             
             

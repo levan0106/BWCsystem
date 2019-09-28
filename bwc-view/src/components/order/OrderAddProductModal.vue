@@ -278,7 +278,13 @@
                 <bwc-grid-data
                 :data="components"
                 no-paging
-                :default-sort = "{prop: 'Id', order: 'descending'}">
+                :default-sort = "{prop: 'Id', order: 'descending'}"
+                 @selection-change="handleComponentSelectionChange">
+                    <el-table-column
+                    type="selection"
+                    width="35">
+                    </el-table-column>
+                    
                     <el-table-column
                         type="index"
                         prop="Id">
@@ -364,7 +370,8 @@ export default {
             materialPrices:[],
             rules:ValidattionRules,
             iRow:0,
-			iColumn:0,
+            iColumn:0,
+            selectedComponents:[]
             })
         },
         computed:{
@@ -519,6 +526,9 @@ export default {
                 const type = 1 //1:customer ; 0:supplier
                 this.$store.dispatch('discount/pullAll', type )
             },
+            handleComponentSelectionChange(val){
+                this.selectedComponents=val;
+            },
             onProductChange(id){
                 const self =  this
                 //reset material
@@ -576,6 +586,7 @@ export default {
                         self.form.ReceivedAMTExcGST=this.ReceivedAMTExcGST
                         self.form.ReceivedGST=this.ReceivedGST
                         self.form.ReceivedAMTIncGST=this.ReceivedAMTIncGST
+                        self.form.SelectedComponents=this.selectedComponents.join(',')
 
                         self.$store.dispatch('order/addProduct',self.form)
                         .then(resolve=>{       

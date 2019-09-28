@@ -15,6 +15,7 @@
 <script>
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
+//import html2pdf from 'html2pdf.js'
 //import jsPDF from '@/plugin/jspdf.debug.js'
 
 window.html2canvas = html2canvas
@@ -52,10 +53,12 @@ export default {
                     width: '100%'
                 },
                 top:30,
-                fontSize:10,
-                fontSizeLarge:14,
+                fontSize:9,
+                fontSizeLarge:12,
                 lineHeight: 15
             }
+
+
             const doc = new jsPDF('p', 'pt', 'letter');
             doc.setFontSize(config.fontSize)
 
@@ -90,7 +93,8 @@ export default {
 
             
             let fileName = "BWC_" + this.fileName+"_" + dataTime.replace(new RegExp('/', 'g'), '_').trim() +".pdf"
-            const call = () => {
+
+            const callSaveFile = () => {
                 doc.save(fileName); // download file
 
                 self.$emit('export-complete') //raise event when export complete
@@ -109,6 +113,20 @@ export default {
             let footerExtend = document.getElementById("export-footer").cloneNode(true)
             this.html.appendChild(footerExtend)
 
+
+            
+// var opt = {
+//   margin:       1,
+//   filename:     fileName,
+//   image:        { type: 'jpeg', quality: 1 },
+//   jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+// };
+
+// html2pdf().set(opt).from(this.html).save();
+
+//return true;
+
+
             doc.fromHTML(
                 this.html, 
                 config.margin.left, 
@@ -117,13 +135,10 @@ export default {
                    'width': config.margin.width, // max width of content on PDF
                    pagesplit: true
                 }, 
-                call);
+                callSaveFile);
          },
     }
 }
 
 </script>
 
-<style>
-
-</style>
