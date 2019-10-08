@@ -398,6 +398,16 @@ const order = {
           })
         })
       },
+      exportMakerSheet({commit},id){
+        return new Promise((resolve,reject)=>{
+          HTTP.isDownloadFile=true;
+          HTTP.get('action/order/ExportMakerSheet/'+id)
+          .then(response =>{      
+            resolve(response)
+          })
+          
+        })
+      },
       //End MakerSheet
 
       // Service

@@ -74,9 +74,9 @@
                     <i class="el-icon-check"></i> Close
                 </el-button>  
                 <el-button type="primary" 
-                    :icon="isMakerSheetExport?'el-icon-loading':'el-icon-printer'" 
+                    :icon="isMakerSheetExporting?'el-icon-loading':'el-icon-printer'" 
                     v-if="orderInfo.Step <= 2"
-                    @click="printMakerSheet" >
+                    @click="exportMakerSheet" >
                     Production Sheet
                 </el-button>
                 <el-button type="primary" icon="el-icon-plus"
@@ -160,6 +160,7 @@ export default {
             
             isExport:false,
             isMakerSheetExport:false,
+            isMakerSheetExporting:false,
             filterValues:{},
             makerSheetProducts:[],
             makerSheetComponents:[],
@@ -224,6 +225,23 @@ export default {
                 this.isMakerSheetExport = true
             })
                 
+        },
+        exportMakerSheet(){
+            this.isMakerSheetExporting = true
+
+            this.$store.dispatch('order/exportMakerSheet',this.id)
+            .then(response=>{
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', 'BWC_ProductSheet_' + this.id + '.pdf'); //or any other extension
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(url);
+                
+                this.isMakerSheetExporting = false
+            })
         },
         updateStep(step){
             let sefl=this

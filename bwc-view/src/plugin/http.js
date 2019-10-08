@@ -15,7 +15,12 @@ export const HTTP = axios.create({
     }]
 })
 HTTP.interceptors.request.use(
-    request => { // intercept the global error
+    request => {         
+        if(HTTP.isDownloadFile){
+            request.responseType = 'blob';// important for download file
+        }else{
+            request.responseType = 'Array';
+        }
         return request
     },
     error =>{
@@ -24,7 +29,8 @@ HTTP.interceptors.request.use(
 )
 
 HTTP.interceptors.response.use(
-    response => { 
+    response => {   
+        HTTP.isDownloadFile = false; // Remove responseType = 'blob'     
         return response
     }, 
     error => {

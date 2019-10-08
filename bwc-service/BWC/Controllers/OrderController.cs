@@ -1,10 +1,17 @@
 ﻿using BWC.Authentication.Filters;
 using BWC.Common;
 using BWC.Core.Common;
+using BWC.Core.Export;
 using BWC.Core.Interfaces;
 using BWC.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Web;
 using System.Web.Http;
 
 namespace BWC.Controllers
@@ -293,10 +300,308 @@ namespace BWC.Controllers
             dictionary.Add("pc", productComponent);
             dictionary.Add("c", component);
 
+            return dictionary;
+        }
+
+        [HttpGet]
+        public HttpResponseMessage ExportMakerSheet(Int64 id)
+        {
+            // Get datas
+            var orderData = _order.GetInfo(id);
+            var productData = _makerSheet.GetAllProducts(id);
+            var productComponentData = _makerSheet.GetAllProductComponents(id);
+            var componentData = _makerSheet.GetAllComponents(id);
+
             //update Product step to in-process: 2
             _orderProduct.UpdateProductStep(id, 2, RequestContext.Principal.Identity.Name);
 
-            return dictionary;
+            var productDistinct = productData.GroupBy(test => test.ProductName)
+                   .Select(grp => grp.First())
+                   .ToList();
+
+            GeneratePdf pdf = new GeneratePdf();
+            Dictionary<string, string> columns = new Dictionary<string, string>();
+            Dictionary<string, string> detailColumns = new Dictionary<string, string>();
+            string caution = string.Empty;
+            string bodyContent = string.Empty;
+            string generalInfo = @"<table style='font-size: 9pt;'>
+                                    <tr><td>SALE ID:</td><td>{0}</td></tr>
+                                    <tr><td>CUSTOMER:</td><td>{1}</td></tr>
+                                    <tr><td>NAME/REF:</td><td>{2}</td></tr>
+                                    <tr><td>SITE ADDRESS:</td><td>{3}</td></tr>
+                                    <tr><td>SALE DATE:</td><td>{4}</td></tr>
+                                    <tr><td>REQ DATE:</td><td>{5}</td></tr>
+                                    </table>";
+            bodyContent += string.Format(generalInfo, 
+                orderData.Id, 
+                orderData.CustomerName, 
+                orderData.OrderRefNo, 
+                orderData.CustomerAddress, 
+                orderData.OrderDate, 
+                orderData.PickupDateForOrderOnly);
+
+            int totalPage = productDistinct.Count();
+            for (int i = 0; i < totalPage; i++)
+            {
+                MakerSheet pro = productDistinct[i];
+                switch (pro.CategoryCode)
+                {
+                    case "ROLLERBLIND":
+                        columns = new Dictionary<string, string>
+                        {
+                            {"Id", "Id" },
+                            {"LocationName", "LOC"},
+                            {"Width", "WIDTH"},
+                            {"Drop", "DROP"},
+                            {"Quantity", "QTY"},
+                            {"MaterialName", "MATERIAL"},
+                            {"MaterialColorName", "COL"},
+                            {"ControlSideId", "CTRL"},
+                            {"ControlHBOL", "CTRL HEIGHT"},
+                            {"ControlColorName", "CTRL COL"},
+                            {"BKT", "BKT"},
+                        };
+                        detailColumns = new Dictionary<string, string>
+                        {
+                            {"Id", "Id" },
+                            {"MaterialColorName", "M. COL"},
+                            {"MaterialWidth", "M WIDTH"},
+                            {"MaterialDrop", "M DROP"},
+                            {"Quantity", "QTY"},
+                            {"TubeWidth", "TUBE WITH"},
+                            {"BarColorName", "BAR COL"},
+                            {"RollId", "ROLL"},
+                            {"Notes", "NOTE"},
+                        };
+                        break;
+                    case "ZIPSCREEN":
+
+                        columns = new Dictionary<string, string>
+                        {
+                            {"Id", "Id" },
+                            {"LocationName", "LOC"},
+                            {"Width", "WIDTH"},
+                            {"Drop", "DROP"},
+                            {"Quantity", "QTY"},
+                            {"MaterialName", "MATERIAL"},
+                            {"MaterialColorName", "COL"},
+                            {"ControlColorName", "CTRL"},
+                            {"Notes", "NOTE"},
+                        };
+                        detailColumns = new Dictionary<string, string>
+                        {
+                            {"Id", "Id" },
+                            {"MaterialWidth", "M WIDTH"},
+                            {"MaterialDrop", "M DROP"},
+                            {"Quantity", "QTY"},
+                            {"TSplineName", "B. SPLINE"},
+                            {"TubeDia", "TUBE DIA"},
+                            {"TubeWidth", "TUBE WIDTH"},
+                            {"BarColorName", "BAR COL"},
+                            {"BAR WIDTH", "BAR WIDTH"},
+                            {"BoxColorName", "BOX COL"},
+                            {"BOX WIDTH", "BOX WIDTH"},
+                            {"GuideColorName", "GUIDE COL"},
+                            {"OuterTrackDrop", "OUTER GUIDE"},
+                            {"InnerTrackDrop", "INNER GUIDE"},
+                            //{"Notes", "NOTE"}
+                        };
+                        caution = "SIDE OF MATERIAL = NO ZIP (ON 200MM TOP AND 20MM BOTTOM)";
+                        break;
+                    case "FLYSCREEN":
+                        columns = new Dictionary<string, string>
+                        {
+                            {"Id", "Id" },
+                            {"LocationName", "LOC"},
+                            {"Width", "WIDTH"},
+                            {"Drop", "DROP"},
+                            {"Quantity", "QTY"},
+                            {"MaterialName", "MATERIAL"},
+                            {"MaterialColorName", "COL"},
+                            {"ControlColorName", "CTRL"},
+                            {"Notes", "NOTE"},
+                        };
+                        detailColumns = new Dictionary<string, string>
+                        {
+                            {"Id", "Id" },
+                            {"MaterialColorName", "M. COL"},
+                            {"MaterialWidth", "M WIDTH"},
+                            {"MaterialDrop", "M DROP"},
+                            {"Quantity", "QTY"}
+                        };
+                        break;
+                    case "SECURITY":
+                    case "FLYDOOR":
+                        columns = new Dictionary<string, string>
+                        {
+                            {"Id", "Id" },
+                            {"LocationName", "LOC"},
+                            {"Width", "WIDTH"},
+                            {"Drop", "DROP"},
+                            {"Quantity", "QTY"},
+                            {"MaterialName", "MATERIAL"},
+                            {"MaterialColorName", "COL"},
+                            {"ControlColorName", "CTRL"},
+                            {"BOL", "BOL"},
+                        };
+                        detailColumns = new Dictionary<string, string>
+                        {
+                            {"Id", "Id" },
+                            {"MaterialName", "MATERIAL"},
+                            {"MaterialColorName", "COL"},
+                            {"FrameWidth", "FRAME WIDTH"},
+                            {"MaterialDrop", "FRAME DROP"},
+                            {"FrameDrop", "QTY"},
+                            {"MeshWidth", "QTY"},
+                            {"MeshDrop", "QTY"},
+                        };
+                        break;
+                    case "RS":
+                        columns = new Dictionary<string, string>
+                        {
+                            {"Id", "Id" },
+                            {"LocationName", "LOC"},
+                            {"Width", "WIDTH"},
+                            {"Drop", "DROP"},
+                            {"Quantity", "QTY"},
+                            {"MaterialName", "MATERIAL"},
+                            {"MaterialColorName", "COL"},
+                            {"ControlColorName", "CTRL"},
+                            {"Notes", "NOTE"},
+                        };
+                        detailColumns = new Dictionary<string, string>
+                        {
+                            {"Id", "Id" },
+                            {"MaterialColorName", "M. COL"},
+                            {"Quantity", "QTY"},
+                            {"BarColorName", "BAR COL"},
+                            {"RollId", "ROLL"},
+                            {"BoxTypeDrop", "Box Type"},
+                            {"BoxLength", "Box Length"},
+                            {"BottomBarHeight", "BottomBar Height"},
+                            {"BottomBarLength", "BottomBar Length"},
+                            {"SlatHeight", "Slat Height"},
+                            {"SlatAmount", "Slat Amount"},
+                            {"SlatLenght", "Slat Length"},
+                            {"AxleLenght", "Axle Length"},
+                        };
+                        break;
+                    default:
+                        columns = new Dictionary<string, string>
+                        {
+                            {"Id", "Id" },
+                            {"LocationName", "LOC"},
+                            {"Width", "WIDTH"},
+                            {"Drop", "DROP"},
+                            {"Quantity", "QTY"},
+                            {"MaterialName", "MATERIAL"},
+                            {"MaterialColorName", "M. COL"},
+                            {"ControlColorName", "CTRL COL"},
+                            {"ControlSideId", "CTRL SIDE"},
+                        };
+                        detailColumns = new Dictionary<string, string>
+                        {
+                            {"Id", "Id" },
+                            {"MaterialColorName", "M. COL"},
+                            {"MaterialWidth", "M WIDTH"},
+                            {"MaterialDrop", "M DROP"},
+                            {"Quantity", "QTY"},
+                            {"TubeWidth", "TUBE WIDTH"},
+                            {"BarColorName", "BAR COL"},
+                            {"RollId", "ROLL"},
+                            {"TubeType", "Tube Type"},
+                            {"BottomRailWidth", "Bottom Rail"},
+                            {"HoodWidth", "Hood"},
+                            {"OuterTrackDrop", "Outer Track"},
+                            {"InnerTrackDrop", "Inner Track"},
+                            {"FrameWidth", "Frame Width"},
+                            {"FrameDrop", "Frame Drop"},
+                        };
+                        break;
+                }
+
+                // Title
+                bodyContent += pdf.FormatTitle(string.Format("{0} ({1} of {2} in order)", pro.ProductName, i + 1, totalPage));
+                var products = productData.Where(p => p.ProductName == pro.ProductName).ToList();
+                bodyContent += pdf.ToDataTable<MakerSheet>(products, columns);
+
+                // Title
+                bodyContent += pdf.FormatTitle("MAKING DETAIL");
+                bodyContent += pdf.FormatTitle(caution,"p");
+                bodyContent += pdf.ToDataTable<MakerSheet>(products, detailColumns);
+
+                // Product Components
+                bodyContent += pdf.FormatTitle("Product Components");
+                var productComponents = productComponentData.Where(p => p.ProductId == pro.ProductId)
+                    .GroupBy(item => item.ComponentCode)
+                    .Select(cl => new MakerSheetComponent()
+                    {
+                        ProductId = cl.First().ProductId,
+                        ComponentName = cl.First().ComponentName,
+                        ComponentCode = cl.First().ComponentCode,
+                        Quantity = cl.Sum(s => s.Quantity),
+                        ColorName = cl.First().ColorName,
+                        Size = cl.First().Size
+                    })
+                    .ToList();
+                columns = new Dictionary<string, string>
+                {
+                    {"ComponentName", "NAME"},
+                    {"Quantity", "QTY"},
+                    {"ColorName", "COLOUR"},
+                    {"Size", "SIZE"}
+                };
+                bodyContent += pdf.ToDataTable<MakerSheetComponent>(productComponents, columns);
+
+                // Break to new page
+                if (i + 1 < totalPage)
+                {
+                    bodyContent += pdf.NewPage;
+                }
+            }
+
+            // Components
+            var components = componentData.GroupBy(item => new { item.ComponentCode, item.Size })
+                    .Select(cl => new MakerSheetComponent()
+                    {
+                        ProductId = cl.First().ProductId,
+                        ComponentName = cl.First().ComponentName,
+                        ComponentCode = cl.First().ComponentCode,
+                        Quantity = cl.Sum(s => s.Quantity),
+                        ColorName = cl.First().ColorName,
+                        Size = cl.First().Size
+                    }).ToList();
+            if (components.Count() > 0)
+            {
+                // Break to new page
+                bodyContent += pdf.NewPage;
+                bodyContent += pdf.FormatTitle("OTHER ITEMS");
+                columns = new Dictionary<string, string>
+                {
+                    {"ComponentName", "NAME"},
+                    {"Quantity", "QTY"},
+                    {"ColorName", "COLOUR"},
+                    {"Size", "SIZE"}
+                };
+                bodyContent += pdf.ToDataTable<MakerSheetComponent>(components, columns);
+            }
+
+            string html = pdf.HtmlBody(bodyContent);
+
+            string fileName = string.Format("BWC_ProductSheet_{0}", id);
+            byte[] stream= pdf.GenerateFromHtml(html, fileName);
+
+            var response = new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new ByteArrayContent(stream)
+            };
+            response.Content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment")
+            {
+                FileName = fileName
+            };
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+
+            return response;
         }
         #endregion
 
