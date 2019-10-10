@@ -46,19 +46,22 @@ namespace BWC.Model
         public string BarColorName { get; set; }
         public string GuideColorName { get; set; }
         public string ControlColorName { get; set; }
+        public string StripeColorName { get; set; }
 
-        public int? ControlSideId { get; set; }
+        public string ControlSideId { get; set; }
         public string ControlSideName { get; set; }
-        public int? RollId { get; set; }
+        public string RollId { get; set; }
         public string RollName { get; set; }
-        public int? TSplineId { get; set; }
+        public string TSplineId { get; set; }
         public string TSplineName { get; set; }
-        public int? BSplineId { get; set; }
+        public string BSplineId { get; set; }
         public string BSplineName { get; set; }
-        public int? FlapId { get; set; }
+        public string FlapId { get; set; }
         public string FlapName { get; set; }
         public string ControlHBOL { get; set; }
         public string TubeDia { get; set; }
         public string Notes{ get; set; }
+        public string BKTId { get; set; }
+        public string BKTName { get; set; }
     }
 }

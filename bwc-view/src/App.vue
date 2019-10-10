@@ -54,35 +54,47 @@ export default {
         {UnitName:'NA',Id:10}
       ],
       locations:[
-        {LocationName:'NA',Id:1},
+        {LocationName:'N/A',Id:1},
       ],
       controlSides:[
-        {Name:'Top',Id:1},
-        {Name:'Botton',Id:2},
-        {Name:'Left',Id:3},
-        {Name:'Right',Id:4},
-        {Name:'Central',Id:5},
-        {Name:'NA',Id:6}
+        {Name:'Top',Id:'Top'},
+        {Name:'Botton',Id:'Bottom'},
+        {Name:'Left',Id:'Left'},
+        {Name:'Right',Id:'Right'},
+        {Name:'Col',Id:'Col'},
+        {Name:'Cor',Id:'Cor'},
+        {Name:'N/A',Id:'N/A'},
       ],
       flaps:[
-        {Name:'Straight',Id:1},
-        {Name:'Scallop',Id:2},
-        {Name:'Spline',Id:3},
-        {Name:'Pocket',Id:4}
+        {Name:'Straight',Id:'Straight'},
+        {Name:'Scallop',Id:'Scallop'},
+        {Name:'Spline',Id:'Spline'},
+        {Name:'Pocket',Id:'Pocket'}
       ],
       bSplines:[
-        {Name:'N/A',Id:1},
-        {Name:'Small',Id:2},
-        {Name:'Big',Id:3},
+        {Name:'Small',Id:'Smal'},
+        {Name:'Big',Id:'Big'},
+        {Name:'N/A',Id:'N/A'},
       ],
       tSplines:[
-        {Name:'N/A',Id:1},
-        {Name:'Small',Id:2},
-        {Name:'Big',Id:3},
+        {Name:'Small',Id:'Small'},
+        {Name:'Big',Id:'Big'},
+        {Name:'N/A',Id:'N/A'},
       ],
       rolls:[
-        {Name:'Under',Id:1},
-        {Name:'Over',Id:2},
+        {Name:'Under',Id:'Under'},
+        {Name:'Over',Id:'Over'},
+        {Name:'Top',Id:'Top'},
+        {Name:'Bottom',Id:'Bottom'},
+        {Name:'Left',Id:'Left'},
+        {Name:'Right',Id:'Right'},
+        {Name:'N/A',Id:'N/A'},
+      ],
+      BKTs:[
+        {Name:'TF',Id:'TF'},
+        {Name:'FF',Id:'FF'},
+        {Name:'DLE',Id:'DLE'},
+        {Name:'N/A',Id:'N/A'},
       ],
       paymentType:[
         {PaymentTypeName:'C.O.D',Id:1},
@@ -111,6 +123,7 @@ export default {
     this.$store.dispatch('pushTSplines',this.tSplines)
     this.$store.dispatch('pushBSplines',this.bSplines)
     this.$store.dispatch('pushFlaps',this.flaps)
+    this.$store.dispatch('pushBKTs',this.BKTs)
     this.$store.dispatch('pushPaymentType',this.paymentType)
     this.$store.dispatch('pullSystemInfo')
   }

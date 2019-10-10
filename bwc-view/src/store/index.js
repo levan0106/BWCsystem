@@ -1,9 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import state from '@/store/state'
-import getters from '@/store/getters'
-import mutations from '@/store/mutations'
-import actions from '@/store/actions'
 import {HTTP} from '@/plugin/http'
 import component from '@/store/modules/component'
 import supplier from '@/store/modules/supplier'
@@ -59,6 +55,7 @@ export default new Vuex.Store({
     bSplines:[],
     tSplines:[],
     rolls:[],
+    BKTs:[],
     paymentType:[],
     sessionWarning:false,
     forceReloadPage:null,
@@ -81,6 +78,7 @@ export default new Vuex.Store({
     bSplines:state=>state.bSplines,  
     tSplines:state=>state.tSplines,  
     rolls:state=>state.rolls,  
+    BKTs:state=>state.BKTs,  
     rootUrl:state=>state.rootUrl,  
     paymentType:state=>state.paymentType,
     sessionWarning:state=>state.sessionWarning,
@@ -144,6 +142,9 @@ export default new Vuex.Store({
     pushRolls(state,rolls){
       state.rolls=rolls
     },
+    pushBKTs(state,BKTs){
+      state.BKTs=BKTs
+    },
     pushPaymentType(state,paymentType){
       state.paymentType=paymentType
     },
@@ -200,6 +201,9 @@ export default new Vuex.Store({
     },
     pushRolls({commit},rolls){
       commit('pushRolls',rolls)
+    },
+    pushBKTs({commit},BKTs){
+      commit('pushBKTs',BKTs)
     },
     pushPaymentType({commit},paymentType){
       commit('pushPaymentType',paymentType)

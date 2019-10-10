@@ -349,7 +349,6 @@ namespace BWC.Controllers
                     case "ROLLERBLIND":
                         columns = new Dictionary<string, string>
                         {
-                            {"Id", "Id" },
                             {"LocationName", "LOC"},
                             {"Width", "WIDTH"},
                             {"Drop", "DROP"},
@@ -359,11 +358,10 @@ namespace BWC.Controllers
                             {"ControlSideId", "CTRL"},
                             {"ControlHBOL", "CTRL HEIGHT"},
                             {"ControlColorName", "CTRL COL"},
-                            {"BKT", "BKT"},
+                            {"BKTId", "BKT"},
                         };
                         detailColumns = new Dictionary<string, string>
                         {
-                            {"Id", "Id" },
                             {"MaterialColorName", "M. COL"},
                             {"MaterialWidth", "M WIDTH"},
                             {"MaterialDrop", "M DROP"},
@@ -378,19 +376,17 @@ namespace BWC.Controllers
 
                         columns = new Dictionary<string, string>
                         {
-                            {"Id", "Id" },
                             {"LocationName", "LOC"},
                             {"Width", "WIDTH"},
                             {"Drop", "DROP"},
                             {"Quantity", "QTY"},
                             {"MaterialName", "MATERIAL"},
                             {"MaterialColorName", "COL"},
-                            {"ControlColorName", "CTRL"},
+                            {"ControlSideId", "CTRL"},
                             {"Notes", "NOTE"},
                         };
                         detailColumns = new Dictionary<string, string>
                         {
-                            {"Id", "Id" },
                             {"MaterialWidth", "M WIDTH"},
                             {"MaterialDrop", "M DROP"},
                             {"Quantity", "QTY"},
@@ -411,55 +407,75 @@ namespace BWC.Controllers
                     case "FLYSCREEN":
                         columns = new Dictionary<string, string>
                         {
-                            {"Id", "Id" },
                             {"LocationName", "LOC"},
                             {"Width", "WIDTH"},
                             {"Drop", "DROP"},
                             {"Quantity", "QTY"},
                             {"MaterialName", "MATERIAL"},
                             {"MaterialColorName", "COL"},
-                            {"ControlColorName", "CTRL"},
-                            {"Notes", "NOTE"},
+                            {"ControlSideId", "SPRING"},
+                            {"RollId", "TAB"},
                         };
                         detailColumns = new Dictionary<string, string>
                         {
-                            {"Id", "Id" },
-                            {"MaterialColorName", "M. COL"},
-                            {"MaterialWidth", "M WIDTH"},
-                            {"MaterialDrop", "M DROP"},
-                            {"Quantity", "QTY"}
-                        };
-                        break;
-                    case "SECURITY":
-                    case "FLYDOOR":
-                        columns = new Dictionary<string, string>
-                        {
-                            {"Id", "Id" },
-                            {"LocationName", "LOC"},
-                            {"Width", "WIDTH"},
-                            {"Drop", "DROP"},
-                            {"Quantity", "QTY"},
-                            {"MaterialName", "MATERIAL"},
-                            {"MaterialColorName", "COL"},
-                            {"ControlColorName", "CTRL"},
-                            {"BOL", "BOL"},
-                        };
-                        detailColumns = new Dictionary<string, string>
-                        {
-                            {"Id", "Id" },
                             {"MaterialName", "MATERIAL"},
                             {"MaterialColorName", "COL"},
                             {"FrameWidth", "FRAME WIDTH"},
-                            {"MaterialDrop", "FRAME DROP"},
-                            {"FrameDrop", "QTY"},
-                            {"MeshWidth", "QTY"},
-                            {"MeshDrop", "QTY"},
+                            {"FrameDrop", "FRAME DROP"},
+                            {"Quantity", "QTY"},
+                            {"Notes", "NOTE"},
+                        };
+                        break;
+                    case "SECURITY":
+                        columns = new Dictionary<string, string>
+                        {
+                            {"LocationName", "LOC"},
+                            {"Width", "WIDTH"},
+                            {"Drop", "DROP"},
+                            {"Quantity", "QTY"},
+                            {"MaterialName", "MATERIAL"},
+                            {"MaterialColorName", "COL"},
+                            {"ControlColorName", "CTRL"},
+                            {"ControlHBOL", "BOL"},
+                        };
+                        detailColumns = new Dictionary<string, string>
+                        {
+                            {"MaterialName", "MATERIAL"},
+                            {"MaterialColorName", "COL"},
+                            {"FrameWidth", "FRAME WIDTH"},
+                            {"FrameDrop", "FRAME DROP"},
+                            {"Quantity", "QTY"},
+                            {"MeshWidth", "MESH WIDTH"},
+                            {"MeshDrop", "MESH DROP"}
+                        };
+                        break;
+                    case "FLYDOOR":
+                        columns = new Dictionary<string, string>
+                        {
+                            {"LocationName", "LOC"},
+                            {"Width", "WIDTH"},
+                            {"Drop", "DROP"},
+                            {"Quantity", "QTY"},
+                            {"MaterialName", "MATERIAL"},
+                            {"MaterialColorName", "COL"},
+                            {"ControlColorName", "CTRL"},
+                            {"ControlHBOL", "BOL"},
+                        };
+                        detailColumns = new Dictionary<string, string>
+                        {
+                            {"MaterialName", "MATERIAL"},
+                            {"MaterialColorName", "COL"},
+                            {"FrameWidth", "FRAME WIDTH"},
+                            {"FrameDrop", "FRAME DROP"},
+                            {"Quantity", "QTY"},
+                            {"MeshWidth", "MESH WIDTH"},
+                            {"MeshDrop", "MESH DROP"},
+                            {"Notes", "NOTE"},
                         };
                         break;
                     case "RS":
                         columns = new Dictionary<string, string>
                         {
-                            {"Id", "Id" },
                             {"LocationName", "LOC"},
                             {"Width", "WIDTH"},
                             {"Drop", "DROP"},
@@ -471,7 +487,6 @@ namespace BWC.Controllers
                         };
                         detailColumns = new Dictionary<string, string>
                         {
-                            {"Id", "Id" },
                             {"MaterialColorName", "M. COL"},
                             {"Quantity", "QTY"},
                             {"BarColorName", "BAR COL"},
@@ -489,33 +504,29 @@ namespace BWC.Controllers
                     default:
                         columns = new Dictionary<string, string>
                         {
-                            {"Id", "Id" },
                             {"LocationName", "LOC"},
                             {"Width", "WIDTH"},
                             {"Drop", "DROP"},
                             {"Quantity", "QTY"},
                             {"MaterialName", "MATERIAL"},
-                            {"MaterialColorName", "M. COL"},
-                            {"ControlColorName", "CTRL COL"},
-                            {"ControlSideId", "CTRL SIDE"},
+                            {"MaterialColorName", "COL"},
+                            {"ControlColorName", "CTRL"}
                         };
                         detailColumns = new Dictionary<string, string>
                         {
-                            {"Id", "Id" },
-                            {"MaterialColorName", "M. COL"},
+                            {"MaterialColorName", "COL"},
                             {"MaterialWidth", "M WIDTH"},
                             {"MaterialDrop", "M DROP"},
                             {"Quantity", "QTY"},
+                            {"TSpline", "T. SPLINE"},
+                            {"BSpline", "B. SPLINE"},
+                            {"Flap", "FLAP"},
+                            {"TubeDia", "TUBE DIA"},
                             {"TubeWidth", "TUBE WIDTH"},
                             {"BarColorName", "BAR COL"},
-                            {"RollId", "ROLL"},
-                            {"TubeType", "Tube Type"},
-                            {"BottomRailWidth", "Bottom Rail"},
-                            {"HoodWidth", "Hood"},
-                            {"OuterTrackDrop", "Outer Track"},
-                            {"InnerTrackDrop", "Inner Track"},
-                            {"FrameWidth", "Frame Width"},
-                            {"FrameDrop", "Frame Drop"},
+                            {"BarWidth", "BAR WIDTH"},
+                            {"BoxColorName", "BOX COL"},
+                            {"BoxWidth", "BOX WIDTH"}
                         };
                         break;
                 }
@@ -523,12 +534,12 @@ namespace BWC.Controllers
                 // Title
                 bodyContent += pdf.FormatTitle(string.Format("{0} ({1} of {2} in order)", pro.ProductName, i + 1, totalPage));
                 var products = productData.Where(p => p.ProductName == pro.ProductName).ToList();
-                bodyContent += pdf.ToDataTable<MakerSheet>(products, columns);
+                bodyContent += pdf.ToDataTable<MakerSheet>(products, columns, "Id");
 
-                // Title
+                // Title detail
                 bodyContent += pdf.FormatTitle("MAKING DETAIL");
                 bodyContent += pdf.FormatTitle(caution,"p");
-                bodyContent += pdf.ToDataTable<MakerSheet>(products, detailColumns);
+                bodyContent += pdf.ToDataTable<MakerSheet>(products, detailColumns, "Id");
 
                 // Product Components
                 bodyContent += pdf.FormatTitle("Product Components");
@@ -553,6 +564,34 @@ namespace BWC.Controllers
                 };
                 bodyContent += pdf.ToDataTable<MakerSheetComponent>(productComponents, columns);
 
+                if (pro.CategoryCode == "SECURITY")
+                {
+                    foreach (var product in products)
+                    {
+
+                        string image = @"<br/>
+                                        {3}
+                                        <table>
+                                            <tr>
+                                                <td width='100px' height='150px' style='border: 1px solid #ccc;text-align:center; vertical-align: middle;'>
+                                                    Frame
+                                                </td>
+                                                <td style='transform: rotate(270deg);'>
+                                                    <span>{0}</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style='text-align:center;'>
+                                                    <span>{1}</span>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        </table> 
+                                        <div>Note:{2}</div>
+                                        ";
+                        bodyContent += string.Format(image, product.Drop, product.Width, product.Notes, product.MaterialName);
+                    }
+                }
                 // Break to new page
                 if (i + 1 < totalPage)
                 {

@@ -5,20 +5,6 @@
            <el-form :model="form" ref="form">
                 <el-row :gutter="20">
                     <el-col :span="8">
-                        <el-form-item label="Location" 
-                        :label-width="formLabelWidth">
-                            <!-- <el-select v-model="form.LocationId" 
-                            placeholder="Please select a location"
-                            filterable
-                            class="textbox-fs">
-                                <el-option v-for="l in locations" 
-                                :label="l.LocationName" 
-                                :value="l.Id"
-                                :key="l.Id"></el-option>
-                            </el-select> -->
-                            <el-input v-model="form.LocationName" ></el-input>
-                        </el-form-item>
-
                         <el-form-item label="Product Name" 
                         :label-width="formLabelWidth" prop="ProductId"
                         :rules="rules.Required">
@@ -43,69 +29,6 @@
                             class="input-number-fs"></el-input-number>
                         </el-form-item>
                         
-                        <el-form-item label="Drop" 
-                        :label-width="formLabelWidth" 
-                        prop="Drop"
-                        :rules="rules.Required">
-                            <el-input-number v-model="form.Drop" 
-                            controls-position="right" 
-                            class="input-number-fs" ></el-input-number>
-                        </el-form-item>                                               
-                        
-                        <el-form-item label="Quantity" :label-width="formLabelWidth">
-                            <el-input-number v-model="form.Quantity" 
-                            controls-position="right" 
-                            class="input-number-fs" 
-                            :min=0></el-input-number>
-                        </el-form-item>
-                        
-                        <!-- <el-form-item label="Unit" 
-                        :label-width="formLabelWidth">
-                            <el-select v-model="form.UnitId"
-                            filterable 
-                            placeholder="Please select a unit"
-                            class="textbox-fs">
-                                <el-option v-for="u in units" 
-                                :label="u.UnitName" 
-                                :value="u.Id"
-                                :key="u.Id"></el-option>
-                            </el-select>
-                        </el-form-item> -->
-
-                        <el-form-item label="Unit Price" 
-                        :label-width="formLabelWidth">
-                            <bwc-input-currency v-model="unitPrice"
-                            disabled
-                            controls-position="right"
-                            class="input-number-fs" ></bwc-input-currency>
-                        </el-form-item> 
-
-                        <el-form-item label="Discount (%)" 
-                        :label-width="formLabelWidth">
-                            <el-input-number v-model="form.Discount" 
-                            controls-position="right" 
-                            class="input-number-fs"  ></el-input-number>
-                        </el-form-item>
-                        
-                        <el-form-item label="Extend Price" 
-                        :label-width="formLabelWidth">
-                            <bwc-input-currency 
-                            v-model="form.ExtendPrice" 
-                            class="input-number-fs"
-                            controls-position="right"
-                            ></bwc-input-currency>
-                        </el-form-item>   
-
-                        <el-form-item label="Total Amount" 
-                        :label-width="formLabelWidth" 
-                        :class="totalAmount <= 0 ?'color':''">
-                            <bwc-input-currency v-model="totalAmount" 
-                            disabled
-                            controls-position="right"
-                            class="input-number-fs"></bwc-input-currency>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :span="8">                        
                         <el-form-item label="Material" 
                         :label-width="formLabelWidth" 
                         prop="MaterialId"
@@ -120,21 +43,89 @@
                                 :value="m.MaterialId"
                                 :key="m.Id"></el-option>
                             </el-select>
-                        </el-form-item>
-
-                        <el-form-item label="Material Colour" 
+                        </el-form-item>                                         
+                        
+                        <el-form-item label="Control/Spring" 
                         :label-width="formLabelWidth">
-                            <el-input v-model="form.MaterialColorName" ></el-input>
+                            <el-select v-model="form.ControlSideId" 
+                            placeholder="Please select a control"
+                            filterable
+                            class="textbox-fs">
+                                <el-option v-for="c in controlSides" 
+                                :label="c.Name" 
+                                :value="c.Id"
+                                :key="c.Id"></el-option>
+                            </el-select>
                         </el-form-item>
-
+                        
+                        <el-form-item label="BKT" 
+                        :label-width="formLabelWidth">
+                            <el-select v-model="form.BKTId" 
+                            placeholder="Please select an item"
+                            filterable
+                            class="textbox-fs">
+                                <el-option v-for="c in BKTs" 
+                                :label="c.Name" 
+                                :value="c.Id"
+                                :key="c.Id"></el-option>
+                            </el-select>
+                        </el-form-item>
+                        
                         <el-form-item label="Box Colour" 
                         :label-width="formLabelWidth">
                             <el-input v-model="form.BoxColorName" ></el-input>
                         </el-form-item>
 
-                        <el-form-item label="Bar Colour" 
+                        <el-form-item label="T.Spline" 
                         :label-width="formLabelWidth">
-                            <el-input v-model="form.BarColorName" ></el-input>
+                            <el-select v-model="form.TSplineId" 
+                            placeholder="Please select a control"
+                            filterable
+                            class="textbox-fs">
+                                <el-option v-for="c in tSplines" 
+                                :label="c.Name" 
+                                :value="c.Id"
+                                :key="c.Id"></el-option>
+                            </el-select>
+                        </el-form-item>
+
+                    </el-col>
+                    <el-col :span="8">   
+                        <el-form-item label="." 
+                        :label-width="formLabelWidth">
+                        </el-form-item>
+                        
+                        <el-form-item label="Drop" 
+                        :label-width="formLabelWidth" 
+                        prop="Drop"
+                        :rules="rules.Required">
+                            <el-input-number v-model="form.Drop" 
+                            controls-position="right" 
+                            class="input-number-fs" ></el-input-number>
+                        </el-form-item>                      
+                        
+                        <el-form-item label="Material Colour" 
+                        :label-width="formLabelWidth">
+                            <el-input v-model="form.MaterialColorName" ></el-input>
+                        </el-form-item>
+
+                        <el-form-item label="Control H/BOL" 
+                        :label-width="formLabelWidth">
+                            <el-input v-model="form.ControlHBOL" >
+                            </el-input>
+                        </el-form-item>
+                        
+                        <el-form-item label="Roll/Tab" 
+                        :label-width="formLabelWidth">
+                            <el-select v-model="form.RollId" 
+                            placeholder="Please select a control"
+                            filterable
+                            class="textbox-fs">
+                                <el-option v-for="c in rolls" 
+                                :label="c.Name" 
+                                :value="c.Id"
+                                :key="c.Id"></el-option>
+                            </el-select>
                         </el-form-item>
 
                         <el-form-item label="Guide Colour" 
@@ -142,11 +133,20 @@
                             <el-input v-model="form.GuideColorName" ></el-input>
                         </el-form-item>
 
-                        <el-form-item label="Control Colour" 
+                        <el-form-item label="B.Spline" 
                         :label-width="formLabelWidth">
-                            <el-input v-model="form.ControlColorName" ></el-input>
+                            <el-select v-model="form.BSplineId" 
+                            placeholder="Please select a control"
+                            filterable
+                            class="textbox-fs">
+                                <el-option v-for="c in bSplines" 
+                                :label="c.Name" 
+                                :value="c.Id"
+                                :key="c.Id"></el-option>
+                            </el-select>
                         </el-form-item>
 
+                        
                         <!-- <el-form-item label="Colour" 
                         :label-width="formLabelWidth">
                             <el-select v-model="form.ColorId" 
@@ -163,62 +163,38 @@
                     </el-col>
                     
                     <el-col :span="8">
-                        <el-form-item label="Control Side" 
+                        
+                        <el-form-item label="Location" 
                         :label-width="formLabelWidth">
-                            <el-select v-model="form.ControlSideId" 
-                            placeholder="Please select a control"
-                            filterable
-                            class="textbox-fs">
-                                <el-option v-for="c in controlSides" 
-                                :label="c.Name" 
-                                :value="c.Id"
-                                :key="c.Id"></el-option>
-                            </el-select>
+                            <el-input v-model="form.LocationName" ></el-input>
                         </el-form-item>
 
-                        <el-form-item label="Control H/BOL" 
+                        <el-form-item label="Quantity" :label-width="formLabelWidth">
+                            <el-input-number v-model="form.Quantity" 
+                            controls-position="right" 
+                            class="input-number-fs" 
+                            :min=0></el-input-number>
+                        </el-form-item>
+
+                        <el-form-item label="Bar Colour" 
                         :label-width="formLabelWidth">
-                            <el-input v-model="form.ControlHBOL" >
+                            <el-input v-model="form.BarColorName" ></el-input>
+                        </el-form-item>
+
+                        <el-form-item label="Control Colour" 
+                        :label-width="formLabelWidth">
+                            <el-input v-model="form.ControlColorName" ></el-input>
+                        </el-form-item>
+
+                        <el-form-item label="Tube Dia/Stripe Qty" 
+                        :label-width="formLabelWidth">
+                            <el-input v-model="form.TubeDia" >
                             </el-input>
                         </el-form-item>
 
-                        <el-form-item label="Roll" 
+                        <el-form-item label="Stripe Colour" 
                         :label-width="formLabelWidth">
-                            <el-select v-model="form.RollId" 
-                            placeholder="Please select a control"
-                            filterable
-                            class="textbox-fs">
-                                <el-option v-for="c in rolls" 
-                                :label="c.Name" 
-                                :value="c.Id"
-                                :key="c.Id"></el-option>
-                            </el-select>
-                        </el-form-item>
-
-                        <el-form-item label="T.Spline" 
-                        :label-width="formLabelWidth">
-                            <el-select v-model="form.TSplineId" 
-                            placeholder="Please select a control"
-                            filterable
-                            class="textbox-fs">
-                                <el-option v-for="c in tSplines" 
-                                :label="c.Name" 
-                                :value="c.Id"
-                                :key="c.Id"></el-option>
-                            </el-select>
-                        </el-form-item>
-
-                        <el-form-item label="B.Spline" 
-                        :label-width="formLabelWidth">
-                            <el-select v-model="form.BSplineId" 
-                            placeholder="Please select a control"
-                            filterable
-                            class="textbox-fs">
-                                <el-option v-for="c in bSplines" 
-                                :label="c.Name" 
-                                :value="c.Id"
-                                :key="c.Id"></el-option>
-                            </el-select>
+                            <el-input v-model="form.StripeColorName" ></el-input>
                         </el-form-item>
 
                         <el-form-item label="Flap" 
@@ -232,14 +208,47 @@
                                 :value="c.Id"
                                 :key="c.Id"></el-option>
                             </el-select>
-                        </el-form-item>
+                        </el-form-item>                          
 
-                        <el-form-item label="Tube Dia" 
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col :span="6">                        
+                        <el-form-item label="Unit Price" 
                         :label-width="formLabelWidth">
-                            <el-input v-model="form.TubeDia" >
-                            </el-input>
+                            <bwc-input-currency v-model="unitPrice"
+                            disabled
+                            controls-position="right"
+                            class="input-number-fs" ></bwc-input-currency>
+                        </el-form-item> 
+                    </el-col>
+                    <el-col :span="6">
+                        <el-form-item label="Discount (%)" 
+                        :label-width="formLabelWidth">
+                            <el-input-number v-model="form.Discount" 
+                            controls-position="right" 
+                            class="input-number-fs"  ></el-input-number>
                         </el-form-item>
-                        
+                    </el-col>
+                    <el-col :span="6">
+                        <el-form-item label="Extend Price" 
+                        :label-width="formLabelWidth">
+                            <bwc-input-currency 
+                            v-model="form.ExtendPrice" 
+                            class="input-number-fs"
+                            controls-position="right"
+                            ></bwc-input-currency>
+                        </el-form-item> 
+                    </el-col>
+                    <el-col :span="6">
+                        <el-form-item label="Total Amount" 
+                        :label-width="formLabelWidth" 
+                        :class="totalAmount <= 0 ?'color':''">
+                            <bwc-input-currency v-model="totalAmount" 
+                            disabled
+                            controls-position="right"
+                            class="input-number-fs"></bwc-input-currency>
+                        </el-form-item>
                     </el-col>
                 </el-row>
                 <el-row>
@@ -409,6 +418,9 @@ export default {
             rolls(){
                 return this.$store.getters.rolls
             },
+            BKTs(){
+                return this.$store.getters.BKTs
+            },
             unitPrice(){
                     var self = this;
                     //debugger;
@@ -492,7 +504,6 @@ export default {
                     .then(_=>{
                         this.loading=false
                         this.form = this.$store.getters['order/product']
-
                         //product change
                         this.productChange(this.form.ProductId)
                         .then(_=>{                            
