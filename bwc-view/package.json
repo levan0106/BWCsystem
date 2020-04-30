@@ -24,7 +24,7 @@
     "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
     "@vue/cli-service": "^3.0.0-beta.15",
     "expose-loader": "^0.7.5",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16"
